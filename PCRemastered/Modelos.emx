@@ -383,11 +383,19 @@
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_xkjlwPyLEeiOdd5kNLR_uw" name="Diagramas de Actividad">
-      <eAnnotations xmi:id="_xkkz4PyLEeiOdd5kNLR_uw" source="uml2.diagrams" references="_xkla8PyLEeiOdd5kNLR_uw">
-        <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_xkla8PyLEeiOdd5kNLR_uw" type="Freeform" name="Principal">
-          <element xsi:nil="true"/>
-        </contents>
-      </eAnnotations>
+      <eAnnotations xmi:id="_xkkz4PyLEeiOdd5kNLR_uw" source="uml2.diagrams"/>
+      <packagedElement xmi:type="uml:Activity" xmi:id="_RlJlsPySEeiRk6097v4cjQ" name="Activity1">
+        <eAnnotations xmi:id="_RnvmsPySEeiRk6097v4cjQ" source="uml2.diagrams">
+          <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_RnvmsfySEeiRk6097v4cjQ" type="Activity" element="_RlJlsPySEeiRk6097v4cjQ" name="1.1 Añadir Cliente" measurementUnit="Himetric">
+            <children xmi:type="umlnotation:UMLFrame" xmi:id="_RnvmsvySEeiRk6097v4cjQ" type="Activity Frame" element="_RlJlsPySEeiRk6097v4cjQ" fontName="Segoe UI" fontHeight="8" fillColor="16250871" transparency="0" lineColor="12632258" lineWidth="1" showStereotype="Label">
+              <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_RnwNwPySEeiRk6097v4cjQ" type="ActivityCompartment"/>
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_RnwNwfySEeiRk6097v4cjQ" type="Name"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RnwNwvySEeiRk6097v4cjQ" x="793" y="793"/>
+            </children>
+            <styles xmi:type="notation:BooleanValueStyle" xmi:id="_RnwNw_ySEeiRk6097v4cjQ" name="support_hide_pins"/>
+          </contents>
+        </eAnnotations>
+      </packagedElement>
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_i8shUPyHEeiOdd5kNLR_uw" name="Personal">
