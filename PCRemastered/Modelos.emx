@@ -49,11 +49,21 @@
     <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
   </packageImport>
   <packagedElement xmi:type="uml:Package" xmi:id="_eqsgoPyHEeiOdd5kNLR_uw" name="Ventas">
-    <eAnnotations xmi:id="_esoaUPyHEeiOdd5kNLR_uw" source="uml2.diagrams" references="_esoaUfyHEeiOdd5kNLR_uw">
-      <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_esoaUfyHEeiOdd5kNLR_uw" type="Freeform" name="Principal">
-        <element xsi:nil="true"/>
-      </contents>
-    </eAnnotations>
+    <eAnnotations xmi:id="_esoaUPyHEeiOdd5kNLR_uw" source="uml2.diagrams"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="__LrekPySEeiRk6097v4cjQ" name="Casos de Uso">
+      <eAnnotations xmi:id="__LrekfySEeiRk6097v4cjQ" source="uml2.diagrams" references="__LrekvySEeiRk6097v4cjQ">
+        <contents xmi:type="umlnotation:UMLDiagram" xmi:id="__LrekvySEeiRk6097v4cjQ" type="Freeform" name="Principal">
+          <element xsi:nil="true"/>
+        </contents>
+      </eAnnotations>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_AxDg8PyTEeiRk6097v4cjQ" name="Diagrama de Actividad">
+      <eAnnotations xmi:id="_AxMq4PyTEeiRk6097v4cjQ" source="uml2.diagrams" references="_AxMq4fyTEeiRk6097v4cjQ">
+        <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_AxMq4fyTEeiRk6097v4cjQ" type="Freeform" name="Principal">
+          <element xsi:nil="true"/>
+        </contents>
+      </eAnnotations>
+    </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_hndzwPyHEeiOdd5kNLR_uw" name="Clientes">
     <eAnnotations xmi:id="_hndzwfyHEeiOdd5kNLR_uw" source="uml2.diagrams"/>
@@ -399,32 +409,72 @@
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_i8shUPyHEeiOdd5kNLR_uw" name="Personal">
-    <eAnnotations xmi:id="_i8shUfyHEeiOdd5kNLR_uw" source="uml2.diagrams" references="_i8shUvyHEeiOdd5kNLR_uw">
-      <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_i8shUvyHEeiOdd5kNLR_uw" type="Freeform" name="Principal">
-        <element xsi:nil="true"/>
-      </contents>
-    </eAnnotations>
+    <eAnnotations xmi:id="_i8shUfyHEeiOdd5kNLR_uw" source="uml2.diagrams"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_M-ZAgPyTEeiRk6097v4cjQ" name="Casos de Uso">
+      <eAnnotations xmi:id="_M-ZAgfyTEeiRk6097v4cjQ" source="uml2.diagrams" references="_M-ZAgvyTEeiRk6097v4cjQ">
+        <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_M-ZAgvyTEeiRk6097v4cjQ" type="Freeform" name="Principal">
+          <element xsi:nil="true"/>
+        </contents>
+      </eAnnotations>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_OZyngPyTEeiRk6097v4cjQ" name="Diagrama de Actividad">
+      <eAnnotations xmi:id="_OZ8YgPyTEeiRk6097v4cjQ" source="uml2.diagrams" references="_OZ8YgfyTEeiRk6097v4cjQ">
+        <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_OZ8YgfyTEeiRk6097v4cjQ" type="Freeform" name="Principal">
+          <element xsi:nil="true"/>
+        </contents>
+      </eAnnotations>
+    </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_naNOcPyHEeiOdd5kNLR_uw" name="Productos">
-    <eAnnotations xmi:id="_naNOcfyHEeiOdd5kNLR_uw" source="uml2.diagrams" references="_naNOcvyHEeiOdd5kNLR_uw">
-      <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_naNOcvyHEeiOdd5kNLR_uw" type="Freeform" name="Principal">
-        <element xsi:nil="true"/>
-      </contents>
-    </eAnnotations>
+    <eAnnotations xmi:id="_naNOcfyHEeiOdd5kNLR_uw" source="uml2.diagrams"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_KC_mYPyTEeiRk6097v4cjQ" name="Casos de Uso">
+      <eAnnotations xmi:id="_KDANcPyTEeiRk6097v4cjQ" source="uml2.diagrams" references="_KDANcfyTEeiRk6097v4cjQ">
+        <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_KDANcfyTEeiRk6097v4cjQ" type="Freeform" name="Principal">
+          <element xsi:nil="true"/>
+        </contents>
+      </eAnnotations>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_LGlKUPyTEeiRk6097v4cjQ" name="Diagrama de Actividad">
+      <eAnnotations xmi:id="_LGlKUfyTEeiRk6097v4cjQ" source="uml2.diagrams" references="_LGlKUvyTEeiRk6097v4cjQ">
+        <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_LGlKUvyTEeiRk6097v4cjQ" type="Freeform" name="Principal">
+          <element xsi:nil="true"/>
+        </contents>
+      </eAnnotations>
+    </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_sBjNAPyHEeiOdd5kNLR_uw" name="Proveedores">
-    <eAnnotations xmi:id="_sBjNAfyHEeiOdd5kNLR_uw" source="uml2.diagrams" references="_sBjNAvyHEeiOdd5kNLR_uw">
-      <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_sBjNAvyHEeiOdd5kNLR_uw" type="Freeform" name="Principal">
-        <element xsi:nil="true"/>
-      </contents>
-    </eAnnotations>
+    <eAnnotations xmi:id="_sBjNAfyHEeiOdd5kNLR_uw" source="uml2.diagrams"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_DfVsIPyTEeiRk6097v4cjQ" name="Casos de Uso">
+      <eAnnotations xmi:id="_DfVsIfyTEeiRk6097v4cjQ" source="uml2.diagrams" references="_DfVsIvyTEeiRk6097v4cjQ">
+        <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_DfVsIvyTEeiRk6097v4cjQ" type="Freeform" name="Principal">
+          <element xsi:nil="true"/>
+        </contents>
+      </eAnnotations>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_Et370PyTEeiRk6097v4cjQ" name="Diagrama de Actividad">
+      <eAnnotations xmi:id="_EuBs0PyTEeiRk6097v4cjQ" source="uml2.diagrams" references="_EuBs0fyTEeiRk6097v4cjQ">
+        <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_EuBs0fyTEeiRk6097v4cjQ" type="Freeform" name="Principal">
+          <element xsi:nil="true"/>
+        </contents>
+      </eAnnotations>
+    </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_tXWiUPyHEeiOdd5kNLR_uw" name="Envios">
-    <eAnnotations xmi:id="_tXWiUfyHEeiOdd5kNLR_uw" source="uml2.diagrams" references="_tXWiUvyHEeiOdd5kNLR_uw">
-      <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_tXWiUvyHEeiOdd5kNLR_uw" type="Freeform" name="Principal">
-        <element xsi:nil="true"/>
-      </contents>
-    </eAnnotations>
+    <eAnnotations xmi:id="_tXWiUfyHEeiOdd5kNLR_uw" source="uml2.diagrams"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_PzK1QPyTEeiRk6097v4cjQ" name="Casos de Uso">
+      <eAnnotations xmi:id="_PzK1QfyTEeiRk6097v4cjQ" source="uml2.diagrams" references="_PzK1QvyTEeiRk6097v4cjQ">
+        <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_PzK1QvyTEeiRk6097v4cjQ" type="Freeform" name="Principal">
+          <element xsi:nil="true"/>
+        </contents>
+      </eAnnotations>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_UvdJEPyTEeiRk6097v4cjQ" name="Diagramas de Actividad">
+      <eAnnotations xmi:id="_UvdJEfyTEeiRk6097v4cjQ" source="uml2.diagrams" references="_UvdJEvyTEeiRk6097v4cjQ">
+        <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_UvdJEvyTEeiRk6097v4cjQ" type="Freeform" name="Principal">
+          <element xsi:nil="true"/>
+        </contents>
+      </eAnnotations>
+    </packagedElement>
   </packagedElement>
   <profileApplication xmi:id="_WolEe_yHEeiOdd5kNLR_uw">
     <eAnnotations xmi:id="_WolEfPyHEeiOdd5kNLR_uw" source="http://www.eclipse.org/uml2/2.0.0/UML">
