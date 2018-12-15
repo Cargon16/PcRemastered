@@ -1691,66 +1691,6 @@
           <element xsi:nil="true"/>
         </contents>
       </eAnnotations>
-      <packagedElement xmi:type="uml:Activity" xmi:id="_DSu-wABdEemhZLNvPlFksw" name="Activity1">
-        <eAnnotations xmi:id="_DUQBsABdEemhZLNvPlFksw" source="uml2.diagrams">
-          <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_DUl_8ABdEemhZLNvPlFksw" type="Activity" element="_DSu-wABdEemhZLNvPlFksw" name="AñadirProducto" measurementUnit="Himetric">
-            <children xmi:type="umlnotation:UMLFrame" xmi:id="_DUl_8QBdEemhZLNvPlFksw" type="Activity Frame" element="_DSu-wABdEemhZLNvPlFksw" fontName="Segoe UI" fontHeight="8" fillColor="16250871" transparency="0" lineColor="12632258" lineWidth="1" showStereotype="Label">
-              <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_DUl_8gBdEemhZLNvPlFksw" type="ActivityCompartment"/>
-              <children xmi:type="notation:BasicDecorationNode" xmi:id="_DUl_8wBdEemhZLNvPlFksw" type="Name"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DUl_9ABdEemhZLNvPlFksw" x="793" y="793"/>
-            </children>
-            <styles xmi:type="notation:BooleanValueStyle" xmi:id="_DUl_9QBdEemhZLNvPlFksw" name="support_hide_pins"/>
-          </contents>
-        </eAnnotations>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Activity" xmi:id="_HyPP8ABdEemhZLNvPlFksw" name="Activity2">
-        <eAnnotations xmi:id="_HyPP8QBdEemhZLNvPlFksw" source="uml2.diagrams">
-          <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_HyPP8gBdEemhZLNvPlFksw" type="Activity" element="_HyPP8ABdEemhZLNvPlFksw" name="EliminarProducto" measurementUnit="Himetric">
-            <children xmi:type="umlnotation:UMLFrame" xmi:id="_HyPP8wBdEemhZLNvPlFksw" type="Activity Frame" element="_HyPP8ABdEemhZLNvPlFksw" fontName="Segoe UI" fontHeight="8" fillColor="16250871" transparency="0" lineColor="12632258" lineWidth="1" showStereotype="Label">
-              <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_HyPP9ABdEemhZLNvPlFksw" type="ActivityCompartment"/>
-              <children xmi:type="notation:BasicDecorationNode" xmi:id="_HyPP9QBdEemhZLNvPlFksw" type="Name"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HyPP9gBdEemhZLNvPlFksw" x="793" y="793"/>
-            </children>
-            <styles xmi:type="notation:BooleanValueStyle" xmi:id="_HyPP9wBdEemhZLNvPlFksw" name="support_hide_pins"/>
-          </contents>
-        </eAnnotations>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Activity" xmi:id="_KKAYkABdEemhZLNvPlFksw" name="Activity3">
-        <eAnnotations xmi:id="_KKAYkQBdEemhZLNvPlFksw" source="uml2.diagrams">
-          <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_KKAYkgBdEemhZLNvPlFksw" type="Activity" element="_KKAYkABdEemhZLNvPlFksw" name="ModificarInfoProducto" measurementUnit="Himetric">
-            <children xmi:type="umlnotation:UMLFrame" xmi:id="_KKAYkwBdEemhZLNvPlFksw" type="Activity Frame" element="_KKAYkABdEemhZLNvPlFksw" fontName="Segoe UI" fontHeight="8" fillColor="16250871" transparency="0" lineColor="12632258" lineWidth="1" showStereotype="Label">
-              <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_KKAYlABdEemhZLNvPlFksw" type="ActivityCompartment"/>
-              <children xmi:type="notation:BasicDecorationNode" xmi:id="_KKAYlQBdEemhZLNvPlFksw" type="Name"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KKAYlgBdEemhZLNvPlFksw" x="793" y="793"/>
-            </children>
-            <styles xmi:type="notation:BooleanValueStyle" xmi:id="_KKAYlwBdEemhZLNvPlFksw" name="support_hide_pins"/>
-          </contents>
-        </eAnnotations>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Activity" xmi:id="_NtqFgABdEemhZLNvPlFksw" name="Activity4">
-        <eAnnotations xmi:id="_NtqFgQBdEemhZLNvPlFksw" source="uml2.diagrams">
-          <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_NtqFggBdEemhZLNvPlFksw" type="Activity" element="_NtqFgABdEemhZLNvPlFksw" name="MostrarTodosLosProductos" measurementUnit="Himetric">
-            <children xmi:type="umlnotation:UMLFrame" xmi:id="_NtqFgwBdEemhZLNvPlFksw" type="Activity Frame" element="_NtqFgABdEemhZLNvPlFksw" fontName="Segoe UI" fontHeight="8" fillColor="16250871" transparency="0" lineColor="12632258" lineWidth="1" showStereotype="Label">
-              <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_NtqFhABdEemhZLNvPlFksw" type="ActivityCompartment"/>
-              <children xmi:type="notation:BasicDecorationNode" xmi:id="_NtqFhQBdEemhZLNvPlFksw" type="Name"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NtqFhgBdEemhZLNvPlFksw" x="793" y="793"/>
-            </children>
-            <styles xmi:type="notation:BooleanValueStyle" xmi:id="_NtqFhwBdEemhZLNvPlFksw" name="support_hide_pins"/>
-          </contents>
-        </eAnnotations>
-      </packagedElement>
-      <packagedElement xmi:type="uml:Activity" xmi:id="_P1hw8ABdEemhZLNvPlFksw" name="Activity5">
-        <eAnnotations xmi:id="_P1hw8QBdEemhZLNvPlFksw" source="uml2.diagrams">
-          <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_P1hw8gBdEemhZLNvPlFksw" type="Activity" element="_P1hw8ABdEemhZLNvPlFksw" name="ModificarInfoProducto" measurementUnit="Himetric">
-            <children xmi:type="umlnotation:UMLFrame" xmi:id="_P1hw8wBdEemhZLNvPlFksw" type="Activity Frame" element="_P1hw8ABdEemhZLNvPlFksw" fontName="Segoe UI" fontHeight="8" fillColor="16250871" transparency="0" lineColor="12632258" lineWidth="1" showStereotype="Label">
-              <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_P1hw9ABdEemhZLNvPlFksw" type="ActivityCompartment"/>
-              <children xmi:type="notation:BasicDecorationNode" xmi:id="_P1hw9QBdEemhZLNvPlFksw" type="Name"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P1hw9gBdEemhZLNvPlFksw" x="793" y="793"/>
-            </children>
-            <styles xmi:type="notation:BooleanValueStyle" xmi:id="_P1hw9wBdEemhZLNvPlFksw" name="support_hide_pins"/>
-          </contents>
-        </eAnnotations>
-      </packagedElement>
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_sBjNAPyHEeiOdd5kNLR_uw" name="Proveedores">
