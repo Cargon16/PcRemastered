@@ -1098,10 +1098,7 @@
   <packagedElement xmi:type="uml:Package" xmi:id="_eqsgoPyHEeiOdd5kNLR_uw" name="Ventas">
     <eAnnotations xmi:id="_esoaUPyHEeiOdd5kNLR_uw" source="uml2.diagrams"/>
     <packagedElement xmi:type="uml:Package" xmi:id="__LrekPySEeiRk6097v4cjQ" name="Casos de Uso">
-      <eAnnotations xmi:id="__LrekfySEeiRk6097v4cjQ" source="uml2.diagrams" references="__LrekvySEeiRk6097v4cjQ">
-        <contents xmi:type="umlnotation:UMLDiagram" xmi:id="__LrekvySEeiRk6097v4cjQ" type="Freeform" name="Principal">
-          <element xsi:nil="true"/>
-        </contents>
+      <eAnnotations xmi:id="__LrekfySEeiRk6097v4cjQ" source="uml2.diagrams">
         <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_eppY4P1lEeitw8bgvC9Uew" type="Usecase" name="DiagramaDeCasoDeUsoVentas">
           <children xmi:type="umlnotation:UMLClassifierShape" xmi:id="_hOt9sP1lEeitw8bgvC9Uew" element="_hNf1sP1lEeitw8bgvC9Uew" fontName="Segoe UI" fontHeight="8" fillColor="15912618" transparency="0" lineColor="15912618" lineWidth="1" showStereotype="Label">
             <children xmi:type="notation:DecorationNode" xmi:id="_hO0EUP1lEeitw8bgvC9Uew" type="ImageCompartment">
@@ -1606,11 +1603,7 @@
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_AxDg8PyTEeiRk6097v4cjQ" name="Diagrama de Actividad">
-      <eAnnotations xmi:id="_AxMq4PyTEeiRk6097v4cjQ" source="uml2.diagrams" references="_AxMq4fyTEeiRk6097v4cjQ">
-        <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_AxMq4fyTEeiRk6097v4cjQ" type="Freeform" name="Principal">
-          <element xsi:nil="true"/>
-        </contents>
-      </eAnnotations>
+      <eAnnotations xmi:id="_AxMq4PyTEeiRk6097v4cjQ" source="uml2.diagrams"/>
       <packagedElement xmi:type="uml:Activity" xmi:id="_RIkkEP1mEeitw8bgvC9Uew" name="Activity1">
         <eAnnotations xmi:id="_RItG8P1mEeitw8bgvC9Uew" source="uml2.diagrams">
           <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_RJCeIP1mEeitw8bgvC9Uew" type="Activity" element="_RIkkEP1mEeitw8bgvC9Uew" name="1.1Crear venta" measurementUnit="Himetric">
@@ -4283,10 +4276,7 @@
   <packagedElement xmi:type="uml:Package" xmi:id="_hndzwPyHEeiOdd5kNLR_uw" name="Clientes">
     <eAnnotations xmi:id="_hndzwfyHEeiOdd5kNLR_uw" source="uml2.diagrams"/>
     <packagedElement xmi:type="uml:Package" xmi:id="_uqzxcPyLEeiOdd5kNLR_uw" name="Casos de Uso">
-      <eAnnotations xmi:id="_uq0YgPyLEeiOdd5kNLR_uw" source="uml2.diagrams" references="_uq0YgfyLEeiOdd5kNLR_uw">
-        <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_uq0YgfyLEeiOdd5kNLR_uw" type="Freeform" name="Principal">
-          <element xsi:nil="true"/>
-        </contents>
+      <eAnnotations xmi:id="_uq0YgPyLEeiOdd5kNLR_uw" source="uml2.diagrams">
         <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_v5gWAPyHEeiOdd5kNLR_uw" type="Usecase" name="Caso de Uso Clientes">
           <children xmi:type="umlnotation:UMLClassifierShape" xmi:id="_wY8rEPyHEeiOdd5kNLR_uw" element="_wXddUPyHEeiOdd5kNLR_uw" fontName="Segoe UI" fontHeight="8" fillColor="15912618" transparency="0" lineColor="15912618" lineWidth="1" showStereotype="Label">
             <children xmi:type="notation:DecorationNode" xmi:id="_wZGcEPyHEeiOdd5kNLR_uw" type="ImageCompartment">
@@ -6419,10 +6409,7 @@
   <packagedElement xmi:type="uml:Package" xmi:id="_i8shUPyHEeiOdd5kNLR_uw" name="Personal">
     <eAnnotations xmi:id="_i8shUfyHEeiOdd5kNLR_uw" source="uml2.diagrams"/>
     <packagedElement xmi:type="uml:Package" xmi:id="_M-ZAgPyTEeiRk6097v4cjQ" name="Casos de Uso">
-      <eAnnotations xmi:id="_M-ZAgfyTEeiRk6097v4cjQ" source="uml2.diagrams" references="_M-ZAgvyTEeiRk6097v4cjQ">
-        <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_M-ZAgvyTEeiRk6097v4cjQ" type="Freeform" name="Principal">
-          <element xsi:nil="true"/>
-        </contents>
+      <eAnnotations xmi:id="_M-ZAgfyTEeiRk6097v4cjQ" source="uml2.diagrams">
         <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_S2WKYAuREemMgZ_nL5D1vQ" type="Usecase" name="CasosDeUsoPersonal">
           <children xmi:type="umlnotation:UMLClassifierShape" xmi:id="_XrnQMAuREemMgZ_nL5D1vQ" element="_wXddUPyHEeiOdd5kNLR_uw" fontName="Segoe UI" fontHeight="8" fillColor="15912618" transparency="0" lineColor="15912618" lineWidth="1" showStereotype="Label">
             <children xmi:type="notation:DecorationNode" xmi:id="_XrnQMQuREemMgZ_nL5D1vQ" type="ImageCompartment">
@@ -6688,11 +6675,7 @@
       </eAnnotations>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_OZyngPyTEeiRk6097v4cjQ" name="Diagrama de Actividad">
-      <eAnnotations xmi:id="_OZ8YgPyTEeiRk6097v4cjQ" source="uml2.diagrams" references="_OZ8YgfyTEeiRk6097v4cjQ">
-        <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_OZ8YgfyTEeiRk6097v4cjQ" type="Freeform" name="Principal">
-          <element xsi:nil="true"/>
-        </contents>
-      </eAnnotations>
+      <eAnnotations xmi:id="_OZ8YgPyTEeiRk6097v4cjQ" source="uml2.diagrams"/>
       <packagedElement xmi:type="uml:Activity" xmi:id="_HjCm8AuNEemMgZ_nL5D1vQ" name="Activity1">
         <eAnnotations xmi:id="_HkVAYAuNEemMgZ_nL5D1vQ" source="uml2.diagrams">
           <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_HkVncAuNEemMgZ_nL5D1vQ" type="Activity" element="_HjCm8AuNEemMgZ_nL5D1vQ" name="AltaEmpleado" measurementUnit="Himetric">
@@ -8503,10 +8486,7 @@
   <packagedElement xmi:type="uml:Package" xmi:id="_naNOcPyHEeiOdd5kNLR_uw" name="Productos">
     <eAnnotations xmi:id="_naNOcfyHEeiOdd5kNLR_uw" source="uml2.diagrams"/>
     <packagedElement xmi:type="uml:Package" xmi:id="_KC_mYPyTEeiRk6097v4cjQ" name="Casos de Uso">
-      <eAnnotations xmi:id="_KDANcPyTEeiRk6097v4cjQ" source="uml2.diagrams" references="_KDANcfyTEeiRk6097v4cjQ">
-        <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_KDANcfyTEeiRk6097v4cjQ" type="Freeform" name="Principal">
-          <element xsi:nil="true"/>
-        </contents>
+      <eAnnotations xmi:id="_KDANcPyTEeiRk6097v4cjQ" source="uml2.diagrams">
         <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_ygfx0ALnEemy4NgiuYa0-Q" type="Usecase" name="CasosDeUsoProducto">
           <children xmi:type="umlnotation:UMLClassifierShape" xmi:id="_7Nc64QLnEemy4NgiuYa0-Q" element="_wXddUPyHEeiOdd5kNLR_uw" fontName="Segoe UI" fontHeight="8" fillColor="15912618" transparency="0" lineColor="15912618" lineWidth="1" showStereotype="Label">
             <children xmi:type="notation:DecorationNode" xmi:id="_7Nc64gLnEemy4NgiuYa0-Q" type="ImageCompartment">
@@ -8772,11 +8752,7 @@
       </eAnnotations>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_LGlKUPyTEeiRk6097v4cjQ" name="Diagrama de Actividad">
-      <eAnnotations xmi:id="_LGlKUfyTEeiRk6097v4cjQ" source="uml2.diagrams" references="_LGlKUvyTEeiRk6097v4cjQ">
-        <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_LGlKUvyTEeiRk6097v4cjQ" type="Freeform" name="Principal">
-          <element xsi:nil="true"/>
-        </contents>
-      </eAnnotations>
+      <eAnnotations xmi:id="_LGlKUfyTEeiRk6097v4cjQ" source="uml2.diagrams"/>
       <packagedElement xmi:type="uml:Activity" xmi:id="_LiUQgALoEemy4NgiuYa0-Q" name="Activity1">
         <eAnnotations xmi:id="_LnTeMALoEemy4NgiuYa0-Q" source="uml2.diagrams">
           <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_LnTeMQLoEemy4NgiuYa0-Q" type="Activity" element="_LiUQgALoEemy4NgiuYa0-Q" name="AltaProducto" measurementUnit="Himetric">
@@ -10587,10 +10563,7 @@
   <packagedElement xmi:type="uml:Package" xmi:id="_sBjNAPyHEeiOdd5kNLR_uw" name="Proveedores">
     <eAnnotations xmi:id="_sBjNAfyHEeiOdd5kNLR_uw" source="uml2.diagrams"/>
     <packagedElement xmi:type="uml:Package" xmi:id="_DfVsIPyTEeiRk6097v4cjQ" name="Casos de Uso">
-      <eAnnotations xmi:id="_DfVsIfyTEeiRk6097v4cjQ" source="uml2.diagrams" references="_DfVsIvyTEeiRk6097v4cjQ">
-        <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_DfVsIvyTEeiRk6097v4cjQ" type="Freeform" name="Principal">
-          <element xsi:nil="true"/>
-        </contents>
+      <eAnnotations xmi:id="_DfVsIfyTEeiRk6097v4cjQ" source="uml2.diagrams">
         <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_pwCe4AxVEemiCJjH5Dk4iw" type="Usecase" name="DiagramaDeCasoDeUsoProveedores">
           <children xmi:type="umlnotation:UMLClassifierShape" xmi:id="_ru0fwAxVEemiCJjH5Dk4iw" element="_OhBawAxTEemiCJjH5Dk4iw" fontName="Segoe UI" fontHeight="8" fillColor="15912618" transparency="0" lineColor="15912618" lineWidth="1" showStereotype="Label">
             <children xmi:type="notation:DecorationNode" xmi:id="_ru1t4AxVEemiCJjH5Dk4iw" type="ImageCompartment">
@@ -10912,11 +10885,7 @@
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_Et370PyTEeiRk6097v4cjQ" name="Diagrama de Actividad">
-      <eAnnotations xmi:id="_EuBs0PyTEeiRk6097v4cjQ" source="uml2.diagrams" references="_EuBs0fyTEeiRk6097v4cjQ">
-        <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_EuBs0fyTEeiRk6097v4cjQ" type="Freeform" name="Principal">
-          <element xsi:nil="true"/>
-        </contents>
-      </eAnnotations>
+      <eAnnotations xmi:id="_EuBs0PyTEeiRk6097v4cjQ" source="uml2.diagrams"/>
       <packagedElement xmi:type="uml:Activity" xmi:id="_s4uKQAxZEemDnKRGtbVjEg" name="Activity1">
         <eAnnotations xmi:id="_s57EIAxZEemDnKRGtbVjEg" source="uml2.diagrams">
           <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_s57EIQxZEemDnKRGtbVjEg" type="Activity" element="_s4uKQAxZEemDnKRGtbVjEg" name="AltaProveedor" measurementUnit="Himetric">
@@ -12731,10 +12700,7 @@
   <packagedElement xmi:type="uml:Package" xmi:id="_tXWiUPyHEeiOdd5kNLR_uw" name="Envios">
     <eAnnotations xmi:id="_tXWiUfyHEeiOdd5kNLR_uw" source="uml2.diagrams"/>
     <packagedElement xmi:type="uml:Package" xmi:id="_PzK1QPyTEeiRk6097v4cjQ" name="Casos de Uso">
-      <eAnnotations xmi:id="_PzK1QfyTEeiRk6097v4cjQ" source="uml2.diagrams" references="_PzK1QvyTEeiRk6097v4cjQ">
-        <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_PzK1QvyTEeiRk6097v4cjQ" type="Freeform" name="Principal">
-          <element xsi:nil="true"/>
-        </contents>
+      <eAnnotations xmi:id="_PzK1QfyTEeiRk6097v4cjQ" source="uml2.diagrams">
         <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_iKJ0wP1xEeitw8bgvC9Uew" type="Usecase" name="DiagramaDeCasoDeUso1">
           <children xmi:type="umlnotation:UMLClassifierShape" xmi:id="_iq-p4P1xEeitw8bgvC9Uew" element="_iq9bwP1xEeitw8bgvC9Uew" fontName="Segoe UI" fontHeight="8" fillColor="15912618" transparency="0" lineColor="15912618" lineWidth="1" showStereotype="Label">
             <children xmi:type="notation:DecorationNode" xmi:id="_iq-p4v1xEeitw8bgvC9Uew" type="ImageCompartment">
@@ -12995,11 +12961,7 @@
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_UvdJEPyTEeiRk6097v4cjQ" name="Diagramas de Actividad">
-      <eAnnotations xmi:id="_UvdJEfyTEeiRk6097v4cjQ" source="uml2.diagrams" references="_UvdJEvyTEeiRk6097v4cjQ">
-        <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_UvdJEvyTEeiRk6097v4cjQ" type="Freeform" name="Principal">
-          <element xsi:nil="true"/>
-        </contents>
-      </eAnnotations>
+      <eAnnotations xmi:id="_UvdJEfyTEeiRk6097v4cjQ" source="uml2.diagrams"/>
       <packagedElement xmi:type="uml:Activity" xmi:id="_0bYwcP1xEeitw8bgvC9Uew" name="Activity1">
         <eAnnotations xmi:id="_0bZXgP1xEeitw8bgvC9Uew" source="uml2.diagrams">
           <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_0bZXgf1xEeitw8bgvC9Uew" type="Activity" element="_0bYwcP1xEeitw8bgvC9Uew" name="Crear envío" measurementUnit="Himetric">
