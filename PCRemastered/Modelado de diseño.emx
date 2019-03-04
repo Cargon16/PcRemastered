@@ -79,7 +79,7 @@
             </edges>
           </contents>
         </eAnnotations>
-        <packagedElement xmi:type="uml:Class" xmi:id="_2e-OUD6XEemCgsm7gUtwsg" name="TEnvio" clientDependency="_KZX1UD6aEemCgsm7gUtwsg">
+        <packagedElement xmi:type="uml:Class" xmi:id="_2e-OUD6XEemCgsm7gUtwsg" name="TCliente" clientDependency="_KZX1UD6aEemCgsm7gUtwsg">
           <ownedAttribute xmi:id="_4Wsk8D6XEemCgsm7gUtwsg" name="ID" visibility="private">
             <eAnnotations xmi:id="_DRF18D6YEemCgsm7gUtwsg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
@@ -135,7 +135,7 @@
             </ownedParameter>
           </ownedOperation>
         </packagedElement>
-        <packagedElement xmi:type="uml:Interface" xmi:id="_E4VOoD6aEemCgsm7gUtwsg" name="DAOEnvio" clientDependency="_afwDAD6aEemCgsm7gUtwsg">
+        <packagedElement xmi:type="uml:Interface" xmi:id="_E4VOoD6aEemCgsm7gUtwsg" name="DAOCliente" clientDependency="_afwDAD6aEemCgsm7gUtwsg">
           <ownedOperation xmi:id="_P2lr8D6aEemCgsm7gUtwsg" name="create">
             <ownedParameter xmi:id="__TG2ED6aEemCgsm7gUtwsg" name="Parameter1" direction="return">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
@@ -153,7 +153,7 @@
           <ownedOperation xmi:id="_QFNWwD6aEemCgsm7gUtwsg" name="update"/>
           <ownedOperation xmi:id="_QNWmID6aEemCgsm7gUtwsg" name="delete"/>
         </packagedElement>
-        <packagedElement xmi:type="uml:Class" xmi:id="_HwuYED6aEemCgsm7gUtwsg" name="DaoClienteImp" clientDependency="_3fSiMT6fEemCgsm7gUtwsg _JciZoD6aEemCgsm7gUtwsg _NG2dUD6cEemCgsm7gUtwsg _No9E0D6cEemCgsm7gUtwsg _OF4RYD6cEemCgsm7gUtwsg _OjgokD6cEemCgsm7gUtwsg _Od9vUD6eEemCgsm7gUtwsg _O1h6wD6eEemCgsm7gUtwsg _PRI4sD6eEemCgsm7gUtwsg">
+        <packagedElement xmi:type="uml:Class" xmi:id="_HwuYED6aEemCgsm7gUtwsg" name="DAOClienteImpl" clientDependency="_3fSiMT6fEemCgsm7gUtwsg _JciZoD6aEemCgsm7gUtwsg _NG2dUD6cEemCgsm7gUtwsg _No9E0D6cEemCgsm7gUtwsg _OF4RYD6cEemCgsm7gUtwsg _OjgokD6cEemCgsm7gUtwsg _Od9vUD6eEemCgsm7gUtwsg _O1h6wD6eEemCgsm7gUtwsg _PRI4sD6eEemCgsm7gUtwsg">
           <interfaceRealization xmi:id="_3fSiMT6fEemCgsm7gUtwsg" supplier="_E4VOoD6aEemCgsm7gUtwsg" client="_HwuYED6aEemCgsm7gUtwsg" contract="_E4VOoD6aEemCgsm7gUtwsg"/>
           <ownedOperation xmi:id="_3fJYQz6fEemCgsm7gUtwsg" name="create" visibility="public">
             <ownedParameter xmi:id="_3fJYRD6fEemCgsm7gUtwsg" name="ParámetroDeRetorno" direction="return">
