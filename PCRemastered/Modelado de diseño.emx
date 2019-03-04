@@ -413,6 +413,19 @@
               <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_jJ_gOz6jEemCgsm7gUtwsg" visible="false" type="StructureCompartment"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jJ_gMj6jEemCgsm7gUtwsg" x="3704" y="661"/>
             </children>
+            <children xmi:type="umlnotation:UMLShape" xmi:id="_knKW4T6lEemCgsm7gUtwsg" element="_knKW4D6lEemCgsm7gUtwsg" fontName="Segoe UI" fontHeight="8" transparency="0" lineColor="14263149" lineWidth="1" showStereotype="Label">
+              <children xmi:type="notation:DecorationNode" xmi:id="_knKW4z6lEemCgsm7gUtwsg" type="ImageCompartment">
+                <layoutConstraint xmi:type="notation:Size" xmi:id="_knKW5D6lEemCgsm7gUtwsg" width="1320" height="1320"/>
+              </children>
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_knKW5T6lEemCgsm7gUtwsg" type="Stereotype"/>
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_knKW5j6lEemCgsm7gUtwsg" type="Name"/>
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_knKW5z6lEemCgsm7gUtwsg" type="Parent"/>
+              <children xmi:type="notation:SemanticListCompartment" xmi:id="_knKW6D6lEemCgsm7gUtwsg" type="AttributeCompartment"/>
+              <children xmi:type="notation:SemanticListCompartment" xmi:id="_knKW6T6lEemCgsm7gUtwsg" type="OperationCompartment"/>
+              <children xmi:type="notation:SemanticListCompartment" xmi:id="_knKW6j6lEemCgsm7gUtwsg" visible="false" type="SignalCompartment"/>
+              <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_knKW6z6lEemCgsm7gUtwsg" visible="false" type="StructureCompartment"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_knKW4j6lEemCgsm7gUtwsg" x="4630" y="4101"/>
+            </children>
             <element xsi:nil="true"/>
           </contents>
         </eAnnotations>
@@ -425,6 +438,7 @@
           </ownedOperation>
           <ownedOperation xmi:id="__v6-0D6jEemCgsm7gUtwsg" name="crearDaoCliente"/>
         </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_knKW4D6lEemCgsm7gUtwsg" name="FactoriaIntegracionImp"/>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_mZzEMDqqEemXdcqYKMJCXA" name="Negocio">
