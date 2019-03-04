@@ -399,7 +399,32 @@
           <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_zR4UcjqrEemXdcqYKMJCXA" type="Freeform" name="Principal">
             <element xsi:nil="true"/>
           </contents>
+          <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_hNewMD6jEemCgsm7gUtwsg" type="Class" name="DiagramaFactorias">
+            <children xmi:type="umlnotation:UMLShape" xmi:id="_jJ_gMT6jEemCgsm7gUtwsg" element="_jJ_gMD6jEemCgsm7gUtwsg" fontName="Segoe UI" fontHeight="8" transparency="0" lineColor="14263149" lineWidth="1" showStereotype="Label">
+              <children xmi:type="notation:DecorationNode" xmi:id="_jJ_gMz6jEemCgsm7gUtwsg" type="ImageCompartment">
+                <layoutConstraint xmi:type="notation:Size" xmi:id="_jJ_gND6jEemCgsm7gUtwsg" width="1320" height="1320"/>
+              </children>
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_jJ_gNT6jEemCgsm7gUtwsg" type="Stereotype"/>
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_jJ_gNj6jEemCgsm7gUtwsg" type="Name"/>
+              <children xmi:type="notation:BasicDecorationNode" xmi:id="_jJ_gNz6jEemCgsm7gUtwsg" type="Parent"/>
+              <children xmi:type="notation:SemanticListCompartment" xmi:id="_jJ_gOD6jEemCgsm7gUtwsg" type="AttributeCompartment"/>
+              <children xmi:type="notation:SemanticListCompartment" xmi:id="_jJ_gOT6jEemCgsm7gUtwsg" type="OperationCompartment"/>
+              <children xmi:type="notation:SemanticListCompartment" xmi:id="_jJ_gOj6jEemCgsm7gUtwsg" visible="false" type="SignalCompartment"/>
+              <children xmi:type="umlnotation:UMLShapeCompartment" xmi:id="_jJ_gOz6jEemCgsm7gUtwsg" visible="false" type="StructureCompartment"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jJ_gMj6jEemCgsm7gUtwsg" x="3704" y="661"/>
+            </children>
+            <element xsi:nil="true"/>
+          </contents>
         </eAnnotations>
+        <packagedElement xmi:type="uml:Class" xmi:id="_jJ_gMD6jEemCgsm7gUtwsg" name="FactoriaIntegracion" isAbstract="true">
+          <ownedAttribute xmi:id="_lrP8AD6jEemCgsm7gUtwsg" name="instance" visibility="private" isStatic="true" type="_jJ_gMD6jEemCgsm7gUtwsg">
+            <eAnnotations xmi:id="_zmMM4D6jEemCgsm7gUtwsg" source="http://www.eclipse.org/uml2/2.0.0/UML"/>
+          </ownedAttribute>
+          <ownedOperation xmi:id="_7sUmgD6jEemCgsm7gUtwsg" name="getInstance">
+            <ownedParameter xmi:id="_-lKb4D6jEemCgsm7gUtwsg" name="Parameter1" type="_jJ_gMD6jEemCgsm7gUtwsg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="__v6-0D6jEemCgsm7gUtwsg" name="crearDaoCliente"/>
+        </packagedElement>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_mZzEMDqqEemXdcqYKMJCXA" name="Negocio">
