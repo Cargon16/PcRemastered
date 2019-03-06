@@ -144,10 +144,10 @@
             </ownedParameter>
           </ownedOperation>
           <ownedOperation xmi:id="_P5t4cD6aEemCgsm7gUtwsg" name="readByID">
-            <ownedParameter xmi:id="_HLJJUD6bEemCgsm7gUtwsg" name="Parameter1" type="__kjycD6aEemCgsm7gUtwsg" direction="return"/>
+            <ownedParameter xmi:id="_HLJJUD6bEemCgsm7gUtwsg" name="Parameter1" type="_2e-OUD6XEemCgsm7gUtwsg" direction="return"/>
           </ownedOperation>
           <ownedOperation xmi:id="_P82E8D6aEemCgsm7gUtwsg" name="readAll">
-            <ownedParameter xmi:id="_KEswYD6bEemCgsm7gUtwsg" name="Parameter1" type="_LJB7MD6bEemCgsm7gUtwsg" direction="return">
+            <ownedParameter xmi:id="_KEswYD6bEemCgsm7gUtwsg" name="Parameter1" type="_2e-OUD6XEemCgsm7gUtwsg" direction="return">
               <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3dWojj6fEemCgsm7gUtwsg" value="*"/>
               <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3dWojz6fEemCgsm7gUtwsg"/>
             </ownedParameter>
