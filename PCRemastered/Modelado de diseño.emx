@@ -95,7 +95,23 @@
           <ownedAttribute xmi:id="_2WmnQEAdEemCgsm7gUtwsg" name="activo" visibility="private">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
           </ownedAttribute>
-          <ownedOperation xmi:id="_YUqWYD6YEemCgsm7gUtwsg" name="TCliente"/>
+          <ownedOperation xmi:id="_YUqWYD6YEemCgsm7gUtwsg" name="TCliente">
+            <ownedParameter xmi:id="_Hv9M0EUNEem26fSPOOAisw" name="telefono">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_Hv9M0UUNEem26fSPOOAisw" name="nombre">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_Hv9z4EUNEem26fSPOOAisw" name="direccion">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_Hv9z4UUNEem26fSPOOAisw" name="DNI">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_Hv9z4kUNEem26fSPOOAisw" name="activo">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+            </ownedParameter>
+          </ownedOperation>
           <ownedOperation xmi:id="_aekpMD6YEemCgsm7gUtwsg" name="getID">
             <ownedParameter xmi:id="_dozJgD6YEemCgsm7gUtwsg" name="Parameter1" direction="return">
               <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
@@ -628,6 +644,60 @@
             <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ErOq40AiEemCgsm7gUtwsg" value="*"/>
             <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ErOqHUAiEemCgsm7gUtwsg"/>
           </ownedAttribute>
+          <ownedOperation xmi:id="_8MipcEULEem26fSPOOAisw" name="TProveedores">
+            <ownedParameter xmi:id="_NQSo4EUNEem26fSPOOAisw" name="Nombre">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_NQSo4UUNEem26fSPOOAisw" name="telefono">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_NQTP8EUNEem26fSPOOAisw" name="activo">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:id="__3TD8EULEem26fSPOOAisw" name="SetId">
+            <ownedParameter xmi:id="_RVNsUEUMEem26fSPOOAisw" name="">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:id="_B92gwEUMEem26fSPOOAisw" name="SetNombre">
+            <ownedParameter xmi:id="_M-arMEUMEem26fSPOOAisw" name="Parameter2">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+            <ownedParameter xmi:id="_H3oXkEUMEem26fSPOOAisw" name="Parameter1" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:id="_U0NiwEUMEem26fSPOOAisw" name="SetTelefono">
+            <ownedParameter xmi:id="_abG50EUMEem26fSPOOAisw" name="">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:id="_kenmIEUMEem26fSPOOAisw" name="SetActivo">
+            <ownedParameter xmi:id="_ncDAkEUMEem26fSPOOAisw" name="">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:id="_rdA7oEUMEem26fSPOOAisw" name="GetId">
+            <ownedParameter xmi:id="_unKjcEUMEem26fSPOOAisw" name="Parameter1" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:id="_vSBeUEUMEem26fSPOOAisw" name="GetNombre">
+            <ownedParameter xmi:id="_xTNS8EUMEem26fSPOOAisw" name="Parameter1" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:id="_xwnnsEUMEem26fSPOOAisw" name="GetTelefono">
+            <ownedParameter xmi:id="_zlrE0EUMEem26fSPOOAisw" name="Parameter1" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:id="_z6TRAEUMEem26fSPOOAisw" name="GetActivo">
+            <ownedParameter xmi:id="_1yPqEEUMEem26fSPOOAisw" name="Parameter1" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+            </ownedParameter>
+          </ownedOperation>
         </packagedElement>
         <packagedElement xmi:type="uml:Interface" xmi:id="_KCJPsEAcEemCgsm7gUtwsg" name="DaoProveedores" clientDependency="_sMmRYEAdEemCgsm7gUtwsg">
           <ownedOperation xmi:id="_GS5r4EAeEemCgsm7gUtwsg" name="create"/>
