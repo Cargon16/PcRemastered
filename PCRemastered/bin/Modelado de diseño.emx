@@ -5012,8 +5012,68 @@
           <ownedOperation xmi:id="_5Rt2sEmjEemGrfQ_CenZZA" name="setEvento"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Enumeration" xmi:id="__dQy8EmjEemGrfQ_CenZZA" name="Evento">
+          <ownedAttribute xmi:id="_rH8SYFSVEemyTotpzKBrqw" name="atributo1" visibility="private"/>
+          <ownedAttribute xmi:id="_rnmp4FSVEemyTotpzKBrqw" name="atributo2" visibility="private"/>
           <ownedLiteral xmi:id="_WV1GIEmkEemGrfQ_CenZZA" name="createClienteCommnad" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
           <ownedLiteral xmi:id="_Y_i6YEmkEemGrfQ_CenZZA" name="createClienteErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_ryuUwFSVEemyTotpzKBrqw" name="deleteClienteCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_zWMGMFSVEemyTotpzKBrqw" name="deleteClienteErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_zW7tEFSVEemyTotpzKBrqw" name="updateClienteCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_zYa60FSVEemyTotpzKBrqw" name="updateClienteErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_zZKhsFSVEemyTotpzKBrqw" name="readClienteCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_zbHCcFSVEemyTotpzKBrqw" name="readClienteErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_zdC8IFSVEemyTotpzKBrqw" name="readAllClienteCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_zdyjAFSVEemyTotpzKBrqw" name="readAllClienteErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_zf3moFSVEemyTotpzKBrqw" name="createProductoCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_zhD5cFSVEemyTotpzKBrqw" name="createProductoErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_zjAaMFSVEemyTotpzKBrqw" name="deleteProductoCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_zjwBEFSVEemyTotpzKBrqw" name="deleteProductoErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_zj5LAFSVEemyTotpzKBrqw" name="updateProductoCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_zoqWQFSVEemyTotpzKBrqw" name="updateProductoErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_zq5x8FSVEemyTotpzKBrqw" name="readProductoCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_zrgO4FSVEemyTotpzKBrqw" name="readProductoErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_zu79YFSVEemyTotpzKBrqw" name="readAllProductoCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_zvrkQFSVEemyTotpzKBrqw" name="readAllProductoErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_zvrkQVSVEemyTotpzKBrqw" name="createProveedorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_zxxO8FSVEemyTotpzKBrqw" name="createProveedorErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_zz2SkFSVEemyTotpzKBrqw" name="deleteProveedorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_z1VgUFSVEemyTotpzKBrqw" name="deleteProveedorErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_z2YpMFSVEemyTotpzKBrqw" name="updateProveedorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_z4Kx4FSVEemyTotpzKBrqw" name="updateProveedorErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_z5g1sFSVEemyTotpzKBrqw" name="readProveedorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_z7mgYFSVEemyTotpzKBrqw" name="readProveedorErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_OlmoYFSXEemyTotpzKBrqw" name="readAllProveedorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_O_7M4FSXEemyTotpzKBrqw" name="readAllProveedorErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_PMqBUFSXEemyTotpzKBrqw" name="createEnvioCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_PXFvsFSXEemyTotpzKBrqw" name="createEnvioErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_PgbR4FSXEemyTotpzKBrqw" name="deleteEnvioCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_PqjeQFSXEemyTotpzKBrqw" name="deleteEnvioErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_RMhAQFSXEemyTotpzKBrqw" name="updateEnvioCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_RNaYIFSXEemyTotpzKBrqw" name="updateEnvioErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_RNaYIVSXEemyTotpzKBrqw" name="readEnvioCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_ROTwAFSXEemyTotpzKBrqw" name="readEnvioErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_RRoJwFSXEemyTotpzKBrqw" name="readAllEnvioCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_RS-NkFSXEemyTotpzKBrqw" name="readAllEnvioErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_RTt0cFSXEemyTotpzKBrqw" name="createVentasCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_RTt0cVSXEemyTotpzKBrqw" name="createVentasErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_RX5J0FSXEemyTotpzKBrqw" name="deleteVentasCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_RYCTwFSXEemyTotpzKBrqw" name="deleteVentasErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_RYCTwVSXEemyTotpzKBrqw" name="updateVentasCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_RYCTwlSXEemyTotpzKBrqw" name="updateVentasErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_RYMEwFSXEemyTotpzKBrqw" name="readVentasCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_RYMEwVSXEemyTotpzKBrqw" name="readVentasErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_RcqVEFSXEemyTotpzKBrqw" name="readAllVentasCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_RczfAFSXEemyTotpzKBrqw" name="readAllVentasErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_RczfAVSXEemyTotpzKBrqw" name="createPersonalCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_RhH-UFSXEemyTotpzKBrqw" name="createPersonalErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_RhH-UVSXEemyTotpzKBrqw" name="deletePersonalCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_RhRvUFSXEemyTotpzKBrqw" name="deletePersonalErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_RlN0IFSXEemyTotpzKBrqw" name="updatePersonalCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_RlhWIFSXEemyTotpzKBrqw" name="updatePersonalErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_Rp11cFSXEemyTotpzKBrqw" name="readPersonalCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_Rp11cVSXEemyTotpzKBrqw" name="readPersonalErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_Rp-_YFSXEemyTotpzKBrqw" name="readAllPersonalCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
+          <ownedLiteral xmi:id="_Rp-_YVSXEemyTotpzKBrqw" name="readAllPersonalErrorCommand" classifier="__dQy8EmjEemGrfQ_CenZZA"/>
         </packagedElement>
         <packagedElement xmi:type="uml:Dependency" xmi:id="_GZeXIEmkEemGrfQ_CenZZA" supplier="__dQy8EmjEemGrfQ_CenZZA" client="_sfVJUEmjEemGrfQ_CenZZA"/>
         <packagedElement xmi:type="uml:Dependency" xmi:id="_G-ZpIEmkEemGrfQ_CenZZA" supplier="_sfVJUEmjEemGrfQ_CenZZA" client="_ilHN0EmhEemGrfQ_CenZZA"/>
