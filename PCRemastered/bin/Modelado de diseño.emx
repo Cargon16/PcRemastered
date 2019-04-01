@@ -1294,6 +1294,24 @@
         <packagedElement xmi:type="uml:Dependency" xmi:id="_l7sVoEmBEemGrfQ_CenZZA" supplier="_gQWsYEAeEemCgsm7gUtwsg" client="_knKW4D6lEemCgsm7gUtwsg"/>
         <packagedElement xmi:type="uml:Dependency" xmi:id="_1RlhkEmBEemGrfQ_CenZZA" supplier="_HsUn0EAcEemCgsm7gUtwsg" client="_knKW4D6lEemCgsm7gUtwsg"/>
       </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_gLUJkFSREemqP5TUGFgFsg" name="Connection">
+        <eAnnotations xmi:id="_gLl2YFSREemqP5TUGFgFsg" source="uml2.diagrams" references="_gLl2YVSREemqP5TUGFgFsg">
+          <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_gLl2YVSREemqP5TUGFgFsg" type="Freeform" name="Principal">
+            <element xsi:nil="true"/>
+          </contents>
+          <contents xmi:type="umlnotation:UMLDiagram" xmi:id="_Rr4PEFSSEemqP5TUGFgFsg" type="Class" name="DiagramaDeClase1">
+            <element xsi:nil="true"/>
+          </contents>
+        </eAnnotations>
+        <packagedElement xmi:type="uml:Class" xmi:id="_lHnEcFSREemqP5TUGFgFsg" name="Connection" clientDependency="_N7E28FSSEemqP5TUGFgFsg" isAbstract="true">
+          <ownedAttribute xmi:id="_mcxgkFSREemqP5TUGFgFsg" name="instance" visibility="private" type="_lHnEcFSREemqP5TUGFgFsg"/>
+          <ownedOperation xmi:id="_pWsUAFSREemqP5TUGFgFsg" name="getInstance" isStatic="true">
+            <ownedParameter xmi:id="_q20C8FSREemqP5TUGFgFsg" name="Parameter1" type="_lHnEcFSREemqP5TUGFgFsg" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:id="_zogiEFSREemqP5TUGFgFsg" name="createConnection"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Dependency" xmi:id="_N7E28FSSEemqP5TUGFgFsg" supplier="_lHnEcFSREemqP5TUGFgFsg" client="_lHnEcFSREemqP5TUGFgFsg"/>
+      </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_mZzEMDqqEemXdcqYKMJCXA" name="Negocio">
       <eAnnotations xmi:id="_mZzEMTqqEemXdcqYKMJCXA" source="uml2.diagrams" references="_mZzEMjqqEemXdcqYKMJCXA">
