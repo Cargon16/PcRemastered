@@ -20,7 +20,7 @@ public class SAClienteImp implements SACliente {
 	* @see SACliente#create(tCliente TCliente)
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_qvGYQEmXEem-LJ9cS2JMbA?INHERITED"
 	*/
-	public int create(tCliente TCliente) {
+	public int create(TCliente cliente) {
 		// begin-user-code
 		// TODO Auto-generated method stub
 		return 0;
@@ -32,7 +32,7 @@ public class SAClienteImp implements SACliente {
 	* @see SACliente#read(int id)
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_q1Tt8EmXEem-LJ9cS2JMbA?INHERITED"
 	*/
-	public tCliente read(int id) {
+	public TCliente read(int id) {
 		// begin-user-code
 		// TODO Auto-generated method stub
 		return null;
@@ -80,10 +80,12 @@ public class SAClienteImp implements SACliente {
 	* @see SACliente#readByDNI(String DNI)
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_VHGDIEmZEem-LJ9cS2JMbA?INHERITED"
 	*/
-	public tCliente readByDNI(String DNI) {
+	public TCliente readByDNI(String DNI) {
 		// begin-user-code
 		// TODO Auto-generated method stub
 		return null;
 		// end-user-code
 	}
+
+
 }

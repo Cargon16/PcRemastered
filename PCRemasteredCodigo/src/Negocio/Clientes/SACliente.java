@@ -22,7 +22,7 @@ public interface SACliente {
 	* @return
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_qvGYQEmXEem-LJ9cS2JMbA"
 	*/
-	public int create(tCliente TCliente);
+	public int create(TCliente TCliente);
 
 	/** 
 	* <!-- begin-UML-doc -->
@@ -31,7 +31,7 @@ public interface SACliente {
 	* @return
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_q1Tt8EmXEem-LJ9cS2JMbA"
 	*/
-	public tCliente read(int id);
+	public TCliente read(int id);
 
 	/** 
 	* <!-- begin-UML-doc -->
@@ -66,5 +66,5 @@ public interface SACliente {
 	* @return
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_VHGDIEmZEem-LJ9cS2JMbA"
 	*/
-	public tCliente readByDNI(String DNI);
+	public TCliente readByDNI(String DNI);
 }

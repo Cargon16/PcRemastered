@@ -13,7 +13,7 @@ import java.util.ArrayList;
 *     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_HwuYED6aEemCgsm7gUtwsg"
 * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_HwuYED6aEemCgsm7gUtwsg"
 */
-public class DAOClienteImpl implements DAOCliente, DAOCliente {
+public class DAOClienteImpl implements DAOCliente {
 	/** 
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->

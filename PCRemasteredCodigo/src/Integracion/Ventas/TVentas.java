@@ -3,6 +3,8 @@
  */
 package Integracion.Ventas;
 
+import java.sql.Date;
+import java.util.ArrayList;
 import java.util.Set;
 
 /** 
@@ -181,13 +183,13 @@ public class TVentas {
 	* <!-- end-UML-doc -->
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_3_nsIEAgEemCgsm7gUtwsg"
 	*/
-	private arrayListTProducto cesta;
+	private ArrayList cesta;
 
 	/** 
 	* @return the cesta
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_3_nsIEAgEemCgsm7gUtwsg?GETTER"
 	*/
-	public arrayListTProducto getCesta() {
+	public ArrayList getCesta() {
 		// begin-user-code
 		return cesta;
 		// end-user-code
@@ -197,7 +199,7 @@ public class TVentas {
 	* @param cesta the cesta to set
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_3_nsIEAgEemCgsm7gUtwsg?SETTER"
 	*/
-	public void setCesta(arrayListTProducto cesta) {
+	public void setCesta(ArrayList cesta) {
 		// begin-user-code
 		this.cesta = cesta;
 		// end-user-code
