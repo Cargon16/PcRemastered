@@ -3,14 +3,16 @@
  */
 package Negocio.Proveedores;
 
-import Integración.Proveedores.TProveedores;
+import Integracion.Proveedores.TProveedores;
 import java.util.Set;
 
 /** 
 * <!-- begin-UML-doc -->
 * <!-- end-UML-doc -->
 * @author nacho710
-* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+* @uml.annotations
+*     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_WvX9oEmbEemGrfQ_CenZZA"
+* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_WvX9oEmbEemGrfQ_CenZZA"
 */
 public interface SAProveedores {
 	/** 
@@ -18,7 +20,7 @@ public interface SAProveedores {
 	* <!-- end-UML-doc -->
 	* @param tproveedor
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_olY88EmbEemGrfQ_CenZZA"
 	*/
 	public int create(TProveedores tproveedor);
 
@@ -27,7 +29,7 @@ public interface SAProveedores {
 	* <!-- end-UML-doc -->
 	* @param id
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_80MYkEmbEemGrfQ_CenZZA"
 	*/
 	public TProveedores read(int id);
 
@@ -35,7 +37,7 @@ public interface SAProveedores {
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_WXS_YEmcEemGrfQ_CenZZA"
 	*/
 	public Set<TProveedores> readAll();
 
@@ -44,7 +46,7 @@ public interface SAProveedores {
 	* <!-- end-UML-doc -->
 	* @param tproveedor
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_eBfq8EmcEemGrfQ_CenZZA"
 	*/
 	public int update(TProveedores tproveedor);
 
@@ -53,7 +55,7 @@ public interface SAProveedores {
 	* <!-- end-UML-doc -->
 	* @param id
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_wmSb0EmcEemGrfQ_CenZZA"
 	*/
 	public int delete(int id);
 }

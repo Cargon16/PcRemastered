@@ -7,13 +7,15 @@ package Negocio.Envios;
  * <!-- begin-UML-doc -->
  * <!-- end-UML-doc -->
  * @author nacho710
- * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+ * @uml.annotations
+ *     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_jcZkgEmIEemqEfCnrOzXGQ"
+ * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_jcZkgEmIEemqEfCnrOzXGQ"
  */
 public class ComprobadorSintactico {
 	/** 
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_rrVU0EmIEemqEfCnrOzXGQ"
 	*/
 	public void idCorrect() {
 		// begin-user-code
@@ -27,7 +29,7 @@ public class ComprobadorSintactico {
 	* <!-- end-UML-doc -->
 	* @param Nombre
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_fQ8oAEmZEem-LJ9cS2JMbA"
 	*/
 	public Boolean nombreCorrect(String Nombre) {
 		// begin-user-code
@@ -41,7 +43,7 @@ public class ComprobadorSintactico {
 	* <!-- end-UML-doc -->
 	* @param DNI
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_gNMi8EmbEem-LJ9cS2JMbA"
 	*/
 	public Boolean DNICorrect(String DNI) {
 		// begin-user-code

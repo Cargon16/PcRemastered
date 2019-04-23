@@ -3,14 +3,16 @@
  */
 package Negocio.Envios;
 
-import Integración.Envios.TEnvio;
+import Integracion.Envios.TEnvio;
 import java.util.Set;
 
 /** 
 * <!-- begin-UML-doc -->
 * <!-- end-UML-doc -->
 * @author nacho710
-* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+* @uml.annotations
+*     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_cfB_MEmHEemqEfCnrOzXGQ"
+* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_cfB_MEmHEemqEfCnrOzXGQ"
 */
 public interface SAEnvio {
 	/** 
@@ -18,7 +20,7 @@ public interface SAEnvio {
 	* <!-- end-UML-doc -->
 	* @param TEnvio
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_fKNMAEmHEemqEfCnrOzXGQ"
 	*/
 	public int create(TEnvio TEnvio);
 
@@ -27,7 +29,7 @@ public interface SAEnvio {
 	* <!-- end-UML-doc -->
 	* @param id
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_rM-aUEmHEemqEfCnrOzXGQ"
 	*/
 	public TEnvio readByID(int id);
 
@@ -35,7 +37,7 @@ public interface SAEnvio {
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_ycZOYEmHEemqEfCnrOzXGQ"
 	*/
 	public Set<TEnvio> readAll();
 
@@ -44,7 +46,7 @@ public interface SAEnvio {
 	* <!-- end-UML-doc -->
 	* @param TEnvio
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_6QIQcEmHEemqEfCnrOzXGQ"
 	*/
 	public int update(TEnvio TEnvio);
 
@@ -53,7 +55,7 @@ public interface SAEnvio {
 	* <!-- end-UML-doc -->
 	* @param id
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_DcB_UEmIEemqEfCnrOzXGQ"
 	*/
 	public int delete(int id);
 }

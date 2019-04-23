@@ -3,15 +3,17 @@
  */
 package Negocio.Ventas;
 
-import Integración.Ventas.TVentas;
+import Integracion.Ventas.TVentas;
 import java.util.Set;
-import Integración.Productos.TProducto;
+import Integracion.Productos.TProducto;
 
 /** 
 * <!-- begin-UML-doc -->
 * <!-- end-UML-doc -->
 * @author nacho710
-* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+* @uml.annotations
+*     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_o8GnEEmLEemqEfCnrOzXGQ"
+* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_o8GnEEmLEemqEfCnrOzXGQ"
 */
 public interface SAVentas {
 	/** 
@@ -19,7 +21,7 @@ public interface SAVentas {
 	* <!-- end-UML-doc -->
 	* @param tVenta
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_1A3ZcEmLEemqEfCnrOzXGQ"
 	*/
 	public int create(TVentas tVenta);
 
@@ -28,7 +30,7 @@ public interface SAVentas {
 	* <!-- end-UML-doc -->
 	* @param id
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_CQYuwEmMEemqEfCnrOzXGQ"
 	*/
 	public TVentas read(int id);
 
@@ -36,7 +38,7 @@ public interface SAVentas {
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_F55zIEmMEemqEfCnrOzXGQ"
 	*/
 	public Set<TVentas> readAll();
 
@@ -45,7 +47,7 @@ public interface SAVentas {
 	* <!-- end-UML-doc -->
 	* @param tVenta
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_MLSRoEmMEemqEfCnrOzXGQ"
 	*/
 	public int update(TVentas tVenta);
 
@@ -56,7 +58,7 @@ public interface SAVentas {
 	* @param producto
 	* @param cantidad
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_TtyZwEmMEemqEfCnrOzXGQ"
 	*/
 	public TVentas addCesta(int id, TProducto producto, int cantidad);
 
@@ -67,7 +69,7 @@ public interface SAVentas {
 	* @param producto
 	* @param cantidad
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_jfHkgEmMEemqEfCnrOzXGQ"
 	*/
 	public TVentas removeCesta(int id, TProducto producto, int cantidad);
 
@@ -76,7 +78,7 @@ public interface SAVentas {
 	* <!-- end-UML-doc -->
 	* @param id
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_tlafEEmMEemqEfCnrOzXGQ"
 	*/
 	public int devolucion(int id);
 
@@ -85,7 +87,7 @@ public interface SAVentas {
 	* <!-- end-UML-doc -->
 	* @param id
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_4awQ8EmMEemqEfCnrOzXGQ"
 	*/
 	public int closeVenta(int id);
 }

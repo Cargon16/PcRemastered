@@ -3,21 +3,23 @@
  */
 package Negocio.Ventas;
 
-import Integración.Ventas.TVentas;
+import Integracion.Ventas.TVentas;
 import java.util.Set;
-import Integración.Productos.TProducto;
+import Integracion.Productos.TProducto;
 
 /** 
 * <!-- begin-UML-doc -->
 * <!-- end-UML-doc -->
 * @author nacho710
-* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+* @uml.annotations
+*     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_-ekNgEmMEemqEfCnrOzXGQ"
+* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_-ekNgEmMEemqEfCnrOzXGQ"
 */
 public class SAVentasImp implements SAVentas {
 	/** 
 	* (non-Javadoc)
 	* @see SAVentas#create(TVentas tVenta)
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_1A3ZcEmLEemqEfCnrOzXGQ?INHERITED"
 	*/
 	public int create(TVentas tVenta) {
 		// begin-user-code
@@ -29,7 +31,7 @@ public class SAVentasImp implements SAVentas {
 	/** 
 	* (non-Javadoc)
 	* @see SAVentas#read(int id)
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_CQYuwEmMEemqEfCnrOzXGQ?INHERITED"
 	*/
 	public TVentas read(int id) {
 		// begin-user-code
@@ -41,7 +43,7 @@ public class SAVentasImp implements SAVentas {
 	/** 
 	* (non-Javadoc)
 	* @see SAVentas#readAll()
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_F55zIEmMEemqEfCnrOzXGQ?INHERITED"
 	*/
 	public Set<TVentas> readAll() {
 		// begin-user-code
@@ -53,7 +55,7 @@ public class SAVentasImp implements SAVentas {
 	/** 
 	* (non-Javadoc)
 	* @see SAVentas#update(TVentas tVenta)
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_MLSRoEmMEemqEfCnrOzXGQ?INHERITED"
 	*/
 	public int update(TVentas tVenta) {
 		// begin-user-code
@@ -65,7 +67,7 @@ public class SAVentasImp implements SAVentas {
 	/** 
 	* (non-Javadoc)
 	* @see SAVentas#addCesta(int id, TProducto producto, int cantidad)
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_TtyZwEmMEemqEfCnrOzXGQ?INHERITED"
 	*/
 	public TVentas addCesta(int id, TProducto producto, int cantidad) {
 		// begin-user-code
@@ -77,7 +79,7 @@ public class SAVentasImp implements SAVentas {
 	/** 
 	* (non-Javadoc)
 	* @see SAVentas#removeCesta(int id, TProducto producto, int cantidad)
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_jfHkgEmMEemqEfCnrOzXGQ?INHERITED"
 	*/
 	public TVentas removeCesta(int id, TProducto producto, int cantidad) {
 		// begin-user-code
@@ -89,7 +91,7 @@ public class SAVentasImp implements SAVentas {
 	/** 
 	* (non-Javadoc)
 	* @see SAVentas#devolucion(int id)
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_tlafEEmMEemqEfCnrOzXGQ?INHERITED"
 	*/
 	public int devolucion(int id) {
 		// begin-user-code
@@ -101,7 +103,7 @@ public class SAVentasImp implements SAVentas {
 	/** 
 	* (non-Javadoc)
 	* @see SAVentas#closeVenta(int id)
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_4awQ8EmMEemqEfCnrOzXGQ?INHERITED"
 	*/
 	public int closeVenta(int id) {
 		// begin-user-code

@@ -3,20 +3,22 @@
  */
 package Negocio.Personal;
 
-import Integración.Personal.TPersonal;
+import Integracion.Personal.TPersonal;
 import java.util.Set;
 
 /** 
 * <!-- begin-UML-doc -->
 * <!-- end-UML-doc -->
 * @author nacho710
-* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+* @uml.annotations
+*     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_U9eQsFLnEemG-P2dJpE1PA"
+* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_U9eQsFLnEemG-P2dJpE1PA"
 */
 public class SAPersonalImp implements SAPersonal {
 	/** 
 	* (non-Javadoc)
 	* @see SAPersonal#create(TPersonal TPersonal)
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_mWcPAFLkEemG-P2dJpE1PA?INHERITED"
 	*/
 	public int create(TPersonal TPersonal) {
 		// begin-user-code
@@ -28,7 +30,7 @@ public class SAPersonalImp implements SAPersonal {
 	/** 
 	* (non-Javadoc)
 	* @see SAPersonal#read(int id)
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_C3N18FLnEemG-P2dJpE1PA?INHERITED"
 	*/
 	public TPersonal read(int id) {
 		// begin-user-code
@@ -40,7 +42,7 @@ public class SAPersonalImp implements SAPersonal {
 	/** 
 	* (non-Javadoc)
 	* @see SAPersonal#readAll()
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_GAPcYFLnEemG-P2dJpE1PA?INHERITED"
 	*/
 	public Set<TPersonal> readAll() {
 		// begin-user-code
@@ -52,7 +54,7 @@ public class SAPersonalImp implements SAPersonal {
 	/** 
 	* (non-Javadoc)
 	* @see SAPersonal#update(TPersonal tPersonal)
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_K0iR0FLnEemG-P2dJpE1PA?INHERITED"
 	*/
 	public int update(TPersonal tPersonal) {
 		// begin-user-code
@@ -64,7 +66,7 @@ public class SAPersonalImp implements SAPersonal {
 	/** 
 	* (non-Javadoc)
 	* @see SAPersonal#delete(int id)
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_OhnnkFLnEemG-P2dJpE1PA?INHERITED"
 	*/
 	public int delete(int id) {
 		// begin-user-code

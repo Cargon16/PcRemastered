@@ -3,14 +3,16 @@
  */
 package Negocio.Personal;
 
-import Integración.Personal.TPersonal;
+import Integracion.Personal.TPersonal;
 import java.util.Set;
 
 /** 
 * <!-- begin-UML-doc -->
 * <!-- end-UML-doc -->
 * @author nacho710
-* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+* @uml.annotations
+*     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_iunzwFLkEemG-P2dJpE1PA"
+* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_iunzwFLkEemG-P2dJpE1PA"
 */
 public interface SAPersonal {
 	/** 
@@ -18,7 +20,7 @@ public interface SAPersonal {
 	* <!-- end-UML-doc -->
 	* @param TPersonal
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_mWcPAFLkEemG-P2dJpE1PA"
 	*/
 	public int create(TPersonal TPersonal);
 
@@ -27,7 +29,7 @@ public interface SAPersonal {
 	* <!-- end-UML-doc -->
 	* @param id
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_C3N18FLnEemG-P2dJpE1PA"
 	*/
 	public TPersonal read(int id);
 
@@ -35,7 +37,7 @@ public interface SAPersonal {
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_GAPcYFLnEemG-P2dJpE1PA"
 	*/
 	public Set<TPersonal> readAll();
 
@@ -44,7 +46,7 @@ public interface SAPersonal {
 	* <!-- end-UML-doc -->
 	* @param tPersonal
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_K0iR0FLnEemG-P2dJpE1PA"
 	*/
 	public int update(TPersonal tPersonal);
 
@@ -53,7 +55,7 @@ public interface SAPersonal {
 	* <!-- end-UML-doc -->
 	* @param id
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_OhnnkFLnEemG-P2dJpE1PA"
 	*/
 	public int delete(int id);
 }

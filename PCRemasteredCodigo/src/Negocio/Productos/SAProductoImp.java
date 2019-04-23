@@ -7,7 +7,9 @@ package Negocio.Productos;
  * <!-- begin-UML-doc -->
  * <!-- end-UML-doc -->
  * @author nacho710
- * @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+ * @uml.annotations
+ *     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_KPvNIEmbEem-LJ9cS2JMbA"
+ * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_KPvNIEmbEem-LJ9cS2JMbA"
  */
 public interface SAProductoImp {
 }

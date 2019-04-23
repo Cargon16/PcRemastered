@@ -3,14 +3,16 @@
  */
 package Negocio.Productos;
 
-import Integración.Productos.TProducto;
+import Integracion.Productos.TProducto;
 import java.util.Set;
 
 /** 
 * <!-- begin-UML-doc -->
 * <!-- end-UML-doc -->
 * @author nacho710
-* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+* @uml.annotations
+*     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_elO8EEmaEem-LJ9cS2JMbA"
+* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_elO8EEmaEem-LJ9cS2JMbA"
 */
 public class SAProducto {
 	/** 
@@ -18,7 +20,7 @@ public class SAProducto {
 	* <!-- end-UML-doc -->
 	* @param producto
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_gVIMYEmaEem-LJ9cS2JMbA"
 	*/
 	public int create(TProducto producto) {
 		// begin-user-code
@@ -32,7 +34,7 @@ public class SAProducto {
 	* <!-- end-UML-doc -->
 	* @param id
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_udU2IEmaEem-LJ9cS2JMbA"
 	*/
 	public TProducto read(int id) {
 		// begin-user-code
@@ -45,7 +47,7 @@ public class SAProducto {
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_yZH9UEmaEem-LJ9cS2JMbA"
 	*/
 	public Set<TProducto> readAll() {
 		// begin-user-code
@@ -59,7 +61,7 @@ public class SAProducto {
 	* <!-- end-UML-doc -->
 	* @param Producto
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_9jEtQEmaEem-LJ9cS2JMbA"
 	*/
 	public int update(TProducto Producto) {
 		// begin-user-code
@@ -73,7 +75,7 @@ public class SAProducto {
 	* <!-- end-UML-doc -->
 	* @param DNI
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_D_8qEEmbEem-LJ9cS2JMbA"
 	*/
 	public int delete(int DNI) {
 		// begin-user-code
@@ -87,7 +89,7 @@ public class SAProducto {
 	* <!-- end-UML-doc -->
 	* @param Nombre
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_QE30gEmbEem-LJ9cS2JMbA"
 	*/
 	public TProducto readByNombre(String Nombre) {
 		// begin-user-code

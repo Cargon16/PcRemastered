@@ -4,13 +4,15 @@
 package Negocio.Clientes;
 
 import java.util.Set;
-import Integración.Clientes.TCliente;
+import Integracion.Clientes.TCliente;
 
 /** 
 * <!-- begin-UML-doc -->
 * <!-- end-UML-doc -->
 * @author nacho710
-* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+* @uml.annotations
+*     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_nDBvIEmXEem-LJ9cS2JMbA"
+* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_nDBvIEmXEem-LJ9cS2JMbA"
 */
 public interface SACliente {
 	/** 
@@ -18,7 +20,7 @@ public interface SACliente {
 	* <!-- end-UML-doc -->
 	* @param TCliente
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_qvGYQEmXEem-LJ9cS2JMbA"
 	*/
 	public int create(tCliente TCliente);
 
@@ -27,7 +29,7 @@ public interface SACliente {
 	* <!-- end-UML-doc -->
 	* @param id
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_q1Tt8EmXEem-LJ9cS2JMbA"
 	*/
 	public tCliente read(int id);
 
@@ -35,7 +37,7 @@ public interface SACliente {
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_q4-tAEmXEem-LJ9cS2JMbA"
 	*/
 	public Set<TCliente> readAll();
 
@@ -44,7 +46,7 @@ public interface SACliente {
 	* <!-- end-UML-doc -->
 	* @param tCliente
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_q8de0EmXEem-LJ9cS2JMbA"
 	*/
 	public int update(TCliente tCliente);
 
@@ -53,7 +55,7 @@ public interface SACliente {
 	* <!-- end-UML-doc -->
 	* @param id
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_rAecIEmXEem-LJ9cS2JMbA"
 	*/
 	public int delete(int id);
 
@@ -62,7 +64,7 @@ public interface SACliente {
 	* <!-- end-UML-doc -->
 	* @param DNI
 	* @return
-	* @generated "UML a Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
+	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_VHGDIEmZEem-LJ9cS2JMbA"
 	*/
 	public tCliente readByDNI(String DNI);
 }
