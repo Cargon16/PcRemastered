@@ -52,4 +52,5 @@ public interface DAOCliente {
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_QNWmID6aEemCgsm7gUtwsg"
 	*/
 	public int delete(int id);
+	public TCliente readByDNI(String DNI);
 }

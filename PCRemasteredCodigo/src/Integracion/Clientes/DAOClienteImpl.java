@@ -20,12 +20,7 @@ import Integracion.Connection.Connections;
 * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_HwuYED6aEemCgsm7gUtwsg"
 */
 public class DAOClienteImpl implements DAOCliente {
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @return
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_3fJYQz6fEemCgsm7gUtwsg"
-	*/
+
 	//////////////// POR REVISAR EL AUTOINCREMENT//////////////
 	@Override
 	public Integer create( TCliente tCliente ) {
@@ -124,11 +119,6 @@ public class DAOClienteImpl implements DAOCliente {
 		return retorno;
 	}
 
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_3fSiMD6fEemCgsm7gUtwsg"
-	*/
 	@Override
 	public int delete(int id) {
 		int retorno = -1;
@@ -144,6 +134,25 @@ public class DAOClienteImpl implements DAOCliente {
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 			retorno = -1;
+		}
+		return retorno;
+	}
+	@Override
+	public TCliente readByDNI(String DNI) {
+		String lectura = "SELECT * FROM clientes WHERE dni=" + DNI + " FOR UPDATE;";
+		TCliente retorno = null;
+		try {
+			Connection conn =  Connections.getInstance();
+			if (conn != null) {
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(lectura);
+				if (rs.next()) {
+					retorno = new TCliente(rs.getInt("id"), rs.getInt("telefono"), rs.getString("nombre"),
+							rs.getString("direccion"),rs.getString("dni"), rs.getBoolean("activo"));
+				}
+			}
+		} catch (SQLException e) {
+			retorno = null;
 		}
 		return retorno;
 	}
