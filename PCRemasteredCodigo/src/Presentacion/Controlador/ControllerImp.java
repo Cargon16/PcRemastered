@@ -3,6 +3,10 @@
  */
 package Presentacion.Controlador;
 
+import Presentacion.Command.Command;
+import Presentacion.Command.Contexto;
+import Presentacion.Factorias.FactoriaCommands;
+
 /** 
  * <!-- begin-UML-doc -->
  * <!-- end-UML-doc -->
@@ -12,4 +16,11 @@ package Presentacion.Controlador;
  * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_xAqgoFSSEemqP5TUGFgFsg"
  */
 public class ControllerImp extends Controller {
+
+	@Override
+	public void ejecutar(Contexto contexto) {
+		
+		Command comando= FactoriaCommands.getInstance().generacionCommand(contexto.getEvento());
+		comando.ejecutar(contexto);
+	}
 }
