@@ -41,14 +41,14 @@ public interface DAOCliente {
 	/** 
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->
+	 * @return 
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_QFNWwD6aEemCgsm7gUtwsg"
 	*/
-	public int update(TCliente cliente);
+	public int update(TCliente tCliente);
 
 	/** 
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->
-	 * @return 
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_QNWmID6aEemCgsm7gUtwsg"
 	*/
 	public int delete(int id);
