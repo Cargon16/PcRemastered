@@ -12,6 +12,13 @@ package Integracion.Productos;
  * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_CuHd4EAbEemCgsm7gUtwsg"
  */
 public class TOrdenador extends TProducto {
+	public TOrdenador(Integer id, String nombre, String descripcion, Integer stock, float precio, String ram, String tarj_grafica, int capacidad) {
+		super(id, nombre, descripcion, stock, precio);
+		this.capacidad = capacidad;
+		this.ram = ram;
+		this.tajerta_graf = tarj_grafica;
+	}
+
 	/** 
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->

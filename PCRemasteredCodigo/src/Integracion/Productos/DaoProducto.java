@@ -3,6 +3,8 @@
  */
 package Integracion.Productos;
 
+import java.util.ArrayList;
+
 /** 
  * <!-- begin-UML-doc -->
  * <!-- end-UML-doc -->
@@ -17,33 +19,34 @@ public interface DaoProducto {
 	* <!-- end-UML-doc -->
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_fponcEAaEemCgsm7gUtwsg"
 	*/
-	public void create();
+	public Integer create(TProducto tProducto);
 
 	/** 
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_fvLOwEAaEemCgsm7gUtwsg"
 	*/
-	public void read();
+	public TProducto read(int id);
 
 	/** 
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->
+	 * @return 
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_fw-lkEAaEemCgsm7gUtwsg"
 	*/
-	public void readAll();
+	public ArrayList<TProducto> readAll();
 
 	/** 
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_fyLfcEAaEemCgsm7gUtwsg"
 	*/
-	public void delete();
+	public int delete(int id);
 
 	/** 
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_fzyB8EAaEemCgsm7gUtwsg"
 	*/
-	public void update();
+	public int update(TProducto tProducto);
 }

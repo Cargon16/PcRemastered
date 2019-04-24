@@ -12,6 +12,14 @@ package Integracion.Productos;
  * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_quAT0EAaEemCgsm7gUtwsg"
  */
 public class TProducto {
+	public TProducto(Integer id, String nombre, String descripcion, Integer stock, float precio) {
+		this.id = id;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.stock = stock;
+		this.precio = precio;
+	}
+
 	/** 
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->
