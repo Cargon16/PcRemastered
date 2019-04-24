@@ -185,8 +185,11 @@ public class TCliente {
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_YUqWYD6YEemCgsm7gUtwsg"
 	*/
 	public TCliente(Integer ID, Integer telefono, String nombre, String direccion, String DNI, Boolean activo) {
-		// begin-user-code
-		// TODO Auto-generated constructor stub
-		// end-user-code
+		this.ID = ID;
+		this.telefono = telefono;
+		this.nombre = nombre;
+		this.direccion = direccion;
+		this.DNI = DNI;
+		this.activo = activo;
 	}
 }

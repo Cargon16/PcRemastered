@@ -3,8 +3,10 @@
  */
 package Negocio.Clientes;
 
+import java.util.ArrayList;
 import java.util.Set;
 import Integracion.Clientes.TCliente;
+import Negocio.ComprobadorSintactico.ComprobadorSintactico;
 
 /** 
 * <!-- begin-UML-doc -->
@@ -21,17 +23,14 @@ public class SAClienteImp implements SACliente {
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_qvGYQEmXEem-LJ9cS2JMbA?INHERITED"
 	*/
 	public int create(TCliente cliente) {
-		// begin-user-code
-		// TODO Auto-generated method stub
-		return 0;
-		// end-user-code
+		
+		if(cliente!=null){
+			
+		}
+		return cliente.getID();
+	
 	}
-
-	/** 
-	* (non-Javadoc)
-	* @see SACliente#read(int id)
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_q1Tt8EmXEem-LJ9cS2JMbA?INHERITED"
-	*/
+	
 	public TCliente read(int id) {
 		// begin-user-code
 		// TODO Auto-generated method stub
@@ -44,7 +43,7 @@ public class SAClienteImp implements SACliente {
 	* @see SACliente#readAll()
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_q4-tAEmXEem-LJ9cS2JMbA?INHERITED"
 	*/
-	public Set<TCliente> readAll() {
+	public ArrayList<TCliente> readAll() {
 		// begin-user-code
 		// TODO Auto-generated method stub
 		return null;
