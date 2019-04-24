@@ -20,7 +20,7 @@ public interface DAOCliente {
 	* @return
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_P2lr8D6aEemCgsm7gUtwsg"
 	*/
-	public Integer create();
+	public Integer create(TCliente tCliente);
 
 	/** 
 	* <!-- begin-UML-doc -->
@@ -28,7 +28,7 @@ public interface DAOCliente {
 	* @return
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_P5t4cD6aEemCgsm7gUtwsg"
 	*/
-	public TCliente readByID();
+	public TCliente readByID(int id);
 
 	/** 
 	* <!-- begin-UML-doc -->
@@ -43,12 +43,13 @@ public interface DAOCliente {
 	* <!-- end-UML-doc -->
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_QFNWwD6aEemCgsm7gUtwsg"
 	*/
-	public void update();
+	public int update(TCliente cliente);
 
 	/** 
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->
+	 * @return 
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_QNWmID6aEemCgsm7gUtwsg"
 	*/
-	public void delete();
+	public int delete(int id);
 }

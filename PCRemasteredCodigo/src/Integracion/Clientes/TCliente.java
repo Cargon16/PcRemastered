@@ -184,7 +184,7 @@ public class TCliente {
 	* @param activo
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_YUqWYD6YEemCgsm7gUtwsg"
 	*/
-	public TCliente(Integer telefono, String nombre, String direccion, String DNI, Boolean activo) {
+	public TCliente(Integer ID, Integer telefono, String nombre, String direccion, String DNI, Boolean activo) {
 		// begin-user-code
 		// TODO Auto-generated constructor stub
 		// end-user-code
