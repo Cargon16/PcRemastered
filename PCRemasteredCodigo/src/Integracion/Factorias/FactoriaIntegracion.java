@@ -3,6 +3,13 @@
  */
 package Integracion.Factorias;
 
+import Integracion.Clientes.DAOCliente;
+import Integracion.Envios.DAOEnvio;
+import Integracion.Personal.DAOPersonal;
+import Integracion.Productos.DaoProducto;
+import Integracion.Proveedores.DaoProveedores;
+import Integracion.Ventas.DaoVentas;
+
 /** 
  * <!-- begin-UML-doc -->
  * <!-- end-UML-doc -->
@@ -23,91 +30,63 @@ public abstract class FactoriaIntegracion {
 	* @return the instance
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_lrP8AD6jEemCgsm7gUtwsg?GETTER"
 	*/
-	public static FactoriaIntegracion getInstance() {
-		// begin-user-code
+	public static synchronized FactoriaIntegracion getInstance() {
+		if (instance== null){
+			instance = new FactoriaIntegracionImp();
+		}
 		return instance;
-		// end-user-code
 	}
 
 	/** 
 	* @param instance the instance to set
+	 * @return 
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_lrP8AD6jEemCgsm7gUtwsg?SETTER"
 	*/
-	public static void setInstance(FactoriaIntegracion instance) {
-		// begin-user-code
-		FactoriaIntegracion.instance = instance;
-		// end-user-code
-	}
+
+	public abstract DAOCliente crearDaoCliente() ;
+
 
 	/** 
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#__v6-0D6jEemCgsm7gUtwsg"
-	*/
-	public void crearDaoCliente() {
-		// begin-user-code
-		// TODO Auto-generated method stub
-
-		// end-user-code
-	}
-
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
+	 * @return 
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_EXgvgEAZEemCgsm7gUtwsg"
 	*/
-	public void crearDaoVenta() {
-		// begin-user-code
-		// TODO Auto-generated method stub
-
-		// end-user-code
-	}
-
+	public abstract DaoVentas crearDaoVenta() ; 
 	/** 
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->
+	 * @return 
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_ExbEUEAZEemCgsm7gUtwsg"
 	*/
-	public void crearDaoEnvios() {
+	public abstract DAOEnvio crearDaoEnvios() ;
 		// begin-user-code
 		// TODO Auto-generated method stub
 
 		// end-user-code
-	}
+	
 
 	/** 
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->
+	 * @return 
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_FrPBMEAZEemCgsm7gUtwsg"
 	*/
-	public void crearDaoProducto() {
-		// begin-user-code
-		// TODO Auto-generated method stub
-
-		// end-user-code
-	}
+	public abstract DaoProducto crearDaoProducto() ;
 
 	/** 
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->
+	 * @return 
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_GASrMEAZEemCgsm7gUtwsg"
 	*/
-	public void crearDaoPersonal() {
-		// begin-user-code
-		// TODO Auto-generated method stub
-
-		// end-user-code
-	}
+	public abstract DAOPersonal crearDaoPersonal();
 
 	/** 
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->
+	 * @return 
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_MuiE0EAZEemCgsm7gUtwsg"
 	*/
-	public void crearDaoProveedroes() {
-		// begin-user-code
-		// TODO Auto-generated method stub
-
-		// end-user-code
-	}
+	public abstract DaoProveedores crearDaoProveedroes();
 }
