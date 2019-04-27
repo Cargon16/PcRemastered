@@ -3,7 +3,14 @@
  */
 package Integracion.Ventas;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import Integracion.Connection.Connections;
 
 /** 
  * <!-- begin-UML-doc -->
@@ -16,15 +23,31 @@ import java.util.ArrayList;
 public class DaoVentasImp implements DaoVentas {
 
 	@Override
-	public int create(TVentas venta) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int create(TVentas tVenta) {
+	
+		String insercion = "INSERT INTO ventas (id,precioTotal,fecha,pagado,devuelto,idCliente,activo) VALUES ('" + tVenta.getID() + "', '"
+				+ tVenta.getPrecio() + "', '" + tVenta.getFecha() + "', '"+tVenta.getCliente()+"', '" + "');";
+		int id = -1;
+		try {
+			Connection conn = Connections.getInstance();
+			if (conn != null) {
+				for (TLineaVentas l : tVenta.getLineasVenta().values())
+					insertaLineaVenta(l, conn);
+				Statement stmt = conn.createStatement();
+				stmt.execute(insercion);
+				id = tVenta.getID();
+					
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			id = -1;
+		}
+		return id;
 	}
 
 	@Override
 	public TVentas readbyID(int idVenta) {
 		
-		return null;
 	}
 
 	@Override
@@ -56,10 +79,33 @@ public class DaoVentasImp implements DaoVentas {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	/** 
-	* (non-Javadoc)
-	* @see DaoVentas#create()
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_ix80gEAgEemCgsm7gUtwsg?INHERITED"
-	*/
+	private void insertaLineaVenta(TLineaVentas linea, Connection conexion){
+		String insercion = "INSERT INTO lineaVenta (idVenta,idProducto,cantidad, precioTotal) VALUES ('" +
+		linea.getIDVenta() + "' , '" + linea.getIDProducto()  +  "' , '" + linea.getCantidad() +  "' , '" + linea.getPrecioTotal() + "');";
+		try {
+			Statement stmt = conexion.createStatement();
+			stmt.execute(insercion);
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	private HashMap<Integer, TLineaVentas> getLineaVenta(int idVenta,Connection conexion){
+		String lectura="SELECT * FROM lineaVenta WHERE idVenta="+idVenta+" FOR UPDATE;";
+		HashMap<Integer, TLineaVentas> retorno=new HashMap<Integer, TLineaVentas>();
+		try {
+			Statement stmt = conexion.createStatement();
+			ResultSet rs = stmt.executeQuery(lectura);
+			while (rs.next()) {
+				int idProducto=rs.getInt("idProducto");
+				TLineaVentas lineaventa = new TLineaVentas(rs.getInt("idVenta"),idProducto, rs.getInt("cantidad"),rs.getFloat("precioTotal"));
+				retorno.put(idProducto,lineaventa);
+			}
+		} catch (SQLException e) {
+			retorno=null;
+		}
+		return retorno;
+	}
 	
 }

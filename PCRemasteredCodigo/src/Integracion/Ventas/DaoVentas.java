@@ -4,6 +4,7 @@
 package Integracion.Ventas;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import Integracion.Productos.TProducto;
 
