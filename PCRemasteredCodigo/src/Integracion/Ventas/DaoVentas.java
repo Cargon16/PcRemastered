@@ -3,6 +3,11 @@
  */
 package Integracion.Ventas;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import Integracion.Productos.TProducto;
+
 /** 
  * <!-- begin-UML-doc -->
  * <!-- end-UML-doc -->
@@ -12,38 +17,19 @@ package Integracion.Ventas;
  * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_kH0tMEAeEemCgsm7gUtwsg"
  */
 public interface DaoVentas {
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_ix80gEAgEemCgsm7gUtwsg"
-	*/
-	public void create();
+	
+	public int create(TVentas venta);
 
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_jLIJgEAgEemCgsm7gUtwsg"
-	*/
-	public void readbyID();
+	public TVentas readbyID(int idVenta);
 
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_lC-b8EAgEemCgsm7gUtwsg"
-	*/
-	public void readAll();
+	public ArrayList<TVentas> readAll();
+	
+	public int update( TVentas venta);
 
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_lP3ocEAgEemCgsm7gUtwsg"
-	*/
-	public void update();
-
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_ljM0IEAgEemCgsm7gUtwsg"
-	*/
-	public void delete();
+	public int delete( int idVenta);
+	
+	public int añadirLineaVenta(TVentas venta, int IDProducto);
+	
+	public int eliminarLineaVenta(TVentas venta, int IDProducto);
+	
 }

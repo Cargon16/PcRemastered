@@ -22,5 +22,6 @@ public class ControllerImp extends Controller {
 		
 		Command comando= FactoriaCommands.getInstance().generacionCommand(contexto.getEvento());
 		comando.ejecutar(contexto);
+		
 	}
 }
