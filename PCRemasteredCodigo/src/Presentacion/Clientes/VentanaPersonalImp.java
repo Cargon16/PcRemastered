@@ -12,6 +12,8 @@ package Presentacion.Clientes;
  * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_cYzEoFOpEemH9v7SOzgnzQ"
  */
 public class VentanaPersonalImp extends VentanaClientes {
+	public VentanaPersonalImp() {
+	}
 	/** 
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->
