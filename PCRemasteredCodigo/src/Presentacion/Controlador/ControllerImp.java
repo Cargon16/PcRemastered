@@ -6,6 +6,7 @@ package Presentacion.Controlador;
 import Presentacion.Command.Command;
 import Presentacion.Command.Contexto;
 import Presentacion.Factorias.FactoriaCommands;
+import Presentacion.Personal.Ventana;
 
 /** 
  * <!-- begin-UML-doc -->
@@ -21,7 +22,7 @@ public class ControllerImp extends Controller {
 	public void ejecutar(Contexto contexto) {
 		
 		Command comando= FactoriaCommands.getInstance().generacionCommand(contexto.getEvento());
-		comando.ejecutar(contexto);
+		Contexto con= comando.ejecutar(contexto);		
 		
 	}
 }

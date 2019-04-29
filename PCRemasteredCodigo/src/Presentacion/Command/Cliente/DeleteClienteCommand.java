@@ -6,7 +6,8 @@ import Presentacion.Command.Contexto;
 public class DeleteClienteCommand implements Command{
 
 	@Override
-	public void ejecutar(Contexto contexto) {
+	public Contexto ejecutar(Contexto contexto) {
+		return contexto;
 		// TODO Auto-generated method stub
 		
 	}
