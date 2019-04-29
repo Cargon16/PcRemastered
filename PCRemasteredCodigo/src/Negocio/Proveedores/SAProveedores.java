@@ -4,6 +4,8 @@
 package Negocio.Proveedores;
 
 import Integracion.Proveedores.TProveedores;
+
+import java.util.ArrayList;
 import java.util.Set;
 
 /** 
@@ -39,7 +41,7 @@ public interface SAProveedores {
 	* @return
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_WXS_YEmcEemGrfQ_CenZZA"
 	*/
-	public Set<TProveedores> readAll();
+	public ArrayList<TProveedores> readAll();
 
 	/** 
 	* <!-- begin-UML-doc -->

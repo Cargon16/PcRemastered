@@ -4,6 +4,8 @@
 package Negocio.Ventas;
 
 import Integracion.Ventas.TVentas;
+
+import java.util.ArrayList;
 import java.util.Set;
 import Integracion.Productos.TProducto;
 
@@ -40,7 +42,7 @@ public interface SAVentas {
 	* @return
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_F55zIEmMEemqEfCnrOzXGQ"
 	*/
-	public Set<TVentas> readAll();
+	public ArrayList<TVentas> readAll();
 
 	/** 
 	* <!-- begin-UML-doc -->
