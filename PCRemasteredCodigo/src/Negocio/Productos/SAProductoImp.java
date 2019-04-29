@@ -3,53 +3,41 @@
  */
 package Negocio.Productos;
 
+import java.util.ArrayList;
 import java.util.Set;
 
+import Integracion.Factorias.FactoriaIntegracion;
 import Integracion.Productos.TProducto;
 
-/** 
- * <!-- begin-UML-doc -->
- * <!-- end-UML-doc -->
- * @author nacho710
- * @uml.annotations
- *     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_KPvNIEmbEem-LJ9cS2JMbA"
- * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_KPvNIEmbEem-LJ9cS2JMbA"
- */
 public class SAProductoImp implements SAProducto  {
 
 	@Override
 	public int create(TProducto producto) {
-		// TODO Auto-generated method stub
-		return 0;
+		return FactoriaIntegracion.getInstance().crearDaoProducto().create(producto);
 	}
 
 	@Override
 	public TProducto read(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return FactoriaIntegracion.getInstance().crearDaoProducto().read(id);
 	}
 
 	@Override
-	public Set<TProducto> readAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<TProducto> readAll() {
+		return FactoriaIntegracion.getInstance().crearDaoProducto().readAll();
 	}
 
 	@Override
 	public int update(TProducto Producto) {
-		// TODO Auto-generated method stub
-		return 0;
+		return FactoriaIntegracion.getInstance().crearDaoProducto().update(Producto);
 	}
 
 	@Override
 	public int delete(int DNI) {
-		// TODO Auto-generated method stub
-		return 0;
+		return FactoriaIntegracion.getInstance().crearDaoProducto().delete(DNI);
 	}
 
 	@Override
 	public TProducto readByNombre(String Nombre) {
-		// TODO Auto-generated method stub
-		return null;
+		return FactoriaIntegracion.getInstance().crearDaoProducto().readByNombre(Nombre);
 	}
 }

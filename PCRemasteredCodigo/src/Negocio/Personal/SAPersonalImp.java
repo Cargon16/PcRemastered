@@ -3,75 +3,32 @@
  */
 package Negocio.Personal;
 
+import Integracion.Factorias.FactoriaIntegracion;
 import Integracion.Personal.TPersonal;
+
+import java.util.ArrayList;
 import java.util.Set;
 
-/** 
-* <!-- begin-UML-doc -->
-* <!-- end-UML-doc -->
-* @author nacho710
-* @uml.annotations
-*     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_U9eQsFLnEemG-P2dJpE1PA"
-* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_U9eQsFLnEemG-P2dJpE1PA"
-*/
+
 public class SAPersonalImp implements SAPersonal {
-	/** 
-	* (non-Javadoc)
-	* @see SAPersonal#create(TPersonal TPersonal)
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_mWcPAFLkEemG-P2dJpE1PA?INHERITED"
-	*/
-	public int create(TPersonal TPersonal) {
-		// begin-user-code
-		// TODO Auto-generated method stub
-		return 0;
-		// end-user-code
+	
+	public int create(TPersonal tPersonal) {
+		return FactoriaIntegracion.getInstance().crearDaoPersonal().create(tPersonal);
 	}
 
-	/** 
-	* (non-Javadoc)
-	* @see SAPersonal#read(int id)
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_C3N18FLnEemG-P2dJpE1PA?INHERITED"
-	*/
 	public TPersonal read(int id) {
-		// begin-user-code
-		// TODO Auto-generated method stub
-		return null;
-		// end-user-code
+		return FactoriaIntegracion.getInstance().crearDaoPersonal().readByID(id);
 	}
 
-	/** 
-	* (non-Javadoc)
-	* @see SAPersonal#readAll()
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_GAPcYFLnEemG-P2dJpE1PA?INHERITED"
-	*/
-	public Set<TPersonal> readAll() {
-		// begin-user-code
-		// TODO Auto-generated method stub
-		return null;
-		// end-user-code
+	public ArrayList<TPersonal> readAll() {
+		return FactoriaIntegracion.getInstance().crearDaoPersonal().readAll();
 	}
 
-	/** 
-	* (non-Javadoc)
-	* @see SAPersonal#update(TPersonal tPersonal)
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_K0iR0FLnEemG-P2dJpE1PA?INHERITED"
-	*/
 	public int update(TPersonal tPersonal) {
-		// begin-user-code
-		// TODO Auto-generated method stub
-		return 0;
-		// end-user-code
+		return FactoriaIntegracion.getInstance().crearDaoPersonal().update(tPersonal);
 	}
 
-	/** 
-	* (non-Javadoc)
-	* @see SAPersonal#delete(int id)
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_OhnnkFLnEemG-P2dJpE1PA?INHERITED"
-	*/
 	public int delete(int id) {
-		// begin-user-code
-		// TODO Auto-generated method stub
-		return 0;
-		// end-user-code
+		return FactoriaIntegracion.getInstance().crearDaoPersonal().delete(id);
 	}
 }

@@ -49,4 +49,6 @@ public interface DaoProducto {
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_fzyB8EAaEemCgsm7gUtwsg"
 	*/
 	public int update(TProducto tProducto);
+	
+	public TProducto readByNombre(String nombre);
 }

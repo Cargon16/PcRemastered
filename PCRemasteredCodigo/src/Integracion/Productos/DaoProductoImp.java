@@ -121,4 +121,24 @@ public class DaoProductoImp implements DaoProducto {
 		return retorno;
 	}
 
+	@Override
+	public TProducto readByNombre(String nombre) {
+		String lectura = "SELECT * FROM productos WHERE nombre=" + nombre + " FOR UPDATE;";
+		TProducto retorno = null;
+		try {
+			Connection conn = Connections.getInstance();
+			if (conn != null) {
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(lectura);
+				if (rs.next()) {
+					retorno = new TProducto(rs.getInt("id"), nombre, rs.getString("descripcion"),
+							rs.getInt("stock"),rs.getFloat("precio"));
+				}
+			}
+		} catch (SQLException e) {
+			retorno = null;
+		}
+		return retorno;
+	}
+
 }
