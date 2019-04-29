@@ -4,74 +4,34 @@
 package Negocio.Envios;
 
 import Integracion.Envios.TEnvio;
-import java.util.Set;
+import Integracion.Factorias.FactoriaIntegracion;
 
-/** 
-* <!-- begin-UML-doc -->
-* <!-- end-UML-doc -->
-* @author nacho710
-* @uml.annotations
-*     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_L6DUgEmIEemqEfCnrOzXGQ"
-* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_L6DUgEmIEemqEfCnrOzXGQ"
-*/
+import java.util.ArrayList;
+
 public class SAEnvioImp implements SAEnvio {
-	/** 
-	* (non-Javadoc)
-	* @see SAEnvio#create(TEnvio TEnvio)
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_fKNMAEmHEemqEfCnrOzXGQ?INHERITED"
-	*/
-	public int create(TEnvio TEnvio) {
-		// begin-user-code
-		// TODO Auto-generated method stub
-		return 0;
-		// end-user-code
+	
+	public int create(TEnvio tEnvio) {
+		return FactoriaIntegracion.getInstance().crearDaoEnvios().create(tEnvio);
+	
 	}
 
-	/** 
-	* (non-Javadoc)
-	* @see SAEnvio#readByID(int id)
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_rM-aUEmHEemqEfCnrOzXGQ?INHERITED"
-	*/
+	
 	public TEnvio readByID(int id) {
-		// begin-user-code
-		// TODO Auto-generated method stub
-		return null;
-		// end-user-code
+		return FactoriaIntegracion.getInstance().crearDaoEnvios().readByID(id);
 	}
 
-	/** 
-	* (non-Javadoc)
-	* @see SAEnvio#readAll()
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_ycZOYEmHEemqEfCnrOzXGQ?INHERITED"
-	*/
-	public Set<TEnvio> readAll() {
-		// begin-user-code
-		// TODO Auto-generated method stub
-		return null;
-		// end-user-code
+
+	public ArrayList<TEnvio> readAll() {
+		return FactoriaIntegracion.getInstance().crearDaoEnvios().readAll();
 	}
 
-	/** 
-	* (non-Javadoc)
-	* @see SAEnvio#update(TEnvio TEnvio)
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_6QIQcEmHEemqEfCnrOzXGQ?INHERITED"
-	*/
-	public int update(TEnvio TEnvio) {
-		// begin-user-code
-		// TODO Auto-generated method stub
-		return 0;
-		// end-user-code
+	
+	public int update(TEnvio tEnvio) {
+		return FactoriaIntegracion.getInstance().crearDaoEnvios().update(tEnvio);
 	}
 
-	/** 
-	* (non-Javadoc)
-	* @see SAEnvio#delete(int id)
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_DcB_UEmIEemqEfCnrOzXGQ?INHERITED"
-	*/
+	
 	public int delete(int id) {
-		// begin-user-code
-		// TODO Auto-generated method stub
-		return 0;
-		// end-user-code
+		return FactoriaIntegracion.getInstance().crearDaoEnvios().delete(id);
 	}
 }
