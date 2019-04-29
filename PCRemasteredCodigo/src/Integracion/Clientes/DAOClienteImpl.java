@@ -89,11 +89,7 @@ public class DAOClienteImpl implements DAOCliente {
 		return retorno;
 	}
 
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_3fJYTD6fEemCgsm7gUtwsg"
-	*/
+
 	@Override
 	public int update(TCliente tCliente) {
 		int retorno = -1;
