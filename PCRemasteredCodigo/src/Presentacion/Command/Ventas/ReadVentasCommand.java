@@ -1,20 +1,18 @@
 package Presentacion.Command.Ventas;
 
-import java.util.ArrayList;
-
 import Integracion.Ventas.TVentas;
 import Negocio.Factorias.FactoriaNegocio;
 import Presentacion.Command.Command;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 
-public class ReadAllVentasCommand implements Command {
+public class ReadVentasCommand implements Command {
 
 	@Override
 	public Contexto ejecutar(Contexto contexto) {
-		ArrayList<TVentas> i= FactoriaNegocio.getInstance().crearSAVentas().readAll();
-		if(i.isEmpty()){
-			contexto.setEvento(Evento.readAllVentasErrorCommand);
+		TVentas i= FactoriaNegocio.getInstance().crearSAVentas().read((int) contexto.getDatos());
+		if(i.equals(null)){
+			contexto.setEvento(Evento.readVentasErrorCommand);
 			contexto.setDatos(null);
 			
 		}

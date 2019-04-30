@@ -57,37 +57,5 @@ public class Contexto {
 	* <!-- end-UML-doc -->
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_0gEsoEmjEemGrfQ_CenZZA"
 	*/
-	public Contexto() {
-		
-	}
-
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_0jgbIEmjEemGrfQ_CenZZA"
-	*/
 	
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_0kujIEmjEemGrfQ_CenZZA"
-	*/
-	public void setDato() {
-		// begin-user-code
-		// TODO Auto-generated method stub
-
-		// end-user-code
-	}
-
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_5Rt2sEmjEemGrfQ_CenZZA"
-	*/
-	public void setEvento() {
-		// begin-user-code
-		// TODO Auto-generated method stub
-
-		// end-user-code
-	}
 }

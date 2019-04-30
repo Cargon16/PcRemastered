@@ -1,18 +1,18 @@
-package Presentacion.Command.Personal;
+package Presentacion.Command.Productos;
 
-import Integracion.Envios.TEnvio;
+import Integracion.Productos.TProducto;
 import Negocio.Factorias.FactoriaNegocio;
 import Presentacion.Command.Command;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 
-public class ReadByIDPersonalCommand implements Command {
+public class ReadProductosCommand implements Command {
 
 	@Override
 	public Contexto ejecutar(Contexto contexto) {
-		TEnvio i= FactoriaNegocio.getInstance().crearSAEnvios().readByID((int) contexto.getDatos());
+		TProducto i= FactoriaNegocio.getInstance().crearSAProductos().read((int) contexto.getDatos());
 		if(i.equals(null)){
-			contexto.setEvento(Evento.readByIDPersonalErrorCommand);
+			contexto.setEvento(Evento.readProveedorErrorCommand);
 			contexto.setDatos(null);
 			
 		}
