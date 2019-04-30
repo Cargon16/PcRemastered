@@ -20,7 +20,7 @@ public class ControllerImp extends Controller {
 	@Override
 	public void ejecutar(Contexto contexto) {
 		
-		Command comando= FactoriaCommands.getInstance().generacionCommand(contexto.getEvento());
+		Command comando = FactoriaCommands.getInstance().generacionCommand(contexto.getEvento());
 		Contexto vista= comando.ejecutar(contexto);	// capa de negocio	
 		comando.ejecutar(vista); // creacion o actualizacion de la capa de presentancion.
 	}

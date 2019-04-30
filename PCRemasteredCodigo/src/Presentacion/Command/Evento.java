@@ -397,7 +397,16 @@ public enum Evento {
 	 * <!-- end-UML-doc -->
 	 * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_Rp-_YVSXEemyTotpzKBrqw"
 	 */
-	readAllPersonalErrorCommand;
+	readAllPersonalErrorCommand, 
+	
+	crearVentanaCliente,
+	crearVentanaVentas, crearVentanaProductos,
+	
+	
+	
+	
+	
+	INIT;
 	/** 
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->

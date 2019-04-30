@@ -17,17 +17,10 @@ import Presentacion.Ventana;
 */
 public abstract class VentanaClientes extends JFrame implements Ventana{
 	private static final long serialVersionUID = 1L;
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_HhjwAFOpEemH9v7SOzgnzQ"
-	*/
+	
 	private static VentanaClientes instance;
 
-	/** 
-	* @return the instance
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_HhjwAFOpEemH9v7SOzgnzQ?GETTER"
-	*/
+	
 	public static VentanaClientes getInstance() {
 		if ( instance==null){
 			instance = new VentanaClientesImp();

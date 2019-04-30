@@ -20,7 +20,7 @@ public abstract class FactoriaCommands {
 	* <!-- end-UML-doc -->
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_21bCoFSUEemuHuD_HqBchg"
 	*/
-	private static FactoriaCommands instance;
+	private static FactoriaCommands instance= null;
 
 	/** 
 	* @return the instance
@@ -28,31 +28,11 @@ public abstract class FactoriaCommands {
 	*/
 	public static FactoriaCommands getInstance() {
 		// begin-user-code
+		if ( instance== null){
+			instance= new FactoriaCommandsImp();
+		}
 		return instance;
-		// end-user-code
-	}
-
-	/** 
-	* @param instance the instance to set
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_21bCoFSUEemuHuD_HqBchg?SETTER"
-	*/
-	public static void setInstance(FactoriaCommands instance) {
-		// begin-user-code
-		FactoriaCommands.instance = instance;
-		// end-user-code
-	}
-
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @param evento
-	* @return
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_7x91IFSUEemuHuD_HqBchg"
-	*/
-	public Command generacionCommand(Evento evento) {
-		// begin-user-code
-		// TODO Auto-generated method stub
-		return null;
-		// end-user-code
-	}
+	}	
+	public abstract Command generacionCommand(Evento evento);
+		
 }
