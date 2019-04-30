@@ -12,10 +12,10 @@ public class ReadPersonalCommand implements Command {
 	public Contexto ejecutar(Contexto contexto) {
 		TPersonal i= FactoriaNegocio.getInstance().crearSAPersonal().read((int) contexto.getDatos());
 		if(i.equals(null)){
-			contexto.setEvento(Evento.readByIDPersonalErrorCommand);
+			contexto.setEvento(Evento.readPersonalErrorCommand);
 			contexto.setDatos(null);
-			
-		}
+
+		}		
 		return contexto;
 	}
 

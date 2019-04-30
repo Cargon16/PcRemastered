@@ -21,7 +21,7 @@ public  abstract class  ComprobadorSintactico {
 	}
 	
 	
-	public abstract  boolean idCorrect(int id);
+	public abstract  boolean idCorrect(String id);
 
 	public abstract boolean nombreCorrect(String Nombre);
 
