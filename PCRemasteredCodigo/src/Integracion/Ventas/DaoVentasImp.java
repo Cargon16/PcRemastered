@@ -68,8 +68,7 @@ public class DaoVentasImp implements DaoVentas {
 		return 0;
 	}
 
-	@Override
-	public int añadirLineaVenta(TVentas venta, int IDProducto) {
+	public int anadirLineaVenta(TVentas venta, int IDProducto) {
 		// TODO Auto-generated method stub
 		return 0;
 	}

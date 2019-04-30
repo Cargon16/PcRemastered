@@ -28,7 +28,7 @@ public interface DaoVentas {
 
 	public int delete( int idVenta);
 	
-	public int añadirLineaVenta(TVentas venta, int IDProducto);
+	public int anadirLineaVenta(TVentas venta, int IDProducto);
 	
 	public int eliminarLineaVenta(TVentas venta, int IDProducto);
 	
