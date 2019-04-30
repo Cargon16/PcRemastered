@@ -3,6 +3,8 @@
  */
 package Presentacion.Proveedores;
 
+import Presentacion.Ventana;
+
 /** 
  * <!-- begin-UML-doc -->
  * <!-- end-UML-doc -->

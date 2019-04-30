@@ -2,17 +2,9 @@
  * 
  */
 package Presentacion.Clientes;
-
-/** 
- * <!-- begin-UML-doc -->
- * <!-- end-UML-doc -->
- * @author nacho710
- * @uml.annotations
- *     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_cYzEoFOpEemH9v7SOzgnzQ"
- * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_cYzEoFOpEemH9v7SOzgnzQ"
- */
-public class VentanaPersonalImp extends VentanaClientes {
-	public VentanaPersonalImp() {
+s
+public class VentanaClientesImp extends VentanaClientes {
+	public VentanaClientesImp() {
 	}
 	/** 
 	* <!-- begin-UML-doc -->
@@ -186,5 +178,11 @@ public class VentanaPersonalImp extends VentanaClientes {
 		// TODO Auto-generated method stub
 
 		// end-user-code
+	}
+
+	@Override
+	public void Actualizar() {
+		// TODO Auto-generated method stub
+		
 	}
 }

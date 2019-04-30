@@ -6,7 +6,6 @@ package Presentacion.Controlador;
 import Presentacion.Command.Command;
 import Presentacion.Command.Contexto;
 import Presentacion.Factorias.FactoriaCommands;
-import Presentacion.Personal.Ventana;
 
 /** 
  * <!-- begin-UML-doc -->
@@ -22,7 +21,7 @@ public class ControllerImp extends Controller {
 	public void ejecutar(Contexto contexto) {
 		
 		Command comando= FactoriaCommands.getInstance().generacionCommand(contexto.getEvento());
-		Contexto con= comando.ejecutar(contexto);		
-		
+		Contexto vista= comando.ejecutar(contexto);	// capa de negocio	
+		comando.ejecutar(vista); // creacion o actualizacion de la capa de presentancion.
 	}
 }

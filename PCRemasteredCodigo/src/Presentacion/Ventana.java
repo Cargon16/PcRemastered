@@ -1,7 +1,7 @@
 /**
  * 
  */
-package Presentacion.Proveedores;
+package Presentacion;
 
 /** 
  * <!-- begin-UML-doc -->
