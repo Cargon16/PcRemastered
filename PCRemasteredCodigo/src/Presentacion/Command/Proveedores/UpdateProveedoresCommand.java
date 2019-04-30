@@ -1,5 +1,14 @@
 package Presentacion.Command.Proveedores;
 
-public class UpdateProveedoresCommand {
+import Presentacion.Command.Command;
+import Presentacion.Command.Contexto;
+
+public class UpdateProveedoresCommand implements Command {
+
+	@Override
+	public Contexto ejecutar(Contexto contexto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

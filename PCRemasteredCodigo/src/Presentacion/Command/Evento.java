@@ -60,6 +60,12 @@ public enum Evento {
 	 * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_zbHCcFSVEemyTotpzKBrqw"
 	 */
 	readClienteErrorCommand,
+	
+	readByDNIClienteCommand,
+	
+	readByDNIClienteCommandError,
+	
+
 	/** 
 	 * <!-- begin-UML-doc -->
 	 * <!-- end-UML-doc -->
@@ -84,6 +90,10 @@ public enum Evento {
 	 * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_zhD5cFSVEemyTotpzKBrqw"
 	 */
 	createProductoErrorCommand,
+
+	readByIDProdcutoErrorCommand,
+
+	readByIDProductoCommand,
 	/** 
 	 * <!-- begin-UML-doc -->
 	 * <!-- end-UML-doc -->
@@ -149,6 +159,10 @@ public enum Evento {
 	 * <!-- end-UML-doc -->
 	 * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_zz2SkFSVEemyTotpzKBrqw"
 	 */
+	readByIDProveedorErrorCommand,
+
+	readByIDProveedorCommand,
+	
 	deleteProveedorCommand,
 	/** 
 	 * <!-- begin-UML-doc -->
@@ -204,6 +218,10 @@ public enum Evento {
 	 * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_PXFvsFSXEemyTotpzKBrqw"
 	 */
 	createEnvioErrorCommand,
+	
+	readByIDEnvioErrorCommand,
+
+	readByIDEnvioCommand,
 	/** 
 	 * <!-- begin-UML-doc -->
 	 * <!-- end-UML-doc -->
@@ -264,6 +282,10 @@ public enum Evento {
 	 * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_RTt0cVSXEemyTotpzKBrqw"
 	 */
 	createVentasErrorCommand,
+	
+	readByIDVentasErrorCommand,
+
+	readByIDVentasCommand,
 	/** 
 	 * <!-- begin-UML-doc -->
 	 * <!-- end-UML-doc -->
@@ -324,6 +346,10 @@ public enum Evento {
 	 * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_RhH-UFSXEemyTotpzKBrqw"
 	 */
 	createPersonalErrorCommand,
+	
+	readByIDPersonalErrorCommand,
+
+	readByIDPersonalCommand,
 	/** 
 	 * <!-- begin-UML-doc -->
 	 * <!-- end-UML-doc -->

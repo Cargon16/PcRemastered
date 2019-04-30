@@ -1,19 +1,18 @@
-package Presentacion.Command.Envios;
+package Presentacion.Command.Personal;
 
-import java.util.ArrayList;
 import Integracion.Envios.TEnvio;
 import Negocio.Factorias.FactoriaNegocio;
 import Presentacion.Command.Command;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 
-public class ReadAllEnviosCommand implements Command {
+public class ReadByIDPersonalCommand implements Command {
 
 	@Override
 	public Contexto ejecutar(Contexto contexto) {
-		ArrayList<TEnvio> i= FactoriaNegocio.getInstance().crearSAEnvios().readAll();
-		if(i.isEmpty()){
-			contexto.setEvento(Evento.readAllEnvioErrorCommand);
+		TEnvio i= FactoriaNegocio.getInstance().crearSAEnvios().readByID((int) contexto.getDatos());
+		if(i.equals(null)){
+			contexto.setEvento(Evento.readByIDPersonalErrorCommand);
 			contexto.setDatos(null);
 			
 		}

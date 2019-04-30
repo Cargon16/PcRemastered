@@ -1,5 +1,14 @@
 package Presentacion.Command.Ventas;
 
-public class UpdateVentasCommand {
+import Presentacion.Command.Command;
+import Presentacion.Command.Contexto;
+
+public class UpdateVentasCommand implements Command {
+
+	@Override
+	public Contexto ejecutar(Contexto contexto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }

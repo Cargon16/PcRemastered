@@ -1,5 +1,21 @@
 package Presentacion.Command.Productos;
 
-public class DeleteProductosCommand {
+import Negocio.Factorias.FactoriaNegocio;
+import Presentacion.Command.Command;
+import Presentacion.Command.Contexto;
+import Presentacion.Command.Evento;
+
+public class DeleteProductosCommand implements Command {
+
+	@Override
+	public Contexto ejecutar(Contexto contexto) {
+		int i= FactoriaNegocio.getInstance().crearSAProductos().delete((int) contexto.getDatos());
+		if(i == -1){
+			contexto.setEvento(Evento.deleteProductoErrorCommand);
+			contexto.setDatos(null);
+			
+		}
+		return contexto;
+	}
 
 }
