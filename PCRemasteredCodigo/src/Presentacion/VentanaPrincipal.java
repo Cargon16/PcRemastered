@@ -25,11 +25,11 @@ private JFrame frame;
 		frame = new JFrame();
 		frame.setResizable(false);
 		
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 534, 360);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setTitle("PcRemastered");
 		JButton botonVentas = new JButton("Clientes");
-		botonVentas.setBounds(70, 45, 92, 59);
+		botonVentas.setBounds(26, 32, 106, 56);
 		botonVentas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -45,7 +45,7 @@ private JFrame frame;
 		frame.getContentPane().add(botonVentas);
 		
 		JButton botonModelo = new JButton("Productos");
-		botonModelo.setBounds(172, 45, 89, 59);
+		botonModelo.setBounds(144, 32, 106, 56);
 		botonModelo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -59,8 +59,8 @@ private JFrame frame;
 		});
 		frame.getContentPane().add(botonModelo);
 		
-		JButton botonCliente = new JButton("Cliente");
-		botonCliente.setBounds(271, 45, 98, 59);
+		JButton botonCliente = new JButton("Ventas");
+		botonCliente.setBounds(262, 32, 98, 56);
 		botonCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -78,6 +78,18 @@ private JFrame frame;
 		lblNewLabel.setIcon(new ImageIcon("top_c1_hd.png"));
 		lblNewLabel.setBounds(99, 142, 232, 93);
 		frame.getContentPane().add(lblNewLabel);
+		
+		JButton btnEnvios = new JButton("Envios");
+		btnEnvios.setBounds(144, 103, 106, 59);
+		frame.getContentPane().add(btnEnvios);
+		
+		JButton btnP = new JButton("Personal");
+		btnP.setBounds(272, 103, 106, 59);
+		frame.getContentPane().add(btnP);
+		
+		JButton btnProveedores = new JButton("Proveedores");
+		btnProveedores.setBounds(26, 103, 106, 59);
+		frame.getContentPane().add(btnProveedores);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 	}
