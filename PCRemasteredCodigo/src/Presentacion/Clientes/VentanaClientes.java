@@ -4,7 +4,8 @@
 package Presentacion.Clientes;
 
 import javax.swing.JFrame;
-import Presentacion.Personal.Ventana;
+
+import Presentacion.Ventana;
 
 /** 
 * <!-- begin-UML-doc -->
@@ -14,7 +15,8 @@ import Presentacion.Personal.Ventana;
 *     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_DBsScFOpEemH9v7SOzgnzQ"
 * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_DBsScFOpEemH9v7SOzgnzQ"
 */
-public abstract class VentanaClientes extends JFrame implements Ventana {
+public abstract class VentanaClientes extends JFrame implements Ventana{
+	private static final long serialVersionUID = 1L;
 	/** 
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->
@@ -27,18 +29,10 @@ public abstract class VentanaClientes extends JFrame implements Ventana {
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_HhjwAFOpEemH9v7SOzgnzQ?GETTER"
 	*/
 	public static VentanaClientes getInstance() {
-		// begin-user-code
+		if ( instance==null){
+			instance = new VentanaClientesImp();
+		}
 		return instance;
-		// end-user-code
 	}
 
-	/** 
-	* @param instance the instance to set
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_HhjwAFOpEemH9v7SOzgnzQ?SETTER"
-	*/
-	public static void setInstance(VentanaClientes instance) {
-		// begin-user-code
-		VentanaClientes.instance = instance;
-		// end-user-code
-	}
 }

@@ -12,4 +12,5 @@ package Presentacion.Factorias;
  * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_wP6HMFSUEemuHuD_HqBchg"
  */
 public class FactoriaCommandsImp extends FactoriaCommands {
+	
 }
