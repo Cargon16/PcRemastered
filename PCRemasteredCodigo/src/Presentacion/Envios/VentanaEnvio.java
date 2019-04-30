@@ -3,7 +3,7 @@
  */
 package Presentacion.Envios;
 
-import Presentacion.Personal.Ventana;
+
 
 /** 
 * <!-- begin-UML-doc -->
@@ -13,7 +13,7 @@ import Presentacion.Personal.Ventana;
 *     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_aIn_kFLqEemG-P2dJpE1PA"
 * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_aIn_kFLqEemG-P2dJpE1PA"
 */
-public abstract class VentanaEnvio implements Ventana {
+public abstract class VentanaEnvio implements Presentacion.Ventana {
 	/** 
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->

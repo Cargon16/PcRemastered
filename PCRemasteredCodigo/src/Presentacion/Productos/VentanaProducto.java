@@ -3,6 +3,8 @@
  */
 package Presentacion.Productos;
 
+import Presentacion.Ventana;
+
 /** 
  * <!-- begin-UML-doc -->
  * <!-- end-UML-doc -->

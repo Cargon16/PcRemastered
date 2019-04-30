@@ -185,4 +185,10 @@ public class VentanaEnvioImp extends VentanaEnvio {
 
 		// end-user-code
 	}
+
+	@Override
+	public void Actualizar() {
+		// TODO Auto-generated method stub
+		
+	}
 }

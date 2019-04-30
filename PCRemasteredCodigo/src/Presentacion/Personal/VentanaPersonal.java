@@ -5,6 +5,8 @@ package Presentacion.Personal;
 
 import javax.swing.JFrame;
 
+import Presentacion.Ventana;
+
 /** 
 * <!-- begin-UML-doc -->
 * <!-- end-UML-doc -->

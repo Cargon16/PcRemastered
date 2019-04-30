@@ -44,9 +44,9 @@ public class VentanaClientesImp extends VentanaClientes{
 		panel2.setLayout(new BorderLayout(0, 0));
 		
 		ArrayList<JPanel> paneles = new ArrayList<JPanel>();
-		JPanel añadir = new PanelAddClientes();
-		añadir.setVisible(true);
-		paneles.add(añadir);
+		JPanel anadir = new PanelAddClientes();
+		anadir.setVisible(true);
+		paneles.add(anadir);
 		JPanel eliminar = new PanelDeleteClientes();
 		eliminar.setVisible(true);
 		paneles.add(eliminar);
@@ -61,9 +61,9 @@ public class VentanaClientesImp extends VentanaClientes{
 		paneles.add(mAll);
 	
 		
-		JButton botonAñadir = new JButton("Añadir Cliente");
+		JButton botonanadir = new JButton("Añadir Cliente");
 		
-		botonAñadir.addActionListener(new ActionListener() {
+		botonanadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
 				setTitle("Añadir cliente");
@@ -72,7 +72,7 @@ public class VentanaClientesImp extends VentanaClientes{
 				
 			}
 		});
-		panel_1.add(botonAñadir);
+		panel_1.add(botonanadir);
 		
 		JButton botonEliminar = new JButton("<html>Eliminar <br /> clientes</html>");
 		botonEliminar.addActionListener(new ActionListener() {
