@@ -21,7 +21,8 @@ public class ControllerImp extends Controller {
 	public void ejecutar(Contexto contexto) {
 		
 		Command comando = FactoriaCommands.getInstance().generacionCommand(contexto.getEvento());
-		Contexto vista= comando.ejecutar(contexto);	// capa de negocio	
-		comando.ejecutar(vista); // creacion o actualizacion de la capa de presentancion.
+		Contexto vista = comando.ejecutar(contexto);	// capa de negocio
+		if(vista!=null)
+			comando.ejecutar(vista); // creacion o actualizacion de la capa de presentancion.
 	}
 }

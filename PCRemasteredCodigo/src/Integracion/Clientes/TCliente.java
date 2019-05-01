@@ -12,7 +12,7 @@ public class TCliente {
 	private String direccion;
 	private String DNI;
 
-	public TCliente(Integer ID, Integer telefono, String nombre, String direccion, String DNI, Boolean activo) {
+	public TCliente(Integer ID, String DNI,String nombre,Integer telefono,  String direccion,  Boolean activo) {
 		this.ID = ID;
 		this.telefono = telefono;
 		this.nombre = nombre;
@@ -48,7 +48,7 @@ public class TCliente {
 
 	public String getNombre() {
 		// begin-user-code
-		return nombre;
+		return this.nombre;
 		// end-user-code
 	}
 

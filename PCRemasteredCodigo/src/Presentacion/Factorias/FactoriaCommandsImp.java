@@ -5,6 +5,7 @@ package Presentacion.Factorias;
 
 import Presentacion.Command.Command;
 import Presentacion.Command.Evento;
+import Presentacion.Command.Cliente.CreateClienteCommand;
 import Presentacion.Command.Vista.CrearVentanaClienteCommand;
 import Presentacion.Command.Vista.InitCommand;
 
@@ -25,6 +26,7 @@ public class FactoriaCommandsImp extends FactoriaCommands {
 		switch (evento){
 		case INIT : return new InitCommand();
 		case crearVentanaCliente: return new CrearVentanaClienteCommand();
+		case createClienteCommnad: return new CreateClienteCommand();
 		default : return null;
 		}
 	}

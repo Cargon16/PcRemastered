@@ -17,7 +17,7 @@ public class CreateClienteCommand implements Command{
 			contexto.setDatos(null);
 		}
 		
-		return contexto;
+		return null;
 		
 		
 	}

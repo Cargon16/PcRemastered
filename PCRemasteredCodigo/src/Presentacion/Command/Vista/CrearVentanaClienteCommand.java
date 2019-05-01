@@ -10,7 +10,7 @@ public class CrearVentanaClienteCommand implements Command {
 	@Override
 	public Contexto ejecutar(Contexto contexto) {
 		VentanaClientes.getInstance();
-		return contexto;
+		return null;
 	}
 
 }

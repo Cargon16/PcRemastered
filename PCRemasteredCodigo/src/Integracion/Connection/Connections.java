@@ -21,7 +21,7 @@ public abstract class Connections {
 
 	public static void createConnection() {
 		try{
-			instance =  DriverManager.getConnection("jdbc:mariadb://localhost:3306/DB?user=root&password=1234");
+			instance =  DriverManager.getConnection("jdbc:mariadb://localhost/PCRemastered", "root", "1234");
 			instance.setAutoCommit(false);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

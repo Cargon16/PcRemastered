@@ -4,10 +4,13 @@
 package Integracion.Clientes;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+
+import javax.swing.text.StyleContext.SmallAttributeSet;
 
 import Integracion.Connection.Connections;
 
@@ -24,29 +27,28 @@ public class DAOClienteImpl implements DAOCliente {
 	//////////////// POR REVISAR EL AUTOINCREMENT//////////////
 	@Override
 	public Integer create( TCliente tCliente ) {
-		int id= 0;
-		int activo = 1;
-		if (tCliente.isActivo())
-			activo = 1;
-		else
-			activo = 0;
-		
-		String insercion = "INSERT INTO clientes " + "VALUES ('" + tCliente.getDNI() +"', '"
-				+ id + "', '" + tCliente.getNombre() + "', '" + tCliente.getTelefono() + "', '" + activo + "');";
+		int id =-1;
+		String insercion = "INSERT INTO clientes (Dni,Nombre,Direccion,Telefono,Activo)" + "VALUES (?,?,?,?,?)";
 			
 		Connection conn = Connections.getInstance();
 			if (conn != null) {
 				try {				
-					Statement stmt = conn.createStatement();
-					stmt.execute(insercion);		
+					PreparedStatement stmt = conn.prepareStatement(insercion);
+					stmt.setString(1, tCliente.getDNI());
+					stmt.setString(2, tCliente.getNombre());
+					stmt.setString(3, tCliente.getDireccion());
+					stmt.setInt(4, tCliente.getTelefono() );
+					stmt.setBoolean(5, tCliente.isActivo());
+					stmt.execute();
+					stmt.close();
 					if (!stmt.isClosed())
 						stmt.close();
 				} catch (SQLException e) {
-					id = -1;
+					e.printStackTrace();
 				}
 			}
 		
-		return id;
+		return id ;
 	}
 //////////////////////////////////////////////////////////
 	@Override

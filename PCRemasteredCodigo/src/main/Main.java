@@ -9,7 +9,7 @@ public class Main {
 	public static void main(String[] args) {
 		Contexto contexto = new Contexto( Evento.INIT,null);
 		Controller.getInstance().ejecutar(contexto);
-
+		
 	}
 
 }

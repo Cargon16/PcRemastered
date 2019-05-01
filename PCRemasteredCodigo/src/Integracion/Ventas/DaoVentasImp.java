@@ -47,6 +47,7 @@ public class DaoVentasImp implements DaoVentas {
 
 	@Override
 	public TVentas readbyID(int idVenta) {
+		return null;
 		
 	}
 

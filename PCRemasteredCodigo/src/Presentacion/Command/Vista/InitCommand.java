@@ -10,8 +10,8 @@ public class InitCommand implements Command{
 	@Override
 	public Contexto ejecutar(Contexto contexto) {
 		// TODO Auto-generated method stub
-		VentanaPrincipal n = new VentanaPrincipal();
-		return contexto;
+		VentanaPrincipal.getInstance();
+		return null;
 	}
 
 }
