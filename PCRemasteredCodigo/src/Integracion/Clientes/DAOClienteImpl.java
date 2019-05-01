@@ -38,7 +38,7 @@ public class DAOClienteImpl implements DAOCliente {
 					stmt.setString(2, tCliente.getNombre());
 					stmt.setString(3, tCliente.getDireccion());
 					stmt.setInt(4, tCliente.getTelefono() );
-					stmt.setInt(5, 0);
+					stmt.setBoolean(5, tCliente.isActivo());
 					stmt.execute();
 					stmt.close();
 					if (!stmt.isClosed())
