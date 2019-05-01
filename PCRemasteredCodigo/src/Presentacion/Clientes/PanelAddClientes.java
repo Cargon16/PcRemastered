@@ -13,9 +13,11 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import Integracion.Clientes.TCliente;
+import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
+import java.awt.Font;
 
 /** 
  * <!-- begin-UML-doc -->
@@ -25,7 +27,7 @@ import Presentacion.Controlador.Controller;
  *     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_0zbAcFOpEemH9v7SOzgnzQ"
  * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_0zbAcFOpEemH9v7SOzgnzQ"
  */
-public class PanelAddClientes extends JPanel {
+public class PanelAddClientes extends JPanel implements Ventana {
 
 private static final long serialVersionUID = 1L;
 
@@ -39,44 +41,44 @@ public PanelAddClientes() {
 	setOpaque(false);
 	dniText = new JTextField();
 	dniText.setColumns(10);
-	dniText.setBounds(49, 80, 279, 57);
+	dniText.setBounds(109, 80, 279, 57);
 	add(dniText);
 
 	JLabel label = new JLabel("DNI");
-	label.setBounds(386, 101, 46, 14);
+	label.setBounds(37, 101, 46, 14);
 	add(label);
 
 	nombreText = new JTextField();
 	nombreText.setColumns(10);
-	nombreText.setBounds(49, 148, 279, 57);
+	nombreText.setBounds(109, 148, 279, 57);
 	add(nombreText);
 
 	JLabel label_1 = new JLabel("Nombre");
-	label_1.setBounds(386, 169, 75, 14);
+	label_1.setBounds(37, 169, 75, 14);
 	add(label_1);
 
 	telefonoText = new JTextField();
 	telefonoText.setColumns(10);
-	telefonoText.setBounds(49, 216, 279, 57);
+	telefonoText.setBounds(109, 216, 279, 57);
 	add(telefonoText);
 
 	JLabel label_2 = new JLabel("Telefono");
-	label_2.setBounds(386, 237, 75, 14);
+	label_2.setBounds(37, 237, 75, 14);
 	add(label_2);
 	
 	
 	direccionText = new JTextField();
 	direccionText.setColumns(10);
-	direccionText.setBounds(49, 286, 279, 57);
+	direccionText.setBounds(109, 284, 279, 57);
 	add(direccionText);
 	
 	JLabel labelDIreccion = new JLabel("Direccion");
-	labelDIreccion.setBounds(386, 305, 75, 14);
+	labelDIreccion.setBounds(37, 305, 75, 14);
 	add(labelDIreccion);
 
 	JRadioButton activoRB = new JRadioButton("Activo");
 	activoRB.setToolTipText("Activo");
-	activoRB.setBounds(59, 370, 109, 23);
+	activoRB.setBounds(141, 350, 109, 23);
 	activoRB.setOpaque(false);
 	JRadioButton inactivoRB = new JRadioButton("Inactivo");
 	activoRB.addActionListener(new ActionListener() {
@@ -88,7 +90,7 @@ public PanelAddClientes() {
 	});
 	add(activoRB);
 
-	inactivoRB.setBounds(170, 370, 109, 23);
+	inactivoRB.setBounds(255, 350, 109, 23);
 	inactivoRB.setOpaque(false);
 	add(inactivoRB);
 	inactivoRB.addActionListener(new ActionListener() {
@@ -99,7 +101,7 @@ public PanelAddClientes() {
 			activoRB.setSelected(false);
 		}
 	});
-	JButton button = new JButton("Añadir");
+	JButton button = new JButton("A�adir");
 	button.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			boolean ok = false ;
@@ -111,9 +113,19 @@ public PanelAddClientes() {
 			
 		}
 	});
-	button.setBounds(517, 281, 132, 62);
+	button.setBounds(169, 382, 132, 40);
 	add(button);
 	
+	JLabel lblAadirCliente = new JLabel("A\u00D1ADIR CLIENTE");
+	lblAadirCliente.setFont(new Font("Tahoma", Font.BOLD, 16));
+	lblAadirCliente.setBounds(37, 13, 162, 32);
+	add(lblAadirCliente);
+	
+	
+}
+@Override
+public void Actualizar(Contexto contexto) {
+	// TODO Auto-generated method stub
 	
 }
 }	

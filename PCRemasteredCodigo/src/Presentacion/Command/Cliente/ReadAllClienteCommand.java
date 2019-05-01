@@ -16,9 +16,14 @@ public class ReadAllClienteCommand implements Command {
 		if(i.isEmpty()){
 			contexto.setEvento(Evento.readAllClienteErrorCommand);
 			contexto.setDatos(null);
-			
+			return contexto;
 		}
-		return contexto;
+		else {
+			contexto.setDatos(i);
+			Contexto cnx = new Contexto(Evento.VentanaCliente, contexto);
+			return cnx;
+		}
+		
 	}
 
 }

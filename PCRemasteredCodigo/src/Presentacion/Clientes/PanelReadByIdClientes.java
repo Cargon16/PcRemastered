@@ -38,7 +38,7 @@ public class PanelReadByIdClientes extends JPanel implements Ventana{
 	public PanelReadByIdClientes() {
 		setLayout(null);
 		setOpaque(false);
-		button = new JButton("OK");
+		button = new JButton("Buscar Cliente");
 		button.setBounds(370, 36, 262, 57);
 		add(button);
 		
@@ -71,10 +71,10 @@ public class PanelReadByIdClientes extends JPanel implements Ventana{
 		textArea.setVisible(true);
 		String s = null;
 		TCliente c = (TCliente) contexto.getDatos();
-		if(c.isActivo().toString()== "true")
-			s= "activo";
-		else s= "no activo";
-		textArea.setText("DNI:		"+ c.getDNI() + "\n" + "Nombre:		" +c.getNombre() +"\n" + "NÂº de Telefono:		"+c.getTelefono() + "\n" + "Estado:		"+s+  "\n" );
+		if(c.isActivo())
+			s= "Activo";
+		else s= "No activo";
+		textArea.setText("DNI: "+ c.getDNI() + "\n" + "Nombre: " +c.getNombre() +"\n" + "Nº de Teléfono: "+c.getTelefono() + "\n" + "Dirección: " + c.getDireccion()+ "\n" +"Estado: "+s+  "\n" );
 		
 		
 	}

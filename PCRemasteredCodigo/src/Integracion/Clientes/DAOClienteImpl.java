@@ -72,7 +72,8 @@ public class DAOClienteImpl implements DAOCliente {
 	}
 	@Override
 	public ArrayList<TCliente> readAll() {
-		String lectura = "SELECT * FROM clientes WHERE activo=1 FOR UPDATE;";
+		//String lectura = "SELECT * FROM clientes WHERE activo=1 FOR UPDATE;";
+		String lectura = "SELECT * FROM clientes FOR UPDATE;";
 		ArrayList<TCliente> retorno = new ArrayList<TCliente>();
 		try {
 			Connection conn = Connections.getInstance();
@@ -98,9 +99,9 @@ public class DAOClienteImpl implements DAOCliente {
 		int activo = 0;
 		if(tCliente.isActivo())
 			activo = 1;
-		String actualizacion = "UPDATE clientes SET  dni='" + tCliente.getDNI() + "', id='" + tCliente.getID()
-				+ "', nombre='" + tCliente.getNombre() + "', telefono='" + tCliente.getTelefono() + "', activo='"
-				+ activo + "' WHERE id=" + tCliente.getID();
+		String actualizacion = "UPDATE clientes SET  id='" + tCliente.getID() + ", dni='" + tCliente.getDNI() + 
+				"', nombre='" + tCliente.getNombre() + "', telefono='" + tCliente.getTelefono() + "', direccion='" + tCliente.getDireccion() + "', activo='"
+				+ Integer.toBinaryString(activo) + "' WHERE id=" + tCliente.getID();
 		try {
 			Connection conn = Connections.getInstance();
 

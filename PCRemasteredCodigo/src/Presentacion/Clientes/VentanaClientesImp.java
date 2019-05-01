@@ -71,12 +71,12 @@ public class VentanaClientesImp extends VentanaClientes{
 		paneles.add(mAll);
 	
 		
-		JButton botonanadir = new JButton("AÃ±adir Cliente");
+		JButton botonanadir = new JButton("Añadir Cliente");
 		
 		botonanadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
-				setTitle("AÃ±adir cliente");
+				setTitle("Añadir cliente");
 				panel2.add(paneles.get(0),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane()); 
 				

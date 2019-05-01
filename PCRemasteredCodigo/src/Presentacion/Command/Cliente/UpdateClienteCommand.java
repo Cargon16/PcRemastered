@@ -14,9 +14,13 @@ public class UpdateClienteCommand implements Command{
 		if(i == -1){
 			contexto.setEvento(Evento.updateClienteErrorCommand);
 			contexto.setDatos(null);
-			
+			return contexto;
 		}
-		return contexto;
+		else {
+			contexto.setDatos(i);
+			Contexto cnx = new Contexto(Evento.VentanaCliente, contexto);
+			return cnx;
+		}
 		
 	}
 
