@@ -13,7 +13,7 @@ import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
 
-public class VentanaPrincipal implements Ventana {
+public abstract class  VentanaPrincipal implements Ventana {
 	public static VentanaPrincipal instance = null;
 	public static VentanaPrincipal getInstance() {
 		if(instance==null)
@@ -22,8 +22,5 @@ public class VentanaPrincipal implements Ventana {
 	}
 	 
 	@Override
-	public void Actualizar() {
-		// TODO Auto-generated method stub
-		
-	}
+	public abstract void Actualizar() ;
 }
