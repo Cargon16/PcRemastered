@@ -8,6 +8,8 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -16,6 +18,8 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
+
+import Presentacion.VentanaPrincipal;
 
 public class VentanaClientesImp extends VentanaClientes{
 	
@@ -131,7 +135,15 @@ public class VentanaClientesImp extends VentanaClientes{
 		});
 		panel_1.add(btnQuery);
 	setLocationRelativeTo(null);
-		
+	addWindowListener(new WindowAdapter()
+    {
+        @Override
+        public void windowClosing(WindowEvent e)
+        {
+            System.out.println("Closed");
+            VentanaClientes.setInstance(null)
+;        }
+    });
 	}
 	
 	

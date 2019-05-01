@@ -61,8 +61,8 @@ public class DAOClienteImpl implements DAOCliente {
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery(lectura);
 				if (rs.next()) {
-					retorno = new TCliente(id, rs.getInt("telefono"), rs.getString("nombre"),
-							rs.getString("direccion"),rs.getString("dni"), rs.getBoolean("activo"));
+					retorno = new TCliente(id,rs.getString("dni"), rs.getString("nombre"),rs.getInt("telefono"), 
+							rs.getString("direccion"),rs.getBoolean("activo"));
 				}
 			}
 		} catch (SQLException e) {
@@ -80,8 +80,8 @@ public class DAOClienteImpl implements DAOCliente {
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery(lectura);
 				while (rs.next()) {
-					TCliente cliente = new TCliente(rs.getInt("id"), rs.getInt("telefono"), rs.getString("nombre"),
-							rs.getString("direccion"),rs.getString("dni"), rs.getBoolean("activo"));
+					TCliente cliente = new TCliente(rs.getInt("id"),rs.getString("dni"), rs.getString("nombre"),rs.getInt("telefono"), 
+							rs.getString("direccion"),rs.getBoolean("activo"));
 					retorno.add(cliente);
 				}
 			}
@@ -145,8 +145,8 @@ public class DAOClienteImpl implements DAOCliente {
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery(lectura);
 				if (rs.next()) {
-					retorno = new TCliente(rs.getInt("id"), rs.getInt("telefono"), rs.getString("nombre"),
-							rs.getString("direccion"),rs.getString("dni"), rs.getBoolean("activo"));
+					retorno = new TCliente(rs.getInt("id"),rs.getString("dni"), rs.getString("nombre"),rs.getInt("telefono"), 
+							rs.getString("direccion"),rs.getBoolean("activo"));
 				}
 			}
 		} catch (SQLException e) {

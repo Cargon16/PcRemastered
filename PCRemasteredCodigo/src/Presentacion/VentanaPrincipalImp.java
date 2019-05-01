@@ -13,13 +13,12 @@ import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
 
 public class VentanaPrincipalImp extends VentanaPrincipal{
-	
+	private JFrame frame = new JFrame();
 public VentanaPrincipalImp() {
 	
-		JFrame frame = new JFrame();
+		
 		frame = new JFrame();
 		frame.setResizable(false);
-		
 		frame.setBounds(100, 100, 534, 360);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setTitle("PcRemastered");
@@ -88,5 +87,10 @@ public VentanaPrincipalImp() {
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 	}
+
+@Override
+public void Actualizar() {
+	
+}
 
 }
