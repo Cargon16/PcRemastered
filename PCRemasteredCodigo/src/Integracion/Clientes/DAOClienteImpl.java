@@ -28,17 +28,17 @@ public class DAOClienteImpl implements DAOCliente {
 	@Override
 	public Integer create( TCliente tCliente ) {
 		int id =-1;
-		String insercion = "INSERT INTO clientes (Dni,Nombre,Direccion,Telefono,Activo)" + "VALUES (?,?,?,?,?)";
+		String insercion = "INSERT INTO clientes (DNI,Nombre,Direccion,Telefono,Activo) VALUES (?,?,?,?,?)";
 			
 		Connection conn = Connections.getInstance();
 			if (conn != null) {
 				try {				
-					PreparedStatement stmt = conn.prepareStatement(insercion);
+					PreparedStatement stmt = conn.prepareStatement(insercion ,Statement.RETURN_GENERATED_KEYS);
 					stmt.setString(1, tCliente.getDNI());
 					stmt.setString(2, tCliente.getNombre());
 					stmt.setString(3, tCliente.getDireccion());
 					stmt.setInt(4, tCliente.getTelefono() );
-					stmt.setBoolean(5, tCliente.isActivo());
+					stmt.setInt(5, 0);
 					stmt.execute();
 					stmt.close();
 					if (!stmt.isClosed())

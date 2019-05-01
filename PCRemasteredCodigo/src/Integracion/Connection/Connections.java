@@ -22,7 +22,7 @@ public abstract class Connections {
 	public static void createConnection() {
 		try{
 			instance =  DriverManager.getConnection("jdbc:mariadb://localhost/PCRemastered", "root", "1234");
-			instance.setAutoCommit(false);
+			instance.setAutoCommit(true);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
