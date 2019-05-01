@@ -3,7 +3,10 @@
  */
 package Presentacion;
 
+import Presentacion.Command.Contexto;
+
 public interface Ventana {
 
-	public void Actualizar();
+	
+	void Actualizar(Contexto contexto);
 }

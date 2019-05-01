@@ -27,7 +27,7 @@ public VentanaPrincipalImp() {
 		botonVentas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					Contexto contexto = new Contexto(Evento.crearVentanaCliente, null);
+					Contexto contexto = new Contexto(Evento.VentanaCliente, null);
 					Controller.getInstance().ejecutar(contexto);
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
@@ -88,8 +88,10 @@ public VentanaPrincipalImp() {
 		frame.setVisible(true);
 	}
 
+
 @Override
-public void Actualizar() {
+public void Actualizar(Contexto contexto) {
+	// TODO Auto-generated method stub
 	
 }
 

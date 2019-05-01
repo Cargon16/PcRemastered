@@ -406,7 +406,7 @@ public enum Evento {
 	
 	
 	
-	INIT, readByNombreProductoCommand;
+	INIT, readByNombreProductoCommand, ErrorCommand, VistaCliente, VentanaCliente;
 	/** 
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->

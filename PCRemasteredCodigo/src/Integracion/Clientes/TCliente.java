@@ -6,7 +6,7 @@ package Integracion.Clientes;
 public class TCliente {
 
 	private Integer ID;
-	private boolean activo;
+	private Boolean activo;
 	private Integer telefono;
 	private String nombre;
 	private String direccion;
@@ -87,7 +87,7 @@ public class TCliente {
 		// end-user-code
 	}
 
-	public boolean isActivo() {
+	public Boolean isActivo() {
 		// begin-user-code
 		return activo;
 		// end-user-code

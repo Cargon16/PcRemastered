@@ -5,12 +5,20 @@ import Presentacion.Clientes.VentanaClientes;
 import Presentacion.Command.Command;
 import Presentacion.Command.Contexto;
 
-public class CrearVentanaClienteCommand implements Command {
+public class VentanaClienteCommand implements Command {
 
 	@Override
 	public Contexto ejecutar(Contexto contexto) {
+		if(contexto.getDatos()==null){
 		VentanaClientes.getInstance();
-		return null;
+		contexto.setDatos(null);
+		
+		}
+		else{
+			VentanaClientes.getInstance().Actualizar(contexto);
+			
+		}
+		return contexto ;
 	}
 
 }

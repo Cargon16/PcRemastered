@@ -22,5 +22,5 @@ public abstract class  VentanaPrincipal implements Ventana {
 	}
 	 
 	@Override
-	public abstract void Actualizar() ;
+	public abstract void Actualizar(Contexto contexto) ;
 }

@@ -20,11 +20,18 @@ import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
 import Presentacion.VentanaPrincipal;
+import Presentacion.Command.Contexto;
 
 public class VentanaClientesImp extends VentanaClientes{
 	
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	private PanelAddClientes anadir = new PanelAddClientes();
+	private PanelDeleteClientes eliminar = new PanelDeleteClientes();
+	private PanelUpdateClientes actualizar = new PanelUpdateClientes();
+	private PanelReadByIdClientes mID = new PanelReadByIdClientes();
+	private PanelReadAllClientes mAll = new PanelReadAllClientes();
+	
 	
 	public VentanaClientesImp() {
 		setResizable(false);
@@ -48,19 +55,18 @@ public class VentanaClientesImp extends VentanaClientes{
 		panel2.setLayout(new BorderLayout(0, 0));
 		
 		ArrayList<JPanel> paneles = new ArrayList<JPanel>();
-		JPanel anadir = new PanelAddClientes();
 		anadir.setVisible(true);
 		paneles.add(anadir);
-		JPanel eliminar = new PanelDeleteClientes();
+		
 		eliminar.setVisible(true);
 		paneles.add(eliminar);
-		JPanel actualizar = new PanelUpdateClientes();
+		
 		actualizar.setVisible(true);
 		paneles.add(actualizar);
-		JPanel mID = new PanelReadByIdClientes();
+		
 		mID.setVisible(true);
 		paneles.add(mID);
-		JPanel mAll = new PanelReadAllClientes();
+		
 		mAll.setVisible(true);
 		paneles.add(mAll);
 	
@@ -141,15 +147,23 @@ public class VentanaClientesImp extends VentanaClientes{
         public void windowClosing(WindowEvent e)
         {
             System.out.println("Closed");
-            VentanaClientes.setInstance(null)
-;        }
+            VentanaClientes.setInstance(null);        }
     });
 	}
 	
 	
 	@Override
-	public void Actualizar() {
-		// TODO Auto-generated method stub
+	public void Actualizar(Contexto contexto) {
+		Contexto c = (Contexto) contexto.getDatos();
 		
+		switch (c.getEvento()) {
+
+		case readClienteCommand: mID.Actualizar(c);
+			
+			break;
+
+		default:
+			break;
+		}
 	}
 }

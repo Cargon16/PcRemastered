@@ -14,12 +14,9 @@ public class CreateClienteCommand implements Command{
 		int i = FactoriaNegocio.getInstance().crearSAClientes().create((TCliente) contexto.getDatos());
 		if ( i == -1 ){
 			contexto.setEvento(Evento.ErrorCommand);
-			contexto.setDatos("Erro en la creacion del cliente");
+			contexto.setDatos("Error en la creacion del cliente");
 		}
-		
 		return contexto;
-		
-		
 	}
 
 }

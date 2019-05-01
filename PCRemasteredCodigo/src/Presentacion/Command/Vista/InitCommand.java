@@ -11,7 +11,8 @@ public class InitCommand implements Command{
 	public Contexto ejecutar(Contexto contexto) {
 		// TODO Auto-generated method stub
 		VentanaPrincipal.getInstance();
-		return null;
+		contexto.setDatos(null);
+		return contexto ;
 	}
 
 }
