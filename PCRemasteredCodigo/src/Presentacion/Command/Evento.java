@@ -406,7 +406,7 @@ public enum Evento {
 	
 	
 	
-	INIT;
+	INIT, readByNombreProductoCommand;
 	/** 
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->

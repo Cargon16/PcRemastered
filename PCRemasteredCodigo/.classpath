@@ -2,7 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-	<classpathentry kind="lib" path="/usr/share/dbeaver/plugins/org.eclipse.equinox.launcher_1.5.300.v20190213-1655.jar"/>
-	<classpathentry kind="lib" path="/home/nacho710/Descargas/mariadb-java-client-2.4.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/agoni/git/mariadb-java-client-2.4.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -6,7 +6,7 @@ import Presentacion.Command.Command;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 
-public class ReadByIDPRoductosCommand implements Command {
+public class ReadByNombrePRoductosCommand implements Command {
 
 	@Override
 	public Contexto ejecutar(Contexto contexto) {
