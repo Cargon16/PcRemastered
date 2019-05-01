@@ -30,16 +30,16 @@ public class PanelAddEnvio extends JPanel implements Ventana{
 		
 		direccion = new JTextField();
 		direccion.setColumns(10);
-		direccion.setBounds(109, 148, 279, 57);
+		direccion.setBounds(109, 86, 279, 32);
 		add(direccion);
 
-		JLabel label_1 = new JLabel("Direccion");
-		label_1.setBounds(37, 169, 75, 14);
-		add(label_1);
+		JLabel lblDireccin = new JLabel("Direcci\u00F3n");
+		lblDireccin.setBounds(37, 95, 75, 14);
+		add(lblDireccin);
 
 		JRadioButton activoRB = new JRadioButton("Activo");
 		activoRB.setToolTipText("Activo");
-		activoRB.setBounds(141, 350, 109, 23);
+		activoRB.setBounds(109, 165, 109, 23);
 		activoRB.setOpaque(false);
 		JRadioButton inactivoRB = new JRadioButton("Inactivo");
 		activoRB.addActionListener(new ActionListener() {
@@ -51,7 +51,7 @@ public class PanelAddEnvio extends JPanel implements Ventana{
 		});
 		add(activoRB);
 
-		inactivoRB.setBounds(255, 350, 109, 23);
+		inactivoRB.setBounds(279, 165, 109, 23);
 		inactivoRB.setOpaque(false);
 		add(inactivoRB);
 		inactivoRB.addActionListener(new ActionListener() {
@@ -68,19 +68,23 @@ public class PanelAddEnvio extends JPanel implements Ventana{
 				boolean ok = false ;
 				if(activoRB.isSelected()) 
 					ok = true;
-				TEnvio envio = new TEnvio((Integer) null, ok, direccion.getText());
+				TEnvio envio = new TEnvio(null, ok, direccion.getText());
 				Contexto contexto = new Contexto(Evento.createEnvioCommand, envio);
 				Controller.getInstance().ejecutar(contexto);
 				
 			}
 		});
-		button.setBounds(169, 382, 132, 40);
+		button.setBounds(162, 197, 132, 40);
 		add(button);
 		
 		JLabel lblAadirCliente = new JLabel("A\u00D1ADIR ENVIO");
 		lblAadirCliente.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblAadirCliente.setBounds(37, 13, 162, 32);
 		add(lblAadirCliente);
+		
+		JLabel lblEstado = new JLabel("Estado");
+		lblEstado.setBounds(37, 168, 56, 16);
+		add(lblEstado);
 		
 		
 	}

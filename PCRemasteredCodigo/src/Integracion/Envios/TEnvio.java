@@ -3,24 +3,24 @@ package Integracion.Envios;
 
 public class TEnvio {
 
-	public TEnvio(int iD, Boolean estado, String direccion) {
+	public TEnvio(Integer iD, Boolean estado, String direccion) {
 		super();
 		ID = iD;
 		Estado = estado;
 		Direccion = direccion;
 	}
 
-	private int ID;
+	private Integer ID;
 	private Boolean Estado;
 	private String Direccion;
 
-	public int getID() {
+	public Integer getID() {
 		// begin-user-code
 		return ID;
 		// end-user-code
 	}
 
-	public void setID(int ID) {
+	public void setID(Integer ID) {
 		// begin-user-code
 		this.ID = ID;
 		// end-user-code

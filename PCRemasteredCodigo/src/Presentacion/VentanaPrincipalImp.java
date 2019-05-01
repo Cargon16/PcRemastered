@@ -71,6 +71,17 @@ public VentanaPrincipalImp() {
 		
 		JButton btnEnvios = new JButton("Envios");
 		btnEnvios.setBounds(26, 141, 106, 59);
+		btnEnvios.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					Contexto contexto = new Contexto(Evento.crearVentanaEnvios, null);
+					Controller.getInstance().ejecutar(contexto);
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
 		frame.getContentPane().add(btnEnvios);
 		
 		JButton btnP = new JButton("Personal");

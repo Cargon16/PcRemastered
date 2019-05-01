@@ -5,6 +5,7 @@ package Presentacion.Envios;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -31,11 +32,11 @@ import Presentacion.Command.Contexto;
 
 public class VentanaEnvioImp extends VentanaEnvio {
 	private JPanel contentPane;
-	private PanelAddClientes anadir = new PanelAddClientes();
-	private PanelDeleteClientes eliminar = new PanelDeleteClientes();
+	private PanelAddEnvio anadir = new PanelAddEnvio();
+	/*private PanelDeleteClientes eliminar = new PanelDeleteClientes();
 	private PanelUpdateClientes actualizar = new PanelUpdateClientes();
 	private PanelReadByIdClientes mID = new PanelReadByIdClientes();
-	private PanelReadAllClientes mAll = new PanelReadAllClientes();
+	private PanelReadAllClientes mAll = new PanelReadAllClientes();*/
 	
 	
 	public VentanaEnvioImp() {
@@ -63,7 +64,7 @@ public class VentanaEnvioImp extends VentanaEnvio {
 		anadir.setVisible(true);
 		paneles.add(anadir);
 		
-		eliminar.setVisible(true);
+		/*eliminar.setVisible(true);
 		paneles.add(eliminar);
 		
 		actualizar.setVisible(true);
@@ -73,15 +74,15 @@ public class VentanaEnvioImp extends VentanaEnvio {
 		paneles.add(mID);
 		
 		mAll.setVisible(true);
-		paneles.add(mAll);
+		paneles.add(mAll);*/
 	
 		
-		JButton botonanadir = new JButton("Añadir Cliente");
+		JButton botonanadir = new JButton("Añadir Envío");
 		
 		botonanadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
-				setTitle("Añadir cliente");
+				setTitle("Añadir envío");
 				panel2.add(paneles.get(0),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane()); 
 				
@@ -89,46 +90,46 @@ public class VentanaEnvioImp extends VentanaEnvio {
 		});
 		panel_1.add(botonanadir);
 		
-		JButton botonEliminar = new JButton("<html>Eliminar <br /> clientes</html>");
+		JButton botonEliminar = new JButton("<html>Eliminar <br /> envío</html>");
 		botonEliminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
-				setTitle("Eliminar cliente");
+				setTitle("Eliminar envío");
 				panel2.add(paneles.get(1),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane()); 
 			}
 		});
 		panel_1.add(botonEliminar);
 		
-		JButton botonActualizar = new JButton("<html>Actualizar<br /> clientes</html>");
+		JButton botonActualizar = new JButton("<html>Actualizar<br /> envío</html>");
 		botonActualizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
-				setTitle("Actualizar cliente");
+				setTitle("Actualizar envío");
 				panel2.add(paneles.get(2),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane()); 
 			}
 		});
 		panel_1.add(botonActualizar);
 		
-		JButton botonMostrarID = new JButton("<html>Mostrar clientes<br /> por su ID </html>");
+		JButton botonMostrarID = new JButton("<html>Mostrar envío<br /> por su ID </html>");
 		
 		botonMostrarID.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
-				setTitle("Mostrar clientes por ID");
+				setTitle("Mostrar envío por ID");
 				panel2.add(paneles.get(3),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane());
 			}
 		});
 		panel_1.add(botonMostrarID);
 		
-		JButton botonMostrarTodo = new JButton("<html>Mostrar todos<br /> los clientes</html>");
+		JButton botonMostrarTodo = new JButton("<html>Mostrar todos<br /> los envíos</html>");
 		
 		botonMostrarTodo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
-				setTitle("Mostrar todos los clientes ");
+				setTitle("Mostrar todos los envíos ");
 				panel2.add(paneles.get(4),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane());
 			}
@@ -139,7 +140,7 @@ public class VentanaEnvioImp extends VentanaEnvio {
 		btnQuery.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
-				setTitle("Query de cliente ");
+				setTitle("Query de envío");
 				panel2.add(paneles.get(5),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane());
 			}
@@ -156,14 +157,13 @@ public class VentanaEnvioImp extends VentanaEnvio {
     });
 	}
 	
-	
 	@Override
 	public void Actualizar(Contexto contexto) {
 		Contexto c = (Contexto) contexto.getDatos();
 		
 		switch (c.getEvento()) {
 
-		case readClienteCommand: mID.Actualizar(c);
+		case createEnvioCommand: anadir.Actualizar(c);
 			
 			break;
 

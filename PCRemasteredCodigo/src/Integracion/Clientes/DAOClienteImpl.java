@@ -27,7 +27,7 @@ public class DAOClienteImpl implements DAOCliente {
 	//////////////// POR REVISAR EL AUTOINCREMENT//////////////
 	@Override
 	public Integer create( TCliente tCliente ) {
-		int id =-1;
+		int id =0;
 		String insercion = "INSERT INTO clientes (DNI,Nombre,Direccion,Telefono,Activo) VALUES (?,?,?,?,?)";
 			
 		Connection conn = Connections.getInstance();

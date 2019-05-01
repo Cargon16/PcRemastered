@@ -16,9 +16,14 @@ public class CreateEnviosCommand implements Command{
 		if ( i == -1 ){
 			contexto.setEvento(Evento.createEnvioErrorCommand);
 			contexto.setDatos(null);
+			return contexto;
 		}
-			
-		return contexto;
+		else {
+			contexto.setDatos(i);
+			Contexto cnx = new Contexto(Evento.crearVentanaEnvios, contexto);
+			return cnx;
+		}
+		
 	}
 	
 	

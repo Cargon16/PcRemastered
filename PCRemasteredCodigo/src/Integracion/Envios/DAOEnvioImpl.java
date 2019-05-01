@@ -4,6 +4,7 @@
 package Integracion.Envios;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -15,30 +16,25 @@ public class DAOEnvioImpl implements DAOEnvio {
 	
 	@Override
 	public Integer create(TEnvio envio) {
-		int id= 0;
-		
-		int activo = 1;
-		if (envio.isEstado())
-			activo = 1;
-		else
-			activo = 0;
-		
-		String insercion = "INSERT INTO envios " + "VALUES ('" + envio.getID() +"', '"
-				+ id + "', '" + envio.isEstado() + "', '" + envio.getDireccion()  + "');";
+		int id =0;
+		String insercion = "INSERT INTO envios (Direccion,Estado) VALUES (?,?)";
 			
 		Connection conn = Connections.getInstance();
 			if (conn != null) {
 				try {				
-					Statement stmt = conn.createStatement();
-					stmt.execute(insercion);		
+					PreparedStatement stmt = conn.prepareStatement(insercion ,Statement.RETURN_GENERATED_KEYS);
+					stmt.setString(1, envio.getDireccion());
+					stmt.setBoolean(2, envio.isEstado());
+					stmt.execute();
+					stmt.close();
 					if (!stmt.isClosed())
 						stmt.close();
 				} catch (SQLException e) {
-					id = -1;
+					e.printStackTrace();
 				}
 			}
 		
-		return id;
+		return id ;
 	}
 
 	public TEnvio readByID(int id) {
