@@ -96,12 +96,13 @@ public class DAOClienteImpl implements DAOCliente {
 	@Override
 	public int update(TCliente tCliente) {
 		int retorno = -1;
+		
 		int activo = 0;
 		if(tCliente.isActivo())
 			activo = 1;
-		String actualizacion = "UPDATE clientes SET  id='" + tCliente.getID() + ", dni='" + tCliente.getDNI() + 
+		String actualizacion = "UPDATE clientes SET  id='" + tCliente.getID() + "', dni='" + tCliente.getDNI() + 
 				"', nombre='" + tCliente.getNombre() + "', telefono='" + tCliente.getTelefono() + "', direccion='" + tCliente.getDireccion() + "', activo='"
-				+ Integer.toBinaryString(activo) + "' WHERE id=" + tCliente.getID();
+				+ activo + "' WHERE id=" + tCliente.getID();
 		try {
 			Connection conn = Connections.getInstance();
 

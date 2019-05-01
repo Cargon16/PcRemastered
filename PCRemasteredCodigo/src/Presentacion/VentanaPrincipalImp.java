@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
+import java.awt.Font;
 
 public class VentanaPrincipalImp extends VentanaPrincipal{
 	private JFrame frame = new JFrame();
@@ -23,7 +24,7 @@ public VentanaPrincipalImp() {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setTitle("PcRemastered");
 		JButton botonVentas = new JButton("Clientes");
-		botonVentas.setBounds(26, 32, 106, 56);
+		botonVentas.setBounds(26, 72, 106, 56);
 		botonVentas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -39,7 +40,7 @@ public VentanaPrincipalImp() {
 		frame.getContentPane().add(botonVentas);
 		
 		JButton botonModelo = new JButton("Productos");
-		botonModelo.setBounds(144, 32, 106, 56);
+		botonModelo.setBounds(393, 142, 106, 56);
 		botonModelo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -54,7 +55,7 @@ public VentanaPrincipalImp() {
 		frame.getContentPane().add(botonModelo);
 		
 		JButton botonCliente = new JButton("Ventas");
-		botonCliente.setBounds(262, 32, 98, 56);
+		botonCliente.setBounds(283, 72, 98, 56);
 		botonCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -68,22 +69,22 @@ public VentanaPrincipalImp() {
 		});
 		frame.getContentPane().add(botonCliente);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("top_c1_hd.png"));
-		lblNewLabel.setBounds(99, 142, 232, 93);
-		frame.getContentPane().add(lblNewLabel);
-		
 		JButton btnEnvios = new JButton("Envios");
-		btnEnvios.setBounds(144, 103, 106, 59);
+		btnEnvios.setBounds(26, 141, 106, 59);
 		frame.getContentPane().add(btnEnvios);
 		
 		JButton btnP = new JButton("Personal");
-		btnP.setBounds(272, 103, 106, 59);
+		btnP.setBounds(393, 72, 106, 56);
 		frame.getContentPane().add(btnP);
 		
 		JButton btnProveedores = new JButton("Proveedores");
-		btnProveedores.setBounds(26, 103, 106, 59);
+		btnProveedores.setBounds(144, 72, 106, 56);
 		frame.getContentPane().add(btnProveedores);
+		
+		JLabel lblPcremastered = new JLabel("PcRemastered");
+		lblPcremastered.setFont(new Font("Tahoma", Font.BOLD, 23));
+		lblPcremastered.setBounds(177, 13, 168, 42);
+		frame.getContentPane().add(lblPcremastered);
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
 	}
@@ -94,5 +95,4 @@ public void Actualizar(Contexto contexto) {
 	// TODO Auto-generated method stub
 	
 }
-
 }
