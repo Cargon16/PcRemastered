@@ -41,6 +41,7 @@ import Presentacion.Command.Ventas.UpdateVentasCommand;
 import Presentacion.Command.Vista.InitCommand;
 import Presentacion.Command.Vista.VentanaClienteCommand;
 import Presentacion.Command.Vista.VentanaEnvioCommand;
+import Presentacion.Command.Vista.VentanaPersonalCommand;
 
 /** 
  * <!-- begin-UML-doc -->
@@ -72,7 +73,7 @@ public class FactoriaCommandsImp extends FactoriaCommands {
 		//case readByNombreProductoCommand: return new ReadByNombrePRoductosCommand();
 		case readProductoCommand: return new ReadProductosCommand();
 		case updateProductoCommand:return new UpdateProductosCommand();
-		//case crearVentanaPersonal: return new CrearVentanaPersonalCommand();
+		case crearVentanaPersonal: return new VentanaPersonalCommand();
 		case createPersonalCommand: return new CreatePersonalCommand();
 		case deletePersonalCommand: return new DeletePersonalCommand();
 		case readAllPersonalCommand: return new ReadAllPersonalCommand();

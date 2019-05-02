@@ -135,17 +135,6 @@ public class VentanaEnvioImp extends VentanaEnvio {
 			}
 		});
 		panel_1.add(botonMostrarTodo);
-		
-		JButton btnQuery = new JButton("Query");
-		btnQuery.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				panel2.removeAll();
-				setTitle("Query de envío");
-				panel2.add(paneles.get(5),SwingConstants.CENTER);
-				SwingUtilities.updateComponentTreeUI(getContentPane());
-			}
-		});
-		panel_1.add(btnQuery);
 	setLocationRelativeTo(null);
 	addWindowListener(new WindowAdapter()
     {
@@ -163,9 +152,8 @@ public class VentanaEnvioImp extends VentanaEnvio {
 		
 		switch (c.getEvento()) {
 
-		case createEnvioCommand: anadir.Actualizar(c);
-		case readEnvioCommand: mID.Actualizar(c);
-			break;
+		case createEnvioCommand: anadir.Actualizar(c);break;
+		case readEnvioCommand: mID.Actualizar(c);break;
 
 		default:
 			break;

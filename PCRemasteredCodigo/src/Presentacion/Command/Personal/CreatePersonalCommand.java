@@ -15,6 +15,11 @@ public class CreatePersonalCommand implements Command {
 			contexto.setEvento(Evento.createPersonalErrorCommand);
 			contexto.setDatos(null);
 		}
+		else {
+			contexto.setDatos(i);
+			Contexto cnx = new Contexto(Evento.crearVentanaPersonal, contexto);
+			return cnx;
+		}
 			
 		return contexto;
 	}

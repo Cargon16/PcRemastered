@@ -47,7 +47,7 @@ public class DAOEnvioImpl implements DAOEnvio {
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery(lectura);
 				if (rs.next()) {
-					retorno = new TEnvio(id, rs.getBoolean("activo"), rs.getString("direccion"));
+					retorno = new TEnvio(id, rs.getBoolean("estado"), rs.getString("direccion"));
 				}
 			}
 		} catch (SQLException e) {
@@ -66,7 +66,7 @@ public class DAOEnvioImpl implements DAOEnvio {
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery(lectura);
 				while (rs.next()) {
-					TEnvio cliente = new TEnvio(rs.getInt("id"), rs.getBoolean("activo"), rs.getString("direccion"));
+					TEnvio cliente = new TEnvio(rs.getInt("id"), rs.getBoolean("estado"), rs.getString("direccion"));
 					retorno.add(cliente);
 				}
 			}
@@ -81,7 +81,7 @@ public class DAOEnvioImpl implements DAOEnvio {
 		int activo = 0;
 		if(envio.isEstado())
 			activo = 1;
-		String actualizacion = "UPDATE envios SET  id='" + envio.getID()+ "', activo='" + activo
+		String actualizacion = "UPDATE envios SET  id='" + envio.getID()+ "', estado='" + activo
 				+ "', direccion='" + envio.getDireccion() + "' WHERE id=" + envio.getID();
 		try {
 			Connection conn = Connections.getInstance();

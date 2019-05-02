@@ -4,6 +4,7 @@
 package Integracion.Personal;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -14,31 +15,29 @@ public class DAOPersonalImpl implements DAOPersonal {
 
 	@Override
 	public Integer create(TPersonal personal) {
-
-		int id= 0;
-		int activo = 1;
-
-		if (personal.isActivo())
-			activo = 1;
-		else
-			activo = 0;
-
-		String insercion = "INSERT INTO personal " + "VALUES ('" + personal.getPass() +"', '"
-				+ personal.isActivo() + "', '" + personal.getSalario() + "', '" + personal.getID() + "', '" + personal.getTelefono() + "', '" +personal.getNombre() +"');";
-
+		int id =0;
+		String insercion = "INSERT INTO personal (PASS,Activo,Salario,Telefono,Nombre) VALUES (?,?,?,?,?)";
+			
 		Connection conn = Connections.getInstance();
-		if (conn != null) {
-			try {				
-				Statement stmt = conn.createStatement();
-				stmt.execute(insercion);		
-				if (!stmt.isClosed())
+			if (conn != null) {
+				try {				
+					PreparedStatement stmt = conn.prepareStatement(insercion ,Statement.RETURN_GENERATED_KEYS);
+					stmt.setString(1, personal.getPass());
+					stmt.setBoolean(2, personal.isActivo());
+					stmt.setDouble(3, personal.getSalario());
+					stmt.setInt(4, personal.getTelefono() );
+					stmt.setString(5, personal.getNombre());
+					stmt.execute();
 					stmt.close();
-			} catch (SQLException e) {
-				id = -1;
+					if (!stmt.isClosed())
+						stmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
 			}
-		}
-
-		return id;
+		
+		return id ;
+		
 	}
 
 	@Override
@@ -64,7 +63,7 @@ public class DAOPersonalImpl implements DAOPersonal {
 	@Override
 	public ArrayList<TPersonal> readAll() {
 		
-		String lectura = "SELECT * FROM personal WHERE activo=1 FOR UPDATE;";
+		String lectura = "SELECT * FROM personal FOR UPDATE;";
 		ArrayList<TPersonal> retorno = new ArrayList<TPersonal>();
 		try {
 			Connection conn = Connections.getInstance();
@@ -89,7 +88,7 @@ public class DAOPersonalImpl implements DAOPersonal {
 		int activo = 0;
 		if(personal.isActivo())
 			activo = 1;
-		String actualizacion = "UPDATE personal SET  pass='" + personal.getPass() + "', activo='" + personal.isActivo()
+		String actualizacion = "UPDATE personal SET  pass='" + personal.getPass() + "', activo='" + activo
 				+ "', salario='" + personal.getSalario() + "', id='" + personal.getID() + "', telefono='"
 				+ personal.getTelefono()+ "', nombre='" + personal.getNombre() +"' WHERE id=" + personal.getID();
 		try {

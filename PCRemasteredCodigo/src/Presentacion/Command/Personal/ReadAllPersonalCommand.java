@@ -17,9 +17,14 @@ public class ReadAllPersonalCommand implements Command {
 		if(i.isEmpty()){
 			contexto.setEvento(Evento.readAllPersonalErrorCommand);
 			contexto.setDatos(null);
-			
+			return contexto;
 		}
-		return contexto;
+		else {
+			contexto.setDatos(i);
+			Contexto cnx = new Contexto(Evento.crearVentanaPersonal, contexto);
+			return cnx;
+		}
+		
 	}
  
 }
