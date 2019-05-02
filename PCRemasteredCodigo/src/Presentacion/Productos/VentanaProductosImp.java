@@ -3,6 +3,20 @@
  */
 package Presentacion.Productos;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.GridLayout;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.util.ArrayList;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+
+import Presentacion.Clientes.VentanaClientes;
+import Presentacion.Command.Contexto;
+
 /** 
  * <!-- begin-UML-doc -->
  * <!-- end-UML-doc -->
@@ -12,177 +26,86 @@ package Presentacion.Productos;
  * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_FJOqJVMOEemdZLpuw9I4eQ"
  */
 public class VentanaProductosImp extends VentanaProducto {
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_FJOqJ1MOEemdZLpuw9I4eQ"
-	*/
-	private Object BotonAdd;
-
-	/** 
-	* @return the BotonAdd
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_FJOqJ1MOEemdZLpuw9I4eQ?GETTER"
-	*/
-	public Object getBotonAdd() {
-		// begin-user-code
-		return BotonAdd;
-		// end-user-code
+	
+	private static final long serialVersionUID = 1L;
+	
+	private JPanel contentPaneProducto;
+	private PanelAddProducto anadir = new PanelAddProducto();
+	private PanelDeleteProducto delete = new PanelDeleteProducto();
+	private PanelReadAllProducto readAll = new PanelReadAllProducto();
+	private PanelReadByIdProducto readById = new PanelReadByIdProducto();
+	private PanelUpdateProducto updateProducto = new PanelUpdateProducto();
+	
+	public VentanaProductosImp(){
+		setResizable(false);
+		setVisible(true);
+		setLocationRelativeTo(null);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setBounds(100, 100, 737, 598);
+		
+		contentPaneProducto = new JPanel();
+		contentPaneProducto.setBackground(new Color(204, 255, 255));
+		contentPaneProducto.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPaneProducto);
+		contentPaneProducto.setLayout(null);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(5, 5, 706, 93);
+		contentPaneProducto.add(panel_1);
+		panel_1.setLayout(new GridLayout(1, 1, 0, 0));
+		JPanel panel2 = new JPanel();
+		panel2.setOpaque(false);
+		panel2.setBounds(5, 109, 706, 439);
+		contentPaneProducto.add(panel2);
+		panel2.setLayout(new BorderLayout(0, 0));
+		
+		ArrayList<JPanel> paneles = new ArrayList<JPanel>();
+		anadir.setVisible(true);
+		paneles.add(anadir);
+		
+		delete.setVisible(true);
+		paneles.add(delete);
+		
+		readAll.setVisible(true);
+		paneles.add(readAll);
+		
+		readById.setVisible(true);
+		paneles.add(readById);
+		
+		updateProducto.setVisible(true);
+		paneles.add(updateProducto);
+		
+		
+		setLocationRelativeTo(null);
+		addWindowListener(new WindowAdapter()
+	    {
+	        @Override
+	        public void windowClosing(WindowEvent e)
+	        {
+	            System.out.println("Closed");
+	            VentanaClientes.setInstance(null);        }
+	    });
+		
 	}
 
-	/** 
-	* @param BotonAdd the BotonAdd to set
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_FJOqJ1MOEemdZLpuw9I4eQ?SETTER"
-	*/
-	public void setBotonAdd(Object BotonAdd) {
-		// begin-user-code
-		this.BotonAdd = BotonAdd;
-		// end-user-code
-	}
-
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_FJOqKFMOEemdZLpuw9I4eQ"
-	*/
-	private Object BotonDelete;
-
-	/** 
-	* @return the BotonDelete
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_FJOqKFMOEemdZLpuw9I4eQ?GETTER"
-	*/
-	public Object getBotonDelete() {
-		// begin-user-code
-		return BotonDelete;
-		// end-user-code
-	}
-
-	/** 
-	* @param BotonDelete the BotonDelete to set
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_FJOqKFMOEemdZLpuw9I4eQ?SETTER"
-	*/
-	public void setBotonDelete(Object BotonDelete) {
-		// begin-user-code
-		this.BotonDelete = BotonDelete;
-		// end-user-code
-	}
-
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_FJOqKVMOEemdZLpuw9I4eQ"
-	*/
-	private Object BotonUpdate;
-
-	/** 
-	* @return the BotonUpdate
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_FJOqKVMOEemdZLpuw9I4eQ?GETTER"
-	*/
-	public Object getBotonUpdate() {
-		// begin-user-code
-		return BotonUpdate;
-		// end-user-code
-	}
-
-	/** 
-	* @param BotonUpdate the BotonUpdate to set
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_FJOqKVMOEemdZLpuw9I4eQ?SETTER"
-	*/
-	public void setBotonUpdate(Object BotonUpdate) {
-		// begin-user-code
-		this.BotonUpdate = BotonUpdate;
-		// end-user-code
-	}
-
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_FJOqKlMOEemdZLpuw9I4eQ"
-	*/
-	private Object BotonRead;
-
-	/** 
-	* @return the BotonRead
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_FJOqKlMOEemdZLpuw9I4eQ?GETTER"
-	*/
-	public Object getBotonRead() {
-		// begin-user-code
-		return BotonRead;
-		// end-user-code
-	}
-
-	/** 
-	* @param BotonRead the BotonRead to set
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_FJOqKlMOEemdZLpuw9I4eQ?SETTER"
-	*/
-	public void setBotonRead(Object BotonRead) {
-		// begin-user-code
-		this.BotonRead = BotonRead;
-		// end-user-code
-	}
-
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_FJOqK1MOEemdZLpuw9I4eQ"
-	*/
-	private Object BotonReadAll;
-
-	/** 
-	* @return the BotonReadAll
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_FJOqK1MOEemdZLpuw9I4eQ?GETTER"
-	*/
-	public Object getBotonReadAll() {
-		// begin-user-code
-		return BotonReadAll;
-		// end-user-code
-	}
-
-	/** 
-	* @param BotonReadAll the BotonReadAll to set
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_FJOqK1MOEemdZLpuw9I4eQ?SETTER"
-	*/
-	public void setBotonReadAll(Object BotonReadAll) {
-		// begin-user-code
-		this.BotonReadAll = BotonReadAll;
-		// end-user-code
-	}
-
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_FJOqLFMOEemdZLpuw9I4eQ"
-	*/
-	private Object ListaPaneles;
-
-	/** 
-	* @return the ListaPaneles
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_FJOqLFMOEemdZLpuw9I4eQ?GETTER"
-	*/
-	public Object getListaPaneles() {
-		// begin-user-code
-		return ListaPaneles;
-		// end-user-code
-	}
-
-	/** 
-	* @param ListaPaneles the ListaPaneles to set
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_FJOqLFMOEemdZLpuw9I4eQ?SETTER"
-	*/
-	public void setListaPaneles(Object ListaPaneles) {
-		// begin-user-code
-		this.ListaPaneles = ListaPaneles;
-		// end-user-code
-	}
-
-	/** 
-	* (non-Javadoc)
-	* @see Ventana#Actualizar()
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_FJNcAVMOEemdZLpuw9I4eQ?INHERITED"
-	*/
-	public void Actualizar() {
-		// begin-user-code
+	@Override
+	public void Actualizar(Contexto contexto) {
 		// TODO Auto-generated method stub
-
-		// end-user-code
+		
+		Contexto c = (Contexto) contexto.getDatos();
+		
+		switch(c.getEvento()){
+		case readProductoCommand: readById.Actualizar(c); 
+		break;
+		
+		default: 
+			break;
+			
+		}
+	
+		
+		
+		
 	}
+	
 }

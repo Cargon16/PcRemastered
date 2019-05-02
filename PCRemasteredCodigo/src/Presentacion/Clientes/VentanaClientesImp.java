@@ -44,10 +44,12 @@ public class VentanaClientesImp extends VentanaClientes{
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(5, 5, 706, 93);
 		contentPane.add(panel_1);
 		panel_1.setLayout(new GridLayout(1, 1, 0, 0));
+		
 		JPanel panel2 = new JPanel();
 		panel2.setOpaque(false);
 		panel2.setBounds(5, 109, 706, 439);

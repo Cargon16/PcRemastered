@@ -400,7 +400,11 @@ public enum Evento {
 	readAllPersonalErrorCommand, 
 	
 	crearVentanaCliente,
-	crearVentanaVentas, crearVentanaProductos, crearVentanaEnvios, crearVentanaPersonal, crearVentanaProveedores,
+	crearVentanaVentas,
+	crearVentanaProductos,
+	crearVentanaEnvios,
+	crearVentanaPersonal,
+	crearVentanaProveedores,
 	
 	
 	
