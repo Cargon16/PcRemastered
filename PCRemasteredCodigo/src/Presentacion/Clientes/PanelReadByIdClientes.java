@@ -18,6 +18,8 @@ import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
+import javax.swing.JLabel;
+import java.awt.Font;
 
 /** 
 * <!-- begin-UML-doc -->
@@ -39,12 +41,12 @@ public class PanelReadByIdClientes extends JPanel implements Ventana{
 		setLayout(null);
 		setOpaque(false);
 		button = new JButton("Buscar Cliente");
-		button.setBounds(370, 36, 262, 57);
+		button.setBounds(434, 68, 171, 42);
 		add(button);
 		
 		textField = new JTextField();
 		textField.setColumns(10);
-		textField.setBounds(72, 37, 276, 56);
+		textField.setBounds(83, 68, 339, 42);
 		add(textField);
 		textArea = new JTextArea();
 		JScrollPane scroll = new JScrollPane(textArea);
@@ -54,6 +56,11 @@ public class PanelReadByIdClientes extends JPanel implements Ventana{
 	    add(scroll);
 	    textArea.setVisible(false);
 	    textArea.setEditable(false);
+	    
+	    JLabel lblIntroduceElId = new JLabel("Introduce el ID");
+	    lblIntroduceElId.setFont(new Font("Tahoma", Font.PLAIN, 15));
+	    lblIntroduceElId.setBounds(83, 45, 110, 16);
+	    add(lblIntroduceElId);
 	
 	    button.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {

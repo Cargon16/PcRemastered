@@ -15,9 +15,14 @@ public class ReadAllEnviosCommand implements Command {
 		if(i.isEmpty()){
 			contexto.setEvento(Evento.readAllEnvioErrorCommand);
 			contexto.setDatos(null);
-			
+			return contexto;
 		}
-		return contexto;
+		else {
+			contexto.setDatos(i);
+			Contexto cnx = new Contexto(Evento.crearVentanaEnvios, contexto);
+			return cnx;
+		}
+		
 	}
 
 }

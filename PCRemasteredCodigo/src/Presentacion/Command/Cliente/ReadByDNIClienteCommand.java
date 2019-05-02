@@ -14,9 +14,14 @@ public class ReadByDNIClienteCommand implements Command {
 		if(i.equals(null)){
 			contexto.setEvento(Evento.readByDNIClienteCommandError);
 			contexto.setDatos(null);
-			
+			return contexto;
 		}
-		return contexto;
+		else {
+			contexto.setDatos(i);
+			Contexto cnx = new Contexto(Evento.VentanaCliente, contexto);
+			return cnx;
+		}
+		
 		
 	}
 

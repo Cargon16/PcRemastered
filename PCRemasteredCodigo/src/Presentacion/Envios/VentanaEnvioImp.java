@@ -33,10 +33,10 @@ import Presentacion.Command.Contexto;
 public class VentanaEnvioImp extends VentanaEnvio {
 	private JPanel contentPane;
 	private PanelAddEnvio anadir = new PanelAddEnvio();
-	/*private PanelDeleteClientes eliminar = new PanelDeleteClientes();
-	private PanelUpdateClientes actualizar = new PanelUpdateClientes();
-	private PanelReadByIdClientes mID = new PanelReadByIdClientes();
-	private PanelReadAllClientes mAll = new PanelReadAllClientes();*/
+	private PanelDeleteEnvio eliminar = new PanelDeleteEnvio();
+	private PanelUpdateEnvio actualizar = new PanelUpdateEnvio();
+	private PanelReadByIdEnvio mID = new PanelReadByIdEnvio();
+	private PanelReadAllEnvio mAll = new PanelReadAllEnvio();
 	
 	
 	public VentanaEnvioImp() {
@@ -64,7 +64,7 @@ public class VentanaEnvioImp extends VentanaEnvio {
 		anadir.setVisible(true);
 		paneles.add(anadir);
 		
-		/*eliminar.setVisible(true);
+		eliminar.setVisible(true);
 		paneles.add(eliminar);
 		
 		actualizar.setVisible(true);
@@ -74,7 +74,7 @@ public class VentanaEnvioImp extends VentanaEnvio {
 		paneles.add(mID);
 		
 		mAll.setVisible(true);
-		paneles.add(mAll);*/
+		paneles.add(mAll);
 	
 		
 		JButton botonanadir = new JButton("Añadir Envío");
@@ -164,7 +164,7 @@ public class VentanaEnvioImp extends VentanaEnvio {
 		switch (c.getEvento()) {
 
 		case createEnvioCommand: anadir.Actualizar(c);
-			
+		case readEnvioCommand: mID.Actualizar(c);
 			break;
 
 		default:

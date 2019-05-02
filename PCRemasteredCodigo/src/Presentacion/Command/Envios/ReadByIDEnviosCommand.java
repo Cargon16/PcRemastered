@@ -14,9 +14,14 @@ public class ReadByIDEnviosCommand implements Command {
 		if(i.equals(null)){
 			contexto.setEvento(Evento.readByIDEnvioErrorCommand);
 			contexto.setDatos(null);
-			
+			return contexto;
 		}
-		return contexto;
+		else {
+			contexto.setDatos(i);
+			Contexto cnx = new Contexto(Evento.crearVentanaEnvios, contexto);
+			return cnx;
+		}
+		
 	}
 
 }

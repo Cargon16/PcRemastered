@@ -37,11 +37,11 @@ public class PanelAddEnvio extends JPanel implements Ventana{
 		lblDireccin.setBounds(37, 95, 75, 14);
 		add(lblDireccin);
 
-		JRadioButton activoRB = new JRadioButton("Activo");
+		JRadioButton activoRB = new JRadioButton("En curso");
 		activoRB.setToolTipText("Activo");
 		activoRB.setBounds(109, 165, 109, 23);
 		activoRB.setOpaque(false);
-		JRadioButton inactivoRB = new JRadioButton("Inactivo");
+		JRadioButton inactivoRB = new JRadioButton("Entregado");
 		activoRB.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
