@@ -2,7 +2,7 @@
 
 CREATE TABLE clientes(
 ID int NOT NULL unique AUTO_INCREMENT ,
-DNI varchar(9),
+DNI varchar(9) unique ,
 Nombre varchar(30),
 Direccion varchar(50),
 Telefono integer(9),

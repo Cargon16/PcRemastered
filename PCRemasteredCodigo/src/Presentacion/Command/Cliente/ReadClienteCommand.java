@@ -11,7 +11,7 @@ public class ReadClienteCommand implements Command {
 	@Override
 	public Contexto ejecutar(Contexto contexto) {
 		TCliente i= FactoriaNegocio.getInstance().crearSAClientes().read((int) contexto.getDatos());
-		if(i.equals(null)){
+		if(i == null){
 			contexto.setEvento(Evento.readClienteErrorCommand);
 		}
 		contexto.setDatos(i);

@@ -11,17 +11,13 @@ public class UpdateClienteCommand implements Command{
 	@Override
 	public Contexto ejecutar(Contexto contexto) {
 		int i= FactoriaNegocio.getInstance().crearSAClientes().update((TCliente) contexto.getDatos());
-		if(i == -1){
+		if(i == -1)
 			contexto.setEvento(Evento.updateClienteErrorCommand);
-			contexto.setDatos(null);
-			return contexto;
-		}
-		else {
-			contexto.setDatos(i);
-			Contexto cnx = new Contexto(Evento.VentanaCliente, contexto);
-			return cnx;
-		}
-		
+		contexto.setDatos(i);
+		Contexto cnx = new Contexto(Evento.VentanaCliente, contexto);
+		return cnx;
+
+
 	}
 
 }

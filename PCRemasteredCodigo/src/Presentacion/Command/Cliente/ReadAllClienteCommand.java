@@ -12,8 +12,8 @@ public class ReadAllClienteCommand implements Command {
 
 	@Override
 	public Contexto ejecutar(Contexto contexto) {
-		ArrayList<TCliente> i= FactoriaNegocio.getInstance().crearSAClientes().readAll();
-		if(i.isEmpty()){
+		ArrayList<TCliente> i = FactoriaNegocio.getInstance().crearSAClientes().readAll();
+		if(i==null){
 			contexto.setEvento(Evento.readAllClienteErrorCommand);
 		}
 		contexto.setDatos(i);

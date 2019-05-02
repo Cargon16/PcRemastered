@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
@@ -46,9 +47,7 @@ public class DAOClienteImpl implements DAOCliente {
 					stmt.close();
 					if (!stmt.isClosed())
 						stmt.close();
-				} catch (SQLException e) {
-					e.printStackTrace();
-				}
+				} catch (  SQLException e) {}
 			}
 		
 		return id ;
@@ -80,7 +79,7 @@ public class DAOClienteImpl implements DAOCliente {
 		ArrayList<TCliente> retorno = new ArrayList<TCliente>();
 		try {
 			Connection conn = Connections.getInstance();
-			if (conn != null) {
+			if(conn != null) {
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery(lectura);
 				while (rs.next()) {

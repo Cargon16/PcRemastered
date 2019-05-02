@@ -13,10 +13,14 @@ import Negocio.ComprobadorSintactico.ComprobadorSintactico;
 public class SAClienteImp implements SACliente {
 	
 	public int create(TCliente cliente) {
-		// comprobar que el DNI no existe es decir readBYDNI y que retorne null;
-		// si no existe introduce el cliente.
-		return FactoriaIntegracion.getInstance().crearDaoCliente().create(cliente);
-	
+		int retorno= -1; 
+		TCliente c = FactoriaIntegracion.getInstance().crearDaoCliente().readByDNI(cliente.getDNI());
+		if ( c == null){ //existe el DNI
+			retorno = FactoriaIntegracion.getInstance().crearDaoCliente().create(cliente);
+		}	
+		return retorno;
+		// -1 ya existe el DNI
+	 	// other - id del cliente creado:
 	}
 	
 	public TCliente read(int id) {
@@ -31,8 +35,13 @@ public class SAClienteImp implements SACliente {
 	}
 
 	public int update(TCliente tCliente) {
-		// 
-		return FactoriaIntegracion.getInstance().crearDaoCliente().update(tCliente);
+		// comprobar que el cliente existe -- ReaDByDNI
+		int retorno =-1; 
+		TCliente c = FactoriaIntegracion.getInstance().crearDaoCliente().readByDNI(tCliente.getDNI());
+		if (c!=null){
+			retorno = FactoriaIntegracion.getInstance().crearDaoCliente().update(tCliente);
+		}
+		return retorno;
 	}
 
 	public int delete(int id) {

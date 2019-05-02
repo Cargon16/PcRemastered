@@ -81,7 +81,7 @@ public class PanelReadByIdClientes extends JPanel implements Ventana{
 		if(c.isActivo())
 			s= "Activo";
 		else s= "No activo";
-		textArea.setText("DNI: "+ c.getDNI() + "\n" + "Nombre: " +c.getNombre() +"\n" + "Nº de Teléfono: "+c.getTelefono() + "\n" + "Dirección: " + c.getDireccion()+ "\n" +"Estado: "+s+  "\n" );
+		textArea.setText("DNI: "+ c.getDNI() + "\n" + "Nombre: " +c.getNombre() +"\n" + "Nï¿½ de Telï¿½fono: "+c.getTelefono() + "\n" + "Direcciï¿½n: " + c.getDireccion()+ "\n" +"Estado: "+s+  "\n" );
 		
 		
 	}
