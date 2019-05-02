@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import Integracion.Clientes.TCliente;
+import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
@@ -25,14 +26,14 @@ import java.awt.Font;
 *     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_4CoucFOpEemH9v7SOzgnzQ"
 * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_4CoucFOpEemH9v7SOzgnzQ"
 */
-public class PanelDeleteClientes extends JPanel {
+public class PanelDeleteClientes extends JPanel implements Ventana {
 	private JTextField textField;
 	private Controller ap;
 	private TCliente c;
 	/**
 	 * Create the panel.
 	 */
-	public PanelDeleteClientes() {
+	public PanelDeleteClientes(){
 		setLayout(null);
 		setOpaque(false);
 		textField = new JTextField();
@@ -61,5 +62,10 @@ public class PanelDeleteClientes extends JPanel {
 		lblEliminarCliente.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblEliminarCliente.setBounds(92, 26, 167, 35);
 		add(lblEliminarCliente);
+	}
+	@Override
+	public void Actualizar(Contexto contexto) {
+		// TODO Auto-generated method stub
+		
 	}
 }

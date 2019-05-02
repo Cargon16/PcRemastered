@@ -71,12 +71,12 @@ public class VentanaClientesImp extends VentanaClientes{
 		paneles.add(mAll);
 	
 		
-		JButton botonanadir = new JButton("Añadir Cliente");
+		JButton botonanadir = new JButton("Aï¿½adir Cliente");
 		
 		botonanadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
-				setTitle("Añadir cliente");
+				setTitle("Aï¿½adir cliente");
 				panel2.add(paneles.get(0),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane()); 
 				
@@ -146,9 +146,9 @@ public class VentanaClientesImp extends VentanaClientes{
 		Contexto c = (Contexto) contexto.getDatos();
 		
 		switch (c.getEvento()) {
-
+		case createClienteCommnad:anadir.Actualizar(c);
 		case readClienteCommand: mID.Actualizar(c);
-			
+		case deleteClienteCommand:eliminar.Actualizar(c);
 			break;
 
 		default:

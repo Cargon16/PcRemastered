@@ -72,12 +72,12 @@ public class VentanaPersonalImp extends VentanaPersonal {
 		paneles.add(mAll);
 	
 		
-		JButton botonanadir = new JButton("Añadir Personal");
+		JButton botonanadir = new JButton("Aï¿½adir Personal");
 		
 		botonanadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
-				setTitle("Añadir personal");
+				setTitle("Aï¿½adir personal");
 				panel2.add(paneles.get(0),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane()); 
 				
@@ -148,7 +148,9 @@ public class VentanaPersonalImp extends VentanaPersonal {
 		
 		switch (c.getEvento()) {
 		case createPersonalCommand: anadir.Actualizar(c);break;
+		
 		case readPersonalCommand: mID.Actualizar(c);break;
+		
 			
 
 		default:

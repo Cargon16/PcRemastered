@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
@@ -101,7 +102,7 @@ public PanelAddClientes() {
 			activoRB.setSelected(false);
 		}
 	});
-	JButton button = new JButton("Añadir");
+	JButton button = new JButton("Aï¿½adir");
 	button.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			boolean ok = false ;
@@ -125,7 +126,6 @@ public PanelAddClientes() {
 }
 @Override
 public void Actualizar(Contexto contexto) {
-	// TODO Auto-generated method stub
 	
 }
 }	
