@@ -2,8 +2,6 @@ package Presentacion;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -14,10 +12,12 @@ import Presentacion.Controlador.Controller;
 import java.awt.Font;
 
 public class VentanaPrincipalImp extends VentanaPrincipal{
-	private JFrame frame = new JFrame();
-public VentanaPrincipalImp() {
 	
-		
+	private JFrame frame = new JFrame();
+	
+	public VentanaPrincipalImp() {
+
+
 		frame = new JFrame();
 		frame.setResizable(false);
 		frame.setBounds(100, 100, 534, 360);
@@ -38,7 +38,7 @@ public VentanaPrincipalImp() {
 		});
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().add(botonVentas);
-		
+
 		JButton botonModelo = new JButton("Productos");
 		botonModelo.setBounds(393, 142, 106, 56);
 		botonModelo.addActionListener(new ActionListener() {
@@ -53,7 +53,7 @@ public VentanaPrincipalImp() {
 			}
 		});
 		frame.getContentPane().add(botonModelo);
-		
+
 		JButton botonCliente = new JButton("Ventas");
 		botonCliente.setBounds(283, 72, 98, 56);
 		botonCliente.addActionListener(new ActionListener() {
@@ -68,7 +68,7 @@ public VentanaPrincipalImp() {
 			}
 		});
 		frame.getContentPane().add(botonCliente);
-		
+
 		JButton btnEnvios = new JButton("Envios");
 		btnEnvios.setBounds(26, 141, 106, 59);
 		btnEnvios.addActionListener(new ActionListener() {
@@ -83,7 +83,7 @@ public VentanaPrincipalImp() {
 			}
 		});
 		frame.getContentPane().add(btnEnvios);
-		
+
 		JButton btnP = new JButton("Personal");
 		btnP.setBounds(393, 72, 106, 56);
 		btnP.addActionListener(new ActionListener() {
@@ -98,11 +98,11 @@ public VentanaPrincipalImp() {
 			}
 		});
 		frame.getContentPane().add(btnP);
-		
+
 		JButton btnProveedores = new JButton("Proveedores");
 		btnProveedores.setBounds(144, 72, 106, 56);
 		frame.getContentPane().add(btnProveedores);
-		
+
 		JLabel lblPcremastered = new JLabel("PcRemastered");
 		lblPcremastered.setFont(new Font("Tahoma", Font.BOLD, 23));
 		lblPcremastered.setBounds(177, 13, 168, 42);
@@ -112,9 +112,9 @@ public VentanaPrincipalImp() {
 	}
 
 
-@Override
-public void Actualizar(Contexto contexto) {
-	// TODO Auto-generated method stub
-	
-}
+	@Override
+	public void Actualizar(Contexto contexto) {
+		// TODO Auto-generated method stub
+
+	}
 }

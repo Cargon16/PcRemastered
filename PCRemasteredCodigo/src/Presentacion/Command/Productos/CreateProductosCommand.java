@@ -15,9 +15,14 @@ public class CreateProductosCommand implements Command {
 		if ( i == -1 ){
 			contexto.setEvento(Evento.createProductoErrorCommand);
 			contexto.setDatos(null);
-		}
+			return contexto;
+		}else{
+			contexto.setDatos(i);
+			Contexto cnx = new Contexto(Evento.crearVentanaProductos,contexto);
+			return cnx;
 			
-		return contexto;
+		}
+		
 	}
 
 }

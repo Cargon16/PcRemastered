@@ -3,6 +3,11 @@
  */
 package Presentacion.Productos;
 
+import javax.swing.JPanel;
+
+import Presentacion.Ventana;
+import Presentacion.Command.Contexto;
+
 /** 
  * <!-- begin-UML-doc -->
  * <!-- end-UML-doc -->
@@ -11,5 +16,11 @@ package Presentacion.Productos;
  *     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_P4ykIlMOEemdZLpuw9I4eQ"
  * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_P4ykIlMOEemdZLpuw9I4eQ"
  */
-public class PanelUpdateProducto {
+public class PanelUpdateProducto extends JPanel implements Ventana {
+
+	@Override
+	public void Actualizar(Contexto contexto) {
+		// TODO Auto-generated method stub
+		
+	}
 }
