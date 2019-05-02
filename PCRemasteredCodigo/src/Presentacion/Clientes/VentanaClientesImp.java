@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
@@ -148,11 +149,16 @@ public class VentanaClientesImp extends VentanaClientes{
 		Contexto c = (Contexto) contexto.getDatos();
 		
 		switch (c.getEvento()) {
-		case createClienteCommnad:anadir.Actualizar(c);
-		case readClienteCommand: mID.Actualizar(c);
-		case deleteClienteCommand:eliminar.Actualizar(c);
-			break;
-
+		case createClienteCommnad: JOptionPane.showMessageDialog(null, "Se ha creado el cliente nuevo con id " +c.getDatos()); break;
+		case createClienteErrorCommand: JOptionPane.showMessageDialog(null, "No se ha podido añadir el cliente"); break;
+		case readClienteCommand: mID.Actualizar(c);break;
+		case deleteClienteCommand:JOptionPane.showMessageDialog(null, "Se ha eliminado el cliente con id" +c.getDatos() + "\n existosamente") ;break;
+		case deleteClienteErrorCommand: if ( (int)c.getDatos() ==-1)
+											JOptionPane.showMessageDialog(null, "El cliente no existe");
+										else if( (int)c.getDatos()==-2)
+											JOptionPane.showMessageDialog(null, "El cliente ya esta inactivo");
+													;break;
+		
 		default:
 			break;
 		}

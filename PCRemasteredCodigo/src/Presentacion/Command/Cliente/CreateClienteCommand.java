@@ -11,12 +11,14 @@ public class CreateClienteCommand implements Command{
 	@Override
 	public Contexto ejecutar(Contexto contexto) {
 		
-		int i = FactoriaNegocio.getInstance().crearSAClientes().create((TCliente) contexto.getDatos());
-		if ( i == -1 ){
-			contexto.setEvento(Evento.ErrorCommand);
-			contexto.setDatos("Error en la creacion del cliente");
+		int i= FactoriaNegocio.getInstance().crearSAClientes().create((TCliente)contexto.getDatos());
+		if(i < 1){
+			contexto.setEvento(Evento.createClienteErrorCommand);
 		}
-		return contexto;
+		else contexto.setDatos(i);
+		Contexto cnx = new Contexto(Evento.VentanaCliente, contexto);
+		return cnx;
+		
 	}
 
 }

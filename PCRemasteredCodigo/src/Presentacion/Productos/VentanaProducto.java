@@ -20,17 +20,10 @@ public abstract class VentanaProducto extends JFrame implements Ventana {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_FJOqI1MOEemdZLpuw9I4eQ"
-	*/
+
 	private static VentanaProducto instance = null;
 
-	/** 
-	* @return the instance
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_FJOqI1MOEemdZLpuw9I4eQ?GETTER"
-	*/
+	
 	public static VentanaProducto getInstance() {
 		// begin-user-code
 		if(instance==null){
@@ -41,13 +34,9 @@ public abstract class VentanaProducto extends JFrame implements Ventana {
 		// end-user-code
 	}
 
-	/** 
-	* @param instance the instance to set
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_FJOqI1MOEemdZLpuw9I4eQ?SETTER"
-	*/
-	public static void setInstance(Object instance) {
-		// begin-user-code
+	public static void setInstance() {
+		
 		instance = null;
-		// end-user-code
+		
 	}
 }

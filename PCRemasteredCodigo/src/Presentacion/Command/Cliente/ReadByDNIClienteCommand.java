@@ -13,15 +13,11 @@ public class ReadByDNIClienteCommand implements Command {
 		TCliente i= FactoriaNegocio.getInstance().crearSAClientes().readByDNI((String) contexto.getDatos());
 		if(i.equals(null)){
 			contexto.setEvento(Evento.readByDNIClienteCommandError);
-			contexto.setDatos(null);
-			return contexto;
 		}
-		else {
 			contexto.setDatos(i);
 			Contexto cnx = new Contexto(Evento.VentanaCliente, contexto);
 			return cnx;
-		}
-		
+
 		
 	}
 

@@ -41,7 +41,8 @@ public class DAOClienteImpl implements DAOCliente {
 					stmt.setBoolean(5, tCliente.isActivo());
 					stmt.execute();
 					ResultSet rs = stmt.getGeneratedKeys();
-					id = rs.getInt("id");
+					if(rs.next())
+						id = rs.getInt(1);
 					stmt.close();
 					if (!stmt.isClosed())
 						stmt.close();

@@ -13,16 +13,12 @@ public class DeleteClienteCommand implements Command{
 	public Contexto ejecutar(Contexto contexto) {
 		int i= FactoriaNegocio.getInstance().crearSAClientes().delete(Integer.parseInt((String)contexto.getDatos()));
 		if(i < 1){
-			contexto.setEvento(Evento.readClienteErrorCommand);
-			contexto.setDatos(null);
-			return contexto;
+			contexto.setEvento(Evento.deleteClienteErrorCommand);
 		}
-		else {
-			contexto.setDatos(i);
-			Contexto cnx = new Contexto(Evento.VentanaCliente, contexto);
-			return cnx;
-		}
-		
-	}
+		contexto.setDatos(i);
+		Contexto cnx = new Contexto(Evento.VentanaCliente, contexto);
+		return cnx;
 
+	
+	}
 }

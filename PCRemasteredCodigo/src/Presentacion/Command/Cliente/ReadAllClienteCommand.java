@@ -15,14 +15,11 @@ public class ReadAllClienteCommand implements Command {
 		ArrayList<TCliente> i= FactoriaNegocio.getInstance().crearSAClientes().readAll();
 		if(i.isEmpty()){
 			contexto.setEvento(Evento.readAllClienteErrorCommand);
-			contexto.setDatos(null);
-			return contexto;
 		}
-		else {
-			contexto.setDatos(i);
-			Contexto cnx = new Contexto(Evento.VentanaCliente, contexto);
-			return cnx;
-		}
+		contexto.setDatos(i);
+		Contexto cnx = new Contexto(Evento.VentanaCliente, contexto);
+		return cnx;
+
 		
 	}
 

@@ -83,7 +83,7 @@ public class VentanaProductosImp extends VentanaProducto {
 	        public void windowClosing(WindowEvent e)
 	        {
 	            System.out.println("Closed");
-	            VentanaClientes.setInstance(null);        }
+	            VentanaProducto.setInstance();        }
 	    });
 		
 	}
