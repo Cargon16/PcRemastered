@@ -12,3 +12,10 @@ PRIMARY KEY (ID)
 
 alter TABLE clientes;
 set AUTO_INCREMENT(0);
+
+CREATE TABLE envios (
+  ID int(11) NOT NULL unique AUTO_INCREMENT,
+  Direccion varchar(50),
+  Activo int(11),
+  PRIMARY KEY (ID)
+);
