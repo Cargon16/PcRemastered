@@ -24,6 +24,7 @@ import Presentacion.Command.Personal.UpdatePersonalCommand;
 import Presentacion.Command.Productos.CreateProductosCommand;
 import Presentacion.Command.Productos.DeleteProductosCommand;
 import Presentacion.Command.Productos.ReadAllProductosCommand;
+import Presentacion.Command.Productos.ReadByNombreProductosCommand;
 //import Presentacion.Command.Productos.ReadByNombrePRoductosCommand;
 import Presentacion.Command.Productos.ReadProductosCommand;
 import Presentacion.Command.Productos.UpdateProductosCommand;
@@ -59,8 +60,8 @@ public class FactoriaCommandsImp extends FactoriaCommands {
 		// TODO Auto-generated method stub
 		Command c = null;
 		switch (evento){
-		case INIT : return new InitCommand();
-		case VentanaCliente: return new VentanaClienteCommand();
+		case INIT : return new InitCommand(); 
+		case VentanaCliente: return new VentanaClienteCommand(); 
 		case createClienteCommnad: return new CreateClienteCommand();
 		case deleteClienteCommand: return new DeleteClienteCommand();
 		case readAllClienteCommand: return new ReadAllClienteCommand();
@@ -71,7 +72,7 @@ public class FactoriaCommandsImp extends FactoriaCommands {
 		case createProductoCommand: return new CreateProductosCommand();
 		case deleteProductoCommand: return new DeleteProductosCommand();
 		case readAllProductoCommand: return new ReadAllProductosCommand();
-		//case readByNombreProductoCommand: return new ReadByNombrePRoductosCommand();
+		case readByNombreProductosCommand: return new ReadByNombreProductosCommand();
 		case readProductoCommand: return new ReadProductosCommand();
 		case updateProductoCommand:return new UpdateProductosCommand();
 		case crearVentanaPersonal: return new VentanaPersonalCommand();

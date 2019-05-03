@@ -66,8 +66,7 @@ public class PanelReadByIdProducto extends JPanel implements Ventana {
 	    button.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
 	    	
-	    		TCliente c;
-	    		Contexto contexto = new Contexto (Evento.readProductoCommand,Integer.valueOf(textField.getText()));
+	    		Contexto contexto = new Contexto (Evento.readByNombreProductosCommand,Integer.valueOf(textField.getText()));
 	    		Controller.getInstance().ejecutar(contexto);
 
 	    	}
@@ -81,7 +80,6 @@ public class PanelReadByIdProducto extends JPanel implements Ventana {
 		// TODO Auto-generated method stub
 		
 		textArea.setVisible(true);
-		String s=null;
 		TProducto p = (TProducto) contexto.getDatos();
 		textArea.setText("Nombre: " + p.getNombre() + "\n" + "Descripcion: "+p.getDescripcion()+ "\n" + "Stock: "+p.getStock() + "\n" + "Precio: "+p.getPrecio()+"\n" );
 		

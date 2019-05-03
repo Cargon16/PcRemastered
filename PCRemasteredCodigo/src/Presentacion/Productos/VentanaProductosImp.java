@@ -182,6 +182,7 @@ public class VentanaProductosImp extends VentanaProducto {
 			JOptionPane.showMessageDialog(null, "El producto no existe");break;
 		case readAllProductoCommand : readAll.Actualizar(c);break;
 		case readAllProductoErrorCommand : JOptionPane.showMessageDialog(null, "No hay productos registrados \n en la base de datos");break;
+		case readByIDProdcutoErrorCommand : JOptionPane.showMessageDialog(null, "El producto no existe");break;
 		default: 
 			break;
 			

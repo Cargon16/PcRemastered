@@ -406,6 +406,8 @@ public enum Evento {
 	crearVentanaPersonal,
 	crearVentanaProveedores,
 	
+	readByNombreProductosCommand,
+	
 	
 	
 	
