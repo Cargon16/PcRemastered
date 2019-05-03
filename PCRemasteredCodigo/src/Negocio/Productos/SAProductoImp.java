@@ -13,7 +13,12 @@ public class SAProductoImp implements SAProducto  {
 
 	@Override
 	public int create(TProducto producto) {
-		return FactoriaIntegracion.getInstance().crearDaoProducto().create(producto);
+		int r = -1;
+		TProducto p = FactoriaIntegracion.getInstance().crearDaoProducto().readByNombre(producto.getNombre());
+		if(p==null){
+			return FactoriaIntegracion.getInstance().crearDaoProducto().create(producto);
+		}
+		return r;
 	}
 
 	@Override
@@ -32,8 +37,11 @@ public class SAProductoImp implements SAProducto  {
 	}
 
 	@Override
-	public int delete(int DNI) {
-		return FactoriaIntegracion.getInstance().crearDaoProducto().delete(DNI);
+	public int delete(int id) {
+	
+			return FactoriaIntegracion.getInstance().crearDaoProducto().delete(id);
+	
+			
 	}
 
 	@Override

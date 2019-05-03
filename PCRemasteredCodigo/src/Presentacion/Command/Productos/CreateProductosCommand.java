@@ -1,6 +1,5 @@
 package Presentacion.Command.Productos;
 
-import Integracion.Personal.TPersonal;
 import Integracion.Productos.TProducto;
 import Negocio.Factorias.FactoriaNegocio;
 import Presentacion.Command.Command;

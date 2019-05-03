@@ -19,7 +19,11 @@ public interface SAProducto {
 
 	public int update(TProducto Producto);
 
-	public int delete(int DNI);
+	public int delete(int nombre);
 
 	public TProducto readByNombre(String Nombre);
+
+	
+
+
 }

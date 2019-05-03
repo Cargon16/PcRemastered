@@ -28,6 +28,10 @@ import Presentacion.Controlador.Controller;
 * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_B39NwFOqEemH9v7SOzgnzQ"
 */
 public class PanelReadAllClientes extends JPanel implements Ventana {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	JButton button;
 	JTextArea textArea;
 	public PanelReadAllClientes() {
@@ -63,6 +67,7 @@ public class PanelReadAllClientes extends JPanel implements Ventana {
 	@Override
 	public void Actualizar(Contexto contexto) {
 		textArea.setVisible(true);
+		@SuppressWarnings("unchecked")
 		ArrayList<TCliente> array = (ArrayList<TCliente>) contexto.getDatos();
 		String texto = "";
 		for (TCliente c : array) {
@@ -72,8 +77,8 @@ public class PanelReadAllClientes extends JPanel implements Ventana {
 			else
 				s = "No activo";
 			texto = texto + "ID: " + c.getID() + "\n" + "DNI: " + c.getDNI() + "\n"
-					+ "Nombre: " + c.getNombre() + "\n" + "N� de Telefono: " + c.getTelefono() + "\n" +
-					"Direcci�n: " + c.getDireccion() + "\n" + "Estado: " + s + "\n\n";
+					+ "Nombre: " + c.getNombre() + "\n" + "Numero de Telefono: " + c.getTelefono() + "\n" +
+					"Direccion: " + c.getDireccion() + "\n" + "Estado: " + s + "\n\n";
 
 		}
 		textArea.setText(texto);

@@ -72,14 +72,17 @@ public class VentanaProductosImp extends VentanaProducto {
 		delete.setVisible(true);
 		paneles.add(delete);
 		
-		readAll.setVisible(true);
-		paneles.add(readAll);
+		updateProducto.setVisible(true);
+		paneles.add(updateProducto);
 		
 		readById.setVisible(true);
 		paneles.add(readById);
 		
-		updateProducto.setVisible(true);
-		paneles.add(updateProducto);
+
+		readAll.setVisible(true);
+		paneles.add(readAll);
+		
+		
 		
 		JButton anadir = new JButton("<html>Anadir <br /> producto</html>");
 		anadir.addActionListener(new ActionListener() {
@@ -145,7 +148,7 @@ public class VentanaProductosImp extends VentanaProducto {
 				// TODO Auto-generated method stub
 				panel2.removeAll();
 				setTitle("Actualizar Producto");
-				panel2.add(paneles.get(3),SwingConstants.CENTER);
+				panel2.add(paneles.get(4),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane());
 			}
 		});

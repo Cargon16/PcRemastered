@@ -102,7 +102,7 @@ public PanelAddClientes() {
 			activoRB.setSelected(false);
 		}
 	});
-	JButton button = new JButton("A�adir");
+	JButton button = new JButton("Anadir");
 	button.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			boolean ok = false ;

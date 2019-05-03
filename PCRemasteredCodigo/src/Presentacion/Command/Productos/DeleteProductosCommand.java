@@ -9,7 +9,7 @@ public class DeleteProductosCommand implements Command {
 
 	@Override
 	public Contexto ejecutar(Contexto contexto) {
-		int i= FactoriaNegocio.getInstance().crearSAProductos().delete((int) contexto.getDatos());
+		int i= FactoriaNegocio.getInstance().crearSAProductos().delete(Integer.parseInt((String) contexto.getDatos()));
 		if(i < 1){
 			contexto.setEvento(Evento.deleteProductoErrorCommand);
 		}

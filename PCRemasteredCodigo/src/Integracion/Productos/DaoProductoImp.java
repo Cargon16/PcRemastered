@@ -4,6 +4,7 @@
 package Integracion.Productos;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -24,21 +25,25 @@ public class DaoProductoImp implements DaoProducto {
 	
 	public Integer create(TProducto tProducto) {
 		int id= 0;
-		String insercion = "INSERT INTO productos " + "VALUES ('" + id + "', '" + tProducto.getNombre() +"', '"
-				+ tProducto.getDescripcion() + "', '" + tProducto.getStock() + "', '" + tProducto.getPrecio() + "');";
+		String insercion = "INSERT INTO productos (Nombre,Descripcion,Stock,Precio) VALUES (?,?,?,?)";
 			
 		Connection conn = Connections.getInstance();
 			if (conn != null) {
 				try {				
-					Statement stmt = conn.createStatement();
-					stmt.execute(insercion);		
-					if (!stmt.isClosed())
+					PreparedStatement stmt = conn.prepareStatement(insercion, Statement.RETURN_GENERATED_KEYS);
+					stmt.setString(1, tProducto.getNombre());
+					stmt.setString(2, tProducto.getDescripcion());
+					stmt.setInt(3, tProducto.getStock());
+					stmt.setFloat(4, tProducto.getPrecio());
+					stmt.execute();
+					ResultSet rs = stmt.getGeneratedKeys();
+					if(rs.next())
+						id=rs.getInt(1);
+					stmt.close();
+					if(!stmt.isClosed())
 						stmt.close();
-				} catch (SQLException e) {
-					id = -1;
-				}
+				}catch(SQLException e){}
 			}
-		
 		return id;
 	}
 
