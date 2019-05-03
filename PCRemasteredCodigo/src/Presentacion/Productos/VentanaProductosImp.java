@@ -6,12 +6,18 @@ package Presentacion.Productos;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
 import Presentacion.Clientes.VentanaClientes;
@@ -75,6 +81,75 @@ public class VentanaProductosImp extends VentanaProducto {
 		updateProducto.setVisible(true);
 		paneles.add(updateProducto);
 		
+		JButton anadir = new JButton("<html>Anadir <br /> producto</html>");
+		anadir.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				panel2.removeAll();
+				setTitle("Anadir Producto");
+				panel2.add(paneles.get(0),SwingConstants.CENTER);
+				SwingUtilities.updateComponentTreeUI(getContentPane());
+			}
+		});
+		panel_1.add(anadir);
+		
+		JButton eliminar = new JButton("<html>Eliminar <br /> producto</html>");
+		eliminar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				panel2.removeAll();
+				setTitle("Eliminar Producto");
+				panel2.add(paneles.get(1),SwingConstants.CENTER);
+				SwingUtilities.updateComponentTreeUI(getContentPane());
+			}
+		});
+		panel_1.add(eliminar);
+		
+		JButton actualizar = new JButton("<html>Actualizar <br /> producto</html>");
+		actualizar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				panel2.removeAll();
+				setTitle("Actualizar Producto");
+				panel2.add(paneles.get(2),SwingConstants.CENTER);
+				SwingUtilities.updateComponentTreeUI(getContentPane());
+			}
+		});
+		panel_1.add(actualizar);
+		
+		JButton mostrarID = new JButton("<html>Mostrar <br /> producto</html>");
+		mostrarID.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				panel2.removeAll();
+				setTitle("Actualizar Producto");
+				panel2.add(paneles.get(3),SwingConstants.CENTER);
+				SwingUtilities.updateComponentTreeUI(getContentPane());
+			}
+		});
+		panel_1.add(mostrarID);
+		
+		JButton mostrarTodo = new JButton("<html>Mostrar todos <br />los productos</html>");
+		mostrarTodo.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				panel2.removeAll();
+				setTitle("Actualizar Producto");
+				panel2.add(paneles.get(3),SwingConstants.CENTER);
+				SwingUtilities.updateComponentTreeUI(getContentPane());
+			}
+		});
+		panel_1.add(mostrarTodo);
 		
 		setLocationRelativeTo(null);
 		addWindowListener(new WindowAdapter()
@@ -95,9 +170,15 @@ public class VentanaProductosImp extends VentanaProducto {
 		Contexto c = (Contexto) contexto.getDatos();
 		
 		switch(c.getEvento()){
-		case readProductoCommand: readById.Actualizar(c); 
-		break;
-		
+		case createProductoCommand : JOptionPane.showMessageDialog(null, "Se ha creado el producto nuevo con id" + c.getDatos()); break;
+		case createProductoErrorCommand : JOptionPane.showMessageDialog(null, "No se ha podido anadir el producto"); break;
+		case readProductoCommand: readById.Actualizar(c); break;
+		case readProductoErrorCommand : JOptionPane.showMessageDialog(null, "El producto no existe");break;
+		case deleteProductoCommand : JOptionPane.showMessageDialog(null, "Se ha eliminado el producto con id " + c.getDatos()+"\n  exitosamente ");break;
+		case deleteProductoErrorCommand: if ( (int)c.getDatos() ==-1)
+			JOptionPane.showMessageDialog(null, "El producto no existe");break;
+		case readAllProductoCommand : readAll.Actualizar(c);break;
+		case readAllProductoErrorCommand : JOptionPane.showMessageDialog(null, "No hay productos registrados \n en la base de datos");break;
 		default: 
 			break;
 			
