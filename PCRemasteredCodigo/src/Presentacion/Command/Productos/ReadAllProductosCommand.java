@@ -13,12 +13,14 @@ public class ReadAllProductosCommand implements Command {
 	@Override
 	public Contexto ejecutar(Contexto contexto) {
 		ArrayList<TProducto> i= FactoriaNegocio.getInstance().crearSAProductos().readAll();
-		if(i.isEmpty()){
+		if(i==null){
 			contexto.setEvento(Evento.readAllProductoErrorCommand);
-			contexto.setDatos(null);
+			
 			
 		}
-		return contexto;
+		contexto.setDatos(i);
+		Contexto cnx = new Contexto(Evento.crearVentanaProductos, contexto);
+		return cnx;
 	}
 
 }

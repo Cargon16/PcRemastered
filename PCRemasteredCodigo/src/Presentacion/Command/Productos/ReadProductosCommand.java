@@ -11,12 +11,14 @@ public class ReadProductosCommand implements Command {
 	@Override
 	public Contexto ejecutar(Contexto contexto) {
 		TProducto i= FactoriaNegocio.getInstance().crearSAProductos().read((int) contexto.getDatos());
-		if(i.equals(null)){
+		if(i==null){
 			contexto.setEvento(Evento.readProveedorErrorCommand);
-			contexto.setDatos(null);
+			
 			
 		}
-		return contexto;
+		contexto.setDatos(i);
+		Contexto cnx = new Contexto(Evento.crearVentanaProductos, contexto);
+		return cnx;
 	}
 
 }

@@ -11,12 +11,11 @@ public class UpdateProductosCommand implements Command {
 	@Override
 	public Contexto ejecutar(Contexto contexto) {
 		int i= FactoriaNegocio.getInstance().crearSAProductos().update((TProducto) contexto.getDatos());
-		if(i == -1){
+		if(i == -1)
 			contexto.setEvento(Evento.updateProductoErrorCommand);
-			contexto.setDatos(null);
-			
-		}
-		return contexto;
+		contexto.setDatos(i);
+		Contexto cnx = new Contexto(Evento.crearVentanaProductos, contexto);
+		return cnx;
 	}
 
 }
