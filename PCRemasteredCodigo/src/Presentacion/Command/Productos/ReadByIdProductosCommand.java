@@ -6,11 +6,11 @@ import Presentacion.Command.Command;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 
-public class ReadByNombreProductosCommand implements Command {
+public class ReadByIdProductosCommand implements Command {
 
 	@Override
 	public Contexto ejecutar(Contexto contexto) {
-		TProducto i= FactoriaNegocio.getInstance().crearSAProductos().readByNombre((String) contexto.getDatos());
+		TProducto i= FactoriaNegocio.getInstance().crearSAProductos().readById((int) contexto.getDatos());
 		if(i.equals(null)){
 			contexto.setEvento(Evento.readByIDProdcutoErrorCommand);
 		}

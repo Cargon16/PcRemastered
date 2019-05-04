@@ -127,8 +127,8 @@ public class DaoProductoImp implements DaoProducto {
 	}
 
 	@Override
-	public TProducto readByNombre(String nombre) {
-		String lectura = "SELECT * FROM productos WHERE nombre=" + nombre + " FOR UPDATE;";
+	public TProducto readByID(int id) {
+		String lectura = "SELECT * FROM productos WHERE id=" + id + " FOR UPDATE;";
 		TProducto retorno = null;
 		try {
 			Connection conn = Connections.getInstance();
@@ -136,7 +136,7 @@ public class DaoProductoImp implements DaoProducto {
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery(lectura);
 				if (rs.next()) {
-					retorno = new TProducto(rs.getInt("id"), nombre, rs.getString("descripcion"),
+					retorno = new TProducto(id, rs.getString("nombre"), rs.getString("descripcion"),
 							rs.getInt("stock"),rs.getFloat("precio"));
 				}
 			}

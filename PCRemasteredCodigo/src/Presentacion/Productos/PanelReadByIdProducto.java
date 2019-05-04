@@ -66,9 +66,9 @@ public class PanelReadByIdProducto extends JPanel implements Ventana {
 	    button.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
 	    	
-	    		Contexto contexto = new Contexto (Evento.readByNombreProductosCommand,Integer.valueOf(textField.getText()));
+	    		Contexto contexto = new Contexto (Evento.readByIDProductosCommand,Integer.valueOf(textField.getText()));
 	    		Controller.getInstance().ejecutar(contexto);
-
+	    		Actualizar(contexto);
 	    	}
 	    });
 	

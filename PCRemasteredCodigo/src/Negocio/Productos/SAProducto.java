@@ -21,7 +21,9 @@ public interface SAProducto {
 
 	public int delete(int nombre);
 
-	public TProducto readByNombre(String Nombre);
+	public TProducto readById(int id);
+
+	
 
 	
 

@@ -50,5 +50,7 @@ public interface DaoProducto {
 	*/
 	public int update(TProducto tProducto);
 	
-	public TProducto readByNombre(String nombre);
+	public TProducto readByID(int Id);
+
+	
 }

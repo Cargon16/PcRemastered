@@ -24,7 +24,7 @@ import Presentacion.Command.Personal.UpdatePersonalCommand;
 import Presentacion.Command.Productos.CreateProductosCommand;
 import Presentacion.Command.Productos.DeleteProductosCommand;
 import Presentacion.Command.Productos.ReadAllProductosCommand;
-import Presentacion.Command.Productos.ReadByNombreProductosCommand;
+import Presentacion.Command.Productos.ReadByIdProductosCommand;
 //import Presentacion.Command.Productos.ReadByNombrePRoductosCommand;
 import Presentacion.Command.Productos.ReadProductosCommand;
 import Presentacion.Command.Productos.UpdateProductosCommand;
@@ -72,7 +72,7 @@ public class FactoriaCommandsImp extends FactoriaCommands {
 		case createProductoCommand: return new CreateProductosCommand();
 		case deleteProductoCommand: return new DeleteProductosCommand();
 		case readAllProductoCommand: return new ReadAllProductosCommand();
-		case readByNombreProductosCommand: return new ReadByNombreProductosCommand();
+		case readByIDProductosCommand: return new ReadByIdProductosCommand();
 		case readProductoCommand: return new ReadProductosCommand();
 		case updateProductoCommand:return new UpdateProductosCommand();
 		case crearVentanaPersonal: return new VentanaPersonalCommand();
