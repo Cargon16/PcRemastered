@@ -25,7 +25,7 @@ public class DaoProductoImp implements DaoProducto {
 	
 	public Integer create(TProducto tProducto) {
 		int id= 0;
-		String insercion = "INSERT INTO productos (Nombre,Descripcion,Stock,Precio) VALUES (?,?,?,?)";
+		String insercion = "INSERT INTO producto (Nombre,Descripcion,Stock,Precio) VALUES (?,?,?,?)";
 			
 		Connection conn = Connections.getInstance();
 			if (conn != null) {
@@ -42,13 +42,13 @@ public class DaoProductoImp implements DaoProducto {
 					stmt.close();
 					if(!stmt.isClosed())
 						stmt.close();
-				}catch(SQLException e){}
+				}catch(SQLException e){e.printStackTrace();}
 			}
 		return id;
 	}
 
 	public TProducto read(int id) {
-		String lectura = "SELECT * FROM productos WHERE id=" + id + " FOR UPDATE;";
+		String lectura = "SELECT * FROM producto WHERE id=" + id + " FOR UPDATE;";
 		TProducto retorno = null;
 		try {
 			Connection conn = Connections.getInstance();
@@ -67,7 +67,7 @@ public class DaoProductoImp implements DaoProducto {
 	}
 
 	public ArrayList<TProducto> readAll() {
-		String lectura = "SELECT * FROM productos WHERE stock > 0 FOR UPDATE;";
+		String lectura = "SELECT * FROM producto WHERE stock > 0 FOR UPDATE;";
 		ArrayList<TProducto> retorno = new ArrayList<TProducto>();
 		try {
 			Connection conn = Connections.getInstance();
@@ -89,7 +89,7 @@ public class DaoProductoImp implements DaoProducto {
 	public int delete(int id) {
 		int retorno = -1;
 
-		String borrado = "UPDATE productos SET stock=0 WHERE id=" + id;
+		String borrado = "UPDATE producto SET stock=0 WHERE id=" + id;
 		try {
 			Connection conn =  Connections.getInstance();
 			if (conn != null) {
@@ -107,7 +107,7 @@ public class DaoProductoImp implements DaoProducto {
 	public int update(TProducto tProducto) {
 		int retorno = -1;
 		
-		String actualizacion = "UPDATE productos SET  id='" + tProducto.getId()
+		String actualizacion = "UPDATE producto SET  id='" + tProducto.getId()
 				+ "', nombre='" + tProducto.getNombre() + "', descripcion='" + tProducto.getDescripcion() + "', stock='"
 				+ tProducto.getStock() + "', precio='" + tProducto.getPrecio() + "' WHERE id=" + tProducto.getId();
 		try {
@@ -128,7 +128,7 @@ public class DaoProductoImp implements DaoProducto {
 
 	@Override
 	public TProducto readByID(int id) {
-		String lectura = "SELECT * FROM productos WHERE id=" + id + " FOR UPDATE;";
+		String lectura = "SELECT * FROM producto WHERE id=" + id + " FOR UPDATE;";
 		TProducto retorno = null;
 		try {
 			Connection conn = Connections.getInstance();
@@ -144,6 +144,28 @@ public class DaoProductoImp implements DaoProducto {
 			retorno = null;
 		}
 		return retorno;
+	}
+	
+	@Override
+	public TProducto readByNombre(String nombre) {
+		String lectura = "SELECT * FROM producto WHERE Nombre=" + nombre + " FOR UPDATE;";
+		TProducto retorno = null;
+		try {
+			Connection conn = Connections.getInstance();
+			if (conn != null) {
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(lectura);
+				if (rs.next()) {
+					retorno = new TProducto(rs.getInt("id"), nombre, rs.getString("descripcion"),
+							rs.getInt("stock"),rs.getFloat("precio"));
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			retorno = null;
+		}
+		return retorno;
+		
 	}
 
 }

@@ -407,6 +407,7 @@ public enum Evento {
 	crearVentanaProveedores,
 	
 	readByIDProductosCommand,
+	createProductoErrorExisteCommand,
 	
 	
 	

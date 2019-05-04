@@ -14,12 +14,16 @@ public class SAProductoImp implements SAProducto  {
 	@Override
 	public int create(TProducto producto) {
 		
-		//Comprobar mediante readByNombre(hacer metodo) si el producto a añadir ya existe 
 		//Si existe solo se cambiaria el stock
 		//Si no existe se crea normal
 		
+		TProducto t =FactoriaIntegracion.getInstance().crearDaoProducto().readByNombre(producto.getNombre());
+		if(t==null){
+			return FactoriaIntegracion.getInstance().crearDaoProducto().create(producto);
+		}else{
+			return -1;
+		}
 		
-		return FactoriaIntegracion.getInstance().crearDaoProducto().create(producto);
 	}
 
 	@Override
@@ -49,4 +53,5 @@ public class SAProductoImp implements SAProducto  {
 	public TProducto readById(int id) {
 		return FactoriaIntegracion.getInstance().crearDaoProducto().readByID(id);
 	}
+
 }

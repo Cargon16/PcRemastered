@@ -23,6 +23,8 @@ public interface SAProducto {
 
 	public TProducto readById(int id);
 
+
+
 	
 
 	

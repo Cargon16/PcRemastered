@@ -52,5 +52,7 @@ public interface DaoProducto {
 	
 	public TProducto readByID(int Id);
 
+	public TProducto readByNombre(String nombre);
+
 	
 }
