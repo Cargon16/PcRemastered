@@ -83,6 +83,7 @@ public class VentanaClientesImp extends VentanaClientes{
 				panel2.add(paneles.get(0),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane()); 
 				
+				
 			}
 		});
 		panel_1.add(botonanadir);

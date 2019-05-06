@@ -39,8 +39,12 @@ public class SAProductoImp implements SAProducto  {
 	@Override
 	public int update(TProducto Producto) {
 		//Comprobar que el producto existe mediante su ID
+		TProducto t=FactoriaIntegracion.getInstance().crearDaoProducto().readByID(Producto.getId());
+		if(t==null){
+			return FactoriaIntegracion.getInstance().crearDaoProducto().update(Producto);
+		}else return -1;
 		
-		return FactoriaIntegracion.getInstance().crearDaoProducto().update(Producto);
+		
 	}
 
 	@Override

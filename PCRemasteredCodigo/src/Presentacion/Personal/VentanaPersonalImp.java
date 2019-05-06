@@ -137,7 +137,7 @@ public class VentanaPersonalImp extends VentanaPersonal {
         public void windowClosing(WindowEvent e)
         {
             System.out.println("Closed");
-            VentanaClientes.setInstance(null);        }
+            VentanaPersonalImp.setInstance(null);        }
     });
 	}
 	

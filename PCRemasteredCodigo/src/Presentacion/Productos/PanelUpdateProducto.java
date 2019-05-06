@@ -28,6 +28,10 @@ import Presentacion.Controlador.Controller;
  */
 public class PanelUpdateProducto extends JPanel implements Ventana {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField nombre;
 	private JTextField descripcion;
 	private JTextField stock;
@@ -80,41 +84,44 @@ public class PanelUpdateProducto extends JPanel implements Ventana {
 			JButton botonBuscar = new JButton("Buscar");
 			botonBuscar.setBounds(427, 28, 222, 23);
 			add(botonBuscar);
-			
-		
+
+
 			botonBuscar.addActionListener(new ActionListener() {
-				
+
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					// TODO Auto-generated method stub
-					
+
 					try{
-						
-						Contexto contexto = new Contexto(Evento.readProductoCommand, Integer.valueOf(campoFindId.getText()));
+
+						Contexto contexto = new Contexto(Evento.readByIDProductoCommand, Integer.valueOf(campoFindId.getText()));
 						Controller.getInstance().ejecutar(contexto);
-						producto = (TProducto) contexto.getDatos();
-						
-						nombre.setText(producto.getNombre());
-						add(nombre);
-						add(labelNombre);
-						
-						descripcion.setText(producto.getDescripcion());
-						add(descripcion);
-						add(labelDescripcion);
-						
-						stock.setText(Integer.toString( producto.getStock()));
-						add(stock);
-						add(labelStock);
-						
-						precio.setText(Float.toString(producto.getPrecio()));
-						add(precio);
-						add(labelPrecio);
-						
-						buttonActualizar.setVisible(true);
+						if(contexto.getDatos()!=null){
+							producto = (TProducto) contexto.getDatos();
+
+							nombre.setText(producto.getNombre());
+							add(nombre);
+							add(labelNombre);
+
+							descripcion.setText(producto.getDescripcion());
+							add(descripcion);
+							add(labelDescripcion);
+
+							stock.setText(Integer.toString( producto.getStock()));
+							add(stock);
+							add(labelStock);
+
+							precio.setText(Float.toString(producto.getPrecio()));
+							add(precio);
+							add(labelPrecio);
+
+							buttonActualizar.setVisible(true);
+
+						}
+
 						repaint();
-						
+
 					}catch( Exception ex){
-						System.out.println(Integer.valueOf(botonBuscar.getText()));
 						nombre.setText("");
 						descripcion.setText("");
 						stock.setText("");

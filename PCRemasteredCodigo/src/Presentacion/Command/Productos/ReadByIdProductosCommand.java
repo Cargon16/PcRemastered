@@ -11,7 +11,7 @@ public class ReadByIdProductosCommand implements Command {
 	@Override
 	public Contexto ejecutar(Contexto contexto) {
 		TProducto i= FactoriaNegocio.getInstance().crearSAProductos().readById((int) contexto.getDatos());
-		if(i.equals(null)){
+		if(i==null){
 			contexto.setEvento(Evento.readByIDProdcutoErrorCommand);
 		}
 		contexto.setDatos(i);
