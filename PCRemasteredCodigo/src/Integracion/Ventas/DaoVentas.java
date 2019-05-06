@@ -18,7 +18,6 @@ import Integracion.Productos.TProducto;
  */
 public interface DaoVentas {
 	
-	public int create(TVentas venta);
 
 	public TVentas readbyID(int idVenta);
 
@@ -27,9 +26,11 @@ public interface DaoVentas {
 	public int update( TVentas venta);
 
 	public int delete( int idVenta);
+
+	int abrirVenta(TVentas venta);
 	
-	public int anadirLineaVenta(TVentas venta, int IDProducto);
 	
-	public int eliminarLineaVenta(TVentas venta, int IDProducto);
+
+	int añadirLineaVenta(TLineaVentas lineaVenta);
 	
 }

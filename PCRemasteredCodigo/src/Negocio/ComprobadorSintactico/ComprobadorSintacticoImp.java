@@ -82,7 +82,7 @@ public class ComprobadorSintacticoImp extends ComprobadorSintactico {
 		int miDNI = Integer.parseInt(cadena.substring(0, 8));
 		int resto =0;
 		String miLetra="";
-		String[] letra = {"T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","k","E"};
+		String[] letra = {"T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E"};
 		
 		resto=miDNI %23;
 		

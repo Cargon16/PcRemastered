@@ -92,4 +92,6 @@ public interface SAVentas {
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_4awQ8EmMEemqEfCnrOzXGQ"
 	*/
 	public int closeVenta(int id);
+
+	public TVentas AddProductoVenta(int idVenta, int producto, int cantidad);
 }

@@ -12,17 +12,16 @@ import Integracion.Clientes.TCliente;
 
 
 public class TVentas {
-	
+	private Integer ID;
 	private float precio;
 	private Date fecha;
 	private Boolean pagado;
 	private Boolean devuelto;
 	private HashMap<Integer,TLineaVentas> lineasVenta = new HashMap<Integer,TLineaVentas>();
-	private TCliente cliente;
-	private Integer ID;
-	
+	private Integer IDCliente;
+	private Integer IDPersonal;
 	public TVentas(Integer iD, float precio, Date fecha, Boolean pagado, Boolean devuelto,
-				HashMap<Integer,TLineaVentas> tLineaVentas,TCliente cliente) {
+				HashMap<Integer,TLineaVentas> tLineaVentas,int cliente, int idempleado) {
 			super();
 			this.ID = iD;
 			this.precio = precio;
@@ -30,7 +29,8 @@ public class TVentas {
 			this.pagado = pagado;
 			this.devuelto = devuelto;
 			this.lineasVenta = tLineaVentas;
-			this.cliente = cliente;
+			this.IDCliente = cliente;
+			this.IDPersonal = idempleado;
 	}
 
 	public float getPrecio() {
@@ -73,14 +73,6 @@ public class TVentas {
 		this.lineasVenta = lineasVenta;
 	}
 
-	public TCliente getCliente() {
-		return cliente;
-	}
-
-	public void setCliente(TCliente cliente) {
-		this.cliente = cliente;
-	}
-
 	public Integer getID() {
 		return ID;
 	}
@@ -88,5 +80,24 @@ public class TVentas {
 	public void setID(Integer iD) {
 		ID = iD;
 	}
+
+	public Integer getIDCliente() {
+		return IDCliente;
+	}
+
+	public void setIDCliente(Integer iDCliente) {
+		IDCliente = iDCliente;
+	}
+
+
+	public Integer getIDPersonal() {
+		return IDPersonal;
+	}
+
+	public void setIDPersonal(Integer iDPersonal) {
+		IDPersonal = iDPersonal;
+	}
+
+	
 		
 }

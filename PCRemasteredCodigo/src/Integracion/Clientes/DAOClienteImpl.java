@@ -94,7 +94,6 @@ public class DAOClienteImpl implements DAOCliente {
 		return retorno;
 	}
 
-
 	@Override
 	public int update(TCliente tCliente) {
 		int retorno = -1;

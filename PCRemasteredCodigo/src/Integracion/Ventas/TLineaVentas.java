@@ -3,6 +3,8 @@
  */
 package Integracion.Ventas;
 
+import Integracion.Productos.TProducto;
+
 /** 
  * <!-- begin-UML-doc -->
  * <!-- end-UML-doc -->
@@ -13,13 +15,8 @@ package Integracion.Ventas;
  */
 public class TLineaVentas {
 
-	public TLineaVentas(Integer iDVenta, Integer iDProducto, Integer cantidad, float precioTotal) {
-		super();
-		this.IDVenta = iDVenta;
-		this.IDProducto = iDProducto;
-		this.cantidad = cantidad;
-		this.precioTotal = precioTotal;
-	}
+	
+	
 
 	private Integer IDVenta;
 
@@ -27,9 +24,16 @@ public class TLineaVentas {
 
 	private Integer cantidad;
 
-	private float precioTotal;
 
 	
+
+	public TLineaVentas(Integer iDVenta, Integer iDProducto, Integer cantidad) {
+		super();
+		this.IDVenta = iDVenta;
+		this.IDProducto = iDProducto;
+		this.cantidad = cantidad;
+	}
+
 	public Integer getIDVenta() {
 		return IDVenta;
 	}
@@ -54,13 +58,6 @@ public class TLineaVentas {
 		this.cantidad = cantidad;
 	}
 
-	public float getPrecioTotal() {
-		return precioTotal;
-	}
-
-	public void setPrecioTotal(float precioTotal) {
-		this.precioTotal = precioTotal;
-	}
 
 	
 	/** 
