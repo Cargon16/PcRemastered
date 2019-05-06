@@ -142,7 +142,7 @@ public class VentanaEnvioImp extends VentanaEnvio {
         public void windowClosing(WindowEvent e)
         {
             System.out.println("Closed");
-            VentanaClientes.setInstance(null);        }
+            VentanaEnvioImp.setInstance(null);        }
     });
 	}
 	

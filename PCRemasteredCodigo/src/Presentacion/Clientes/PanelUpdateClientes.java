@@ -142,6 +142,7 @@ public class PanelUpdateClientes extends JPanel implements Ventana{
 
 	@Override
 	public void Actualizar(Contexto contexto) {
+		/*
 		c = (TCliente) contexto.getDatos();
 		dni.setText(c.getDNI());
 		add(dni);
@@ -177,6 +178,6 @@ public class PanelUpdateClientes extends JPanel implements Ventana{
 	}
 
 }
-		
+		*/
 	}
 }
