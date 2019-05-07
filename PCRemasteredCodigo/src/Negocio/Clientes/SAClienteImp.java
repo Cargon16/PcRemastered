@@ -35,12 +35,12 @@ public class SAClienteImp implements SACliente {
 
 	public int update(TCliente tCliente) {
 		// comprobar que el cliente existe -- ReaDByDNI
-		int retorno =-1; 
+		 
 		TCliente c = FactoriaIntegracion.getInstance().crearDaoCliente().readByDNI(tCliente.getDNI());
-		if (c!=null){
-			retorno = FactoriaIntegracion.getInstance().crearDaoCliente().update(tCliente);
+		if (c==null){
+			return FactoriaIntegracion.getInstance().crearDaoCliente().update(tCliente);
 		}
-		return retorno;
+		return -1;
 	}
 
 	public int delete(int id) {

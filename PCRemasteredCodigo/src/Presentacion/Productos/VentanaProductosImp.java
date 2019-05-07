@@ -174,7 +174,7 @@ public class VentanaProductosImp extends VentanaProducto {
 		switch(c.getEvento()){
 		case createProductoCommand : JOptionPane.showMessageDialog(null, "Se ha creado el producto nuevo con id" + c.getDatos()); break;
 		case createProductoErrorCommand : JOptionPane.showMessageDialog(null, "No se ha podido anadir el producto"); break;
-		case readProductoCommand: readById.Actualizar(c); break;
+		case readProductoCommand: readById.Actualizar(c); updateProducto.Actualizar(c);break;
 		case readProductoErrorCommand : JOptionPane.showMessageDialog(null, "El producto no existe");break;
 		case deleteProductoCommand : JOptionPane.showMessageDialog(null, "Se ha eliminado el producto con id " + c.getDatos()+"\n  exitosamente ");break;
 		case deleteProductoErrorCommand: JOptionPane.showMessageDialog(null, "El producto no existe");break;

@@ -151,7 +151,7 @@ public class VentanaClientesImp extends VentanaClientes{
 		switch (c.getEvento()) {
 		case createClienteCommnad: JOptionPane.showMessageDialog(null, "Se ha creado el cliente nuevo con id " +c.getDatos()); break;
 		case createClienteErrorCommand: JOptionPane.showMessageDialog(null, "No se ha podido añadir el cliente"); break;
-		case readClienteCommand: mID.Actualizar(c);break;
+		case readClienteCommand: mID.Actualizar(c);actualizar.Actualizar(c);break;
 		case readClienteErrorCommand: JOptionPane.showMessageDialog(null, "El cliente no existe");break;
 		case deleteClienteCommand:JOptionPane.showMessageDialog(null, "Se ha eliminado el cliente con id" +c.getDatos() + "\n existosamente") ;break;
 		case deleteClienteErrorCommand: if ( (int)c.getDatos() ==-1)
@@ -161,6 +161,7 @@ public class VentanaClientesImp extends VentanaClientes{
 													;break;
 		case readAllClienteCommand: mAll.Actualizar(c); break;
 		case readAllClienteErrorCommand:JOptionPane.showMessageDialog(null, "No hay clientes registrados \n en la base de datos");break;
+		case updateClienteErrorCommand : JOptionPane.showMessageDialog(null, "No ha sido posible actualizar");break;
 		default:
 			break;
 		}

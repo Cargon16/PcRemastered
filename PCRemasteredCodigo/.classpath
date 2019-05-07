@@ -2,6 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/USUARIO/Desktop/mariadb-java-client-2.4.1.jar"/>
+	<classpathentry kind="lib" path="/home/nacho710/Descargas/mariadb-java-client-2.4.1.jar"/>
 	<classpathentry kind="output" path="src"/>
 </classpath>

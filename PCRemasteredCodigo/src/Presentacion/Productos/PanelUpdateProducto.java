@@ -37,6 +37,12 @@ public class PanelUpdateProducto extends JPanel implements Ventana {
 	private JTextField precio;
 	private TProducto producto;
 	private JTextField campoFindId;
+	private JLabel labelNombre;
+	private JLabel labelDescripcion;
+	private JLabel labelStock;
+	private JLabel labelPrecio;
+	private JButton buttonActualizar;
+	private JButton botonBuscar;
 	
 	
 	 public PanelUpdateProducto() {
@@ -46,41 +52,49 @@ public class PanelUpdateProducto extends JPanel implements Ventana {
 			nombre = new JTextField();
 			nombre.setColumns(10);
 			nombre.setBounds(49, 80, 279, 57);
+			add(nombre);
 
-			JLabel labelNombre = new JLabel("Nombre");
+			labelNombre = new JLabel("Nombre");
 			labelNombre.setBounds(386, 101, 46, 14);
+			add(labelNombre);
 
 			descripcion = new JTextField();
 			descripcion.setColumns(10);
 			descripcion.setBounds(49, 148, 279, 57);
+			add(descripcion);
 
-			JLabel labelDescripcion = new JLabel("Descripcion");
+			labelDescripcion = new JLabel("Descripcion");
 			labelDescripcion.setBounds(386, 169, 46, 14);
+			add(labelDescripcion);
 
 			stock = new JTextField();
 			stock.setColumns(10);
 			stock.setBounds(49, 216, 279, 57);
+			add(stock);
 
-			JLabel labelStock = new JLabel("Stock");
+			labelStock = new JLabel("Stock");
 			labelStock.setBounds(386, 237, 75, 14);
+			add(labelStock);;
 			
 			precio = new JTextField();
 			precio.setColumns(10);
 			precio.setBounds(49, 284, 279, 57);
+			add(precio);
 			
-			JLabel labelPrecio = new JLabel("Precio");
+			labelPrecio = new JLabel("Precio");
 			labelPrecio.setBounds(386, 305, 75, 14);
+			add(labelPrecio);
 			
-			JButton buttonActualizar = new JButton("Actualizar");
+			buttonActualizar = new JButton("Actualizar");
 			buttonActualizar.setBounds(517, 329, 132, 43);
 			add(buttonActualizar);
 			
 			campoFindId = new JTextField();
 			campoFindId.setBounds(49, 29, 368, 20);
-			add(campoFindId);
 			campoFindId.setColumns(10);
+			add(campoFindId);
 			
-			JButton botonBuscar = new JButton("Buscar");
+			botonBuscar = new JButton("Buscar");
 			botonBuscar.setBounds(427, 28, 222, 23);
 			add(botonBuscar);
 
@@ -89,44 +103,10 @@ public class PanelUpdateProducto extends JPanel implements Ventana {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					// TODO Auto-generated method stub
-
-					try{
-
+					// TODO Auto-generated method stu
 						Contexto contexto = new Contexto(Evento.readProductoCommand, Integer.valueOf(campoFindId.getText()));
 						Controller.getInstance().ejecutar(contexto);
-						if(contexto.getDatos()!=null){
-							producto = (TProducto) contexto.getDatos();
-
-							nombre.setText(producto.getNombre());
-							add(nombre);
-							add(labelNombre);
-
-							descripcion.setText(producto.getDescripcion());
-							add(descripcion);
-							add(labelDescripcion);
-
-							stock.setText(Integer.toString( producto.getStock()));
-							add(stock);
-							add(labelStock);
-
-							precio.setText(Float.toString(producto.getPrecio()));
-							add(precio);
-							add(labelPrecio);
-
-							buttonActualizar.setVisible(true);
-
-						}
-
-						repaint();
-
-					}catch( Exception ex){
-						nombre.setText("");
-						descripcion.setText("");
-						stock.setText("");
-						precio.setText("");
 						
-					}
 					
 					
 				}
@@ -144,12 +124,16 @@ public class PanelUpdateProducto extends JPanel implements Ventana {
 					producto.setPrecio(Float.valueOf(precio.getText()));
 					
 					try {
+						
 						Contexto contexto = new Contexto(Evento.updateProductoCommand, (TProducto) producto);
 						Controller.getInstance().ejecutar(contexto);
+						
+						
 					} catch (Exception ex) {;}
 					
 				}
 			});
+			
 
 		 
 		 
@@ -159,6 +143,27 @@ public class PanelUpdateProducto extends JPanel implements Ventana {
 	@Override
 	public void Actualizar(Contexto contexto) {
 		// TODO Auto-generated method stub
+		try{
+
+		if(contexto.getDatos()!=null){
+			producto = (TProducto) contexto.getDatos();
+			nombre.setText(producto.getNombre());
+			descripcion.setText(producto.getDescripcion());
+			stock.setText(Integer.toString( producto.getStock()));
+			precio.setText(Float.toString(producto.getPrecio()));
+			buttonActualizar.setVisible(true);
+
+		}
+
+		repaint();
+
+	}catch( Exception ex){
+		nombre.setText("");
+		descripcion.setText("");
+		stock.setText("");
+		precio.setText("");
+		
+	}
 		
 		
 	}

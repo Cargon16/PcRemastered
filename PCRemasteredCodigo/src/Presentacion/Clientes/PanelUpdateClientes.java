@@ -19,6 +19,10 @@ import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
 
 public class PanelUpdateClientes extends JPanel implements Ventana{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField dni;
 	private JTextField nombre;
 	private JTextField telefono;
@@ -29,6 +33,10 @@ public class PanelUpdateClientes extends JPanel implements Ventana{
 	private JLabel label_2;
 	private JLabel label_3;
 	private TCliente c;
+	private JRadioButton activoRB;
+	private JRadioButton inactivoRB;
+	private JButton botonFind;
+	private JButton button;
 
 	/**
 	 * Create the panel.
@@ -39,34 +47,41 @@ public class PanelUpdateClientes extends JPanel implements Ventana{
 		dni = new JTextField();
 		dni.setColumns(10);
 		dni.setBounds(49, 80, 279, 57);
-		// add(dni);
+		add(dni);
 
 		label = new JLabel("DNI");
 		label.setBounds(386, 101, 46, 14);
+		add(label);
 
 		nombre = new JTextField();
 		nombre.setColumns(10);
 		nombre.setBounds(49, 148, 279, 57);
+		add(nombre);
 
 		label_1 = new JLabel("Nombre");
 		label_1.setBounds(386, 169, 46, 14);
+		add(label_1);
 
 		telefono = new JTextField();
 		telefono.setColumns(10);
 		telefono.setBounds(49, 216, 279, 57);
+		add(telefono);
 
 		label_2= new JLabel("Telefono");
 		label_2.setBounds(386, 237, 75, 14);
-		
+		add(label_2);
+
 		direccion = new JTextField();
 		direccion.setColumns(10);
 		direccion.setBounds(49, 284, 279, 57);
+		add(direccion);
 
-		 label_3 = new JLabel("Direcci�n");
+		label_3 = new JLabel("Direcci�n");
 		label_3.setBounds(386, 305, 75, 14);
+		add(label_3);
 
 
-		JButton button = new JButton("Actualizar");
+		button = new JButton("Actualizar");
 
 		button.setBounds(517, 329, 132, 43);
 		// add(button);
@@ -77,13 +92,13 @@ public class PanelUpdateClientes extends JPanel implements Ventana{
 		add(botonfindtext);
 		botonfindtext.setColumns(10);
 
-		JButton botonFind = new JButton("Buscar");
+		botonFind = new JButton("Buscar");
 
 		botonFind.setBounds(427, 28, 222, 23);
 		add(botonFind);
 
-		JRadioButton activoRB = new JRadioButton("Activo");
-		JRadioButton inactivoRB = new JRadioButton("Inactivo");
+		activoRB = new JRadioButton("Activo");
+		inactivoRB = new JRadioButton("Inactivo");
 		activoRB.setVisible(false);
 		inactivoRB.setVisible(false);
 		activoRB.setToolTipText("Activo");
@@ -93,9 +108,9 @@ public class PanelUpdateClientes extends JPanel implements Ventana{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				
-					Contexto contexto = new Contexto(Evento.readClienteCommand, Integer.valueOf(botonfindtext.getText()));
-					Controller.getInstance().ejecutar(contexto);
+
+				Contexto contexto = new Contexto(Evento.readClienteCommand, Integer.valueOf(botonfindtext.getText()));
+				Controller.getInstance().ejecutar(contexto);
 			}
 		});
 
@@ -142,42 +157,33 @@ public class PanelUpdateClientes extends JPanel implements Ventana{
 
 	@Override
 	public void Actualizar(Contexto contexto) {
-		/*
-		c = (TCliente) contexto.getDatos();
-		dni.setText(c.getDNI());
-		add(dni);
-		add(label);
-		nombre.setText(c.getNombre());
-		add(nombre);
-		add(label_1);
-		telefono.setText(c.getTelefono().toString());
-		add(telefono);
-		add(label_2);
-		direccion.setText(c.getDireccion().toString());
-		add(direccion);
-		add(label_3);
-		inactivoRB.setSelected(false);
-		activoRB.setSelected(false);
-		if (c.isActivo())
-			activoRB.setSelected(true);
-		else
-			inactivoRB.setSelected(true);
-		activoRB.setVisible(true);
-		inactivoRB.setVisible(true);
+		try{
+			c = (TCliente) contexto.getDatos();
+			dni.setText(c.getDNI());
+			nombre.setText(c.getNombre());
+			telefono.setText(c.getTelefono().toString());
+			direccion.setText(c.getDireccion().toString());
+			inactivoRB.setSelected(false);
+			activoRB.setSelected(false);
+			if (c.isActivo())
+				activoRB.setSelected(true);
+			else
+				inactivoRB.setSelected(true);
+			activoRB.setVisible(true);
+			inactivoRB.setVisible(true);
 
-		button.setVisible(true);
+			button.setVisible(true);
 
-		repaint();
-	}
+			repaint();
+		}
 
-	catch (Exception ex) {
-		dni.setText("");
-		nombre.setText("");
-		telefono.setText("");
+		catch (Exception ex) {
+			dni.setText("");
+			nombre.setText("");
+			telefono.setText("");
+
+		}
 
 	}
 
-}
-		*/
-	}
 }
