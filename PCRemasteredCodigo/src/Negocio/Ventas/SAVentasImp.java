@@ -14,7 +14,11 @@ import Integracion.Ventas.TVentas;
 public class SAVentasImp implements SAVentas {
 	
 	public int create(TVentas tVenta) {
+		
 		// creo la instancia venta con los datos a null excepto el id 
+		//al darle al boton de nueva venta crea la venta null y para pasar a añadir productos,
+		
+		
 		return FactoriaIntegracion.getInstance().crearDaoVenta().abrirVenta(tVenta);
 	}
 	@Override

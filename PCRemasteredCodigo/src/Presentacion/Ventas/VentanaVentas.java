@@ -3,7 +3,12 @@
  */
 package Presentacion.Ventas;
 
+import javax.swing.JFrame;
+
 import Presentacion.Ventana;
+import Presentacion.Clientes.VentanaClientes;
+import Presentacion.Clientes.VentanaClientesImp;
+import Presentacion.Command.Contexto;
 
 /** 
  * <!-- begin-UML-doc -->
@@ -13,43 +18,30 @@ import Presentacion.Ventana;
  *     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_Fa07AlMPEemdZLpuw9I4eQ"
  * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_Fa07AlMPEemdZLpuw9I4eQ"
  */
-public class VentanaVentas implements Ventana {
+public abstract class VentanaVentas extends JFrame implements Ventana{
 	/** 
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->
 	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_Fa07BFMPEemdZLpuw9I4eQ"
 	*/
-	private VentanaVentas instance;
+private static final long serialVersionUID = 1L;
+	
+	private static VentanaVentas instance = null;
 
-	/** 
-	* @return the instance
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_Fa07BFMPEemdZLpuw9I4eQ?GETTER"
-	*/
-	public VentanaVentas getInstance() {
-		// begin-user-code
+	
+	public static VentanaVentas getInstance() {
+		if ( instance==null){
+			instance = new VentanaVentasImp();
+		}
 		return instance;
-		// end-user-code
 	}
 
-	/** 
-	* @param instance the instance to set
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_Fa07BFMPEemdZLpuw9I4eQ?SETTER"
-	*/
-	public void setInstance(VentanaVentas instance) {
-		// begin-user-code
-		this.instance = instance;
-		// end-user-code
-	}
 
-	/** 
-	* (non-Javadoc)
-	* @see Ventana#Actualizar()
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_Fa07AVMPEemdZLpuw9I4eQ?INHERITED"
-	*/
-	public void Actualizar() {
-		// begin-user-code
+	public static void setInstance(Object object) {
 		// TODO Auto-generated method stub
-
-		// end-user-code
+		instance=null;
+	
 	}
+
+
 }
