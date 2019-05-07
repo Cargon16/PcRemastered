@@ -40,7 +40,7 @@ public class VentanaVentasImp extends VentanaVentas implements Ventana {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private PanelAddClientes anadir = new PanelAddClientes();
+	private PanelAbrirVentas anadir = new PanelAbrirVentas();
 	private PanelDeleteClientes eliminar = new PanelDeleteClientes();
 	private PanelUpdateClientes actualizar = new PanelUpdateClientes();
 	private PanelReadByIdClientes mID = new PanelReadByIdClientes();
