@@ -93,7 +93,7 @@ public class PanelUpdateProducto extends JPanel implements Ventana {
 
 					try{
 
-						Contexto contexto = new Contexto(Evento.readByIDProductoCommand, Integer.valueOf(campoFindId.getText()));
+						Contexto contexto = new Contexto(Evento.readProductoCommand, Integer.valueOf(campoFindId.getText()));
 						Controller.getInstance().ejecutar(contexto);
 						if(contexto.getDatos()!=null){
 							producto = (TProducto) contexto.getDatos();
@@ -141,7 +141,7 @@ public class PanelUpdateProducto extends JPanel implements Ventana {
 					producto.setNombre(nombre.getText());
 					producto.setDescripcion(descripcion.getText());
 					producto.setStock(Integer.valueOf(stock.getText()));
-					producto.setPrecio(Integer.valueOf(precio.getText()));
+					producto.setPrecio(Float.valueOf(precio.getText()));
 					
 					try {
 						Contexto contexto = new Contexto(Evento.updateProductoCommand, (TProducto) producto);

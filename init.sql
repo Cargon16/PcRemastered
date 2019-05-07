@@ -53,7 +53,7 @@ CREATE TABLE envios (
 );
 create table producto(
 ID int (11) not null auto_increment,
-Nombre varchar(50),
+Nombre varchar(50) unique,
 Descripcion varchar (50),
 precio float,
 stock int,
