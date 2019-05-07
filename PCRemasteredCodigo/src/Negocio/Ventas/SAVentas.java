@@ -3,11 +3,10 @@
  */
 package Negocio.Ventas;
 
-import Integracion.Ventas.TVentas;
-
 import java.util.ArrayList;
-import java.util.Set;
+
 import Integracion.Productos.TProducto;
+import Integracion.Ventas.TVentas;
 
 /** 
 * <!-- begin-UML-doc -->

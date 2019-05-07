@@ -20,7 +20,6 @@ import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
-import Presentacion.VentanaPrincipal;
 import Presentacion.Command.Contexto;
 
 public class VentanaClientesImp extends VentanaClientes{

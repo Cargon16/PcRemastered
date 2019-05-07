@@ -12,7 +12,6 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
-import Integracion.Clientes.TCliente;
 import Integracion.Personal.TPersonal;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
@@ -66,7 +65,7 @@ public class PanelUpdatePersonal extends JPanel {
 		contrasena.setColumns(10);
 		contrasena.setBounds(49, 284, 279, 57);
 
-		JLabel label_3 = new JLabel("Contraseña");
+		JLabel label_3 = new JLabel("Contraseï¿½a");
 		label_3.setBounds(386, 305, 75, 14);
 
 
@@ -86,11 +85,11 @@ public class PanelUpdatePersonal extends JPanel {
 		botonFind.setBounds(427, 28, 222, 23);
 		add(botonFind);
 
-		JRadioButton activoRB = new JRadioButton("En nómina");
+		JRadioButton activoRB = new JRadioButton("En nï¿½mina");
 		JRadioButton inactivoRB = new JRadioButton("Despedido");
 		activoRB.setVisible(false);
 		inactivoRB.setVisible(false);
-		activoRB.setToolTipText("En nómina");
+		activoRB.setToolTipText("En nï¿½mina");
 		activoRB.setBounds(49, 349, 109, 23);
 		activoRB.setOpaque(false);
 		botonFind.addActionListener(new ActionListener() {

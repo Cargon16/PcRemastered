@@ -2,7 +2,6 @@ package Presentacion.Command.Personal;
 
 import java.util.ArrayList;
 
-import Integracion.Envios.TEnvio;
 import Integracion.Personal.TPersonal;
 import Negocio.Factorias.FactoriaNegocio;
 import Presentacion.Command.Command;

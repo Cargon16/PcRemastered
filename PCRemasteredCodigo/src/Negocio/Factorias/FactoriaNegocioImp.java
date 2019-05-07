@@ -3,9 +3,6 @@
  */
 package Negocio.Factorias;
 
-import java.util.Set;
-
-import Integracion.Personal.TPersonal;
 import Negocio.Clientes.SACliente;
 import Negocio.Clientes.SAClienteImp;
 import Negocio.Envios.SAEnvio;

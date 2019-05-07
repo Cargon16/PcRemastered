@@ -3,9 +3,9 @@
  */
 package Negocio.Personal;
 
-import Integracion.Personal.TPersonal;
-
 import java.util.ArrayList;
+
+import Integracion.Personal.TPersonal;
 
 
 public interface SAPersonal {

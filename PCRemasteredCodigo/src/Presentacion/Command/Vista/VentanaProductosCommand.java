@@ -2,7 +2,6 @@ package Presentacion.Command.Vista;
 
 import Presentacion.Command.Command;
 import Presentacion.Command.Contexto;
-import Presentacion.Personal.VentanaPersonal;
 import Presentacion.Productos.VentanaProducto;
 
 public class VentanaProductosCommand implements Command{

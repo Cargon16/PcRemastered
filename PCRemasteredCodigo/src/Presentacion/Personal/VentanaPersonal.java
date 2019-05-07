@@ -6,8 +6,6 @@ package Presentacion.Personal;
 import javax.swing.JFrame;
 
 import Presentacion.Ventana;
-import Presentacion.Envios.VentanaEnvio;
-import Presentacion.Envios.VentanaEnvioImp;
 
 
 public abstract class VentanaPersonal extends JFrame implements Ventana {

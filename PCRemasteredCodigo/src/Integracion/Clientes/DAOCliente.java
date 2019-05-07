@@ -1,10 +1,11 @@
+package Integracion.Clientes;
 /**
  * 
  */
-package Integracion.Clientes;
 
 import java.util.ArrayList;
 
+import Integracion.Clientes.TCliente;
 
 public interface DAOCliente {
 

@@ -19,7 +19,6 @@ import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
-import Presentacion.Clientes.VentanaClientes;
 import Presentacion.Command.Contexto;
 
 

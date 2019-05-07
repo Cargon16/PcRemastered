@@ -15,7 +15,6 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ScrollPaneConstants;
 
-import Integracion.Clientes.TCliente;
 import Integracion.Productos.TProducto;
 import Presentacion.Ventana;
 import Presentacion.Command.Contexto;

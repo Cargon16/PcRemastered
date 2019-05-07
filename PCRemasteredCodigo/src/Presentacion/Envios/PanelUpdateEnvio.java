@@ -12,7 +12,6 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
-import Integracion.Clientes.TCliente;
 import Integracion.Envios.TEnvio;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;

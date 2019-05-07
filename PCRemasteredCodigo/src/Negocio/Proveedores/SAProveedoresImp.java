@@ -3,10 +3,10 @@
  */
 package Negocio.Proveedores;
 
+import java.util.ArrayList;
+
 import Integracion.Factorias.FactoriaIntegracion;
 import Integracion.Proveedores.TProveedores;
-
-import java.util.ArrayList;
 
 public class SAProveedoresImp implements SAProveedores {
 	

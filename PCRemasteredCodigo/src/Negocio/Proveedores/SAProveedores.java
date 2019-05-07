@@ -3,10 +3,9 @@
  */
 package Negocio.Proveedores;
 
-import Integracion.Proveedores.TProveedores;
-
 import java.util.ArrayList;
-import java.util.Set;
+
+import Integracion.Proveedores.TProveedores;
 
 /** 
 * <!-- begin-UML-doc -->

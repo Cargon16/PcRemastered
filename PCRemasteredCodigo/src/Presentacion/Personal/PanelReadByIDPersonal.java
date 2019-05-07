@@ -15,7 +15,6 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ScrollPaneConstants;
 
-import Integracion.Envios.TEnvio;
 import Integracion.Personal.TPersonal;
 import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
@@ -80,9 +79,9 @@ public class PanelReadByIDPersonal extends JPanel implements Ventana{
 		String s = null;
 		TPersonal c = (TPersonal) contexto.getDatos();
 		if(c.isActivo())
-			s= "En nómina";
+			s= "En nï¿½mina";
 		else s= "Despedido";
-		textArea.setText("ID: " + c.getID() + "\n" + "Nombre: " + c.getNombre() + "\n"  + "Salario: " + c.getSalario() + " euros\n"  + "Teléfono: " + c.getTelefono() + "\n"  + "Estado: " + s + "\n");
+		textArea.setText("ID: " + c.getID() + "\n" + "Nombre: " + c.getNombre() + "\n"  + "Salario: " + c.getSalario() + " euros\n"  + "Telï¿½fono: " + c.getTelefono() + "\n"  + "Estado: " + s + "\n");
 
 		
 		

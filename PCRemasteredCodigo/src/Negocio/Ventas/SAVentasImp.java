@@ -3,15 +3,12 @@
  */
 package Negocio.Ventas;
 
-import Integracion.Ventas.TLineaVentas;
-import Integracion.Ventas.TVentas;
-
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Set;
 
 import Integracion.Factorias.FactoriaIntegracion;
 import Integracion.Productos.TProducto;
+import Integracion.Ventas.TLineaVentas;
+import Integracion.Ventas.TVentas;
 
 
 public class SAVentasImp implements SAVentas {

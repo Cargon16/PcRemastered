@@ -38,7 +38,6 @@ import Presentacion.Command.Ventas.DeleteVentasCommand;
 import Presentacion.Command.Ventas.ReadAllVentasCommand;
 import Presentacion.Command.Ventas.ReadVentasCommand;
 import Presentacion.Command.Ventas.UpdateVentasCommand;
-
 import Presentacion.Command.Vista.InitCommand;
 import Presentacion.Command.Vista.VentanaClienteCommand;
 import Presentacion.Command.Vista.VentanaEnvioCommand;

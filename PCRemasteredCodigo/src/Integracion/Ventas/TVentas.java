@@ -4,11 +4,7 @@
 package Integracion.Ventas;
 
 import java.sql.Date;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Set;
-
-import Integracion.Clientes.TCliente;
 
 
 public class TVentas {
