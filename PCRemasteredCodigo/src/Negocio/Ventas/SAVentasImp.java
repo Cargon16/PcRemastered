@@ -29,12 +29,13 @@ public class SAVentasImp implements SAVentas {
 		TLineaVentas linea = new TLineaVentas(idVenta, producto, cantidad);
 		TProducto p = FactoriaIntegracion.getInstance().crearDaoProducto().read(producto);
 		if (p.getStock()>=cantidad){
-			FactoriaIntegracion.getInstance().crearDaoVenta().añadirLineaVenta(linea);
+			FactoriaIntegracion.getInstance().crearDaoVenta().addLineaVenta(linea);
 			int nuevoStock = p.getStock()-cantidad;
 			p.setStock(nuevoStock);
 			FactoriaIntegracion.getInstance().crearDaoProducto().update(p);
 			venta = FactoriaIntegracion.getInstance().crearDaoVenta().readbyID(idVenta);
 			float nuevoPrecioTotal = venta.getPrecio() + (p.getPrecio() * cantidad);
+			venta.setPrecio(nuevoPrecioTotal);
 			FactoriaIntegracion.getInstance().crearDaoVenta().update(venta);
 			}
 		}

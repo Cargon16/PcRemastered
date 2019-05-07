@@ -10,7 +10,10 @@ public class DeleteProductosCommand implements Command {
 	@Override
 	public Contexto ejecutar(Contexto contexto) {
 		int i= FactoriaNegocio.getInstance().crearSAProductos().delete(Integer.parseInt((String) contexto.getDatos()));
-		if(i < 1){
+		if(i == -1){
+			contexto.setEvento(Evento.readProductoErrorCommand);
+		}
+		if(i == -2){
 			contexto.setEvento(Evento.deleteProductoErrorCommand);
 		}
 		contexto.setDatos(i);

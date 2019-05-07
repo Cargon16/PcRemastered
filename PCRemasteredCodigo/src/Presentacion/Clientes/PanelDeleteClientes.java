@@ -65,7 +65,8 @@ public class PanelDeleteClientes extends JPanel implements Ventana {
 	}
 	@Override
 	public void Actualizar(Contexto contexto) {
-		// TODO Auto-generated method stub
+		this.revalidate();
+		this.repaint();
 		
 	}
 }

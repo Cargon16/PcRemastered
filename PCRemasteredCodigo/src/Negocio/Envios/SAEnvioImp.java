@@ -11,7 +11,13 @@ import Integracion.Factorias.FactoriaIntegracion;
 public class SAEnvioImp implements SAEnvio {
 	
 	public int create(TEnvio tEnvio) {
-		return FactoriaIntegracion.getInstance().crearDaoEnvios().create(tEnvio);
+		int retorno= -1;
+		TEnvio e = FactoriaIntegracion.getInstance().crearDaoEnvios().readByID(tEnvio.getID());
+		if(e == null){
+			retorno = FactoriaIntegracion.getInstance().crearDaoEnvios().create(tEnvio);
+		}
+		
+		return retorno;
 	
 	}
 
@@ -27,11 +33,23 @@ public class SAEnvioImp implements SAEnvio {
 
 	
 	public int update(TEnvio tEnvio) {
-		return FactoriaIntegracion.getInstance().crearDaoEnvios().update(tEnvio);
+		int retorno= -1;
+		TEnvio e = FactoriaIntegracion.getInstance().crearDaoEnvios().readByID(tEnvio.getID());
+		if(e == null){
+			retorno = FactoriaIntegracion.getInstance().crearDaoEnvios().update(tEnvio);
+		}
+		
+		return retorno;
 	}
 
 	
 	public int delete(int id) {
-		return FactoriaIntegracion.getInstance().crearDaoEnvios().delete(id);
+		int retorno= -1;
+		TEnvio e = FactoriaIntegracion.getInstance().crearDaoEnvios().readByID(id);
+		if(e == null){
+			retorno = FactoriaIntegracion.getInstance().crearDaoEnvios().delete(id);
+		}
+		
+		return retorno;
 	}
 }

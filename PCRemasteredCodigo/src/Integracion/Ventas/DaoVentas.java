@@ -28,6 +28,6 @@ public interface DaoVentas {
 	
 	
 
-	int añadirLineaVenta(TLineaVentas lineaVenta);
+	int addLineaVenta(TLineaVentas lineaVenta);
 	
 }

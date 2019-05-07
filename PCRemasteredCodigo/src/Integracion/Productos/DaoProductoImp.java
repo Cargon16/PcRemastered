@@ -66,7 +66,7 @@ public class DaoProductoImp implements DaoProducto {
 	}
 
 	public ArrayList<TProducto> readAll() {
-		String lectura = "SELECT * FROM producto WHERE stock > 0 FOR UPDATE;";
+		String lectura = "SELECT * FROM producto FOR UPDATE;";
 		ArrayList<TProducto> retorno = new ArrayList<TProducto>();
 		try {
 			Connection conn = Connections.getInstance();
