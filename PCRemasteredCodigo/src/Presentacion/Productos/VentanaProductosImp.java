@@ -177,7 +177,7 @@ public class VentanaProductosImp extends VentanaProducto {
 		case readProductoCommand: readById.Actualizar(c); updateProducto.Actualizar(c);break;
 		case readProductoErrorCommand : JOptionPane.showMessageDialog(null, "El producto no existe");break;
 		case deleteProductoCommand : JOptionPane.showMessageDialog(null, "Se ha eliminado el producto con id " + c.getDatos()+"\n  exitosamente ");break;
-		case deleteProductoErrorCommand: JOptionPane.showMessageDialog(null, "El producto ya fue eliminado");break;
+		case deleteProductoErrorCommand: JOptionPane.showMessageDialog(null, "El producto está agotado");break;
 		case readAllProductoCommand : readAll.Actualizar(c);break;
 		case readAllProductoErrorCommand : JOptionPane.showMessageDialog(null, "No hay productos registrados \n en la base de datos");break;
 		case readByIDProdcutoErrorCommand : JOptionPane.showMessageDialog(null, "El producto no existe");break;
