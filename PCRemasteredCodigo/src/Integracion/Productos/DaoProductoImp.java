@@ -41,7 +41,7 @@ public class DaoProductoImp implements DaoProducto {
 					stmt.close();
 					if(!stmt.isClosed())
 						stmt.close();
-				}catch(SQLException e){e.printStackTrace();}
+				}catch(SQLException e){}
 			}
 		return id;
 	}
@@ -97,7 +97,6 @@ public class DaoProductoImp implements DaoProducto {
 				retorno = id;
 			}
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
 			retorno = -1;
 		}
 		return retorno;
@@ -118,7 +117,7 @@ public class DaoProductoImp implements DaoProducto {
 				retorno = tProducto.getId();
 			}
 		} catch (SQLException e) {
-			System.out.println(e.getMessage());
+			
 			retorno = -1;
 		}
 
@@ -160,7 +159,7 @@ public class DaoProductoImp implements DaoProducto {
 				}
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+			
 			retorno = null;
 		}
 		return retorno;
