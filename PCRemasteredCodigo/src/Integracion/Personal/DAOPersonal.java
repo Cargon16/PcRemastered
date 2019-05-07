@@ -5,8 +5,6 @@ package Integracion.Personal;
 
 import java.util.ArrayList;
 
-import Integracion.Clientes.TCliente;
-
 public interface DAOPersonal {
 
 	public Integer create(TPersonal personal);

@@ -8,12 +8,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import Integracion.Clientes.TCliente;
 import Integracion.Productos.TProducto;
 import Presentacion.Ventana;
 import Presentacion.Command.Contexto;

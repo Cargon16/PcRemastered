@@ -3,10 +3,9 @@
  */
 package Negocio.Productos;
 
-import Integracion.Productos.TProducto;
-
 import java.util.ArrayList;
-import java.util.Set;
+
+import Integracion.Productos.TProducto;
 
 
 public interface SAProducto {

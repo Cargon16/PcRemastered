@@ -3,8 +3,6 @@
  */
 package Integracion.Ventas;
 
-import Integracion.Productos.TProducto;
-
 /** 
  * <!-- begin-UML-doc -->
  * <!-- end-UML-doc -->

@@ -6,8 +6,6 @@ package Presentacion.Envios;
 import javax.swing.JFrame;
 
 import Presentacion.Ventana;
-import Presentacion.Clientes.VentanaClientes;
-import Presentacion.Clientes.VentanaClientesImp;
 
 /** 
 * <!-- begin-UML-doc -->

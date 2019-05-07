@@ -13,7 +13,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 
-import Integracion.Clientes.TCliente;
 import Integracion.Envios.TEnvio;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
@@ -32,7 +31,7 @@ public class PanelReadAllEnvio extends JPanel{
 		setLayout(null);
 		setOpaque(false);
 
-		JButton button = new JButton("Ver los envíos");
+		JButton button = new JButton("Ver los envï¿½os");
 		button.setBounds(208, 36, 262, 57);
 		add(button);
 
@@ -63,7 +62,7 @@ public class PanelReadAllEnvio extends JPanel{
 							s = "En curso";
 						else
 							s = "Entregado";
-						texto = texto + "ID: " + c.getID() + "\n" + "Dirección: " + c.getDireccion() + "\n"  + "Estado: " + s + "\n\n";
+						texto = texto + "ID: " + c.getID() + "\n" + "Direcciï¿½n: " + c.getDireccion() + "\n"  + "Estado: " + s + "\n\n";
 
 					}
 					textArea.setText(texto);

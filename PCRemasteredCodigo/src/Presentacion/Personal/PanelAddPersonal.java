@@ -13,7 +13,6 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
-import Integracion.Clientes.TCliente;
 import Integracion.Personal.TPersonal;
 import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
@@ -53,7 +52,7 @@ public class PanelAddPersonal extends JPanel implements Ventana{
 		passText.setBounds(109, 128, 279, 57);
 		add(passText);
 
-		JLabel label = new JLabel("Contraseña");
+		JLabel label = new JLabel("Contraseï¿½a");
 		label.setBounds(37, 149, 75, 14);
 		add(label);
 		
@@ -101,7 +100,7 @@ public class PanelAddPersonal extends JPanel implements Ventana{
 				activoRB.setSelected(false);
 			}
 		});
-		JButton button = new JButton("Añadir");
+		JButton button = new JButton("Aï¿½adir");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				boolean ok = false ;

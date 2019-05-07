@@ -1,7 +1,9 @@
 package Presentacion;
 
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -9,7 +11,6 @@ import javax.swing.JLabel;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
-import java.awt.Font;
 
 public class VentanaPrincipalImp extends VentanaPrincipal{
 	

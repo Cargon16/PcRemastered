@@ -4,7 +4,6 @@
 package Negocio.Productos;
 
 import java.util.ArrayList;
-import java.util.Set;
 
 import Integracion.Factorias.FactoriaIntegracion;
 import Integracion.Productos.TProducto;

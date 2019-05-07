@@ -5,7 +5,6 @@ package Presentacion.Envios;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,13 +19,6 @@ import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
-import Presentacion.Ventana;
-import Presentacion.Clientes.PanelAddClientes;
-import Presentacion.Clientes.PanelDeleteClientes;
-import Presentacion.Clientes.PanelReadAllClientes;
-import Presentacion.Clientes.PanelReadByIdClientes;
-import Presentacion.Clientes.PanelUpdateClientes;
-import Presentacion.Clientes.VentanaClientes;
 import Presentacion.Command.Contexto;
 
 
@@ -77,12 +69,12 @@ public class VentanaEnvioImp extends VentanaEnvio {
 		paneles.add(mAll);
 	
 		
-		JButton botonanadir = new JButton("Añadir Envío");
+		JButton botonanadir = new JButton("Aï¿½adir Envï¿½o");
 		
 		botonanadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
-				setTitle("Añadir envío");
+				setTitle("Aï¿½adir envï¿½o");
 				panel2.add(paneles.get(0),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane()); 
 				
@@ -90,46 +82,46 @@ public class VentanaEnvioImp extends VentanaEnvio {
 		});
 		panel_1.add(botonanadir);
 		
-		JButton botonEliminar = new JButton("<html>Eliminar <br /> envío</html>");
+		JButton botonEliminar = new JButton("<html>Eliminar <br /> envï¿½o</html>");
 		botonEliminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
-				setTitle("Eliminar envío");
+				setTitle("Eliminar envï¿½o");
 				panel2.add(paneles.get(1),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane()); 
 			}
 		});
 		panel_1.add(botonEliminar);
 		
-		JButton botonActualizar = new JButton("<html>Actualizar<br /> envío</html>");
+		JButton botonActualizar = new JButton("<html>Actualizar<br /> envï¿½o</html>");
 		botonActualizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
-				setTitle("Actualizar envío");
+				setTitle("Actualizar envï¿½o");
 				panel2.add(paneles.get(2),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane()); 
 			}
 		});
 		panel_1.add(botonActualizar);
 		
-		JButton botonMostrarID = new JButton("<html>Mostrar envío<br /> por su ID </html>");
+		JButton botonMostrarID = new JButton("<html>Mostrar envï¿½o<br /> por su ID </html>");
 		
 		botonMostrarID.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
-				setTitle("Mostrar envío por ID");
+				setTitle("Mostrar envï¿½o por ID");
 				panel2.add(paneles.get(3),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane());
 			}
 		});
 		panel_1.add(botonMostrarID);
 		
-		JButton botonMostrarTodo = new JButton("<html>Mostrar todos<br /> los envíos</html>");
+		JButton botonMostrarTodo = new JButton("<html>Mostrar todos<br /> los envï¿½os</html>");
 		
 		botonMostrarTodo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
-				setTitle("Mostrar todos los envíos ");
+				setTitle("Mostrar todos los envï¿½os ");
 				panel2.add(paneles.get(4),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane());
 			}

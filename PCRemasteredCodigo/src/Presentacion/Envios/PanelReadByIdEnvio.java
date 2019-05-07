@@ -3,24 +3,23 @@
  */
 package Presentacion.Envios;
 
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ScrollPaneConstants;
 
-import Integracion.Clientes.TCliente;
 import Integracion.Envios.TEnvio;
 import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
-import javax.swing.JLabel;
-import java.awt.Font;
 
 public class PanelReadByIdEnvio extends JPanel implements Ventana{
 	private static final long serialVersionUID = 1L;
@@ -34,7 +33,7 @@ public class PanelReadByIdEnvio extends JPanel implements Ventana{
 	public PanelReadByIdEnvio() {
 		setLayout(null);
 		setOpaque(false);
-		button = new JButton("Buscar Envío");
+		button = new JButton("Buscar Envï¿½o");
 		button.setBounds(425, 75, 180, 37);
 		add(button);
 		
@@ -74,7 +73,7 @@ public class PanelReadByIdEnvio extends JPanel implements Ventana{
 		if(c.isEstado())
 			s= "En curso";
 		else s= "Entregado";
-		textArea.setText("ID: " + c.getID() + "\n" +"Dirección: " + c.getDireccion()+ "\n" +"Estado: "+s+  "\n" );
+		textArea.setText("ID: " + c.getID() + "\n" +"Direcciï¿½n: " + c.getDireccion()+ "\n" +"Estado: "+s+  "\n" );
 		
 		
 	}

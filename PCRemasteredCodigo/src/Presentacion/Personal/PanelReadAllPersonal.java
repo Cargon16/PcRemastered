@@ -13,7 +13,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 
-
 import Integracion.Personal.TPersonal;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
@@ -63,10 +62,10 @@ public class PanelReadAllPersonal extends JPanel {
 					for (TPersonal c : array) {
 						String s = null;
 						if (c.isActivo())
-							s = "En nómina";
+							s = "En nï¿½mina";
 						else
 							s = "Despedido";
-						texto = texto + "ID: " + c.getID() + "\n" + "Nombre: " + c.getNombre() + "\n"  + "Salario: " + c.getSalario() + " euros\n"  + "Teléfono: " + c.getTelefono() + "\n"  + "Estado: " + s + "\n\n";
+						texto = texto + "ID: " + c.getID() + "\n" + "Nombre: " + c.getNombre() + "\n"  + "Salario: " + c.getSalario() + " euros\n"  + "Telï¿½fono: " + c.getTelefono() + "\n"  + "Estado: " + s + "\n\n";
 
 					}
 					textArea.setText(texto);

@@ -1,7 +1,5 @@
 package Presentacion.Command.Cliente;
 
-import Integracion.Clientes.TCliente;
-import Negocio.Clientes.SACliente;
 import Negocio.Factorias.FactoriaNegocio;
 import Presentacion.Command.Command;
 import Presentacion.Command.Contexto;

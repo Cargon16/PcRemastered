@@ -3,11 +3,10 @@
  */
 package Negocio.Personal;
 
+import java.util.ArrayList;
+
 import Integracion.Factorias.FactoriaIntegracion;
 import Integracion.Personal.TPersonal;
-
-import java.util.ArrayList;
-import java.util.Set;
 
 
 public class SAPersonalImp implements SAPersonal {
