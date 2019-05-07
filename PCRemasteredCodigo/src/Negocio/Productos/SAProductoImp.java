@@ -37,7 +37,7 @@ public class SAProductoImp implements SAProducto  {
 
 	@Override
 	public int update(TProducto Producto) {
-		TProducto t =FactoriaIntegracion.getInstance().crearDaoProducto().readByNombre(Producto.getNombre());
+		TProducto t=FactoriaIntegracion.getInstance().crearDaoProducto().readByNombre(Producto.getNombre());
 		if(t==null){
 			return FactoriaIntegracion.getInstance().crearDaoProducto().update(Producto);
 			
