@@ -42,7 +42,7 @@ public class SAVentasImp implements SAVentas {
 				}
 		
 			else{
-				FactoriaIntegracion.getInstance().crearDaoVenta().añadirLineaVenta(linea);
+				FactoriaIntegracion.getInstance().crearDaoVenta().addLineaVenta(linea);
 				map.put(producto, cantidad);
 			}
 

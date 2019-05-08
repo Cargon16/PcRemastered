@@ -100,7 +100,7 @@ public class PanelAbrirVentas extends JPanel implements Ventana{
 				lineaevento.add(idventa);
 				lineaevento.add(lista.get(comboBox.getSelectedIndex()).getId());
 				lineaevento.add(Integer.valueOf(textcantidad.getText()));
-				Contexto contexto = new Contexto(Evento.AñadirProductoVentaCommand, lineaevento);
+				Contexto contexto = new Contexto(Evento.addProductoVentaCommand, lineaevento);
 				Controller.getInstance().ejecutar(contexto);
 			}
 		});

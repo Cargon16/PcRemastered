@@ -6,14 +6,6 @@ package Integracion.Ventas;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/** 
- * <!-- begin-UML-doc -->
- * <!-- end-UML-doc -->
- * @author nacho710
- * @uml.annotations
- *     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_kH0tMEAeEemCgsm7gUtwsg"
- * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_kH0tMEAeEemCgsm7gUtwsg"
- */
 public interface DaoVentas {
 	
 
@@ -28,7 +20,7 @@ public interface DaoVentas {
 	
 
 
-	public int añadirLineaVenta(TLineaVentas lineaVenta);
+	public int addLineaVenta(TLineaVentas lineaVenta);
 
 	public HashMap<Integer, Integer> getLineaVenta(int idVenta);
 
