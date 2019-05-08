@@ -158,7 +158,7 @@ public class PanelAbrirVentas extends JPanel implements Ventana{
 				   }
 			   i++;
 		   }
-		    texto=texto+"ID:"+ idP + " Nombre:"+ nombre + " Cantidad: "+ venta.getLineasVenta().get(idP) +"\n";  
+		   texto=texto+"ID:"+ idP + " Nombre:"+ nombre + " Cantidad: "+ venta.getLineasVenta().get(idP) +"\n";  
 		 
 		}
 		textArea.setText(texto);

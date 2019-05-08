@@ -202,7 +202,7 @@ public class DaoVentasImp implements DaoVentas {
 		return retorno ;
 	}
 	@Override
-	public int addLineaVenta(TLineaVentas lineaVenta) {
+	public int añadirLineaVenta(TLineaVentas lineaVenta) {
 		String insercion = "INSERT INTO lineaventa (idVenta,idProducto, cantidad) VALUES (?,?,?)";
 		try{
 			Connection conn = Connections.getInstance();
@@ -223,6 +223,8 @@ public class DaoVentasImp implements DaoVentas {
 		}
 		return lineaVenta.getIDVenta();
 	}
+	
+	
 	
 
 }
