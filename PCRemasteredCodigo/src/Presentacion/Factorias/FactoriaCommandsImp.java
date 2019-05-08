@@ -33,8 +33,11 @@ import Presentacion.Command.Proveedores.DeleteProveedoresCommand;
 import Presentacion.Command.Proveedores.ReadAllProveedoresCommand;
 import Presentacion.Command.Proveedores.ReadProveedoresCommand;
 import Presentacion.Command.Proveedores.UpdateProveedoresCommand;
+import Presentacion.Command.Ventas.AbrirVentaCommand;
+import Presentacion.Command.Ventas.AñadirProductoVentaCommand;
 import Presentacion.Command.Ventas.CreateVentasCommand;
 import Presentacion.Command.Ventas.DeleteVentasCommand;
+import Presentacion.Command.Ventas.EliminarProductoVentaCommand;
 import Presentacion.Command.Ventas.ReadAllVentasCommand;
 import Presentacion.Command.Ventas.ReadVentasCommand;
 import Presentacion.Command.Ventas.UpdateVentasCommand;
@@ -100,7 +103,9 @@ public class FactoriaCommandsImp extends FactoriaCommands {
 		case readAllVentasCommand: return new ReadAllVentasCommand();
 		case readVentasCommand: return new ReadVentasCommand();
 		case updateVentasCommand:return new UpdateVentasCommand();
-		
+		case abrirVentaCommand: return new AbrirVentaCommand();
+		case AñadirProductoVentaCommand: return new AñadirProductoVentaCommand();
+		case DeleteProductoVentaCommand: return new EliminarProductoVentaCommand();
 		default : return null;
 		}
 	}

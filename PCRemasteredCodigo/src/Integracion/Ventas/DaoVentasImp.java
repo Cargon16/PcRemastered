@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import Integracion.Connection.Connections;
 
@@ -24,7 +25,7 @@ public class DaoVentasImp implements DaoVentas {
 	@Override
 	public int abrirVenta(TVentas venta){
 		int retorno = 0;
-		String create= "INSERT INTO ventas (precio,fecha,pagado,devuelto,idCliente,IDPersonal) VALUES (?,?,?,?,?,?);" ;
+		String create= "INSERT INTO ventas (precio,fecha,pagado,idCliente,IDPersonal) VALUES (?,?,?,?,?);" ;
 		try{
 		Connection conn = Connections.getInstance();
 			if ( conn!= null){
@@ -32,13 +33,15 @@ public class DaoVentasImp implements DaoVentas {
 				stmt.setFloat(1,venta.getPrecio());
 				stmt.setDate(2,venta.getFecha());
 				stmt.setBoolean(3, venta.getPagado());
-				stmt.setBoolean(4, venta.getDevuelto());
-				stmt.setInt(5, venta.getIDCliente());
-				stmt.setInt(6, venta.getIDPersonal());
+				stmt.setInt(4, venta.getIDCliente());
+				stmt.setInt(5, venta.getIDPersonal());
 				stmt.execute();
 				ResultSet rs = stmt.getGeneratedKeys();
 				if(rs.next())
 					retorno=rs.getInt(1);
+				stmt.close();
+				if (!stmt.isClosed())
+					stmt.close();
 			}
 			
 		} catch (SQLException e) {
@@ -72,7 +75,28 @@ public class DaoVentasImp implements DaoVentas {
 */
 	@Override
 	public TVentas readbyID(int idVenta) {
-		return null;
+		String lectura = "SELECT * FROM ventas WHERE id=" +idVenta+ " FOR UPDATE;";
+		TVentas retorno = null;
+		try {
+			Connection conn = Connections.getInstance();
+			if (conn != null) {
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(lectura);
+				HashMap<Integer, Integer> lineasVenta=getLineaVenta(idVenta);
+				if (rs.next()) {
+					retorno = new TVentas(idVenta,rs.getFloat("precio"),rs.getDate("fecha"), rs.getBoolean("pagado"),lineasVenta,rs.getInt("idcliente"),rs.getInt("idpersonal"));
+				}
+				stmt.close();
+				if (!stmt.isClosed())
+					stmt.close();
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			retorno = null;
+		}
+		return retorno;
+		
+		
 		
 	}
 
@@ -88,60 +112,95 @@ public class DaoVentasImp implements DaoVentas {
 		String update= "UPDATE ventas SET precio="+venta.getPrecio()+","
 				+ "fecha="+venta.getFecha()+","
 				+ "pagado="+venta.getFecha()+","
-				+ "devuelto="+venta.getFecha()+","
 				+ "idcliente="+venta.getFecha()+","
 				+ "idpersonal="+venta.getFecha()+""
-				+ "WHERE id="+venta.getID()+";";
+				+ " WHERE id="+venta.getID()+";";
 		try{
-		Connection conn = Connections.getInstance();
+			Connection conn = Connections.getInstance();
 			if ( conn!= null){
 				Statement stmt = conn.createStatement();
 				stmt.execute(update);
 				retorno = venta.getID();
+				stmt.close();
+				if (!stmt.isClosed())
+					stmt.close();
 			}
-			
+
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return retorno;
 	}
 
+
 	@Override
-	public int delete(int idVenta) {
-		// TODO Auto-generated method stub
-		return 0;
+	public HashMap<Integer,Integer> getLineaVenta(int idVenta){
+		
+			HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+			String insercion = "SELECT * FROM lineaventa WHERE IdVenta="+ idVenta+";";
+			try{
+				Connection conn = Connections.getInstance();
+				if ( conn!= null){
+					Statement stmt = conn.createStatement();
+					ResultSet rs = stmt.executeQuery(insercion);
+					while ( rs.next()){
+						map.put(rs.getInt(2),rs.getInt(3));
+					}
+					stmt.close();
+					if (!stmt.isClosed())
+						stmt.close();
+				}
+			}
+			catch (SQLException e) {
+				e.printStackTrace();
+			}
+			return  map;
 	}
-/*
-	private void insertaLineaVenta(TLineaVentas linea, Connection conexion){
-		String insercion = "INSERT INTO lineaVenta (idVenta,idProducto,cantidad, precioTotal) VALUES ('" +
-		linea.getIDVenta() + "' , '" + linea.getIDProducto()  +  "' , '" + linea.getCantidad() +  "' , '" + linea.getPrecioTotal() + "');";
-		try {
-			Statement stmt = conexion.createStatement();
-			stmt.execute(insercion);
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-			// TODO Auto-generated catch block
+	@Override
+	public int updateLineaVenta(TLineaVentas lineaVenta){
+		String insercion = "UPDATE lineaventa Set cantidad="+lineaVenta.getCantidad()+" Where idVenta="
+				+lineaVenta.getIDVenta()+" AND idProducto="+lineaVenta.getIDProducto()+";";
+		
+				
+		try{
+			Connection conn = Connections.getInstance();
+			if ( conn!= null){
+				Statement stmt = conn.createStatement();
+				stmt.execute(insercion);
+				stmt.close();
+				if (!stmt.isClosed())
+					stmt.close();
+			}
+			
+		}
+		catch (SQLException e) {
 			e.printStackTrace();
 		}
+		return lineaVenta.getIDVenta();
+	
 	}
-	*/
-	/*
-	private HashMap<Integer, TLineaVentas> getLineaVenta(int idVenta,Connection conexion){
-		String lectura="SELECT * FROM lineaVenta WHERE idVenta="+idVenta+" FOR UPDATE;";
-		HashMap<Integer, TLineaVentas> retorno=new HashMap<Integer, TLineaVentas>();
-		try {
-			Statement stmt = conexion.createStatement();
-			ResultSet rs = stmt.executeQuery(lectura);
-			while (rs.next()) {
-				int idProducto=rs.getInt("idProducto");
-				TLineaVentas lineaventa = new TLineaVentas(rs.getInt("idVenta"),idProducto, rs.getInt("cantidad"),rs.getFloat("precioTotal"));
-				retorno.put(idProducto,lineaventa);
+	@Override
+	public int eliminarLineaVenta(TLineaVentas venta){ 
+		int retorno = 0;// devuelve la cantidad eliminada de producto X
+		String insercion = "Delete from lineaventa Where idVenta="+venta.getIDVenta()+" and idProducto="+venta.getIDProducto()+";";;
+		try{
+			Connection conn = Connections.getInstance();
+			if ( conn!= null){
+				Statement stmt = conn.createStatement();
+				stmt.executeQuery(insercion);
+				stmt.close();
+				retorno= venta.getCantidad();
+				if (!stmt.isClosed())
+					stmt.close();
 			}
-		} catch (SQLException e) {
-			retorno=null;
+			
 		}
-		return retorno;
-	}*/
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return retorno ;
+	}
 	@Override
 	public int añadirLineaVenta(TLineaVentas lineaVenta) {
 		String insercion = "INSERT INTO lineaventa (idVenta,idProducto, cantidad) VALUES (?,?,?)";
@@ -153,7 +212,11 @@ public class DaoVentasImp implements DaoVentas {
 				stmt.setInt(2, lineaVenta.getIDProducto());
 				stmt.setInt(3, lineaVenta.getCantidad());
 				stmt.execute();
+				stmt.close();
+				if (!stmt.isClosed())
+					stmt.close();
 			}
+			
 		}
 		catch (SQLException e) {
 			e.printStackTrace();

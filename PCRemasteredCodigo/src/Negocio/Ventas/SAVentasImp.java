@@ -4,6 +4,7 @@
 package Negocio.Ventas;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import Integracion.Factorias.FactoriaIntegracion;
 import Integracion.Productos.TProducto;
@@ -18,22 +19,35 @@ public class SAVentasImp implements SAVentas {
 		// creo la instancia venta con los datos a null excepto el id 
 		//al darle al boton de nueva venta crea la venta null y para pasar a añadir productos,
 		
-		
 		return FactoriaIntegracion.getInstance().crearDaoVenta().abrirVenta(tVenta);
 	}
 	@Override
 	public TVentas AddProductoVenta(int idVenta, int producto, int cantidad){
 		TVentas venta = null;
 		try{
-		venta = FactoriaIntegracion.getInstance().crearDaoVenta().readbyID(idVenta);
 		TLineaVentas linea = new TLineaVentas(idVenta, producto, cantidad);
+		venta = FactoriaIntegracion.getInstance().crearDaoVenta().readbyID(idVenta);
+		HashMap<Integer,Integer> map =FactoriaIntegracion.getInstance().crearDaoVenta().getLineaVenta(idVenta);
 		TProducto p = FactoriaIntegracion.getInstance().crearDaoProducto().read(producto);
 		if (p.getStock()>=cantidad){
-			FactoriaIntegracion.getInstance().crearDaoVenta().añadirLineaVenta(linea);
+			
+			 // encuentra linea de venta con idVenta
+				if(map.containsKey(producto)){
+					// si encuentra producto existe con lina de venta
+					//y actualiza solo la cantidad de ese producto
+					linea.setCantidad(map.get(producto)+ cantidad);
+					FactoriaIntegracion.getInstance().crearDaoVenta().updateLineaVenta(linea);
+					map.replace(producto, map.get(producto)+ cantidad);
+				}
+		
+			else{
+				FactoriaIntegracion.getInstance().crearDaoVenta().añadirLineaVenta(linea);
+				map.put(producto, cantidad);
+			}
 			int nuevoStock = p.getStock()-cantidad;
 			p.setStock(nuevoStock);
 			FactoriaIntegracion.getInstance().crearDaoProducto().update(p);
-			venta = FactoriaIntegracion.getInstance().crearDaoVenta().readbyID(idVenta);
+			venta.setLineasVenta(map);
 			float nuevoPrecioTotal = venta.getPrecio() + (p.getPrecio() * cantidad);
 			FactoriaIntegracion.getInstance().crearDaoVenta().update(venta);
 			}
@@ -42,6 +56,25 @@ public class SAVentasImp implements SAVentas {
 			e.printStackTrace();
 		}
 		return venta;
+	}
+	@Override
+	public TVentas DeleteProductoVenta(int idVenta, int producto){
+		TLineaVentas linea = new TLineaVentas(idVenta, producto, 0);
+		TVentas ventas = FactoriaIntegracion.getInstance().crearDaoVenta().readbyID(idVenta);
+		int cantidad = FactoriaIntegracion.getInstance().crearDaoVenta().eliminarLineaVenta(linea);
+		if( cantidad > 0){ // si es mayor que cero significa que es si exsite la linea de venta y que se puede eliminar
+			
+			HashMap<Integer, Integer> lineaVenta = ventas.getLineasVenta();
+			lineaVenta.remove(producto);
+			ventas.setLineasVenta(lineaVenta);
+			//actualizamos el producto para devolverle el stock
+			TProducto p = FactoriaIntegracion.getInstance().crearDaoProducto().readByID(producto); 
+			p.setStock(p.getStock()+cantidad);
+			ventas.setPrecio( ventas.getPrecio() - (p.getPrecio() * cantidad ));
+		}
+		return ventas;
+		
+		
 	}
 	public TVentas read(int id) {
 		return FactoriaIntegracion.getInstance().crearDaoVenta().readbyID(id);

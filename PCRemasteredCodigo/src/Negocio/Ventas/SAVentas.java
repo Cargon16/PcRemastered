@@ -93,4 +93,6 @@ public interface SAVentas {
 	public int closeVenta(int id);
 
 	public TVentas AddProductoVenta(int idVenta, int producto, int cantidad);
+
+	public TVentas DeleteProductoVenta(int idVenta, int producto);
 }

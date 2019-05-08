@@ -18,7 +18,7 @@ public class VentanaPrincipalImp extends VentanaPrincipal{
 	
 	public VentanaPrincipalImp() {
 
-
+		
 		frame = new JFrame();
 		frame.setResizable(false);
 		frame.setBounds(100, 100, 534, 360);

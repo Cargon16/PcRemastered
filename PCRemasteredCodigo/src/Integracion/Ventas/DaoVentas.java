@@ -4,6 +4,7 @@
 package Integracion.Ventas;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /** 
  * <!-- begin-UML-doc -->
@@ -22,12 +23,16 @@ public interface DaoVentas {
 	
 	public int update( TVentas venta);
 
-	public int delete( int idVenta);
-
 	int abrirVenta(TVentas venta);
 	
 	
 
-	int añadirLineaVenta(TLineaVentas lineaVenta);
+	public int añadirLineaVenta(TLineaVentas lineaVenta);
+
+	public HashMap<Integer, Integer> getLineaVenta(int idVenta);
+
+	public int updateLineaVenta(TLineaVentas lineaVenta);
+
+	public int eliminarLineaVenta(TLineaVentas venta);
 	
 }

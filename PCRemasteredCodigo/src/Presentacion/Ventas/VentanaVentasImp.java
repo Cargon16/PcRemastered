@@ -27,6 +27,8 @@ import Presentacion.Clientes.PanelReadByIdClientes;
 import Presentacion.Clientes.PanelUpdateClientes;
 import Presentacion.Clientes.VentanaClientes;
 import Presentacion.Command.Contexto;
+import Presentacion.Command.Evento;
+import Presentacion.Controlador.Controller;
 
 /** 
  * <!-- begin-UML-doc -->
@@ -36,7 +38,7 @@ import Presentacion.Command.Contexto;
  *     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_Fa07BlMPEemdZLpuw9I4eQ"
  * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_Fa07BlMPEemdZLpuw9I4eQ"
  */
-public class VentanaVentasImp extends VentanaVentas implements Ventana {
+public class VentanaVentasImp extends VentanaVentas {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -94,7 +96,9 @@ public class VentanaVentasImp extends VentanaVentas implements Ventana {
 				panel2.removeAll();
 				setTitle("Abrir venta");
 				panel2.add(paneles.get(0),SwingConstants.CENTER);
-				SwingUtilities.updateComponentTreeUI(getContentPane()); 
+				SwingUtilities.updateComponentTreeUI(getContentPane());
+				Contexto c = new Contexto(Evento.abrirVentaCommand,null);
+				Controller.getInstance().ejecutar(c);
 				
 				
 			}
@@ -159,8 +163,17 @@ public class VentanaVentasImp extends VentanaVentas implements Ventana {
 	@Override
 	public void Actualizar(Contexto contexto) {
 		
-		
-		
+		Contexto c = (Contexto) contexto.getDatos();
+		switch (c.getEvento()) {
+		case abrirVentaCommand:PanelAbrirVentas.Inicializar(c); break;
+		case AñadirProductoVentaCommand:anadir.Actualizar(c); break;
+		case DeleteProductoVentaCommand:anadir.Actualizar(c); break;
+			
+
+		default:
+			break;
+		}
 	}
+
 	
 }

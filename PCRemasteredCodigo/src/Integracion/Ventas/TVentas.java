@@ -12,18 +12,16 @@ public class TVentas {
 	private float precio;
 	private Date fecha;
 	private Boolean pagado;
-	private Boolean devuelto;
-	private HashMap<Integer,TLineaVentas> lineasVenta = new HashMap<Integer,TLineaVentas>();
+	private HashMap<Integer,Integer> lineasVenta = new HashMap<Integer,Integer>();
 	private Integer IDCliente;
 	private Integer IDPersonal;
-	public TVentas(Integer iD, float precio, Date fecha, Boolean pagado, Boolean devuelto,
-				HashMap<Integer,TLineaVentas> tLineaVentas,int cliente, int idempleado) {
+	public TVentas(Integer iD, float precio, Date fecha, Boolean pagado,
+				HashMap<Integer,Integer> tLineaVentas,int cliente, int idempleado) {
 			super();
 			this.ID = iD;
 			this.precio = precio;
 			this.fecha = fecha;
 			this.pagado = pagado;
-			this.devuelto = devuelto;
 			this.lineasVenta = tLineaVentas;
 			this.IDCliente = cliente;
 			this.IDPersonal = idempleado;
@@ -53,19 +51,12 @@ public class TVentas {
 		this.pagado = pagado;
 	}
 
-	public Boolean getDevuelto() {
-		return devuelto;
-	}
 
-	public void setDevuelto(Boolean devuelto) {
-		this.devuelto = devuelto;
-	}
-
-	public HashMap<Integer, TLineaVentas> getLineasVenta() {
+	public HashMap<Integer, Integer> getLineasVenta() {
 		return lineasVenta;
 	}
 
-	public void setLineasVenta(HashMap<Integer, TLineaVentas> lineasVenta) {
+	public void setLineasVenta(HashMap<Integer, Integer> lineasVenta) {
 		this.lineasVenta = lineasVenta;
 	}
 
@@ -93,7 +84,5 @@ public class TVentas {
 	public void setIDPersonal(Integer iDPersonal) {
 		IDPersonal = iDPersonal;
 	}
-
-	
 		
 }
