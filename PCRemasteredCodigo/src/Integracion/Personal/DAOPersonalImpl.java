@@ -57,6 +57,7 @@ public class DAOPersonalImpl implements DAOPersonal {
 			}
 		} catch (SQLException e) {
 			retorno = null;
+			e.printStackTrace();
 		}
 		return retorno;
 	}

@@ -6,6 +6,7 @@ package Negocio.Personal;
 import java.util.ArrayList;
 
 import Integracion.Personal.TPersonal;
+import Presentacion.Command.Contexto;
 
 
 public interface SAPersonal {
@@ -19,4 +20,6 @@ public interface SAPersonal {
 	public int update(TPersonal tPersonal);
 
 	public int delete(int id);
+
+	public int login(TPersonal person);
 }

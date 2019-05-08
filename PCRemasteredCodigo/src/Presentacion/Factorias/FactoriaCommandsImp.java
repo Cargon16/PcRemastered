@@ -18,6 +18,7 @@ import Presentacion.Command.Envios.ReadByIDEnviosCommand;
 import Presentacion.Command.Envios.UpdateEnviosCommand;
 import Presentacion.Command.Personal.CreatePersonalCommand;
 import Presentacion.Command.Personal.DeletePersonalCommand;
+import Presentacion.Command.Personal.LoginCommand;
 import Presentacion.Command.Personal.ReadAllPersonalCommand;
 import Presentacion.Command.Personal.ReadPersonalCommand;
 import Presentacion.Command.Personal.UpdatePersonalCommand;
@@ -106,6 +107,7 @@ public class FactoriaCommandsImp extends FactoriaCommands {
 		case abrirVentaCommand: return new AbrirVentaCommand();
 		case addProductoVentaCommand: return new AñadirProductoVentaCommand();
 		case DeleteProductoVentaCommand: return new EliminarProductoVentaCommand();
+		case Login : return new LoginCommand();
 		default : return null;
 		}
 	}
