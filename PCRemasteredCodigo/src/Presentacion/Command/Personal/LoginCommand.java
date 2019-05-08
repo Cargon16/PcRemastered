@@ -7,23 +7,30 @@ import Presentacion.Command.Command;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
+import Presentacion.Login.Login;
 
 public class LoginCommand implements Command {
 
 	@Override
 	public Contexto ejecutar(Contexto contexto) {
-		Contexto cnx;
+		
 		// TODO Auto-generated method stub
-		int i = FactoriaNegocio.getInstance().crearSAPersonal().login((TPersonal) contexto.getDatos());
+		
+		Contexto cnx ;
+			 
+			 
+			 int i = FactoriaNegocio.getInstance().crearSAPersonal().login((TPersonal) contexto.getDatos());
+			 if ( i > 0 ){
+				 	
+					 cnx= new Contexto(Evento.INIT, i);
+					 return cnx;
+			}
+			else contexto.setDatos(i);
+			cnx= new Contexto(Evento.Login, contexto);
+			return cnx;
 
-
-		if(i==-1){
-			return cnx = new Contexto(Evento.Login, "Datos incorrectos");
-		}else{
-			return cnx = new Contexto( Evento.INIT,null);
 		}
 
-
-	}
+	
 
 }

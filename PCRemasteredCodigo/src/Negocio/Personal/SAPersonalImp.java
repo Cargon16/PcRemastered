@@ -56,8 +56,8 @@ public class SAPersonalImp implements SAPersonal {
 		int retor = -1;
 		TPersonal bbdd = FactoriaIntegracion.getInstance().crearDaoPersonal().readByID(person.getID());
 		if(bbdd!=null){
-			if(person.getPass()==bbdd.getPass())
-				retor=1;
+			if(person.getPass().equals(bbdd.getPass()))
+				retor=bbdd.getID();
 		}
 		return retor;
 		// TODO Auto-generated method stub

@@ -26,10 +26,10 @@ public class ControllerImp extends Controller {
 		//ejecuta el comando añadirCliente---> esto devuelve un contexto (evento ClienteVista , Object( evento añadirCliente, objeto) )
 		//es decir devolvemos un contexto dentro de otro contexto en todos excepto en los de generacion de vista inicial.
 		// en esos casos el Object sera null y no ejecutara el siguiente comando.
-		if (vista.getDatos()!=null)
+		if (vista.getDatos()!=null){
 				comando = FactoriaCommands.getInstance().generacionCommand(vista.getEvento()); 
 				comando.ejecutar(vista);//actualiza la vista con el contexto.
-		
+		}
 									
 	}
 }
