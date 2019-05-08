@@ -34,7 +34,7 @@ import Presentacion.Command.Proveedores.ReadAllProveedoresCommand;
 import Presentacion.Command.Proveedores.ReadProveedoresCommand;
 import Presentacion.Command.Proveedores.UpdateProveedoresCommand;
 import Presentacion.Command.Ventas.AbrirVentaCommand;
-import Presentacion.Command.Ventas.AÃ±adirProductoVentaCommand;
+import Presentacion.Command.Ventas.AñadirProductoVentaCommand;
 import Presentacion.Command.Ventas.CreateVentasCommand;
 import Presentacion.Command.Ventas.DeleteVentasCommand;
 import Presentacion.Command.Ventas.EliminarProductoVentaCommand;
@@ -104,7 +104,7 @@ public class FactoriaCommandsImp extends FactoriaCommands {
 		case readVentasCommand: return new ReadVentasCommand();
 		case updateVentasCommand:return new UpdateVentasCommand();
 		case abrirVentaCommand: return new AbrirVentaCommand();
-		case AÃ±adirProductoVentaCommand: return new AÃ±adirProductoVentaCommand();
+		case addProductoVentaCommand: return new AñadirProductoVentaCommand();
 		case DeleteProductoVentaCommand: return new EliminarProductoVentaCommand();
 		default : return null;
 		}
