@@ -1,11 +1,11 @@
 
 
-drop table envios;
-drop table lineaventa;
-drop table ventas;
-drop table clientes;
-drop table producto;
-drop  table personal;
+drop table IF exists envios;
+drop table IF exists lineaventa;
+drop table IF exists ventas;
+drop table IF exists clientes;
+drop table IF exists producto;
+drop  table IF exists personal;
 
 CREATE TABLE clientes(
 ID int NOT NULL unique AUTO_INCREMENT ,

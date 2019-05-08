@@ -51,8 +51,10 @@ public class SAProductoImp implements SAProducto  {
 	public int delete(int id) {
 	TProducto t=FactoriaIntegracion.getInstance().crearDaoProducto().readByID(id);
 	if(t!=null){
+		if(t.getStock() == 0) return -2;
 		return FactoriaIntegracion.getInstance().crearDaoProducto().delete(id);	
-	}else return -1;
+	}
+	else return -1;
 			
 	}
 	

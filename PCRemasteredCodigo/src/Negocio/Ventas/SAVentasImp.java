@@ -30,6 +30,7 @@ public class SAVentasImp implements SAVentas {
 		HashMap<Integer,Integer> map =FactoriaIntegracion.getInstance().crearDaoVenta().getLineaVenta(idVenta);
 		TProducto p = FactoriaIntegracion.getInstance().crearDaoProducto().read(producto);
 		if (p.getStock()>=cantidad){
+<<<<<<< HEAD
 			
 			 // encuentra linea de venta con idVenta
 				if(map.containsKey(producto)){
@@ -44,11 +45,15 @@ public class SAVentasImp implements SAVentas {
 				FactoriaIntegracion.getInstance().crearDaoVenta().añadirLineaVenta(linea);
 				map.put(producto, cantidad);
 			}
+=======
+			FactoriaIntegracion.getInstance().crearDaoVenta().addLineaVenta(linea);
+>>>>>>> refs/remotes/origin/master
 			int nuevoStock = p.getStock()-cantidad;
 			p.setStock(nuevoStock);
 			FactoriaIntegracion.getInstance().crearDaoProducto().update(p);
 			venta.setLineasVenta(map);
 			float nuevoPrecioTotal = venta.getPrecio() + (p.getPrecio() * cantidad);
+			venta.setPrecio(nuevoPrecioTotal);
 			FactoriaIntegracion.getInstance().crearDaoVenta().update(venta);
 			}
 		}

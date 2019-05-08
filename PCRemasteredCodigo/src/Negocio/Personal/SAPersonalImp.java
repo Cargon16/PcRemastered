@@ -5,6 +5,7 @@ package Negocio.Personal;
 
 import java.util.ArrayList;
 
+import Integracion.Envios.TEnvio;
 import Integracion.Factorias.FactoriaIntegracion;
 import Integracion.Personal.TPersonal;
 
@@ -12,7 +13,13 @@ import Integracion.Personal.TPersonal;
 public class SAPersonalImp implements SAPersonal {
 	
 	public int create(TPersonal tPersonal) {
-		return FactoriaIntegracion.getInstance().crearDaoPersonal().create(tPersonal);
+		int retorno= -1;
+		TPersonal e = FactoriaIntegracion.getInstance().crearDaoPersonal().readByID(tPersonal.getID());
+		if(e == null){
+			retorno = FactoriaIntegracion.getInstance().crearDaoPersonal().create(tPersonal);
+		}
+		
+		return retorno;
 	}
 
 	public TPersonal read(int id) {
@@ -24,10 +31,22 @@ public class SAPersonalImp implements SAPersonal {
 	}
 
 	public int update(TPersonal tPersonal) {
-		return FactoriaIntegracion.getInstance().crearDaoPersonal().update(tPersonal);
+		int retorno= -1;
+		TPersonal e = FactoriaIntegracion.getInstance().crearDaoPersonal().readByID(tPersonal.getID());
+		if(e == null){
+			retorno = FactoriaIntegracion.getInstance().crearDaoPersonal().update(tPersonal);
+		}
+		
+		return retorno;
 	}
 
 	public int delete(int id) {
-		return FactoriaIntegracion.getInstance().crearDaoPersonal().delete(id);
+		int retorno= -1;
+		TPersonal e = FactoriaIntegracion.getInstance().crearDaoPersonal().readByID(id);
+		if(e == null){
+			retorno = FactoriaIntegracion.getInstance().crearDaoPersonal().delete(id);
+		}
+		
+		return retorno;
 	}
 }

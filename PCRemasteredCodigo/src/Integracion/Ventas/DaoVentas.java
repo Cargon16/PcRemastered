@@ -27,6 +27,7 @@ public interface DaoVentas {
 	
 	
 
+<<<<<<< HEAD
 	public int añadirLineaVenta(TLineaVentas lineaVenta);
 
 	public HashMap<Integer, Integer> getLineaVenta(int idVenta);
@@ -34,5 +35,8 @@ public interface DaoVentas {
 	public int updateLineaVenta(TLineaVentas lineaVenta);
 
 	public int eliminarLineaVenta(TLineaVentas venta);
+=======
+	int addLineaVenta(TLineaVentas lineaVenta);
+>>>>>>> refs/remotes/origin/master
 	
 }
