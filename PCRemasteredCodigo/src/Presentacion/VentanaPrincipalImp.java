@@ -11,19 +11,20 @@ import javax.swing.JLabel;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
+import Presentacion.Ventas.VentanaVentas;
 
 public class VentanaPrincipalImp extends VentanaPrincipal{
 	
-	private JFrame frame = new JFrame();
 	
+	private static int empleado;
 	public VentanaPrincipalImp() {
 
 		
-		frame = new JFrame();
-		frame.setResizable(false);
-		frame.setBounds(100, 100, 534, 360);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setTitle("PcRemastered");
+		
+		setResizable(false);
+		setBounds(100, 100, 534, 360);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setTitle("PcRemastered");
 		JButton botonVentas = new JButton("Clientes");
 		botonVentas.setBounds(26, 72, 106, 56);
 		botonVentas.addActionListener(new ActionListener() {
@@ -37,8 +38,8 @@ public class VentanaPrincipalImp extends VentanaPrincipal{
 				}
 			}
 		});
-		frame.getContentPane().setLayout(null);
-		frame.getContentPane().add(botonVentas);
+		getContentPane().setLayout(null);
+		getContentPane().add(botonVentas);
 
 		JButton botonModelo = new JButton("Productos");
 		botonModelo.setBounds(393, 142, 106, 56);
@@ -47,28 +48,32 @@ public class VentanaPrincipalImp extends VentanaPrincipal{
 				try {
 					Contexto contexto = new Contexto(Evento.crearVentanaProductos, null);
 					Controller.getInstance().ejecutar(contexto);
+					
+					
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 			}
 		});
-		frame.getContentPane().add(botonModelo);
+		getContentPane().add(botonModelo);
 
 		JButton botonCliente = new JButton("Ventas");
 		botonCliente.setBounds(283, 72, 98, 56);
 		botonCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					Contexto contexto = new Contexto(Evento.crearVentanaVentas, null);
+					
+					Contexto contexto = new Contexto(Evento.crearVentanaVentas, getTitle());
 					Controller.getInstance().ejecutar(contexto);
+				
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
 			}
 		});
-		frame.getContentPane().add(botonCliente);
+		getContentPane().add(botonCliente);
 
 		JButton btnEnvios = new JButton("Envios");
 		btnEnvios.setBounds(26, 141, 106, 59);
@@ -83,7 +88,7 @@ public class VentanaPrincipalImp extends VentanaPrincipal{
 				}
 			}
 		});
-		frame.getContentPane().add(btnEnvios);
+		getContentPane().add(btnEnvios);
 
 		JButton btnP = new JButton("Personal");
 		btnP.setBounds(393, 72, 106, 56);
@@ -98,24 +103,25 @@ public class VentanaPrincipalImp extends VentanaPrincipal{
 				}
 			}
 		});
-		frame.getContentPane().add(btnP);
+		getContentPane().add(btnP);
 
 		JButton btnProveedores = new JButton("Proveedores");
 		btnProveedores.setBounds(144, 72, 106, 56);
-		frame.getContentPane().add(btnProveedores);
+		getContentPane().add(btnProveedores);
 
 		JLabel lblPcremastered = new JLabel("PcRemastered");
 		lblPcremastered.setFont(new Font("Tahoma", Font.BOLD, 23));
 		lblPcremastered.setBounds(177, 13, 168, 42);
-		frame.getContentPane().add(lblPcremastered);
-		frame.setLocationRelativeTo(null);
-		frame.setVisible(true);
+		getContentPane().add(lblPcremastered);
+		setLocationRelativeTo(null);
+		setVisible(true);
 	}
 
 
 	@Override
 	public void Actualizar(Contexto contexto) {
-		// TODO Auto-generated method stub
+		empleado= (int) contexto.getDatos();
+		
 
 	}
 }

@@ -9,8 +9,14 @@ public class InitCommand implements Command{
 	@Override
 	public Contexto ejecutar(Contexto contexto) {
 		// TODO Auto-generated method stub
-		VentanaPrincipal.getInstance();
-		contexto.setDatos(null);
+		
+		if(contexto.getDatos()==null)
+			VentanaPrincipal.getInstance();
+		else {
+			Integer i = (int) contexto.getDatos();
+			VentanaPrincipal.getInstance().setTitle("Nº de empleado: "+i.toString());
+		}
+		
 		return contexto ;
 	}
 

@@ -14,7 +14,9 @@ public class AbrirVentaCommand implements Command{
 
 	@Override
 	public Contexto ejecutar(Contexto contexto) {
-		TVentas venta = new TVentas(null, 0, null,false,null, 1, 1);
+		String  empleado =  (String) contexto.getDatos();
+		empleado=empleado.substring(16, 17);
+		TVentas venta = new TVentas(null, 0, null,false,null, 1, Integer.valueOf(empleado));
 		int i = FactoriaNegocio.getInstance().crearSAVentas().create(venta);
 		
 		ArrayList<TProducto> p = FactoriaNegocio.getInstance().crearSAProductos().readAll();

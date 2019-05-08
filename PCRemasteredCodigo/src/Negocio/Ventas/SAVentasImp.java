@@ -75,6 +75,7 @@ public class SAVentasImp implements SAVentas {
 			//actualizamos el producto para devolverle el stock
 			TProducto p = FactoriaIntegracion.getInstance().crearDaoProducto().readByID(producto); 
 			p.setStock(p.getStock()+cantidad);
+			FactoriaIntegracion.getInstance().crearDaoProducto().update(p);			
 			ventas.setPrecio( ventas.getPrecio() - (p.getPrecio() * cantidad ));
 		}
 		return ventas;

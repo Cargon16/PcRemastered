@@ -32,11 +32,9 @@ public class VentanaVentasImp extends VentanaVentas {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private PanelAbrirVentas anadir = new PanelAbrirVentas();
-	private PanelDeleteClientes eliminar = new PanelDeleteClientes();
-	private PanelUpdateClientes actualizar = new PanelUpdateClientes();
 	private PanelReadByIdClientes mID = new PanelReadByIdClientes();
 	private PanelReadAllClientes mAll = new PanelReadAllClientes();
-	
+	private	 static int Empleado;
 	
 	public VentanaVentasImp() {
 		setResizable(false);
@@ -65,11 +63,7 @@ public class VentanaVentasImp extends VentanaVentas {
 		anadir.setVisible(true);
 		paneles.add(anadir);
 		
-		eliminar.setVisible(true);
-		paneles.add(eliminar);
-		
-		actualizar.setVisible(true);
-		paneles.add(actualizar);
+	
 		
 		mID.setVisible(true);
 		paneles.add(mID);
@@ -83,10 +77,9 @@ public class VentanaVentasImp extends VentanaVentas {
 		botonanadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
-				setTitle("Abrir venta");
 				panel2.add(paneles.get(0),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane());
-				Contexto c = new Contexto(Evento.abrirVentaCommand,null);
+				Contexto c = new Contexto(Evento.abrirVentaCommand,getTitle());
 				Controller.getInstance().ejecutar(c);
 				
 				
@@ -94,27 +87,7 @@ public class VentanaVentasImp extends VentanaVentas {
 		});
 		panel_1.add(botonanadir);
 		
-		JButton botonEliminar = new JButton("<html>Cancelar <br /> venta</html>");
-		botonEliminar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				panel2.removeAll();
-				setTitle("Eliminar venta");
-				panel2.add(paneles.get(1),SwingConstants.CENTER);
-				SwingUtilities.updateComponentTreeUI(getContentPane()); 
-			}
-		});
-		panel_1.add(botonEliminar);
-		
-		JButton botonActualizar = new JButton("<html>Actualizar<br /> venta</html>");
-		botonActualizar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				panel2.removeAll();
-				setTitle("Actualizar venta");
-				panel2.add(paneles.get(2),SwingConstants.CENTER);
-				SwingUtilities.updateComponentTreeUI(getContentPane()); 
-			}
-		});
-		panel_1.add(botonActualizar);
+	
 		
 		JButton botonMostrarID = new JButton("<html>Mostrar venta<br /> por su ID </html>");
 		
@@ -157,7 +130,7 @@ public class VentanaVentasImp extends VentanaVentas {
 		case abrirVentaCommand:PanelAbrirVentas.Inicializar(c); break;
 		case addProductoVentaCommand:anadir.Actualizar(c); break;
 		case DeleteProductoVentaCommand:anadir.Actualizar(c); break;
-
+		case SetEmpleado:Empleado = (int) c.getDatos(); break;
 		default:
 			break;
 		}
