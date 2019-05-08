@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
@@ -147,7 +148,7 @@ public class VentanaPersonalImp extends VentanaPersonal {
 		
 		switch (c.getEvento()) {
 		case createPersonalCommand: anadir.Actualizar(c);break;
-		
+		case createPersonalErrorCommand: JOptionPane.showMessageDialog(null, "El empleado ya existe.");break;
 		case readPersonalCommand: mID.Actualizar(c);break;
 		
 			

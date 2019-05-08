@@ -15,7 +15,7 @@ public class SAPersonalImp implements SAPersonal {
 	
 	public int create(TPersonal tPersonal) {
 		int retorno= -1;
-		TPersonal e = FactoriaIntegracion.getInstance().crearDaoPersonal().readByID(tPersonal.getID());
+		TPersonal e = FactoriaIntegracion.getInstance().crearDaoPersonal().readByNombre(tPersonal.getNombre());
 		if(e == null){
 			retorno = FactoriaIntegracion.getInstance().crearDaoPersonal().create(tPersonal);
 		}

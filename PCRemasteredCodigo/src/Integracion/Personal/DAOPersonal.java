@@ -12,4 +12,5 @@ public interface DAOPersonal {
 	public ArrayList<TPersonal> readAll();
 	public int update(TPersonal personal);
 	public int delete(int id);
+	public TPersonal readByNombre(String nombre);
 }

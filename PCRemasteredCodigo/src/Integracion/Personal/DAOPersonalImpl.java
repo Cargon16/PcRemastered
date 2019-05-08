@@ -16,7 +16,7 @@ public class DAOPersonalImpl implements DAOPersonal {
 
 	@Override
 	public Integer create(TPersonal personal) {
-		int id =0;
+		int id = 0;
 		String insercion = "INSERT INTO personal (PASS,Activo,Salario,Telefono,Nombre) VALUES (?,?,?,?,?)";
 			
 		Connection conn = Connections.getInstance();
@@ -44,6 +44,25 @@ public class DAOPersonalImpl implements DAOPersonal {
 	@Override
 	public TPersonal readByID(int id) {
 		String lectura = "SELECT * FROM personal WHERE id=" + id + " FOR UPDATE;";
+		TPersonal retorno = null;
+		try {
+			Connection conn = Connections.getInstance();
+			if (conn != null) {
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(lectura);
+				if (rs.next()) {
+					retorno = new TPersonal(rs.getString("pass"), rs.getBoolean("activo"), rs.getDouble("salario"),
+							rs.getInt("id"),rs.getInt("telefono"), rs.getString("nombre"));
+				}
+			}
+		} catch (SQLException e) {
+			retorno = null;
+			e.printStackTrace();
+		}
+		return retorno;
+	}
+	public TPersonal readByNombre(String nomb) {
+		String lectura = "SELECT * FROM personal WHERE nombre='" + nomb + "' FOR UPDATE;";
 		TPersonal retorno = null;
 		try {
 			Connection conn = Connections.getInstance();

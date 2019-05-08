@@ -13,15 +13,12 @@ public class CreatePersonalCommand implements Command {
 		int i = FactoriaNegocio.getInstance().crearSAPersonal().create((TPersonal) contexto.getDatos());
 		if ( i == -1 ){
 			contexto.setEvento(Evento.createPersonalErrorCommand);
-			contexto.setDatos(null);
 		}
-		else {
-			contexto.setDatos(i);
-			Contexto cnx = new Contexto(Evento.crearVentanaPersonal, contexto);
-			return cnx;
-		}
+		else contexto.setDatos(i);
+		Contexto cnx = new Contexto(Evento.crearVentanaPersonal, contexto);
+		return cnx;
 			
-		return contexto;
+		
 	}
 
 }

@@ -100,7 +100,7 @@ public class PanelAddPersonal extends JPanel implements Ventana{
 				activoRB.setSelected(false);
 			}
 		});
-		JButton button = new JButton("Aï¿½adir");
+		JButton button = new JButton("Añadir");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				boolean ok = false ;
