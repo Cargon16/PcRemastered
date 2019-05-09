@@ -95,10 +95,13 @@ public class LoginImp extends Login{
 				
 				// TODO Auto-generated method stub
 				setVisible(false);
-				TPersonal t= new TPersonal(String.valueOf(Password.getPassword()), false,  0.0, Integer.valueOf(UserCamp.getText()), 0, "");
-				Contexto contexto = new Contexto(Evento.loginCommand, t);
-				Controller.getInstance().ejecutar(contexto);
-				
+				Object object = UserCamp.getText() ;
+				if(object instanceof Integer ){
+					TPersonal t= new TPersonal(String.valueOf(Password.getPassword()), false,  0.0, Integer.valueOf(UserCamp.getText()), 0, "");
+					Contexto contexto = new Contexto(Evento.loginCommand, t);
+					Controller.getInstance().ejecutar(contexto);
+				}
+				else Actualizar(null);
 			}
 		});
 		
