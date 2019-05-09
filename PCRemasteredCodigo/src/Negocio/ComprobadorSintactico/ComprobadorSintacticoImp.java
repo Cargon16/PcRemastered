@@ -31,24 +31,10 @@ public class ComprobadorSintacticoImp extends ComprobadorSintactico {
 	private  boolean isNumeric(String cadena){
 
 		boolean okele = false;
-
-		try{
-			if(cadena == null || cadena.isEmpty()){
-				return false;
-			}
-			int i=  0;
-
-			if(cadena.length()>1){
-				i++;
-			}else{
-				return false;
-			}
-
-			for(; i<cadena.length();i++){
-				if(!cadena.matches("0123456789")){
-					return false;
-				}else okele=true;
-			}
+			try {
+				Integer.parseInt(cadena);
+				okele = true;
+			
 		}catch(NumberFormatException e){
 			okele=false;
 
