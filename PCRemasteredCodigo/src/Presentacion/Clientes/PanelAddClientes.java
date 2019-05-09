@@ -110,7 +110,14 @@ public PanelAddClientes() {
 			TCliente cliente = new TCliente(null,dniText.getText(),nombreText.getText(),Integer.valueOf(telefonoText.getText()), direccionText.getText(), ok);
 			Contexto contexto = new Contexto(Evento.createClienteCommnad, cliente);
 			Controller.getInstance().ejecutar(contexto);
-			Actualizar(contexto);
+			direccionText.setText(null);
+			dniText.setText(null);
+			nombreText.setText(null);
+			telefonoText.setText(null);
+			activoRB.setSelected(false);
+			inactivoRB.setSelected(false);
+			
+			
 			
 		}
 	});
