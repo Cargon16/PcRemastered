@@ -50,6 +50,8 @@ public class VentanaClientesImp extends VentanaClientes{
 	public void initComponent() {
 		initPanel();
 		
+	
+		
 		setResizable(false);
 		setVisible(true);
 		setLocationRelativeTo(null);
