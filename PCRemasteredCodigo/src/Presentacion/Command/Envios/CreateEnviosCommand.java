@@ -13,16 +13,13 @@ public class CreateEnviosCommand implements Command{
 	public Contexto ejecutar(Contexto contexto) {
 		
 		int i = FactoriaNegocio.getInstance().crearSAEnvios().create((TEnvio) contexto.getDatos());
-		if ( i == -1 ){
+		if ( i == -1 || i == -2){
 			contexto.setEvento(Evento.createEnvioErrorCommand);
-			contexto.setDatos(null);
-			return contexto;
-		}
-		else {
 			contexto.setDatos(i);
+		}
+		else contexto.setDatos(i);
 			Contexto cnx = new Contexto(Evento.crearVentanaEnvios, contexto);
 			return cnx;
-		}
 		
 	}
 	

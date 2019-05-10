@@ -11,16 +11,12 @@ public class ReadByIDEnviosCommand implements Command {
 	@Override
 	public Contexto ejecutar(Contexto contexto) {
 		TEnvio i= FactoriaNegocio.getInstance().crearSAEnvios().readByID((int) contexto.getDatos());
-		if(i.equals(null)){
-			contexto.setEvento(Evento.readByIDEnvioErrorCommand);
-			contexto.setDatos(null);
-			return contexto;
+		if(i == null){
+			contexto.setEvento(Evento.readEnvioErrorCommand);
 		}
-		else {
-			contexto.setDatos(i);
+		else contexto.setDatos(i);
 			Contexto cnx = new Contexto(Evento.crearVentanaEnvios, contexto);
 			return cnx;
-		}
 		
 	}
 

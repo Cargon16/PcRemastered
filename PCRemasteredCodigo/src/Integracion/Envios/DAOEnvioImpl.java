@@ -27,11 +27,15 @@ public class DAOEnvioImpl implements DAOEnvio {
 					stmt.setString(1, envio.getDireccion());
 					stmt.setBoolean(2, envio.isEstado());
 					stmt.execute();
+					ResultSet rs = stmt.getGeneratedKeys();
+					if(rs.next())
+						id = rs.getInt(1);
 					stmt.close();
 					if (!stmt.isClosed())
 						stmt.close();
 				} catch (SQLException e) {
-					e.printStackTrace();
+					//e.printStackTrace();
+					return -2;
 				}
 			}
 		

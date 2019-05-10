@@ -35,7 +35,7 @@ public class SAEnvioImp implements SAEnvio {
 	public int update(TEnvio tEnvio) {
 		int retorno= -1;
 		TEnvio e = FactoriaIntegracion.getInstance().crearDaoEnvios().readByID(tEnvio.getID());
-		if(e == null){
+		if(e != null){
 			retorno = FactoriaIntegracion.getInstance().crearDaoEnvios().update(tEnvio);
 		}
 		
@@ -46,8 +46,10 @@ public class SAEnvioImp implements SAEnvio {
 	public int delete(int id) {
 		int retorno= -1;
 		TEnvio e = FactoriaIntegracion.getInstance().crearDaoEnvios().readByID(id);
-		if(e == null){
+		if(e != null){
+			if(e.isEstado())
 			retorno = FactoriaIntegracion.getInstance().crearDaoEnvios().delete(id);
+			else retorno = -2;
 		}
 		
 		return retorno;

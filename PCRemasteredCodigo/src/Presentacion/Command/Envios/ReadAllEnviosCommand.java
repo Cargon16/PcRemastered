@@ -15,14 +15,10 @@ public class ReadAllEnviosCommand implements Command {
 		ArrayList<TEnvio> i= FactoriaNegocio.getInstance().crearSAEnvios().readAll();
 		if(i.isEmpty()){
 			contexto.setEvento(Evento.readAllEnvioErrorCommand);
-			contexto.setDatos(null);
-			return contexto;
 		}
-		else {
-			contexto.setDatos(i);
+		else contexto.setDatos(i);
 			Contexto cnx = new Contexto(Evento.crearVentanaEnvios, contexto);
 			return cnx;
-		}
 		
 	}
 

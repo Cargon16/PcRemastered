@@ -12,11 +12,11 @@ public class UpdateEnviosCommand implements Command {
 	public Contexto ejecutar(Contexto contexto) {
 		int i= FactoriaNegocio.getInstance().crearSAEnvios().update((TEnvio) contexto.getDatos());
 		if(i == -1){
-			contexto.setEvento(Evento.deleteEnvioErrorCommand);
-			contexto.setDatos(null);
-			
+			contexto.setEvento(Evento.updateEnvioErrorCommand);
 		}
-		return contexto;
+		else contexto.setDatos(i);
+		Contexto cnx = new Contexto(Evento.crearVentanaEnvios, contexto);
+		return cnx;
 		
 	}
 

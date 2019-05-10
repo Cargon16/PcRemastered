@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
@@ -146,7 +147,15 @@ public class VentanaEnvioImp extends VentanaEnvio {
 
 		case createEnvioCommand: anadir.Actualizar(c);break;
 		case readEnvioCommand: mID.Actualizar(c);break;
-
+		case createEnvioErrorCommand:if(Integer.valueOf(c.getDatos().toString()) == -2)JOptionPane.showMessageDialog(null, "No se puede realizar el envío la compra no existe");
+		else JOptionPane.showMessageDialog(null, "No se puede realizar el envío");break;
+		case readEnvioErrorCommand: JOptionPane.showMessageDialog(null, "El envío no existe");break;
+		case deleteEnvioCommand:JOptionPane.showMessageDialog(null, "Se ha cancelado el envío con id" +c.getDatos() + "\n existosamente") ;break;
+		case deleteEnvioErrorCommand:if(Integer.valueOf(c.getDatos().toString()) == -2)JOptionPane.showMessageDialog(null, "Ese envío ya está cancelado");
+		else JOptionPane.showMessageDialog(null, "No existe el envío");break;
+		case readAllEnvioErrorCommand:JOptionPane.showMessageDialog(null, "No hay envíos registrados \n en la base de datos");break;
+		case updateEnvioCommand:JOptionPane.showMessageDialog(null, "Se han actualizado los datos");break;
+		case updateEnvioErrorCommand : JOptionPane.showMessageDialog(null, "No ha sido posible actualizar");break;
 		default:
 			break;
 		}
