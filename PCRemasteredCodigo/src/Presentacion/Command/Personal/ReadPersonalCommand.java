@@ -11,16 +11,12 @@ public class ReadPersonalCommand implements Command {
 	@Override
 	public Contexto ejecutar(Contexto contexto) {
 		TPersonal i= FactoriaNegocio.getInstance().crearSAPersonal().read((int) contexto.getDatos());
-		if(i.equals(null)){
+		if(i == null){
 			contexto.setEvento(Evento.readPersonalErrorCommand);
-			contexto.setDatos(null);
-			return contexto;
 		}
-		else {
-			contexto.setDatos(i);
+		else contexto.setDatos(i);
 			Contexto cnx = new Contexto(Evento.crearVentanaPersonal, contexto);
 			return cnx;
-		}
 		
 	}
 

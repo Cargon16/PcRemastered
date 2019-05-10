@@ -15,14 +15,10 @@ public class ReadAllPersonalCommand implements Command {
 		ArrayList<TPersonal> i= FactoriaNegocio.getInstance().crearSAPersonal().readAll();
 		if(i.isEmpty()){
 			contexto.setEvento(Evento.readAllPersonalErrorCommand);
-			contexto.setDatos(null);
-			return contexto;
 		}
-		else {
-			contexto.setDatos(i);
+		else contexto.setDatos(i);
 			Contexto cnx = new Contexto(Evento.crearVentanaPersonal, contexto);
 			return cnx;
-		}
 		
 	}
  

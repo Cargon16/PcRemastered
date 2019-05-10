@@ -147,9 +147,16 @@ public class VentanaPersonalImp extends VentanaPersonal {
 		Contexto c = (Contexto) contexto.getDatos();
 		
 		switch (c.getEvento()) {
-		case createPersonalCommand: anadir.Actualizar(c);break;
+		case createPersonalCommand:JOptionPane.showMessageDialog(null, "Se ha creado el cliente nuevo con id " +c.getDatos()); anadir.Actualizar(c);break;
 		case createPersonalErrorCommand: JOptionPane.showMessageDialog(null, "El empleado ya existe.");break;
 		case readPersonalCommand: mID.Actualizar(c);break;
+		case readPersonalErrorCommand: JOptionPane.showMessageDialog(null, "El empleado no existe");break;
+		case deletePersonalCommand:JOptionPane.showMessageDialog(null, "Se ha eliminado el empleado con id" +c.getDatos() + "\n existosamente") ;break;
+		case deletePersonalErrorCommand:if(Integer.valueOf(c.getDatos().toString()) == -2)JOptionPane.showMessageDialog(null, "El empleado ya fue despedido");
+		else JOptionPane.showMessageDialog(null, "No existe el empleado");break;
+		case readAllPersonalErrorCommand:JOptionPane.showMessageDialog(null, "No hay empleados registrados \n en la base de datos");break;
+		case updatePersonalCommand:JOptionPane.showMessageDialog(null, "Se han actualizado los datos");break;
+		case updatePersonalErrorCommand : JOptionPane.showMessageDialog(null, "No ha sido posible actualizar");break;
 		
 			
 

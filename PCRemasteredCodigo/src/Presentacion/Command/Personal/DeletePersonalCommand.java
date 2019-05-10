@@ -10,18 +10,16 @@ public class DeletePersonalCommand implements Command {
 	@Override
 	public Contexto ejecutar(Contexto contexto) {
 		int i= FactoriaNegocio.getInstance().crearSAPersonal().delete(Integer.parseInt((String)contexto.getDatos()));
-		if(i == -1){
+		if(i == -1 || i == -2){
 			contexto.setEvento(Evento.deletePersonalErrorCommand);
-			contexto.setDatos(null);
-			return contexto;
+			 contexto.setDatos(i);
 		}
-		else {
-			contexto.setDatos(i);
+		else contexto.setDatos(i);
 			Contexto cnx = new Contexto(Evento.crearVentanaPersonal, contexto);
 			return cnx;
-		}
 			
 		
 	}
 
 }
+

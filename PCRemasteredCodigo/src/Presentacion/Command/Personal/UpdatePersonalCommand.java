@@ -13,14 +13,10 @@ public class UpdatePersonalCommand implements Command {
 		int i= FactoriaNegocio.getInstance().crearSAPersonal().update((TPersonal) contexto.getDatos());
 		if(i == -1){
 			contexto.setEvento(Evento.updatePersonalErrorCommand);
-			contexto.setDatos(null);
-			return contexto;
 		}
-		else {
-			contexto.setDatos(i);
+		else contexto.setDatos(i);
 			Contexto cnx = new Contexto(Evento.crearVentanaPersonal, contexto);
 			return cnx;
-		}
 		
 		
 	}

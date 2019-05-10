@@ -34,7 +34,7 @@ public class SAPersonalImp implements SAPersonal {
 	public int update(TPersonal tPersonal) {
 		int retorno= -1;
 		TPersonal e = FactoriaIntegracion.getInstance().crearDaoPersonal().readByID(tPersonal.getID());
-		if(e == null){
+		if(e != null){
 			retorno = FactoriaIntegracion.getInstance().crearDaoPersonal().update(tPersonal);
 		}
 		
@@ -44,8 +44,10 @@ public class SAPersonalImp implements SAPersonal {
 	public int delete(int id) {
 		int retorno= -1;
 		TPersonal e = FactoriaIntegracion.getInstance().crearDaoPersonal().readByID(id);
-		if(e == null){
-			retorno = FactoriaIntegracion.getInstance().crearDaoPersonal().delete(id);
+		if(e != null){
+			if(e.isActivo())
+				retorno = FactoriaIntegracion.getInstance().crearDaoPersonal().delete(id);
+				else retorno = -2;
 		}
 
 		return retorno;

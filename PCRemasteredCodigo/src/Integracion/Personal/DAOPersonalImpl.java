@@ -29,6 +29,9 @@ public class DAOPersonalImpl implements DAOPersonal {
 					stmt.setInt(4, personal.getTelefono() );
 					stmt.setString(5, personal.getNombre());
 					stmt.execute();
+					ResultSet rs = stmt.getGeneratedKeys();
+					if(rs.next())
+						id = rs.getInt(1);
 					stmt.close();
 					if (!stmt.isClosed())
 						stmt.close();
