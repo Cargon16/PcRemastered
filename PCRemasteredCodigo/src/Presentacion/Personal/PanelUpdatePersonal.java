@@ -12,25 +12,35 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
+import Integracion.Clientes.TCliente;
 import Integracion.Personal.TPersonal;
+import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
 
 /** 
-* <!-- begin-UML-doc -->
-* <!-- end-UML-doc -->
-* @author nacho710
-* @uml.annotations
-*     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_4Ao7AE8iEemfNOmfBQSQBw"
-* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_4Ao7AE8iEemfNOmfBQSQBw"
-*/
-public class PanelUpdatePersonal extends JPanel {
+ * <!-- begin-UML-doc -->
+ * <!-- end-UML-doc -->
+ * @author nacho710
+ * @uml.annotations
+ *     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_4Ao7AE8iEemfNOmfBQSQBw"
+ * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_4Ao7AE8iEemfNOmfBQSQBw"
+ */
+public class PanelUpdatePersonal extends JPanel implements Ventana {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField Nombre;
 	private JTextField salario;
 	private JTextField telefono;
 	private JTextField contrasena;
 	private JTextField botonfindtext;
+	private JButton button;
+	private JButton botonFind;
+	private JRadioButton activoRB;
+	private JRadioButton inactivoRB;
 
 	private TPersonal c;
 
@@ -60,7 +70,7 @@ public class PanelUpdatePersonal extends JPanel {
 
 		JLabel label_2 = new JLabel("Telefono");
 		label_2.setBounds(386, 237, 75, 14);
-		
+
 		contrasena = new JTextField();
 		contrasena.setColumns(10);
 		contrasena.setBounds(49, 284, 279, 57);
@@ -69,10 +79,9 @@ public class PanelUpdatePersonal extends JPanel {
 		label_3.setBounds(386, 305, 75, 14);
 
 
-		JButton button = new JButton("Actualizar");
+		button = new JButton("Actualizar");
 
 		button.setBounds(517, 329, 132, 43);
-		// add(button);
 		add(button);
 		button.setVisible(false);
 		botonfindtext = new JTextField();
@@ -80,13 +89,13 @@ public class PanelUpdatePersonal extends JPanel {
 		add(botonfindtext);
 		botonfindtext.setColumns(10);
 
-		JButton botonFind = new JButton("Buscar");
+		botonFind = new JButton("Buscar");
 
 		botonFind.setBounds(427, 28, 222, 23);
 		add(botonFind);
 
-		JRadioButton activoRB = new JRadioButton("En n�mina");
-		JRadioButton inactivoRB = new JRadioButton("Despedido");
+		activoRB = new JRadioButton("En n�mina");
+		inactivoRB = new JRadioButton("Despedido");
 		activoRB.setVisible(false);
 		inactivoRB.setVisible(false);
 		activoRB.setToolTipText("En n�mina");
@@ -176,5 +185,55 @@ public class PanelUpdatePersonal extends JPanel {
 			}
 		});
 
+	}
+
+	@Override
+	public void Actualizar(Contexto contexto) {
+		// TODO Auto-generated method stub
+
+		try{
+			c = (TPersonal) contexto.getDatos();
+			Nombre.setText(c.getNombre());
+			add(Nombre);
+			salario.setText(c.getSalario().toString());
+			add(salario);
+			telefono.setText(c.getTelefono().toString());
+			add(telefono);
+			contrasena.setText(c.getPass());
+			add(contrasena);
+			inactivoRB.setSelected(false);
+			activoRB.setSelected(false);
+			if (c.isActivo())
+				activoRB.setSelected(true);
+			else
+				inactivoRB.setSelected(true);
+			activoRB.setVisible(true);
+			inactivoRB.setVisible(true);
+
+			button.setVisible(true);
+
+			repaint();
+		}
+
+		catch (Exception ex) {
+			Nombre.setText("");
+			contrasena.setText("");
+			telefono.setText("");
+			salario.setText("");
+
+		}
+
+	}
+	
+	public void resetCamps(){
+		Nombre.setText(null);
+		salario.setText(null);
+		telefono.setText(null);
+		contrasena.setText(null);
+		activoRB.setSelected(false);
+		inactivoRB.setSelected(false);
+		botonfindtext.setText(null);
+		
+		
 	}
 }

@@ -30,7 +30,14 @@ public class PanelReadByIdEnvio extends JPanel implements Ventana{
 	/**
 	 * Create the panel.
 	 */
-	public PanelReadByIdEnvio() {
+	
+	public PanelReadByIdEnvio(){
+		
+		initComponent();
+		
+	}
+	
+	public void initComponent() {
 		setLayout(null);
 		setOpaque(false);
 		button = new JButton("Buscar Env�o");
@@ -75,6 +82,12 @@ public class PanelReadByIdEnvio extends JPanel implements Ventana{
 		else s= "Entregado";
 		textArea.setText("ID: " + c.getID() + "\n" +"Direcci�n: " + c.getDireccion()+ "\n" +"Estado: "+s+  "\n" );
 		
+		
+	}
+	
+	public void resetCamps() {
+		textField.setText(null);
+		textArea.setText(null);
 		
 	}
 }

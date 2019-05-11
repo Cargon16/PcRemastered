@@ -34,10 +34,14 @@ public class PanelReadAllProducto extends JPanel implements Ventana {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	JButton buttonRead;
-	JTextArea text;
+	private JButton buttonRead;
+	private JTextArea text;
 	
-	public  PanelReadAllProducto() {
+	public PanelReadAllProducto(){
+		initComponent();
+	}
+	
+	public  void initComponent() {
 		// TODO Auto-generated constructor stub
 		
 		setLayout(null);
@@ -80,6 +84,11 @@ public class PanelReadAllProducto extends JPanel implements Ventana {
 			+ "\n"+ "Stock: " + c.getStock() + "\n" + "Precio: " + c.getPrecio() + "\n\n";
 		}
 		text.setText(texto);
+	}
+	
+	public void resetCamps(){
+		text.setText(null);
+		
 	}
 	
 }

@@ -35,13 +35,28 @@ public class VentanaProductosImp extends VentanaProducto {
 	private static final long serialVersionUID = 1L;
 	
 	private JPanel contentPaneProducto;
-	private PanelAddProducto anadir = new PanelAddProducto();
-	private PanelDeleteProducto delete = new PanelDeleteProducto();
-	private PanelReadAllProducto readAll = new PanelReadAllProducto();
-	private PanelReadByIdProducto readById = new PanelReadByIdProducto();
-	private PanelUpdateProducto updateProducto = new PanelUpdateProducto();
+	private PanelAddProducto anadir;
+	private PanelDeleteProducto delete;
+	private PanelReadAllProducto readAll;
+	private PanelReadByIdProducto readById;
+	private PanelUpdateProducto updateProducto;
+	
 	
 	public VentanaProductosImp(){
+		initPanels();
+		initComponent();
+	}
+	
+	public void initPanels(){
+		anadir = new PanelAddProducto();
+		delete = new PanelDeleteProducto();
+		readAll = new PanelReadAllProducto();
+		updateProducto = new PanelUpdateProducto();
+		readById = new PanelReadByIdProducto();
+		
+	}
+	
+	public void initComponent(){
 		setResizable(false);
 		setVisible(true);
 		setLocationRelativeTo(null);
@@ -83,19 +98,20 @@ public class VentanaProductosImp extends VentanaProducto {
 		
 		
 		
-		JButton anadir = new JButton("<html>Anadir <br /> producto</html>");
-		anadir.addActionListener(new ActionListener() {
+		JButton add = new JButton("<html>Anadir <br /> producto</html>");
+		add.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				panel2.removeAll();
 				setTitle("Anadir Producto");
+				anadir.resetCamps();
 				panel2.add(paneles.get(0),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane());
 			}
 		});
-		panel_1.add(anadir);
+		panel_1.add(add);
 		
 		JButton eliminar = new JButton("<html>Eliminar <br /> producto</html>");
 		eliminar.addActionListener(new ActionListener() {
@@ -105,6 +121,7 @@ public class VentanaProductosImp extends VentanaProducto {
 				// TODO Auto-generated method stub
 				panel2.removeAll();
 				setTitle("Eliminar Producto");
+				delete.resetCamps();
 				panel2.add(paneles.get(1),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane());
 			}
@@ -119,6 +136,7 @@ public class VentanaProductosImp extends VentanaProducto {
 				// TODO Auto-generated method stub
 				panel2.removeAll();
 				setTitle("Actualizar Producto");
+				updateProducto.resetCamps();
 				panel2.add(paneles.get(2),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane());
 			}
@@ -133,6 +151,7 @@ public class VentanaProductosImp extends VentanaProducto {
 				// TODO Auto-generated method stub
 				panel2.removeAll();
 				setTitle("Actualizar Producto");
+				readById.resetCamps();
 				panel2.add(paneles.get(3),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane());
 			}
@@ -147,6 +166,7 @@ public class VentanaProductosImp extends VentanaProducto {
 				// TODO Auto-generated method stub
 				panel2.removeAll();
 				setTitle("Actualizar Producto");
+				readAll.resetCamps();
 				panel2.add(paneles.get(4),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane());
 			}
@@ -191,6 +211,12 @@ public class VentanaProductosImp extends VentanaProducto {
 	
 		
 		
+		
+	}
+
+	@Override
+	public void resetCamps() {
+		// TODO Auto-generated method stub
 		
 	}
 	

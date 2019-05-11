@@ -34,9 +34,14 @@ public class PanelReadByIdProducto extends JPanel implements Ventana {
 	private JTextField textField;
 	private JButton button;
 	private JTextArea textArea ;
+	private JScrollPane scroll;
 	
 	
-	public PanelReadByIdProducto() {
+	public PanelReadByIdProducto(){
+		initComponent();
+	}
+	
+	public void initComponent() {
 		setLayout(null);
 		setOpaque(false);
 		button = new JButton("Buscar Producto");
@@ -48,7 +53,7 @@ public class PanelReadByIdProducto extends JPanel implements Ventana {
 		textField.setBounds(83, 68, 339, 42);
 		add(textField);
 		textArea = new JTextArea();
-		JScrollPane scroll = new JScrollPane(textArea);
+		scroll = new JScrollPane(textArea);
 	    scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 	    scroll.setVisible(true);
 	    scroll.setBounds(83, 136, 522, 281);
@@ -80,6 +85,12 @@ public class PanelReadByIdProducto extends JPanel implements Ventana {
 		textArea.setVisible(true);
 		TProducto p = (TProducto) contexto.getDatos();
 		textArea.setText("Nombre: " + p.getNombre() + "\n" + "Descripcion: "+p.getDescripcion()+ "\n" + "Stock: "+p.getStock() + "\n" + "Precio: "+p.getPrecio()+"\n" );
+		
+	}
+	
+	public void resetCamps(){
+		textField.setText(null);
+		textArea.setText(null);
 		
 	}
 }

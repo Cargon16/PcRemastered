@@ -23,9 +23,21 @@ public class PanelAddEnvio extends JPanel implements Ventana{
 	
 	private static final long serialVersionUID = 1L;
 	private JTextField direccion;
+<<<<<<< HEAD
 	private JTextField idVenta;
+=======
+	private JRadioButton activoRB;
+	private JRadioButton inactivoRB;
+	private JButton button;
+>>>>>>> refs/remotes/origin/master
 	
-	public PanelAddEnvio() {
+	public PanelAddEnvio(){
+		
+		initComponents();
+	}
+	
+	
+	public void initComponents() {
 		setLayout(null);
 		setOpaque(false);
 		
@@ -47,11 +59,11 @@ public class PanelAddEnvio extends JPanel implements Ventana{
 		lbVenta.setBounds(37, 115, 140, 14);
 		add(lbVenta);
 
-		JRadioButton activoRB = new JRadioButton("En curso");
+		activoRB = new JRadioButton("En curso");
 		activoRB.setToolTipText("Activo");
 		activoRB.setBounds(101, 178, 109, 23);
 		activoRB.setOpaque(false);
-		JRadioButton inactivoRB = new JRadioButton("Entregado");
+		inactivoRB = new JRadioButton("Entregado");
 		activoRB.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -72,7 +84,7 @@ public class PanelAddEnvio extends JPanel implements Ventana{
 				activoRB.setSelected(false);
 			}
 		});
-		JButton button = new JButton("Añadir Envío");
+		button = new JButton("Añadir Envío");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				boolean ok = false ;
@@ -100,6 +112,14 @@ public class PanelAddEnvio extends JPanel implements Ventana{
 	}
 	public void Actualizar(Contexto contexto) {
 		// TODO Auto-generated method stub
+		this.revalidate();
+		this.repaint();
+	}
+	
+	public void resetCamps(){
+		direccion.setText(null);
+		activoRB.setSelected(false);
+		inactivoRB.setSelected(false);
 		
 	}
 }

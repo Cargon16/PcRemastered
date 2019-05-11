@@ -122,5 +122,11 @@ public class LoginImp extends Login{
 		JOptionPane.showMessageDialog(null, "Datos incorrectos");
 		
 	}
+
+	@Override
+	public void resetCamps() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

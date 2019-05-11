@@ -11,21 +11,32 @@ import javax.swing.JLabel;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
-import Presentacion.Ventas.VentanaVentas;
 
 public class VentanaPrincipalImp extends VentanaPrincipal{
-	
-	
-	private static int empleado;
-	public VentanaPrincipalImp() {
 
-		
-		
+
+	private static final long serialVersionUID = 1L;
+	private static int empleado;
+	private JButton botonVentas;
+	private JButton botonModelo;
+	private JButton botonCliente;
+	private JButton btnEnvios;
+	private JButton btnP;
+	private JButton btnProveedores;
+
+	public VentanaPrincipalImp(){
+		initComponent();
+	}
+
+	public void initComponent() {
+
+
+
 		setResizable(false);
 		setBounds(100, 100, 534, 360);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("PcRemastered");
-		JButton botonVentas = new JButton("Clientes");
+		botonVentas = new JButton("Clientes");
 		botonVentas.setBounds(26, 72, 106, 56);
 		botonVentas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -41,15 +52,15 @@ public class VentanaPrincipalImp extends VentanaPrincipal{
 		getContentPane().setLayout(null);
 		getContentPane().add(botonVentas);
 
-		JButton botonModelo = new JButton("Productos");
+		botonModelo = new JButton("Productos");
 		botonModelo.setBounds(393, 142, 106, 56);
 		botonModelo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					Contexto contexto = new Contexto(Evento.crearVentanaProductos, null);
 					Controller.getInstance().ejecutar(contexto);
-					
-					
+
+
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -58,15 +69,15 @@ public class VentanaPrincipalImp extends VentanaPrincipal{
 		});
 		getContentPane().add(botonModelo);
 
-		JButton botonCliente = new JButton("Ventas");
+		botonCliente = new JButton("Ventas");
 		botonCliente.setBounds(283, 72, 98, 56);
 		botonCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					
+
 					Contexto contexto = new Contexto(Evento.crearVentanaVentas, getTitle());
 					Controller.getInstance().ejecutar(contexto);
-				
+
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -75,7 +86,7 @@ public class VentanaPrincipalImp extends VentanaPrincipal{
 		});
 		getContentPane().add(botonCliente);
 
-		JButton btnEnvios = new JButton("Envios");
+		btnEnvios = new JButton("Envios");
 		btnEnvios.setBounds(26, 141, 106, 59);
 		btnEnvios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -90,7 +101,7 @@ public class VentanaPrincipalImp extends VentanaPrincipal{
 		});
 		getContentPane().add(btnEnvios);
 
-		JButton btnP = new JButton("Personal");
+		btnP = new JButton("Personal");
 		btnP.setBounds(393, 72, 106, 56);
 		btnP.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -105,7 +116,7 @@ public class VentanaPrincipalImp extends VentanaPrincipal{
 		});
 		getContentPane().add(btnP);
 
-		JButton btnProveedores = new JButton("Proveedores");
+		btnProveedores = new JButton("Proveedores");
 		btnProveedores.setBounds(144, 72, 106, 56);
 		getContentPane().add(btnProveedores);
 
@@ -121,7 +132,14 @@ public class VentanaPrincipalImp extends VentanaPrincipal{
 	@Override
 	public void Actualizar(Contexto contexto) {
 		empleado= (int) contexto.getDatos();
-		
+
+
+	}
+
+
+	@Override
+	public void resetCamps() {
+		// TODO Auto-generated method stub
 
 	}
 }

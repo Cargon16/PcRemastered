@@ -20,21 +20,28 @@ import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
 
 /** 
-* <!-- begin-UML-doc -->
-* <!-- end-UML-doc -->
-* @author nacho710
-* @uml.annotations
-*     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_B39NwFOqEemH9v7SOzgnzQ"
-* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_B39NwFOqEemH9v7SOzgnzQ"
-*/
+ * <!-- begin-UML-doc -->
+ * <!-- end-UML-doc -->
+ * @author nacho710
+ * @uml.annotations
+ *     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_B39NwFOqEemH9v7SOzgnzQ"
+ * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_B39NwFOqEemH9v7SOzgnzQ"
+ */
 public class PanelReadAllClientes extends JPanel implements Ventana {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	JButton button;
-	JTextArea textArea;
-	public PanelReadAllClientes() {
+	private JButton button;
+	private JTextArea textArea;
+	private JScrollPane scroll;
+
+
+	public PanelReadAllClientes(){
+		initComponent();
+	}
+
+	public void initComponent() {
 		setLayout(null);
 		setOpaque(false);
 		button = new JButton("Ver los Clientes");
@@ -43,7 +50,7 @@ public class PanelReadAllClientes extends JPanel implements Ventana {
 
 		textArea = new JTextArea();
 
-		JScrollPane scroll = new JScrollPane(textArea);
+		scroll = new JScrollPane(textArea);
 		scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scroll.setVisible(true);
 		scroll.setBounds(83, 136, 522, 281);
@@ -52,8 +59,8 @@ public class PanelReadAllClientes extends JPanel implements Ventana {
 		textArea.setVisible(false);
 		textArea.setEditable(false);
 		button.addActionListener(new ActionListener() {
-			
-			@SuppressWarnings("unchecked")
+
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				Contexto contexto = new Contexto(Evento.readAllClienteCommand, 1);
@@ -82,6 +89,10 @@ public class PanelReadAllClientes extends JPanel implements Ventana {
 
 		}
 		textArea.setText(texto);
-		
+
+	}
+
+	public void resetCamps(){
+		textArea.setText(null);
 	}
 }

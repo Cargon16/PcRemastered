@@ -41,8 +41,12 @@ public class PanelAddProducto extends JPanel implements Ventana {
 	private JTextField stockText;
 	private JTextField precioText;
 	
-	
 	public PanelAddProducto(){
+		initComponent();
+	}
+	
+	
+	public void initComponent(){
 		
 		setLayout(null);
 		setOpaque(false);
@@ -106,7 +110,18 @@ public class PanelAddProducto extends JPanel implements Ventana {
 	@Override
 	public void Actualizar(Contexto contexto) {
 		// TODO Auto-generated method stub
+		this.revalidate();
+		this.repaint();
 	}
+	
+	public void resetCamps(){
+		nombreText.setText(null);
+		descripcionText.setText(null);
+		stockText.setText(null);
+		precioText.setText(null);
+		
+	}
+	
 	
 
 }

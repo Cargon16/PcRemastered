@@ -24,6 +24,10 @@ import Presentacion.Command.Contexto;
 
 
 public class VentanaEnvioImp extends VentanaEnvio {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private PanelAddEnvio anadir = new PanelAddEnvio();
 	private PanelDeleteEnvio eliminar = new PanelDeleteEnvio();
@@ -32,7 +36,20 @@ public class VentanaEnvioImp extends VentanaEnvio {
 	private PanelReadAllEnvio mAll = new PanelReadAllEnvio();
 	
 	
-	public VentanaEnvioImp() {
+	public VentanaEnvioImp(){
+		initPanel();
+		initComponent();
+	}
+	
+	public void initPanel(){
+		anadir = new PanelAddEnvio();
+		eliminar = new PanelDeleteEnvio();
+		actualizar = new PanelUpdateEnvio();
+		mID = new PanelReadByIdEnvio();
+		mAll = new PanelReadAllEnvio();
+	}
+	
+	public void initComponent() {
 		setResizable(false);
 		setVisible(true);
 		setLocationRelativeTo(null);
@@ -76,6 +93,7 @@ public class VentanaEnvioImp extends VentanaEnvio {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
 				setTitle("A�adir env�o");
+				anadir.resetCamps();
 				panel2.add(paneles.get(0),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane()); 
 				
@@ -88,6 +106,7 @@ public class VentanaEnvioImp extends VentanaEnvio {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
 				setTitle("Eliminar env�o");
+				eliminar.resetCamps();
 				panel2.add(paneles.get(1),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane()); 
 			}
@@ -99,6 +118,7 @@ public class VentanaEnvioImp extends VentanaEnvio {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
 				setTitle("Actualizar env�o");
+				actualizar.resetCamps();
 				panel2.add(paneles.get(2),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane()); 
 			}
@@ -111,6 +131,7 @@ public class VentanaEnvioImp extends VentanaEnvio {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
 				setTitle("Mostrar env�o por ID");
+				mID.resetCamps();
 				panel2.add(paneles.get(3),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane());
 			}
@@ -123,6 +144,7 @@ public class VentanaEnvioImp extends VentanaEnvio {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
 				setTitle("Mostrar todos los env�os ");
+				mAll.resetCamps();
 				panel2.add(paneles.get(4),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane());
 			}
@@ -159,5 +181,11 @@ public class VentanaEnvioImp extends VentanaEnvio {
 		default:
 			break;
 		}
+	}
+
+	@Override
+	public void resetCamps() {
+		// TODO Auto-generated method stub
+		
 	}
 }
