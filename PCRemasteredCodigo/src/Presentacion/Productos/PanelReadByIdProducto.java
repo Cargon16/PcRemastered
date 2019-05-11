@@ -88,7 +88,7 @@ public class PanelReadByIdProducto extends JPanel implements Ventana {
 		
 	}
 	
-	public void resetCapms(){
+	public void resetCamps(){
 		textField.setText(null);
 		textArea.setText(null);
 		

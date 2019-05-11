@@ -135,6 +135,11 @@ public class VentanaVentasImp extends VentanaVentas {
 			break;
 		}
 	}
+	@Override
+	public void resetCamps() {
+		// TODO Auto-generated method stub
+		
+	}
 
 	
 }

@@ -182,4 +182,10 @@ public class VentanaEnvioImp extends VentanaEnvio {
 			break;
 		}
 	}
+
+	@Override
+	public void resetCamps() {
+		// TODO Auto-generated method stub
+		
+	}
 }

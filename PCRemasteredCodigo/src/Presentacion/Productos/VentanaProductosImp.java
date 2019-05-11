@@ -151,7 +151,7 @@ public class VentanaProductosImp extends VentanaProducto {
 				// TODO Auto-generated method stub
 				panel2.removeAll();
 				setTitle("Actualizar Producto");
-				readById.resetCapms();
+				readById.resetCamps();
 				panel2.add(paneles.get(3),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane());
 			}
@@ -211,6 +211,12 @@ public class VentanaProductosImp extends VentanaProducto {
 	
 		
 		
+		
+	}
+
+	@Override
+	public void resetCamps() {
+		// TODO Auto-generated method stub
 		
 	}
 	

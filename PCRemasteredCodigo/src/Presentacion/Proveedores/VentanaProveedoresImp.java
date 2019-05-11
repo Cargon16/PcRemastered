@@ -6,20 +6,9 @@ package Presentacion.Proveedores;
 import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 
-/** 
- * <!-- begin-UML-doc -->
- * <!-- end-UML-doc -->
- * @author nacho710
- * @uml.annotations
- *     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_utCnMFLcEemZgJHrDkdxCQ"
- * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_utCnMFLcEemZgJHrDkdxCQ"
- */
+
 public class VentanaProveedoresImp extends VentanaProveedores {
-	/** 
-	* <!-- begin-UML-doc -->
-	* <!-- end-UML-doc -->
-	* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_S_-4AFLhEemZgJHrDkdxCQ"
-	*/
+
 	private Object BotonAdd;
 
 	/** 
@@ -191,6 +180,12 @@ public class VentanaProveedoresImp extends VentanaProveedores {
 
 	@Override
 	public void Actualizar(Contexto contexto) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void resetCamps() {
 		// TODO Auto-generated method stub
 		
 	}

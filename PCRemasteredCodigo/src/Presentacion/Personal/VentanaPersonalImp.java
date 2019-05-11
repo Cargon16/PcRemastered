@@ -185,4 +185,10 @@ public class VentanaPersonalImp extends VentanaPersonal {
 			break;
 		}
 	}
+
+	@Override
+	public void resetCamps() {
+		// TODO Auto-generated method stub
+		
+	}
 }

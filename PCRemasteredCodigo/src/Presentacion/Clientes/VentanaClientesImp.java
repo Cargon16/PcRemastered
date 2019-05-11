@@ -197,4 +197,10 @@ public class VentanaClientesImp extends VentanaClientes{
 			break;
 		}
 	}
+
+	@Override
+	public void resetCamps() {
+		// TODO Auto-generated method stub
+		
+	}
 }
