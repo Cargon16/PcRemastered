@@ -13,34 +13,48 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import Integracion.Envios.TEnvio;
+import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
 
-public class PanelUpdateEnvio extends JPanel{
+public class PanelUpdateEnvio extends JPanel implements Ventana{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField Direccion;
 	private JTextField botonfindtext;
+	private JButton botonFind;
+	private JButton button;
+	private JRadioButton activoRB;
+	private JRadioButton inactivoRB;
 
 	private TEnvio c;
 
 	/**
 	 * Create the panel.
 	 */
-	public PanelUpdateEnvio() {
+	
+	public PanelUpdateEnvio(){
+		
+	}
+	
+	public void initComponent() {
 		setLayout(null);
 		setOpaque(false);
 		Direccion = new JTextField();
 		Direccion.setColumns(10);
 		Direccion.setBounds(49, 80, 279, 57);
-		// add(dni);
+	
 
 		JLabel label = new JLabel("Direccion");
 		label.setBounds(386, 101, 100, 14);
 
-		JButton button = new JButton("Actualizar");
+		button = new JButton("Actualizar");
 
 		button.setBounds(427, 206, 150, 33);
-		// add(button);
+
 		add(button);
 		button.setVisible(false);
 		botonfindtext = new JTextField();
@@ -48,13 +62,13 @@ public class PanelUpdateEnvio extends JPanel{
 		add(botonfindtext);
 		botonfindtext.setColumns(10);
 
-		JButton botonFind = new JButton("Buscar");
+		botonFind = new JButton("Buscar");
 
 		botonFind.setBounds(427, 45, 150, 23);
 		add(botonFind);
 
-		JRadioButton activoRB = new JRadioButton("En curso");
-		JRadioButton inactivoRB = new JRadioButton("Entregado");
+		activoRB = new JRadioButton("En curso");
+		inactivoRB = new JRadioButton("Entregado");
 		activoRB.setVisible(false);
 		inactivoRB.setVisible(false);
 		activoRB.setToolTipText("En curso");
@@ -132,5 +146,20 @@ public class PanelUpdateEnvio extends JPanel{
 			}
 		});
 
+	}
+
+	@Override
+	public void Actualizar(Contexto contexto) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public void resetCamps(){
+		
+		Direccion.setText(null);
+		botonfindtext.setText(null);
+		activoRB.setSelected(false);
+		inactivoRB.setSelected(false);
+		
 	}
 }

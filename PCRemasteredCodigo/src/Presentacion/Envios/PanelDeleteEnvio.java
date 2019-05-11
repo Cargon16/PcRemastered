@@ -12,19 +12,27 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import Integracion.Clientes.TCliente;
+import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
 
-public class PanelDeleteEnvio extends JPanel{
+public class PanelDeleteEnvio extends JPanel implements Ventana{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField textField;
-	private Controller ap;
-	private TCliente c;
+	private JButton btnNewButton;
 	/**
 	 * Create the panel.
 	 */
-	public PanelDeleteEnvio() {
+	
+	public PanelDeleteEnvio(){
+		initComponent();
+	}
+	
+	public void initComponent() {
 		setLayout(null);
 		setOpaque(false);
 		textField = new JTextField();
@@ -32,7 +40,7 @@ public class PanelDeleteEnvio extends JPanel{
 		add(textField);
 		textField.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Eliminar");
+		btnNewButton = new JButton("Eliminar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			try{
@@ -53,5 +61,16 @@ public class PanelDeleteEnvio extends JPanel{
 		lblEliminarEnvio.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblEliminarEnvio.setBounds(104, 26, 140, 35);
 		add(lblEliminarEnvio);
+	}
+	@Override
+	public void Actualizar(Contexto contexto) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public void resetCamps(){
+		textField.setText(null);
+		
+		
 	}
 }
