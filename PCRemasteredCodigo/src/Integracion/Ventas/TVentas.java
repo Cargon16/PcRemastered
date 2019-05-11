@@ -16,7 +16,7 @@ public class TVentas {
 	private Integer IDCliente;
 	private Integer IDPersonal;
 	public TVentas(Integer iD, float precio, Date fecha, Boolean pagado,
-				HashMap<Integer,Integer> tLineaVentas,int cliente, int idempleado) {
+				HashMap<Integer,Integer> tLineaVentas,Integer cliente, Integer idempleado) {
 			super();
 			this.ID = iD;
 			this.precio = precio;

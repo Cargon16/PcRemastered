@@ -78,7 +78,7 @@ public class PanelAbrirVentas extends JPanel implements Ventana{
 		lblIntroducirIdDe.setBounds(420, 208, 318, 46);
 		add(lblIntroducirIdDe);
 		
-		JLabel lblProductosAadidos = new JLabel("Productos a\u00F1adidos");
+		JLabel lblProductosAadidos = new JLabel("Productos añadidos");
 		lblProductosAadidos.setBounds(133, 174, 151, 14);
 		add(lblProductosAadidos);
 		
@@ -111,6 +111,7 @@ public class PanelAbrirVentas extends JPanel implements Ventana{
 				ArrayList<Object> lineaevento = new ArrayList<>();
 				lineaevento.add(idventa);
 				lineaevento.add(Integer.valueOf(textDelete.getText()));
+				lineaevento.add(Integer.valueOf(textcantidad.getText()));
 				Contexto contexto = new Contexto(Evento.DeleteProductoVentaCommand,lineaevento);
 				Controller.getInstance().ejecutar(contexto);
 			}

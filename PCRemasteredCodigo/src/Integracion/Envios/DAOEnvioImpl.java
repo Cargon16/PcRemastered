@@ -18,7 +18,7 @@ public class DAOEnvioImpl implements DAOEnvio {
 	@Override
 	public Integer create(TEnvio envio) {
 		int id =0;
-		String insercion = "INSERT INTO envios (Direccion,Estado) VALUES (?,?)";
+		String insercion = "INSERT INTO envios (Direccion,Activo,IDVenta) VALUES (?,?,?)";
 			
 		Connection conn = Connections.getInstance();
 			if (conn != null) {
@@ -26,6 +26,7 @@ public class DAOEnvioImpl implements DAOEnvio {
 					PreparedStatement stmt = conn.prepareStatement(insercion ,Statement.RETURN_GENERATED_KEYS);
 					stmt.setString(1, envio.getDireccion());
 					stmt.setBoolean(2, envio.isEstado());
+					stmt.setInt(3, envio.getIdVenta());
 					stmt.execute();
 					ResultSet rs = stmt.getGeneratedKeys();
 					if(rs.next())
@@ -52,7 +53,7 @@ public class DAOEnvioImpl implements DAOEnvio {
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery(lectura);
 				if (rs.next()) {
-					retorno = new TEnvio(id, rs.getBoolean("estado"), rs.getString("direccion"));
+					retorno = new TEnvio(id, rs.getBoolean("activo"), rs.getString("direccion"), rs.getInt("idventa"));
 				}
 			}
 		} catch (SQLException e) {
@@ -71,7 +72,7 @@ public class DAOEnvioImpl implements DAOEnvio {
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery(lectura);
 				while (rs.next()) {
-					TEnvio cliente = new TEnvio(rs.getInt("id"), rs.getBoolean("estado"), rs.getString("direccion"));
+					TEnvio cliente = new TEnvio(rs.getInt("id"), rs.getBoolean("activo"), rs.getString("direccion"), rs.getInt("idventa"));
 					retorno.add(cliente);
 				}
 			}
@@ -86,8 +87,8 @@ public class DAOEnvioImpl implements DAOEnvio {
 		int activo = 0;
 		if(envio.isEstado())
 			activo = 1;
-		String actualizacion = "UPDATE envios SET  id='" + envio.getID()+ "', estado='" + activo
-				+ "', direccion='" + envio.getDireccion() + "' WHERE id=" + envio.getID();
+		String actualizacion = "UPDATE envios SET  id='" + envio.getID()+ "', activo='" + activo
+				+ "', direccion='" + envio.getDireccion() + "', idventa='" + envio.getIdVenta() + "' WHERE id=" + envio.getID();
 		try {
 			Connection conn = Connections.getInstance();
 

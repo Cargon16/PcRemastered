@@ -3,16 +3,26 @@ package Integracion.Envios;
 
 public class TEnvio {
 
-	public TEnvio(Integer iD, Boolean estado, String direccion) {
+	public TEnvio(Integer iD, Boolean estado, String direccion, Integer IdVenta) {
 		super();
 		ID = iD;
 		Estado = estado;
 		Direccion = direccion;
+		this.IdVenta = IdVenta;
+	}
+
+	public Integer getIdVenta() {
+		return IdVenta;
+	}
+
+	public void setIdVenta(Integer idVenta) {
+		IdVenta = idVenta;
 	}
 
 	private Integer ID;
 	private Boolean Estado;
 	private String Direccion;
+	private Integer IdVenta;
 
 	public Integer getID() {
 		// begin-user-code

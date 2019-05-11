@@ -23,6 +23,7 @@ public class PanelAddEnvio extends JPanel implements Ventana{
 	
 	private static final long serialVersionUID = 1L;
 	private JTextField direccion;
+	private JTextField idVenta;
 	
 	public PanelAddEnvio() {
 		setLayout(null);
@@ -30,16 +31,25 @@ public class PanelAddEnvio extends JPanel implements Ventana{
 		
 		direccion = new JTextField();
 		direccion.setColumns(10);
-		direccion.setBounds(109, 86, 279, 32);
+		direccion.setBounds(37, 80, 279, 32);
 		add(direccion);
 
-		JLabel lblDireccin = new JLabel("Direcci\u00F3n");
-		lblDireccin.setBounds(37, 95, 75, 14);
+		JLabel lblDireccin = new JLabel("Direccion");
+		lblDireccin.setBounds(37, 58, 75, 14);
 		add(lblDireccin);
+		
+		idVenta = new JTextField();
+		idVenta.setColumns(10);
+		idVenta.setBounds(37, 138, 279, 32);
+		add(idVenta);
+
+		JLabel lbVenta = new JLabel("Id de la compra a enviar");
+		lbVenta.setBounds(37, 115, 140, 14);
+		add(lbVenta);
 
 		JRadioButton activoRB = new JRadioButton("En curso");
 		activoRB.setToolTipText("Activo");
-		activoRB.setBounds(109, 165, 109, 23);
+		activoRB.setBounds(101, 178, 109, 23);
 		activoRB.setOpaque(false);
 		JRadioButton inactivoRB = new JRadioButton("Entregado");
 		activoRB.addActionListener(new ActionListener() {
@@ -51,7 +61,7 @@ public class PanelAddEnvio extends JPanel implements Ventana{
 		});
 		add(activoRB);
 
-		inactivoRB.setBounds(279, 165, 109, 23);
+		inactivoRB.setBounds(207, 178, 109, 23);
 		inactivoRB.setOpaque(false);
 		add(inactivoRB);
 		inactivoRB.addActionListener(new ActionListener() {
@@ -68,22 +78,22 @@ public class PanelAddEnvio extends JPanel implements Ventana{
 				boolean ok = false ;
 				if(activoRB.isSelected()) 
 					ok = true;
-				TEnvio envio = new TEnvio(null, ok, direccion.getText());
+				TEnvio envio = new TEnvio(null, ok, direccion.getText(), Integer.valueOf(idVenta.getText()));
 				Contexto contexto = new Contexto(Evento.createEnvioCommand, envio);
 				Controller.getInstance().ejecutar(contexto);
 				
 			}
 		});
-		button.setBounds(162, 197, 132, 40);
+		button.setBounds(137, 210, 132, 40);
 		add(button);
 		
-		JLabel lblAadirCliente = new JLabel("A\u00D1ADIR ENVIO");
+		JLabel lblAadirCliente = new JLabel("AÑADIR ENVIO");
 		lblAadirCliente.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblAadirCliente.setBounds(37, 13, 162, 32);
 		add(lblAadirCliente);
 		
 		JLabel lblEstado = new JLabel("Estado");
-		lblEstado.setBounds(37, 168, 56, 16);
+		lblEstado.setBounds(37, 181, 56, 16);
 		add(lblEstado);
 		
 		

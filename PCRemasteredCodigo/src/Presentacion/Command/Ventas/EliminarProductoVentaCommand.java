@@ -13,7 +13,7 @@ public class EliminarProductoVentaCommand implements Command{
 	@Override
 	public Contexto ejecutar(Contexto contexto) {
 		ArrayList<Object> lista = (ArrayList<Object>) contexto.getDatos();
-		TVentas i = FactoriaNegocio.getInstance().crearSAVentas().DeleteProductoVenta((int)lista.get(0), (int)lista.get(1));
+		TVentas i = FactoriaNegocio.getInstance().crearSAVentas().DeleteProductoVenta((int)lista.get(0), (int)lista.get(1), (int)lista.get(2));
 		if ( i == null){
 				contexto.setEvento(Evento.addProductoVentaError);
 		}

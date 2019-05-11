@@ -14,7 +14,7 @@ public class InitCommand implements Command{
 			VentanaPrincipal.getInstance();
 		else {
 			Integer i = (int) contexto.getDatos();
-			VentanaPrincipal.getInstance().setTitle("Nº de empleado: "+i.toString());
+			VentanaPrincipal.getInstance().setTitle("Empleado: "+i.toString());
 		}
 		
 		return contexto ;

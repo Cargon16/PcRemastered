@@ -25,7 +25,8 @@ public class DaoVentasImp implements DaoVentas {
 	@Override
 	public int abrirVenta(TVentas venta){
 		int retorno = 0;
-		String create= "INSERT INTO ventas (precio,fecha,pagado,idCliente,IDPersonal) VALUES (?,?,?,?,?);" ;
+		//String create= "INSERT INTO ventas (precio,fecha,pagado,idCliente,IDPersonal) VALUES (?,?,?,?,?);" ;
+		String create= "INSERT INTO ventas (precio,fecha,pagado,IDPersonal) VALUES (?,?,?,?);" ;
 		try{
 		Connection conn = Connections.getInstance();
 			if ( conn!= null){
@@ -33,8 +34,8 @@ public class DaoVentasImp implements DaoVentas {
 				stmt.setFloat(1,venta.getPrecio());
 				stmt.setDate(2,venta.getFecha());
 				stmt.setBoolean(3, venta.getPagado());
-				stmt.setInt(4, venta.getIDCliente());
-				stmt.setInt(5, venta.getIDPersonal());
+				//stmt.setInt(4, venta.getIDCliente());
+				stmt.setInt(4, venta.getIDPersonal());
 				stmt.execute();
 				ResultSet rs = stmt.getGeneratedKeys();
 				if(rs.next())
@@ -132,7 +133,27 @@ public class DaoVentasImp implements DaoVentas {
 		}
 		return retorno;
 	}
-
+	public int getCantidadLineaVenta(TLineaVentas lineaVenta){
+		int cantidad=0;
+		String insercion = "SELECT * FROM lineaventa WHERE IdVenta="+ lineaVenta.getIDVenta()+" and idProducto="+lineaVenta.getIDProducto()+";";
+		try{
+			Connection conn = Connections.getInstance();
+			if ( conn!= null){
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(insercion);
+				while ( rs.next()){
+					cantidad = rs.getInt(3);
+				}
+				stmt.close();
+				if (!stmt.isClosed())
+					stmt.close();
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return  cantidad;
+	}
 
 	@Override
 	public HashMap<Integer,Integer> getLineaVenta(int idVenta){

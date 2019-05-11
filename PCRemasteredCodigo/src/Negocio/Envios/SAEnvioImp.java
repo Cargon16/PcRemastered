@@ -7,16 +7,21 @@ import java.util.ArrayList;
 
 import Integracion.Envios.TEnvio;
 import Integracion.Factorias.FactoriaIntegracion;
+import Integracion.Ventas.TVentas;
 
 public class SAEnvioImp implements SAEnvio {
 	
 	public int create(TEnvio tEnvio) {
 		int retorno= -1;
-		TEnvio e = FactoriaIntegracion.getInstance().crearDaoEnvios().readByID(tEnvio.getID());
-		if(e == null){
-			retorno = FactoriaIntegracion.getInstance().crearDaoEnvios().create(tEnvio);
+		TVentas v = FactoriaIntegracion.getInstance().crearDaoVenta().readbyID(tEnvio.getIdVenta());
+		if(v != null){
+			if(v.getPagado()){
+			TEnvio e = FactoriaIntegracion.getInstance().crearDaoEnvios().readByID(tEnvio.getID());
+			if(e == null){
+				retorno = FactoriaIntegracion.getInstance().crearDaoEnvios().create(tEnvio);
+			}
+			}
 		}
-		
 		return retorno;
 	
 	}

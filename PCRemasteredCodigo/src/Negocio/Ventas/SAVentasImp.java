@@ -60,23 +60,27 @@ public class SAVentasImp implements SAVentas {
 		catch(Exception e){
 			e.printStackTrace();
 		}
+		
 		return venta;
 	}
 	@Override
-	public TVentas DeleteProductoVenta(int idVenta, int producto){
+	public TVentas DeleteProductoVenta(int idVenta, int producto, int cant){
 		TLineaVentas linea = new TLineaVentas(idVenta, producto, 0);
 		TVentas ventas = FactoriaIntegracion.getInstance().crearDaoVenta().readbyID(idVenta);
-		int cantidad = FactoriaIntegracion.getInstance().crearDaoVenta().eliminarLineaVenta(linea);
-		if( cantidad > 0){ // si es mayor que cero significa que es si exsite la linea de venta y que se puede eliminar
+		int cantidad = FactoriaIntegracion.getInstance().crearDaoVenta().getCantidadLineaVenta(linea);
+		FactoriaIntegracion.getInstance().crearDaoVenta().eliminarLineaVenta(linea);
+		
+		if( cantidad > 0 && cantidad >= cant){ // si es mayor que cero significa que es si exsite la linea de venta y que se puede eliminar
 			
 			HashMap<Integer, Integer> lineaVenta = ventas.getLineasVenta();
 			lineaVenta.remove(producto);
 			ventas.setLineasVenta(lineaVenta);
 			//actualizamos el producto para devolverle el stock
 			TProducto p = FactoriaIntegracion.getInstance().crearDaoProducto().readByID(producto); 
-			p.setStock(p.getStock()+cantidad);
+			p.setStock(p.getStock()+cant);
 			FactoriaIntegracion.getInstance().crearDaoProducto().update(p);			
-			ventas.setPrecio( ventas.getPrecio() - (p.getPrecio() * cantidad ));
+			ventas.setPrecio( ventas.getPrecio() - (p.getPrecio() * cant ));
+			FactoriaIntegracion.getInstance().crearDaoVenta().update(ventas);
 		}
 		return ventas;
 		

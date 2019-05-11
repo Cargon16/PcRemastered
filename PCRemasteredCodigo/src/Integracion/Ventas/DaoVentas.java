@@ -19,7 +19,8 @@ public interface DaoVentas {
 	
 	
 
-
+	public int getCantidadLineaVenta(TLineaVentas lineaVenta);
+	
 	public int addLineaVenta(TLineaVentas lineaVenta);
 
 	public HashMap<Integer, Integer> getLineaVenta(int idVenta);

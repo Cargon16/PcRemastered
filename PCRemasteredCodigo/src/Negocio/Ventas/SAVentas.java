@@ -94,5 +94,5 @@ public interface SAVentas {
 
 	public TVentas AddProductoVenta(int idVenta, int producto, int cantidad);
 
-	public TVentas DeleteProductoVenta(int idVenta, int producto);
+	public TVentas DeleteProductoVenta(int idVenta, int producto, int cantidad);
 }
