@@ -27,14 +27,29 @@ import Presentacion.Command.Contexto;
 public class VentanaPersonalImp extends VentanaPersonal {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private PanelAddPersonal anadir = new PanelAddPersonal();
-	private PanelDeletePersonal eliminar = new PanelDeletePersonal();
-	private PanelUpdatePersonal actualizar = new PanelUpdatePersonal();
-	private PanelReadByIDPersonal mID = new PanelReadByIDPersonal();
-	private PanelReadAllPersonal mAll = new PanelReadAllPersonal();
+	private PanelAddPersonal anadir;
+	private PanelDeletePersonal eliminar;
+	private PanelUpdatePersonal actualizar;
+	private PanelReadByIDPersonal mID;
+	private PanelReadAllPersonal mAll;
+	
+	public VentanaPersonalImp(){
+		initPanel();
+		initComponents();
+		
+	}
+	
+	public void initPanel(){
+		anadir = new PanelAddPersonal();
+		eliminar = new PanelDeletePersonal();
+		actualizar = new PanelUpdatePersonal();
+		mID = new PanelReadByIDPersonal();
+		mAll = new PanelReadAllPersonal();
+		
+	}
 	
 	
-	public VentanaPersonalImp() {
+	public void initComponents() {
 		setResizable(false);
 		setVisible(true);
 		setLocationRelativeTo(null);
@@ -78,6 +93,7 @@ public class VentanaPersonalImp extends VentanaPersonal {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
 				setTitle("A�adir personal");
+				anadir.resetCamps();
 				panel2.add(paneles.get(0),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane()); 
 				
@@ -90,6 +106,7 @@ public class VentanaPersonalImp extends VentanaPersonal {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
 				setTitle("Eliminar Personal");
+				eliminar.resetCamps();
 				panel2.add(paneles.get(1),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane()); 
 			}
@@ -101,6 +118,7 @@ public class VentanaPersonalImp extends VentanaPersonal {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
 				setTitle("Actualizar personal");
+				actualizar.resetCamps();
 				panel2.add(paneles.get(2),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane()); 
 			}
@@ -113,6 +131,7 @@ public class VentanaPersonalImp extends VentanaPersonal {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
 				setTitle("Mostrar empleado por ID");
+				mID.resetCamps();
 				panel2.add(paneles.get(3),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane());
 			}
@@ -125,6 +144,7 @@ public class VentanaPersonalImp extends VentanaPersonal {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
 				setTitle("Mostrar todos los empleados ");
+				mAll.resetCamps();
 				panel2.add(paneles.get(4),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane());
 			}
@@ -157,6 +177,7 @@ public class VentanaPersonalImp extends VentanaPersonal {
 		case readAllPersonalErrorCommand:JOptionPane.showMessageDialog(null, "No hay empleados registrados \n en la base de datos");break;
 		case updatePersonalCommand:JOptionPane.showMessageDialog(null, "Se han actualizado los datos");break;
 		case updatePersonalErrorCommand : JOptionPane.showMessageDialog(null, "No ha sido posible actualizar");break;
+		case readAllPersonalCommand : mAll.Actualizar(c);
 		
 			
 

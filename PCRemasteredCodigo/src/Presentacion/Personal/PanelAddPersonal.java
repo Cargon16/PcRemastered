@@ -19,14 +19,7 @@ import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
 
-/** 
-* <!-- begin-UML-doc -->
-* <!-- end-UML-doc -->
-* @author nacho710
-* @uml.annotations
-*     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseÃ±o.emx#_3TPpgE8iEemfNOmfBQSQBw"
-* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseÃ±o.emx#_3TPpgE8iEemfNOmfBQSQBw"
-*/
+
 public class PanelAddPersonal extends JPanel implements Ventana{
 	private static final long serialVersionUID = 1L;
 
@@ -34,7 +27,18 @@ public class PanelAddPersonal extends JPanel implements Ventana{
 	private JTextField nombreText;
 	private JTextField telefonoText;
 	private JTextField salarioText;
+	private JRadioButton activoRB;
+	private JRadioButton inactivoRB;
+	private JButton button;
+
 	public PanelAddPersonal(){
+
+		initComponent();
+
+
+	}
+
+	public void initComponent(){
 		setLayout(null);
 		setOpaque(false);
 
@@ -55,7 +59,7 @@ public class PanelAddPersonal extends JPanel implements Ventana{
 		JLabel label = new JLabel("Contraseï¿½a");
 		label.setBounds(37, 149, 75, 14);
 		add(label);
-		
+
 		telefonoText = new JTextField();
 		telefonoText.setColumns(10);
 		telefonoText.setBounds(109, 198, 279, 57);
@@ -64,22 +68,22 @@ public class PanelAddPersonal extends JPanel implements Ventana{
 		JLabel label_2 = new JLabel("Telefono");
 		label_2.setBounds(37, 219, 75, 14);
 		add(label_2);
-		
-		
+
+
 		salarioText = new JTextField();
 		salarioText.setColumns(10);
 		salarioText.setBounds(109, 268, 279, 57);
 		add(salarioText);
-		
+
 		JLabel labelDIreccion = new JLabel("Salario");
 		labelDIreccion.setBounds(37, 289, 75, 14);
 		add(labelDIreccion);
 
-		JRadioButton activoRB = new JRadioButton("Activo");
+		activoRB = new JRadioButton("Activo");
 		activoRB.setToolTipText("Activo");
 		activoRB.setBounds(141, 350, 109, 23);
 		activoRB.setOpaque(false);
-		JRadioButton inactivoRB = new JRadioButton("Inactivo");
+		inactivoRB = new JRadioButton("Inactivo");
 		activoRB.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -100,7 +104,7 @@ public class PanelAddPersonal extends JPanel implements Ventana{
 				activoRB.setSelected(false);
 			}
 		});
-		JButton button = new JButton("Añadir");
+		button = new JButton("Añadir");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				boolean ok = false ;
@@ -109,22 +113,36 @@ public class PanelAddPersonal extends JPanel implements Ventana{
 				TPersonal personal = new TPersonal(passText.getText(), ok, Double.valueOf(salarioText.getText()), null, Integer.valueOf(telefonoText.getText()), nombreText.getText());
 				Contexto contexto = new Contexto(Evento.createPersonalCommand, personal);
 				Controller.getInstance().ejecutar(contexto);
-				
+
 			}
 		});
 		button.setBounds(151, 382, 132, 40);
 		add(button);
-		
+
 		JLabel lblAadirCliente = new JLabel("A\u00D1ADIR PERSONAL");
 		lblAadirCliente.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblAadirCliente.setBounds(37, 13, 162, 32);
 		add(lblAadirCliente);
-		
-		
+
+
 	}
 	@Override
 	public void Actualizar(Contexto contexto) {
 		// TODO Auto-generated method stub
+		this.revalidate();
+		this.repaint();
+
+	}
+	
+	public void resetCamps(){
+		passText.setText(null);
+		nombreText.setText(null);
+		telefonoText.setText(null);
+		salarioText.setText(null);
+		activoRB.setSelected(false);
+		inactivoRB.setSelected(false);
+		
+		
 		
 	}
 }
