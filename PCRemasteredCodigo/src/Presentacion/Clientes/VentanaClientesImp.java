@@ -31,6 +31,11 @@ public class VentanaClientesImp extends VentanaClientes{
 	private PanelUpdateClientes actualizar;
 	private PanelReadByIdClientes mID;
 	private PanelReadAllClientes mAll;
+	private JButton botonanadir;
+	private JButton botonEliminar;
+	private JButton botonActualizar;
+	private JButton botonMostrarID;
+	private JButton botonMostrarTodo;
 
 	public VentanaClientesImp(){
 		
@@ -49,9 +54,7 @@ public class VentanaClientesImp extends VentanaClientes{
 	}
 	public void initComponent() {
 		initPanel();
-		
 	
-		
 		setResizable(false);
 		setVisible(true);
 		setLocationRelativeTo(null);
@@ -92,12 +95,13 @@ public class VentanaClientesImp extends VentanaClientes{
 		paneles.add(mAll);
 
 
-		JButton botonanadir = new JButton("Añadir Cliente");
+		botonanadir = new JButton("Añadir Cliente");
 
 		botonanadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
 				setTitle("Añadir cliente");
+				anadir.resetCamps();
 				panel2.add(paneles.get(0),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane()); 
 			
@@ -107,11 +111,12 @@ public class VentanaClientesImp extends VentanaClientes{
 		});
 		panel_1.add(botonanadir);
 
-		JButton botonEliminar = new JButton("<html>Eliminar <br /> clientes</html>");
+		botonEliminar = new JButton("<html>Eliminar <br /> clientes</html>");
 		botonEliminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
 				setTitle("Eliminar cliente");
+				eliminar.resetCamps();
 				panel2.add(paneles.get(1),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane()); 
 				
@@ -119,12 +124,13 @@ public class VentanaClientesImp extends VentanaClientes{
 		});
 		panel_1.add(botonEliminar);
 
-		JButton botonActualizar = new JButton("<html>Actualizar<br /> clientes</html>");
+		botonActualizar = new JButton("<html>Actualizar<br /> clientes</html>");
 		botonActualizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				panel2.removeAll();
 				setTitle("Actualizar cliente");
+				actualizar.resetCamps();
 				panel2.add(paneles.get(2),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane()); 
 				
@@ -132,24 +138,26 @@ public class VentanaClientesImp extends VentanaClientes{
 		});
 		panel_1.add(botonActualizar);
 
-		JButton botonMostrarID = new JButton("<html>Mostrar clientes<br /> por su ID </html>");
+		botonMostrarID = new JButton("<html>Mostrar clientes<br /> por su ID </html>");
 
 		botonMostrarID.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
 				setTitle("Mostrar clientes por ID");
+				mID.resetCamps();
 				panel2.add(paneles.get(3),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane());
 			}
 		});
 		panel_1.add(botonMostrarID);
 
-		JButton botonMostrarTodo = new JButton("<html>Mostrar todos<br /> los clientes</html>");
+		botonMostrarTodo = new JButton("<html>Mostrar todos<br /> los clientes</html>");
 
 		botonMostrarTodo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
 				setTitle("Mostrar todos los clientes ");
+				mAll.resetCamps();
 				panel2.add(paneles.get(4),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane());
 			}

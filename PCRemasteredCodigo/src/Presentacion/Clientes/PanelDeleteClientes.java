@@ -19,45 +19,52 @@ import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
 
 /** 
-* <!-- begin-UML-doc -->
-* <!-- end-UML-doc -->
-* @author nacho710
-* @uml.annotations
-*     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_4CoucFOpEemH9v7SOzgnzQ"
-* @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_4CoucFOpEemH9v7SOzgnzQ"
-*/
+ * <!-- begin-UML-doc -->
+ * <!-- end-UML-doc -->
+ * @author nacho710
+ * @uml.annotations
+ *     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_4CoucFOpEemH9v7SOzgnzQ"
+ * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_4CoucFOpEemH9v7SOzgnzQ"
+ */
 public class PanelDeleteClientes extends JPanel implements Ventana {
-	private JTextField textField;
-	private Controller ap;
-	private TCliente c;
 	/**
-	 * Create the panel.
+	 * 
 	 */
+	private static final long serialVersionUID = 1L;
+	private JTextField textField;
+	private JButton btnNewButton;
+
+
 	public PanelDeleteClientes(){
+		initComponent();
+	}
+
+	public void initComponent(){
 		setLayout(null);
 		setOpaque(false);
 		textField = new JTextField();
 		textField.setBounds(57, 95, 250, 35);
 		add(textField);
 		textField.setColumns(10);
-		
-		JButton btnNewButton = new JButton("Eliminar");
+
+		btnNewButton = new JButton("Eliminar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			try{
-				Contexto contexto = new Contexto(Evento.deleteClienteCommand, textField.getText());
-				Controller.getInstance().ejecutar(contexto);
-			}
-			catch(Exception ex){;}
+				try{
+					Contexto contexto = new Contexto(Evento.deleteClienteCommand, textField.getText());
+					Controller.getInstance().ejecutar(contexto);
+				
+				}
+				catch(Exception ex){;}
 			}	
 		});
 		btnNewButton.setBounds(57, 143, 250, 42);
 		add(btnNewButton);
-		
+
 		JLabel lblIntroduceElId = new JLabel("Introduce el Id para eliminar ese usuario");
 		lblIntroduceElId.setBounds(57, 66, 250, 16);
 		add(lblIntroduceElId);
-		
+
 		JLabel lblEliminarCliente = new JLabel("ELIMINAR CLIENTE");
 		lblEliminarCliente.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblEliminarCliente.setBounds(92, 26, 167, 35);
@@ -67,6 +74,11 @@ public class PanelDeleteClientes extends JPanel implements Ventana {
 	public void Actualizar(Contexto contexto) {
 		this.revalidate();
 		this.repaint();
+
+	}
+	
+	public void resetCamps(){
+		textField.setText(null);
 		
 	}
 }

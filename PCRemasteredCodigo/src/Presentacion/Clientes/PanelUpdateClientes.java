@@ -149,6 +149,7 @@ public class PanelUpdateClientes extends JPanel implements Ventana{
 				try {
 					Contexto contexto = new Contexto(Evento.updateClienteCommand, (TCliente) c);
 					Controller.getInstance().ejecutar(contexto);
+					
 				} catch (Exception ex) {;}
 			}
 		});
@@ -184,6 +185,19 @@ public class PanelUpdateClientes extends JPanel implements Ventana{
 
 		}
 
+	}
+	
+	public void resetCamps(){
+		
+		dni.setText(null);
+		nombre.setText(null);
+		telefono.setText(null);
+		direccion.setText(null);
+		activoRB.setSelected(false);
+		inactivoRB.setSelected(false);
+		botonfindtext.setText(null);
+		
+		
 	}
 
 }

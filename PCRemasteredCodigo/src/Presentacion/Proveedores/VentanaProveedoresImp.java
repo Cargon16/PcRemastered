@@ -4,6 +4,7 @@
 package Presentacion.Proveedores;
 
 import Presentacion.Ventana;
+import Presentacion.Command.Contexto;
 
 /** 
  * <!-- begin-UML-doc -->
@@ -186,5 +187,11 @@ public class VentanaProveedoresImp extends VentanaProveedores {
 		// TODO Auto-generated method stub
 
 		// end-user-code
+	}
+
+	@Override
+	public void Actualizar(Contexto contexto) {
+		// TODO Auto-generated method stub
+		
 	}
 }

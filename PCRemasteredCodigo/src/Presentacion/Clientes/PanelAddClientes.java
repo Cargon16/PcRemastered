@@ -38,7 +38,11 @@ public class PanelAddClientes extends JPanel implements Ventana {
 	private JRadioButton activoRB;
 	private JRadioButton inactivoRB;
 	
-	public PanelAddClientes() {
+	public PanelAddClientes(){
+		initComponent();
+	}
+	
+	public void initComponent() {
 		setLayout(null);
 		setOpaque(false);
 		dniText = new JTextField();
@@ -112,8 +116,7 @@ public class PanelAddClientes extends JPanel implements Ventana {
 				TCliente cliente = new TCliente(null,dniText.getText(),nombreText.getText(),Integer.valueOf(telefonoText.getText()), direccionText.getText(), ok);
 				Contexto contexto = new Contexto(Evento.createClienteCommnad, cliente);
 				Controller.getInstance().ejecutar(contexto);
-				
-				resetCamps();
+		
 
 
 
@@ -136,7 +139,7 @@ public class PanelAddClientes extends JPanel implements Ventana {
 		this.repaint();
 	}
 	
-	private void resetCamps(){
+	public void resetCamps(){
 		direccionText.setText(null);
 		dniText.setText(null);
 		nombreText.setText(null);
