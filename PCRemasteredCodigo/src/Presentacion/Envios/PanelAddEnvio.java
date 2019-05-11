@@ -23,13 +23,11 @@ public class PanelAddEnvio extends JPanel implements Ventana{
 	
 	private static final long serialVersionUID = 1L;
 	private JTextField direccion;
-<<<<<<< HEAD
 	private JTextField idVenta;
-=======
+
 	private JRadioButton activoRB;
 	private JRadioButton inactivoRB;
 	private JButton button;
->>>>>>> refs/remotes/origin/master
 	
 	public PanelAddEnvio(){
 		

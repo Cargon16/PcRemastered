@@ -88,13 +88,9 @@ public class PanelAbrirVentas extends JPanel implements Ventana{
 		JLabel lblIntroducirIdDe = new JLabel("Introducir ID de producto \n a eliminar del carro");
 		lblIntroducirIdDe.setBounds(420, 208, 318, 46);
 		add(lblIntroducirIdDe);
-<<<<<<< HEAD
-		
-		JLabel lblProductosAadidos = new JLabel("Productos añadidos");
-=======
 
-		JLabel lblProductosAadidos = new JLabel("Productos a\u00F1adidos");
->>>>>>> refs/remotes/origin/master
+		
+		JLabel lblProductosAadidos = new JLabel("Productos anadidos");
 		lblProductosAadidos.setBounds(133, 174, 151, 14);
 		add(lblProductosAadidos);
 
@@ -129,6 +125,15 @@ public class PanelAbrirVentas extends JPanel implements Ventana{
 				lineaevento.add(Integer.valueOf(textDelete.getText()));
 				lineaevento.add(Integer.valueOf(textcantidad.getText()));
 				Contexto contexto = new Contexto(Evento.DeleteProductoVentaCommand,lineaevento);
+				Controller.getInstance().ejecutar(contexto);
+			}
+		});
+		btnProcesar.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				//ArrayList<Object> lineaevento = new ArrayList<>();
+				Contexto contexto = new Contexto(Evento.procesarVenta,idventa);
 				Controller.getInstance().ejecutar(contexto);
 			}
 		});

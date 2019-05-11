@@ -39,6 +39,7 @@ import Presentacion.Command.Ventas.AnadirProductoVentaCommand;
 import Presentacion.Command.Ventas.CreateVentasCommand;
 import Presentacion.Command.Ventas.DeleteVentasCommand;
 import Presentacion.Command.Ventas.EliminarProductoVentaCommand;
+import Presentacion.Command.Ventas.ProcesarCompraCommand;
 import Presentacion.Command.Ventas.ReadAllVentasCommand;
 import Presentacion.Command.Ventas.ReadVentasCommand;
 import Presentacion.Command.Ventas.UpdateVentasCommand;
@@ -46,9 +47,11 @@ import Presentacion.Command.Vista.InitCommand;
 import Presentacion.Command.Vista.LoginCommandActualizar;
 import Presentacion.Command.Vista.VentanaClienteCommand;
 import Presentacion.Command.Vista.VentanaEnvioCommand;
+import Presentacion.Command.Vista.VentanaPagoCommand;
 import Presentacion.Command.Vista.VentanaPersonalCommand;
 import Presentacion.Command.Vista.VentanaProductosCommand;
 import Presentacion.Command.Vista.VentanaVentasCommand;
+import Presentacion.Ventas.PanelPago;
 
 /** 
  * <!-- begin-UML-doc -->
@@ -110,6 +113,8 @@ public class FactoriaCommandsImp extends FactoriaCommands {
 		case DeleteProductoVentaCommand: return new EliminarProductoVentaCommand();
 		case Login : return new LoginCommandActualizar();
 		case loginCommand: return new LoginCommand();
+		case procesarVenta: return new ProcesarCompraCommand();
+		case crearVentanaPago: return new VentanaPagoCommand();
 		default : return null;
 		}
 	}

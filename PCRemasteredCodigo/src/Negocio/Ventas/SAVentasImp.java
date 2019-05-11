@@ -113,6 +113,10 @@ public class SAVentasImp implements SAVentas {
 		//return FactoriaIntegracion.getInstance().crearDaoVenta();
 		return 0;
 	}
+	public HashMap<Integer, Integer> procesarVenta(int id) {
+		HashMap<Integer, Integer> map = FactoriaIntegracion.getInstance().crearDaoVenta().getLineaVenta(id);
+		return map;
+	}
 
 	public int closeVenta(int id) {
 		//return FactoriaIntegracion.getInstance().crearDaoVenta().cerrarVenta();

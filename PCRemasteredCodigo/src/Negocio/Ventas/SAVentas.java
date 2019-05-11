@@ -4,6 +4,7 @@
 package Negocio.Ventas;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import Integracion.Productos.TProducto;
 import Integracion.Ventas.TVentas;
@@ -95,4 +96,6 @@ public interface SAVentas {
 	public TVentas AddProductoVenta(int idVenta, int producto, int cantidad);
 
 	public TVentas DeleteProductoVenta(int idVenta, int producto, int cantidad);
+	
+	public HashMap<Integer, Integer> procesarVenta(int id);
 }
