@@ -57,7 +57,8 @@ public class DAOEnvioImpl implements DAOEnvio {
 				}
 			}
 		} catch (SQLException e) {
-			retorno = null;
+			//retorno = null;
+			return null;
 		}
 		return retorno;
 	}

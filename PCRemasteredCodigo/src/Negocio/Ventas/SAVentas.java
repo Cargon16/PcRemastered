@@ -97,5 +97,5 @@ public interface SAVentas {
 
 	public TVentas DeleteProductoVenta(int idVenta, int producto, int cantidad);
 	
-	public HashMap<Integer, Integer> procesarVenta(int id);
+	public int vincularClienteVenta(int idCliente, int idVenta);
 }

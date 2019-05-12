@@ -412,7 +412,7 @@ public enum Evento {
 	
 	
 	
-	INIT, readByNombreProductoCommand, ErrorCommand, VistaCliente, VentanaCliente, abrirVentaCommand, addProductoVentaError, addProductoVentaCommand, DeleteProductoVentaCommand, Login, loginErrorCommand, loginCommand, SetEmpleado, procesarVenta, crearVentanaPago, PagoProductoVentaCommand, ;
+	INIT, readByNombreProductoCommand, ErrorCommand, VistaCliente, VentanaCliente, abrirVentaCommand, addProductoVentaError, addProductoVentaCommand, DeleteProductoVentaCommand, Login, loginErrorCommand, loginCommand, SetEmpleado, procesarVenta, crearVentanaPago, PagoProductoVentaCommand, VincularClienteVentaCommand, ;
 	/** 
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->

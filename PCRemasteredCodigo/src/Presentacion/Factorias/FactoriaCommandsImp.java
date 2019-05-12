@@ -39,10 +39,12 @@ import Presentacion.Command.Ventas.AnadirProductoVentaCommand;
 import Presentacion.Command.Ventas.CreateVentasCommand;
 import Presentacion.Command.Ventas.DeleteVentasCommand;
 import Presentacion.Command.Ventas.EliminarProductoVentaCommand;
+import Presentacion.Command.Ventas.PagoProductoVentaCommand;
 import Presentacion.Command.Ventas.ProcesarCompraCommand;
 import Presentacion.Command.Ventas.ReadAllVentasCommand;
 import Presentacion.Command.Ventas.ReadVentasCommand;
 import Presentacion.Command.Ventas.UpdateVentasCommand;
+import Presentacion.Command.Ventas.VincularClienteVentaCommand;
 import Presentacion.Command.Vista.InitCommand;
 import Presentacion.Command.Vista.LoginCommandActualizar;
 import Presentacion.Command.Vista.VentanaClienteCommand;
@@ -115,6 +117,8 @@ public class FactoriaCommandsImp extends FactoriaCommands {
 		case loginCommand: return new LoginCommand();
 		case procesarVenta: return new ProcesarCompraCommand();
 		case crearVentanaPago: return new VentanaPagoCommand();
+		case PagoProductoVentaCommand: return new PagoProductoVentaCommand();
+		case VincularClienteVentaCommand: return new VincularClienteVentaCommand();
 		default : return null;
 		}
 	}

@@ -3,9 +3,12 @@
  */
 package Negocio.Ventas;
 
+import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 
+import Integracion.Clientes.TCliente;
 import Integracion.Factorias.FactoriaIntegracion;
 import Integracion.Productos.TProducto;
 import Integracion.Ventas.TLineaVentas;
@@ -44,6 +47,7 @@ public class SAVentasImp implements SAVentas {
 			else{
 				FactoriaIntegracion.getInstance().crearDaoVenta().addLineaVenta(linea);
 				map.put(producto, cantidad);
+				venta.setLineasVenta(map);
 			}
 
 		
@@ -54,6 +58,8 @@ public class SAVentasImp implements SAVentas {
 			venta.setLineasVenta(map);
 			float nuevoPrecioTotal = venta.getPrecio() + (p.getPrecio() * cantidad);
 			venta.setPrecio(nuevoPrecioTotal);
+			Date inicioLocal = new Date(Calendar.getInstance().getTimeInMillis());
+			venta.setFecha(inicioLocal);
 			FactoriaIntegracion.getInstance().crearDaoVenta().update(venta);
 			}
 		}
@@ -113,9 +119,17 @@ public class SAVentasImp implements SAVentas {
 		//return FactoriaIntegracion.getInstance().crearDaoVenta();
 		return 0;
 	}
-	public HashMap<Integer, Integer> procesarVenta(int id) {
-		HashMap<Integer, Integer> map = FactoriaIntegracion.getInstance().crearDaoVenta().getLineaVenta(id);
-		return map;
+	
+	@Override
+	public int vincularClienteVenta(int idVenta, int idCliente){
+		TCliente c = FactoriaIntegracion.getInstance().crearDaoCliente().readByID(idCliente);
+		int v = -1;
+		if(c != null){
+			TVentas venta = FactoriaIntegracion.getInstance().crearDaoVenta().readbyID(idVenta);
+			venta.setIDCliente(idCliente);
+			v = FactoriaIntegracion.getInstance().crearDaoVenta().update(venta);
+		}
+		return v;
 	}
 
 	public int closeVenta(int id) {

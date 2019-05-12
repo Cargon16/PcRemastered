@@ -34,7 +34,6 @@ public class VentanaVentasImp extends VentanaVentas {
 	private PanelAbrirVentas anadir = new PanelAbrirVentas();
 	private PanelReadByIdClientes mID = new PanelReadByIdClientes();
 	private PanelReadAllClientes mAll = new PanelReadAllClientes();
-	private PanelPago mPag = new PanelPago();
 	private	 static int Empleado;
 	
 	public VentanaVentasImp() {
@@ -132,7 +131,6 @@ public class VentanaVentasImp extends VentanaVentas {
 		case addProductoVentaCommand:anadir.Actualizar(c); break;
 		case DeleteProductoVentaCommand:anadir.Actualizar(c); break;
 		case SetEmpleado:Empleado = (int) c.getDatos(); break;
-		case crearVentanaPago: mPag.Actualizar(contexto);;break;
 		default:
 			break;
 		}

@@ -1,7 +1,8 @@
 package Presentacion.Command.Ventas;
 
+import java.sql.Date;
 import java.util.ArrayList;
-
+import java.util.Calendar;
 
 import Integracion.Productos.TProducto;
 import Integracion.Ventas.TVentas;
@@ -16,7 +17,8 @@ public class AbrirVentaCommand implements Command{
 	public Contexto ejecutar(Contexto contexto) {
 		String  empleado =  (String) contexto.getDatos();
 		empleado=empleado.substring(10, 11);
-		TVentas venta = new TVentas(null, 0, null,false, null, null, Integer.valueOf(empleado));
+		Date inicioLocal = new Date(Calendar.getInstance().getTimeInMillis());
+		TVentas venta = new TVentas(null, 0, inicioLocal,false, null, 1, Integer.valueOf(empleado));// El id es 1 porque es el administrador
 		int i = FactoriaNegocio.getInstance().crearSAVentas().create(venta);
 		
 		ArrayList<TProducto> p = FactoriaNegocio.getInstance().crearSAProductos().readAll();

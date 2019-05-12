@@ -16,10 +16,7 @@ public class SAEnvioImp implements SAEnvio {
 		TVentas v = FactoriaIntegracion.getInstance().crearDaoVenta().readbyID(tEnvio.getIdVenta());
 		if(v != null){
 			if(v.getPagado()){
-			TEnvio e = FactoriaIntegracion.getInstance().crearDaoEnvios().readByID(tEnvio.getID());
-			if(e == null){
 				retorno = FactoriaIntegracion.getInstance().crearDaoEnvios().create(tEnvio);
-			}
 			}
 		}
 		return retorno;

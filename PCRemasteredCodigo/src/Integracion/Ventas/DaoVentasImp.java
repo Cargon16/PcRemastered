@@ -25,8 +25,8 @@ public class DaoVentasImp implements DaoVentas {
 	@Override
 	public int abrirVenta(TVentas venta){
 		int retorno = 0;
-		//String create= "INSERT INTO ventas (precio,fecha,pagado,idCliente,IDPersonal) VALUES (?,?,?,?,?);" ;
-		String create= "INSERT INTO ventas (precio,fecha,pagado,IDPersonal) VALUES (?,?,?,?);" ;
+		String create= "INSERT INTO ventas (precio,fecha,pagado,idCliente,IDPersonal) VALUES (?,?,?,?,?);" ;
+		//String create= "INSERT INTO ventas (precio,fecha,pagado,IDPersonal) VALUES (?,?,?,?);" ;
 		try{
 		Connection conn = Connections.getInstance();
 			if ( conn!= null){
@@ -34,8 +34,8 @@ public class DaoVentasImp implements DaoVentas {
 				stmt.setFloat(1,venta.getPrecio());
 				stmt.setDate(2,venta.getFecha());
 				stmt.setBoolean(3, venta.getPagado());
-				//stmt.setInt(4, venta.getIDCliente());
-				stmt.setInt(4, venta.getIDPersonal());
+				stmt.setInt(4, venta.getIDCliente());
+				stmt.setInt(5, venta.getIDPersonal());
 				stmt.execute();
 				ResultSet rs = stmt.getGeneratedKeys();
 				if(rs.next())
@@ -110,11 +110,12 @@ public class DaoVentasImp implements DaoVentas {
 	@Override
 	public int update(TVentas venta) {
 		int retorno = 0;
+		
 		String update= "UPDATE ventas SET precio="+venta.getPrecio()+","
-				+ "fecha="+venta.getFecha()+","
-				+ "pagado="+venta.getFecha()+","
-				+ "idcliente="+venta.getFecha()+","
-				+ "idpersonal="+venta.getFecha()+""
+				+ "fecha= '"+venta.getFecha()+"',"
+				+ "pagado="+venta.getPagado()+","
+				+ "idcliente="+venta.getIDCliente()+","
+				+ "idpersonal="+venta.getIDPersonal()+""
 				+ " WHERE id="+venta.getID()+";";
 		try{
 			Connection conn = Connections.getInstance();
@@ -130,9 +131,11 @@ public class DaoVentasImp implements DaoVentas {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
+			//return -1;
 		}
 		return retorno;
 	}
+	
 	public int getCantidadLineaVenta(TLineaVentas lineaVenta){
 		int cantidad=0;
 		String insercion = "SELECT * FROM lineaventa WHERE IdVenta="+ lineaVenta.getIDVenta()+" and idProducto="+lineaVenta.getIDProducto()+";";

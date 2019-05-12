@@ -14,8 +14,8 @@ public class ProcesarCompraCommand implements Command{
 	
 	public Contexto ejecutar(Contexto contexto) {
 	int id = Integer.valueOf(contexto.getDatos().toString());
-	HashMap<Integer, Integer> map  = FactoriaNegocio.getInstance().crearSAVentas().procesarVenta(id);
-	TVentas venta = FactoriaNegocio.getInstance().crearSAVentas().read(Integer.valueOf(contexto.getDatos().toString()));
+	//HashMap<Integer, Integer> map  = FactoriaNegocio.getInstance().crearSAVentas().procesarVenta(id);
+	TVentas venta = FactoriaNegocio.getInstance().crearSAVentas().read(id);
 	//ArrayList<TProducto> p = FactoriaNegocio.getInstance().crearSAProductos().readAll();
 	if ( venta == null ){
 		contexto.setEvento(Evento.createVentasErrorCommand);
@@ -26,7 +26,7 @@ public class ProcesarCompraCommand implements Command{
 		}
 		else{
 			ArrayList<Object> lista = new ArrayList<Object>();
-			lista.add(map);
+			//lista.add(map);
 			lista.add(venta);
 			contexto.setDatos(lista);
 		}
