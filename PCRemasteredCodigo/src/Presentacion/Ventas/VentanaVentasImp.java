@@ -131,7 +131,8 @@ public class VentanaVentasImp extends VentanaVentas {
 		case addProductoVentaCommand:anadir.Actualizar(c); break;
 		case DeleteProductoVentaCommand:anadir.Actualizar(c); break;
 		case SetEmpleado:Empleado = (int) c.getDatos(); break;
-		case readAllVentasCommand: mAll.Actualizar(c);
+		case readAllVentasCommand: mAll.Actualizar(c);break;
+		case readVentasCommand: mID.Actualizar(c);break;
 		default:
 			break;
 		}

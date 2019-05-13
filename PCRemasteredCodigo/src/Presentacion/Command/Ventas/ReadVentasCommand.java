@@ -1,5 +1,7 @@
 package Presentacion.Command.Ventas;
 
+import java.util.ArrayList;
+
 import Integracion.Ventas.TVentas;
 import Negocio.Factorias.FactoriaNegocio;
 import Presentacion.Command.Command;
@@ -10,13 +12,15 @@ public class ReadVentasCommand implements Command {
 
 	@Override
 	public Contexto ejecutar(Contexto contexto) {
-		TVentas i= FactoriaNegocio.getInstance().crearSAVentas().read((int) contexto.getDatos());
-		if(i.equals(null)){
+		TVentas i= FactoriaNegocio.getInstance().crearSAVentas().read(Integer.valueOf(contexto.getDatos().toString()));
+		if(i==null){
 			contexto.setEvento(Evento.readVentasErrorCommand);
-			contexto.setDatos(null);
+			
 			
 		}
-		return contexto;
+		else contexto.setDatos(i);
+		Contexto cnx = new Contexto(Evento.crearVentanaVentas, contexto);
+		return cnx;
 	}
 
 }
