@@ -15,7 +15,7 @@ public class EliminarProductoVentaCommand implements Command{
 		ArrayList<Object> lista = (ArrayList<Object>) contexto.getDatos();
 		TVentas i = FactoriaNegocio.getInstance().crearSAVentas().DeleteProductoVenta((int)lista.get(0), (int)lista.get(1), (int)lista.get(2));
 		if ( i == null){
-				contexto.setEvento(Evento.addProductoVentaError);
+				contexto.setEvento(Evento.deleteProductoVentaError);
 		}
 		else contexto.setDatos(i);
 		Contexto cnx = new Contexto(Evento.crearVentanaVentas,contexto);

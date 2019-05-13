@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
@@ -94,7 +95,7 @@ public class VentanaVentasImp extends VentanaVentas {
 		botonMostrarID.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
-				setTitle("Mostrar ventas por ID");
+				//setTitle("Mostrar ventas por ID");
 				panel2.add(paneles.get(1),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane());
 			}
@@ -106,7 +107,7 @@ public class VentanaVentasImp extends VentanaVentas {
 		botonMostrarTodo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
-				setTitle("Mostrar todas las ventas ");
+				//setTitle("Mostrar todas las ventas ");
 				panel2.add(paneles.get(2),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane());
 			}
@@ -129,10 +130,14 @@ public class VentanaVentasImp extends VentanaVentas {
 		switch (c.getEvento()) {
 		case abrirVentaCommand:PanelAbrirVentas.Inicializar(c); break;
 		case addProductoVentaCommand:anadir.Actualizar(c); break;
+		case addProductoVentaError:JOptionPane.showMessageDialog(null, "No se ha podido añadir ese producto a la venta");break;
 		case DeleteProductoVentaCommand:anadir.Actualizar(c); break;
+		case deleteProductoVentaError: JOptionPane.showMessageDialog(null, "No se ha podido eliminar ese producto de la venta");break;
 		case SetEmpleado:Empleado = (int) c.getDatos(); break;
 		case readAllVentasCommand: mAll.Actualizar(c);break;
+		case readAllVentasErrorCommand: JOptionPane.showMessageDialog(null, "No hay ventas registradas en el sistema");break;
 		case readVentasCommand: mID.Actualizar(c);break;
+		case readVentasErrorCommand: JOptionPane.showMessageDialog(null, "Esa venta no está registrada en el sistema");break;
 		default:
 			break;
 		}
