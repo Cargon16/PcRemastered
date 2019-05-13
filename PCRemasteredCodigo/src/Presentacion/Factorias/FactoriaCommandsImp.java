@@ -97,13 +97,11 @@ public class FactoriaCommandsImp extends FactoriaCommands {
 		case readAllEnvioCommand: return new ReadAllEnviosCommand();
 		case readEnvioCommand: return new ReadByIDEnviosCommand();
 		case updateEnvioCommand:return new UpdateEnviosCommand();
-		//case crearVentanaProveedores: return new CrearVentanaProveedoresCommand();
 		case createProveedorCommand: return new CreateProveedoresCommand();
 		case deleteProveedorCommand: return new DeleteProveedoresCommand();
 		case readAllProveedorCommand: return new ReadAllProveedoresCommand();
 		case readProveedorCommand: return new ReadProveedoresCommand();
 		case updateProveedorCommand:return new UpdateProveedoresCommand();
-		//case crearVentanaVentas: return new CrearVentanaVentasCommand();
 		case crearVentanaVentas: return new VentanaVentasCommand();
 		case createVentasCommand: return new CreateVentasCommand();
 		case deleteVentasCommand: return new DeleteVentasCommand();

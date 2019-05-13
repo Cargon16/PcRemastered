@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import Integracion.Connection.Connections;
+import Integracion.Productos.TProducto;
 
 /** 
  * <!-- begin-UML-doc -->
@@ -103,8 +104,22 @@ public class DaoVentasImp implements DaoVentas {
 
 	@Override
 	public ArrayList<TVentas> readAll() {
-		// TODO Auto-generated method stub
-		return null;
+		String lectura = "SELECT * FROM ventas FOR UPDATE;";
+		ArrayList<TVentas> retorno = new ArrayList<TVentas>();
+		try {
+			Connection conn = Connections.getInstance();
+			if (conn != null) {
+				Statement stmt = conn.createStatement();
+				ResultSet rs = stmt.executeQuery(lectura);
+				while (rs.next()) {
+					TVentas venta = new TVentas(rs.getInt("id"),rs.getFloat("precio"),rs.getDate("fecha"), rs.getBoolean("pagado"),getLineaVenta(rs.getInt("id")),rs.getInt("idcliente"),rs.getInt("idpersonal"));
+					retorno.add(venta);
+				}
+			}
+		} catch (SQLException e) {
+			retorno = null;
+		}
+		return retorno;
 	}
 
 	@Override

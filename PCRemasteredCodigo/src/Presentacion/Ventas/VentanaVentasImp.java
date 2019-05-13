@@ -32,8 +32,8 @@ public class VentanaVentasImp extends VentanaVentas {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private PanelAbrirVentas anadir = new PanelAbrirVentas();
-	private PanelReadByIdClientes mID = new PanelReadByIdClientes();
-	private PanelReadAllClientes mAll = new PanelReadAllClientes();
+	private PanelReadVentas mID = new PanelReadVentas();
+	private PanelReadAllVentas mAll = new PanelReadAllVentas();
 	private	 static int Empleado;
 	
 	public VentanaVentasImp() {
@@ -95,7 +95,7 @@ public class VentanaVentasImp extends VentanaVentas {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
 				setTitle("Mostrar ventas por ID");
-				panel2.add(paneles.get(3),SwingConstants.CENTER);
+				panel2.add(paneles.get(1),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane());
 			}
 		});
@@ -107,7 +107,7 @@ public class VentanaVentasImp extends VentanaVentas {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
 				setTitle("Mostrar todas las ventas ");
-				panel2.add(paneles.get(4),SwingConstants.CENTER);
+				panel2.add(paneles.get(2),SwingConstants.CENTER);
 				SwingUtilities.updateComponentTreeUI(getContentPane());
 			}
 		});
@@ -131,6 +131,7 @@ public class VentanaVentasImp extends VentanaVentas {
 		case addProductoVentaCommand:anadir.Actualizar(c); break;
 		case DeleteProductoVentaCommand:anadir.Actualizar(c); break;
 		case SetEmpleado:Empleado = (int) c.getDatos(); break;
+		case readAllVentasCommand: mAll.Actualizar(c);
 		default:
 			break;
 		}

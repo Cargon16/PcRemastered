@@ -1,5 +1,3 @@
-
-
 drop table IF exists envios;
 drop table IF exists lineaventa;
 drop table IF exists ventas;
@@ -36,7 +34,7 @@ pagado bit DEFAULT NULL,
 IDCliente  int DEFAULT NULL,
 IDPersonal int default null,
 PRIMARY KEY(ID),
-constraint foreign key (IDCliente) references clientes(ID) ON DELETE CASCADE,
+constraint foreign key (IDCliente) references clientes(ID),
 constraint foreign key (IDPersonal) references personal(ID) ON DELETE CASCADE
 );
 
@@ -65,3 +63,8 @@ CREATE TABLE lineaventa (
  constraint FOREIGN KEY (IDVenta) REFERENCES ventas (ID) ON DELETE CASCADE,
  constraint FOREIGN KEY (IDProducto) REFERENCES producto (ID) ON DELETE CASCADE
 );
+INSERT INTO personal (pass, activo, salario, telefono, nombre)
+VALUES ('admin', 1, 0, 0, 'admin');
+
+INSERT INTO clientes (dni, nombre, direccion, telefono, activo)
+VALUES ('00000000A', 'admin', null, null, 1);
