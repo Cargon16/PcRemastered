@@ -84,6 +84,7 @@ public class VentanaVentasImp extends VentanaVentas {
 				Controller.getInstance().ejecutar(c);
 				
 				
+				
 			}
 		});
 		panel_1.add(botonanadir);

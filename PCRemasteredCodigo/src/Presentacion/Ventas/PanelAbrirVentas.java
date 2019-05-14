@@ -140,7 +140,10 @@ public class PanelAbrirVentas extends JPanel implements Ventana{
 			public void actionPerformed(ActionEvent e) {
 				//ArrayList<Object> lineaevento = new ArrayList<>();
 				Contexto contexto = new Contexto(Evento.procesarVenta,idventa);
-				Controller.getInstance().ejecutar(contexto);
+				if(!textArea.getText().isEmpty()){
+					Controller.getInstance().ejecutar(contexto);
+				}
+				
 			}
 		});
 
