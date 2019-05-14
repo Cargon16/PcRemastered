@@ -82,6 +82,7 @@ public class PanelAbrirVentas extends JPanel implements Ventana{
 
 		 btnEliminar = new JButton("Eliminar");
 		btnEliminar.setBounds(564, 252, 95, 29);
+		btnEliminar.setEnabled(false);
 		add(btnEliminar);
 
 
@@ -114,6 +115,11 @@ public class PanelAbrirVentas extends JPanel implements Ventana{
 				lineaevento.add(Integer.valueOf(textcantidad.getText()));
 				Contexto contexto = new Contexto(Evento.addProductoVentaCommand, lineaevento);
 				Controller.getInstance().ejecutar(contexto);
+			
+				if(!contexto.getEvento().toString().contains("Error")){
+					btnEliminar.setEnabled(true);
+				}
+				
 			}
 		});
 		btnEliminar.addActionListener(new ActionListener() {

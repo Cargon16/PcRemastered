@@ -62,6 +62,7 @@ public class SAVentasImp implements SAVentas {
 			venta.setFecha(inicioLocal);
 			FactoriaIntegracion.getInstance().crearDaoVenta().update(venta);
 			}
+		else return null;
 		}
 		catch(Exception e){
 			e.printStackTrace();
