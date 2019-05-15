@@ -34,4 +34,10 @@ public abstract class VentanaClientes extends JFrame implements Ventana{
 		instance=null;
 	}
 
+
+	public abstract void initPanel();
+
+
+	public abstract void initComponent();
+	
 }

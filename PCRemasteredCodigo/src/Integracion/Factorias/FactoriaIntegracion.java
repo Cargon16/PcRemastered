@@ -31,5 +31,4 @@ public abstract class FactoriaIntegracion {
 
 	public abstract DAOPersonal crearDaoPersonal();
 	
-	public abstract DaoProveedores crearDaoProveedroes();
 }

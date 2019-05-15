@@ -41,7 +41,7 @@ public class VentanaClientesImp extends VentanaClientes{
 		
 		initComponent();
 	}
-	
+	@Override
 	public void initPanel(){
 		
 		anadir = new PanelAddClientes();
@@ -52,6 +52,7 @@ public class VentanaClientesImp extends VentanaClientes{
 		contentPane = new JPanel();
 		
 	}
+	@Override
 	public void initComponent() {
 		initPanel();
 	

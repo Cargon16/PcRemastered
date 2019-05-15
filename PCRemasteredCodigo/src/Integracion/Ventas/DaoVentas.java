@@ -15,9 +15,7 @@ public interface DaoVentas {
 	
 	public int update( TVentas venta);
 
-	int abrirVenta(TVentas venta);
-	
-	
+	public int abrirVenta(TVentas venta);
 
 	public int getCantidadLineaVenta(TLineaVentas lineaVenta);
 	
