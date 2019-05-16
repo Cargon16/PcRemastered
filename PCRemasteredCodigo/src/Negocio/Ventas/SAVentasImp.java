@@ -70,6 +70,8 @@ public class SAVentasImp implements SAVentas {
 		
 		return venta;
 	}
+	
+	
 	@Override
 	public TVentas DeleteProductoVenta(int idVenta, int producto, int cant){
 		TLineaVentas linea = new TLineaVentas(idVenta, producto, 0);
