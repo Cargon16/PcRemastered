@@ -25,6 +25,7 @@ import javax.swing.JLabel;
 	import Presentacion.Controlador.Controller;
 	import java.awt.Font;
 import java.awt.BorderLayout;
+import java.awt.SystemColor;
 
 	public class PanelPagoImp extends PanelPago{
 		
@@ -46,6 +47,7 @@ import java.awt.BorderLayout;
 			getContentPane().setLayout(null);
 
 			btnProcesar = new JButton("Pagar");
+			btnProcesar.setBackground(SystemColor.textHighlight);
 			btnProcesar.setBounds(429, 263, 170, 41);
 			getContentPane().add(btnProcesar);
 

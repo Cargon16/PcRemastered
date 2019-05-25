@@ -27,6 +27,8 @@ import Presentacion.Clientes.PanelUpdateClientes;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
+import java.awt.SystemColor;
+import java.awt.Font;
 
 public class VentanaVentasImp extends VentanaVentas {
 
@@ -44,7 +46,7 @@ public class VentanaVentasImp extends VentanaVentas {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 737, 598);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(204, 255, 255));
+		contentPane.setBackground(SystemColor.activeCaption);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -74,6 +76,8 @@ public class VentanaVentasImp extends VentanaVentas {
 	
 		
 		JButton botonanadir = new JButton("Abrir Venta");
+		botonanadir.setFont(new Font("Consolas", Font.BOLD, 11));
+		botonanadir.setBackground(SystemColor.activeCaptionBorder);
 		
 		botonanadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -92,6 +96,8 @@ public class VentanaVentasImp extends VentanaVentas {
 	
 		
 		JButton botonMostrarID = new JButton("<html>Mostrar venta<br /> por su ID </html>");
+		botonMostrarID.setFont(new Font("Consolas", Font.BOLD, 11));
+		botonMostrarID.setBackground(SystemColor.activeCaptionBorder);
 		
 		botonMostrarID.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -104,6 +110,8 @@ public class VentanaVentasImp extends VentanaVentas {
 		panel_1.add(botonMostrarID);
 		
 		JButton botonMostrarTodo = new JButton("<html>Mostrar todos<br /> las ventas</html>");
+		botonMostrarTodo.setFont(new Font("Consolas", Font.BOLD, 11));
+		botonMostrarTodo.setBackground(SystemColor.activeCaptionBorder);
 		
 		botonMostrarTodo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

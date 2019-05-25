@@ -21,6 +21,7 @@ import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
+import java.awt.SystemColor;
 
 
 public class PanelReadVentas extends JPanel implements Ventana {
@@ -39,6 +40,7 @@ public class PanelReadVentas extends JPanel implements Ventana {
 		setLayout(null);
 		setOpaque(false);
 		button = new JButton("Buscar Venta");
+		button.setBackground(SystemColor.textHighlight);
 		button.setBounds(434, 68, 171, 42);
 		add(button);
 		

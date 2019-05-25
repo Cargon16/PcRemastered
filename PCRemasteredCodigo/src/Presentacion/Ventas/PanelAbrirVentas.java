@@ -25,6 +25,7 @@ import javax.swing.DefaultListSelectionModel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
+import java.awt.SystemColor;
 
 public class PanelAbrirVentas extends JPanel implements Ventana{
 	/**
@@ -60,7 +61,8 @@ public class PanelAbrirVentas extends JPanel implements Ventana{
 		add(textcantidad);
 		textcantidad.setColumns(10);
 
-		 botonAnadir = new JButton("Add");
+		 botonAnadir = new JButton("A\u00F1adir");
+		 botonAnadir.setBackground(SystemColor.textHighlight);
 		botonAnadir.setBounds(564, 83, 95, 29);
 		add(botonAnadir);
 
@@ -73,6 +75,7 @@ public class PanelAbrirVentas extends JPanel implements Ventana{
 		add(lblCantidad);
 
 		btnProcesar = new JButton("Procesar");
+		btnProcesar.setBackground(SystemColor.textHighlight);
 		btnProcesar.setBounds(538, 334, 121, 41);
 		add(btnProcesar);
 
@@ -81,6 +84,7 @@ public class PanelAbrirVentas extends JPanel implements Ventana{
 		add(textArea);
 
 		 btnEliminar = new JButton("Eliminar");
+		 btnEliminar.setBackground(SystemColor.textHighlight);
 		btnEliminar.setBounds(564, 252, 95, 29);
 		btnEliminar.setEnabled(false);
 		add(btnEliminar);

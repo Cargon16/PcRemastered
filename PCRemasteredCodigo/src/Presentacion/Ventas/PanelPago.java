@@ -20,6 +20,8 @@ import Presentacion.Command.Contexto;
  * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_Fa07AlMPEemdZLpuw9I4eQ"
  */
 public abstract class PanelPago extends JDialog implements Ventana{
+	public PanelPago() {
+	}
 	/** 
 	* <!-- begin-UML-doc -->
 	* <!-- end-UML-doc -->
