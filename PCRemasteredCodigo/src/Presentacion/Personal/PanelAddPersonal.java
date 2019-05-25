@@ -18,6 +18,7 @@ import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
+import java.awt.SystemColor;
 
 
 public class PanelAddPersonal extends JPanel implements Ventana{
@@ -56,9 +57,9 @@ public class PanelAddPersonal extends JPanel implements Ventana{
 		passText.setBounds(109, 128, 279, 57);
 		add(passText);
 
-		JLabel label = new JLabel("Contraseï¿½a");
-		label.setBounds(37, 149, 75, 14);
-		add(label);
+		JLabel lblContrasea = new JLabel("Contrase\u00F1a");
+		lblContrasea.setBounds(37, 149, 75, 14);
+		add(lblContrasea);
 
 		telefonoText = new JTextField();
 		telefonoText.setColumns(10);
@@ -105,6 +106,7 @@ public class PanelAddPersonal extends JPanel implements Ventana{
 			}
 		});
 		button = new JButton("Añadir");
+		button.setBackground(SystemColor.textHighlight);
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				boolean ok = false ;

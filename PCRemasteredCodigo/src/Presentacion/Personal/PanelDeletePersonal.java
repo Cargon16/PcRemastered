@@ -17,6 +17,7 @@ import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
+import java.awt.SystemColor;
 
 
 public class PanelDeletePersonal extends JPanel implements Ventana {
@@ -42,6 +43,7 @@ public class PanelDeletePersonal extends JPanel implements Ventana {
 		textField.setColumns(10);
 
 		btnNewButton = new JButton("Eliminar");
+		btnNewButton.setBackground(SystemColor.textHighlight);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try{

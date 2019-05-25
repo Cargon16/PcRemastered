@@ -57,6 +57,7 @@ public class VentanaPrincipalImp extends VentanaPrincipal{
 
 		
 		botonVentas = new JButton("Clientes");
+		botonVentas.setFont(new Font("Consolas", Font.BOLD, 11));
 		botonVentas.setBackground(SystemColor.activeCaption);
 		botonVentas.setBounds(342, 223, 103, 53);
 		botonVentas.addActionListener(new ActionListener() {
@@ -76,6 +77,7 @@ public class VentanaPrincipalImp extends VentanaPrincipal{
 		getContentPane().add(botonVentas);
 
 		botonModelo = new JButton("Productos");
+		botonModelo.setFont(new Font("Consolas", Font.BOLD, 11));
 		botonModelo.setBackground(SystemColor.activeCaption);
 		botonModelo.setBounds(342, 105, 103, 53);
 		botonModelo.addActionListener(new ActionListener() {
@@ -94,6 +96,7 @@ public class VentanaPrincipalImp extends VentanaPrincipal{
 		getContentPane().add(botonModelo);
 
 		botonCliente = new JButton("Ventas");
+		botonCliente.setFont(new Font("Consolas", Font.BOLD, 11));
 		botonCliente.setBackground(SystemColor.activeCaption);
 		botonCliente.setBounds(56, 105, 103, 53);
 		botonCliente.addActionListener(new ActionListener() {
@@ -112,6 +115,7 @@ public class VentanaPrincipalImp extends VentanaPrincipal{
 		getContentPane().add(botonCliente);
 
 		btnEnvios = new JButton("Envios");
+		btnEnvios.setFont(new Font("Consolas", Font.BOLD, 11));
 		btnEnvios.setBackground(SystemColor.activeCaption);
 		btnEnvios.setBounds(201, 105, 103, 53);
 		btnEnvios.addActionListener(new ActionListener() {
@@ -128,6 +132,7 @@ public class VentanaPrincipalImp extends VentanaPrincipal{
 		getContentPane().add(btnEnvios);
 
 		btnP = new JButton("Personal");
+		btnP.setFont(new Font("Consolas", Font.BOLD, 11));
 		btnP.setForeground(Color.BLACK);
 		btnP.setBackground(SystemColor.activeCaption);
 		btnP.setBounds(56, 223, 103, 53);
@@ -145,7 +150,7 @@ public class VentanaPrincipalImp extends VentanaPrincipal{
 		getContentPane().add(btnP);
 
 		JLabel lblPcremastered = new JLabel("Menu principal");
-		lblPcremastered.setFont(new Font("Segoe Print", Font.BOLD, 23));
+		lblPcremastered.setFont(new Font("Consolas", Font.BOLD, 23));
 		lblPcremastered.setBounds(167, 41, 183, 53);
 		getContentPane().add(lblPcremastered);
 		setLocationRelativeTo(null);

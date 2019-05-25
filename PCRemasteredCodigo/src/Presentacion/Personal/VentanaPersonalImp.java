@@ -21,6 +21,8 @@ import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
 import Presentacion.Command.Contexto;
+import java.awt.SystemColor;
+import java.awt.Font;
 
 
 
@@ -56,7 +58,7 @@ public class VentanaPersonalImp extends VentanaPersonal {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 737, 598);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(204, 255, 255));
+		contentPane.setBackground(SystemColor.activeCaption);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -87,7 +89,9 @@ public class VentanaPersonalImp extends VentanaPersonal {
 		paneles.add(mAll);
 	
 		
-		JButton botonanadir = new JButton("A�adir Personal");
+		JButton botonanadir = new JButton("A\u00F1adir personal");
+		botonanadir.setFont(new Font("Consolas", Font.BOLD, 11));
+		botonanadir.setBackground(SystemColor.activeCaptionBorder);
 		
 		botonanadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -102,6 +106,8 @@ public class VentanaPersonalImp extends VentanaPersonal {
 		panel_1.add(botonanadir);
 		
 		JButton botonEliminar = new JButton("<html>Eliminar <br /> personal</html>");
+		botonEliminar.setBackground(SystemColor.activeCaptionBorder);
+		botonEliminar.setFont(new Font("Consolas", Font.BOLD, 11));
 		botonEliminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
@@ -114,6 +120,8 @@ public class VentanaPersonalImp extends VentanaPersonal {
 		panel_1.add(botonEliminar);
 		
 		JButton botonActualizar = new JButton("<html>Actualizar<br /> personal</html>");
+		botonActualizar.setBackground(SystemColor.activeCaptionBorder);
+		botonActualizar.setFont(new Font("Consolas", Font.BOLD, 11));
 		botonActualizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
@@ -126,6 +134,8 @@ public class VentanaPersonalImp extends VentanaPersonal {
 		panel_1.add(botonActualizar);
 		
 		JButton botonMostrarID = new JButton("<html>Mostrar empleado<br /> por su ID </html>");
+		botonMostrarID.setBackground(SystemColor.activeCaptionBorder);
+		botonMostrarID.setFont(new Font("Consolas", Font.BOLD, 11));
 		
 		botonMostrarID.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -139,6 +149,8 @@ public class VentanaPersonalImp extends VentanaPersonal {
 		panel_1.add(botonMostrarID);
 		
 		JButton botonMostrarTodo = new JButton("<html>Mostrar todos<br /> los empleados</html>");
+		botonMostrarTodo.setFont(new Font("Consolas", Font.BOLD, 11));
+		botonMostrarTodo.setBackground(SystemColor.activeCaptionBorder);
 		
 		botonMostrarTodo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

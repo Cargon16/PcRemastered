@@ -20,6 +20,7 @@ import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
+import java.awt.SystemColor;
 
 
 public class PanelReadByIDPersonal extends JPanel implements Ventana{
@@ -38,6 +39,7 @@ public class PanelReadByIDPersonal extends JPanel implements Ventana{
 		setLayout(null);
 		setOpaque(false);
 		button = new JButton("Buscar empleado");
+		button.setBackground(SystemColor.textHighlight);
 		button.setBounds(425, 75, 180, 37);
 		add(button);
 

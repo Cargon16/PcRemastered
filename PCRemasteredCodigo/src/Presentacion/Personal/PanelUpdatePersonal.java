@@ -18,6 +18,7 @@ import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
+import java.awt.SystemColor;
 
 /** 
  * <!-- begin-UML-doc -->
@@ -80,6 +81,7 @@ public class PanelUpdatePersonal extends JPanel implements Ventana {
 
 
 		button = new JButton("Actualizar");
+		button.setBackground(SystemColor.textHighlight);
 
 		button.setBounds(517, 329, 132, 43);
 		add(button);
@@ -90,6 +92,7 @@ public class PanelUpdatePersonal extends JPanel implements Ventana {
 		botonfindtext.setColumns(10);
 
 		botonFind = new JButton("Buscar");
+		botonFind.setBackground(SystemColor.textHighlight);
 
 		botonFind.setBounds(427, 28, 222, 23);
 		add(botonFind);

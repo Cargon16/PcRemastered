@@ -18,6 +18,7 @@ import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
+import java.awt.SystemColor;
 
 
 public class PanelReadAllPersonal extends JPanel implements Ventana {
@@ -39,6 +40,7 @@ public class PanelReadAllPersonal extends JPanel implements Ventana {
 		setOpaque(false);
 
 		button = new JButton("Ver los empleados");
+		button.setBackground(SystemColor.textHighlight);
 		button.setBounds(208, 36, 262, 57);
 		add(button);
 
