@@ -17,6 +17,7 @@ import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
+import java.awt.SystemColor;
 
 public class PanelUpdateEnvio extends JPanel implements Ventana{
 	/**
@@ -37,7 +38,7 @@ public class PanelUpdateEnvio extends JPanel implements Ventana{
 	 */
 	
 	public PanelUpdateEnvio(){
-		
+		initComponent();
 	}
 	
 	public void initComponent() {
@@ -52,6 +53,7 @@ public class PanelUpdateEnvio extends JPanel implements Ventana{
 		label.setBounds(386, 101, 100, 14);
 
 		button = new JButton("Actualizar");
+		button.setBackground(SystemColor.textHighlight);
 
 		button.setBounds(427, 206, 150, 33);
 
@@ -63,6 +65,7 @@ public class PanelUpdateEnvio extends JPanel implements Ventana{
 		botonfindtext.setColumns(10);
 
 		botonFind = new JButton("Buscar");
+		botonFind.setBackground(SystemColor.textHighlight);
 
 		botonFind.setBounds(427, 45, 150, 23);
 		add(botonFind);

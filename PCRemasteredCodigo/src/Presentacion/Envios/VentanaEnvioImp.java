@@ -21,6 +21,8 @@ import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
 import Presentacion.Command.Contexto;
+import java.awt.Font;
+import java.awt.SystemColor;
 
 
 public class VentanaEnvioImp extends VentanaEnvio {
@@ -56,7 +58,7 @@ public class VentanaEnvioImp extends VentanaEnvio {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 737, 598);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(204, 255, 255));
+		contentPane.setBackground(SystemColor.activeCaption);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -87,7 +89,9 @@ public class VentanaEnvioImp extends VentanaEnvio {
 		paneles.add(mAll);
 	
 		
-		JButton botonanadir = new JButton("A�adir Env�o");
+		JButton botonanadir = new JButton("A\u00F1adir envio");
+		botonanadir.setBackground(SystemColor.activeCaptionBorder);
+		botonanadir.setFont(new Font("Consolas", Font.BOLD, 11));
 		
 		botonanadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -101,7 +105,9 @@ public class VentanaEnvioImp extends VentanaEnvio {
 		});
 		panel_1.add(botonanadir);
 		
-		JButton botonEliminar = new JButton("<html>Eliminar <br /> env�o</html>");
+		JButton botonEliminar = new JButton("Eliminar envio");
+		botonEliminar.setBackground(SystemColor.activeCaptionBorder);
+		botonEliminar.setFont(new Font("Consolas", Font.BOLD, 11));
 		botonEliminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
@@ -113,7 +119,9 @@ public class VentanaEnvioImp extends VentanaEnvio {
 		});
 		panel_1.add(botonEliminar);
 		
-		JButton botonActualizar = new JButton("<html>Actualizar<br /> env�o</html>");
+		JButton botonActualizar = new JButton("Actualizar envio");
+		botonActualizar.setBackground(SystemColor.activeCaptionBorder);
+		botonActualizar.setFont(new Font("Consolas", Font.BOLD, 11));
 		botonActualizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
@@ -125,7 +133,9 @@ public class VentanaEnvioImp extends VentanaEnvio {
 		});
 		panel_1.add(botonActualizar);
 		
-		JButton botonMostrarID = new JButton("<html>Mostrar env�o<br /> por su ID </html>");
+		JButton botonMostrarID = new JButton("Mostrar por ID");
+		botonMostrarID.setBackground(SystemColor.activeCaptionBorder);
+		botonMostrarID.setFont(new Font("Consolas", Font.BOLD, 11));
 		
 		botonMostrarID.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -138,7 +148,9 @@ public class VentanaEnvioImp extends VentanaEnvio {
 		});
 		panel_1.add(botonMostrarID);
 		
-		JButton botonMostrarTodo = new JButton("<html>Mostrar todos<br /> los env�os</html>");
+		JButton botonMostrarTodo = new JButton("Mostrar envios");
+		botonMostrarTodo.setBackground(SystemColor.activeCaptionBorder);
+		botonMostrarTodo.setFont(new Font("Consolas", Font.BOLD, 11));
 		
 		botonMostrarTodo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

@@ -18,6 +18,7 @@ import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
+import java.awt.SystemColor;
 
 /** 
  * <!-- begin-UML-doc -->
@@ -32,7 +33,7 @@ public class PanelReadAllEnvio extends JPanel implements Ventana{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JButton button;
+	private JButton btnVerLosEnvios;
 	private JTextArea textArea;
 	private JScrollPane scroll;
 	
@@ -44,9 +45,10 @@ public class PanelReadAllEnvio extends JPanel implements Ventana{
 		setLayout(null);
 		setOpaque(false);
 
-		button = new JButton("Ver los env�os");
-		button.setBounds(208, 36, 262, 57);
-		add(button);
+		btnVerLosEnvios = new JButton("Ver los envios");
+		btnVerLosEnvios.setBackground(SystemColor.textHighlight);
+		btnVerLosEnvios.setBounds(208, 36, 262, 57);
+		add(btnVerLosEnvios);
 
 		textArea = new JTextArea();
 
@@ -58,7 +60,7 @@ public class PanelReadAllEnvio extends JPanel implements Ventana{
 		add(scroll);
 		textArea.setVisible(false);
 		textArea.setEditable(false);
-		button.addActionListener(new ActionListener() {
+		btnVerLosEnvios.addActionListener(new ActionListener() {
 			@SuppressWarnings({ "unchecked"})
 			@Override
 			public void actionPerformed(ActionEvent e) {

@@ -16,6 +16,7 @@ import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
+import java.awt.SystemColor;
 
 public class PanelDeleteEnvio extends JPanel implements Ventana{
 	/**
@@ -41,6 +42,7 @@ public class PanelDeleteEnvio extends JPanel implements Ventana{
 		textField.setColumns(10);
 		
 		btnNewButton = new JButton("Eliminar");
+		btnNewButton.setBackground(SystemColor.textHighlight);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			try{
@@ -57,7 +59,7 @@ public class PanelDeleteEnvio extends JPanel implements Ventana{
 		lblIntroduceElId.setBounds(71, 61, 221, 16);
 		add(lblIntroduceElId);
 		
-		JLabel lblEliminarEnvio = new JLabel("ELIMINAR ENVÍO");
+		JLabel lblEliminarEnvio = new JLabel("ELIMINAR ENVIO");
 		lblEliminarEnvio.setFont(new Font("Tahoma", Font.BOLD, 16));
 		lblEliminarEnvio.setBounds(104, 26, 140, 35);
 		add(lblEliminarEnvio);

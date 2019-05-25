@@ -20,11 +20,12 @@ import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
+import java.awt.SystemColor;
 
 public class PanelReadByIdEnvio extends JPanel implements Ventana{
 	private static final long serialVersionUID = 1L;
 	private JTextField textField;
-	private JButton button;
+	private JButton btnBuscarEnvio;
 	private JTextArea textArea ;
 	private JLabel lblIntroduceElId;
 	/**
@@ -40,9 +41,10 @@ public class PanelReadByIdEnvio extends JPanel implements Ventana{
 	public void initComponent() {
 		setLayout(null);
 		setOpaque(false);
-		button = new JButton("Buscar Env�o");
-		button.setBounds(425, 75, 180, 37);
-		add(button);
+		btnBuscarEnvio = new JButton("Buscar Envio");
+		btnBuscarEnvio.setBackground(SystemColor.textHighlight);
+		btnBuscarEnvio.setBounds(425, 75, 180, 37);
+		add(btnBuscarEnvio);
 		
 		textField = new JTextField();
 		textField.setColumns(10);
@@ -62,7 +64,7 @@ public class PanelReadByIdEnvio extends JPanel implements Ventana{
 	    lblIntroduceElId.setBounds(82, 50, 113, 16);
 	    add(lblIntroduceElId);
 	
-	    button.addActionListener(new ActionListener() {
+	    btnBuscarEnvio.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
 	    	//	textArea.setVisible(true);
 	    		Contexto contexto = new Contexto (Evento.readEnvioCommand,Integer.valueOf(textField.getText()));

@@ -18,6 +18,7 @@ import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
+import java.awt.SystemColor;
 
 public class PanelAddEnvio extends JPanel implements Ventana{
 	
@@ -83,6 +84,7 @@ public class PanelAddEnvio extends JPanel implements Ventana{
 			}
 		});
 		button = new JButton("Añadir Envío");
+		button.setBackground(SystemColor.textHighlight);
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				boolean ok = false ;
