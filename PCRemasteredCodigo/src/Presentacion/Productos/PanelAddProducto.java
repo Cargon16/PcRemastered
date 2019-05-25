@@ -17,6 +17,7 @@ import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
+import java.awt.SystemColor;
 
 /** 
  * <!-- begin-UML-doc -->
@@ -87,7 +88,8 @@ public class PanelAddProducto extends JPanel implements Ventana {
 		labelPrecio.setBounds(37, 174, 75, 14);
 		add(labelPrecio);
 		
-		JButton buttonAnadir = new JButton("Anadir");
+		JButton buttonAnadir = new JButton("A\u00F1adir");
+		buttonAnadir.setBackground(SystemColor.textHighlight);
 		buttonAnadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TProducto producto = new TProducto(null, nombreText.getText(), descripcionText.getText(), Integer.valueOf(stockText.getText()), Float.valueOf(precioText.getText()));

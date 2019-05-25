@@ -16,6 +16,7 @@ import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
+import java.awt.SystemColor;
 
 /** 
  * <!-- begin-UML-doc -->
@@ -90,6 +91,7 @@ public class PanelUpdateProducto extends JPanel implements Ventana {
 		add(labelPrecio);
 
 		buttonActualizar = new JButton("Actualizar");
+		buttonActualizar.setBackground(SystemColor.textHighlight);
 		buttonActualizar.setBounds(517, 329, 132, 43);
 		add(buttonActualizar);
 
@@ -99,6 +101,7 @@ public class PanelUpdateProducto extends JPanel implements Ventana {
 		add(campoFindId);
 
 		botonBuscar = new JButton("Buscar");
+		botonBuscar.setBackground(SystemColor.textHighlight);
 		botonBuscar.setBounds(427, 28, 222, 23);
 		add(botonBuscar);
 

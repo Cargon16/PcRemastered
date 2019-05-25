@@ -16,6 +16,7 @@ import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
+import java.awt.SystemColor;
 
 /** 
  * <!-- begin-UML-doc -->
@@ -49,6 +50,7 @@ public class PanelDeleteProducto extends JPanel implements Ventana {
 		add(text);
 
 		butonEliminar = new JButton("Eliminar");
+		butonEliminar.setBackground(SystemColor.textHighlight);
 		butonEliminar.addActionListener(new ActionListener() {
 
 			@Override

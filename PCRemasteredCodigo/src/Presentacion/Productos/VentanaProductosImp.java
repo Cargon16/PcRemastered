@@ -21,6 +21,8 @@ import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
 import Presentacion.Command.Contexto;
+import java.awt.SystemColor;
+import java.awt.Font;
 
 /** 
  * <!-- begin-UML-doc -->
@@ -64,7 +66,7 @@ public class VentanaProductosImp extends VentanaProducto {
 		setBounds(100, 100, 737, 598);
 		
 		contentPaneProducto = new JPanel();
-		contentPaneProducto.setBackground(new Color(204, 255, 255));
+		contentPaneProducto.setBackground(SystemColor.activeCaption);
 		contentPaneProducto.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPaneProducto);
 		contentPaneProducto.setLayout(null);
@@ -99,6 +101,8 @@ public class VentanaProductosImp extends VentanaProducto {
 		
 		
 		JButton add = new JButton("<html>Anadir <br /> producto</html>");
+		add.setFont(new Font("Consolas", Font.BOLD, 11));
+		add.setBackground(SystemColor.activeCaptionBorder);
 		add.addActionListener(new ActionListener() {
 			
 			@Override
@@ -114,6 +118,8 @@ public class VentanaProductosImp extends VentanaProducto {
 		panel_1.add(add);
 		
 		JButton eliminar = new JButton("<html>Eliminar <br /> producto</html>");
+		eliminar.setFont(new Font("Consolas", Font.BOLD, 11));
+		eliminar.setBackground(SystemColor.activeCaptionBorder);
 		eliminar.addActionListener(new ActionListener() {
 			
 			@Override
@@ -129,6 +135,8 @@ public class VentanaProductosImp extends VentanaProducto {
 		panel_1.add(eliminar);
 		
 		JButton actualizar = new JButton("<html>Actualizar <br /> producto</html>");
+		actualizar.setFont(new Font("Consolas", Font.BOLD, 11));
+		actualizar.setBackground(SystemColor.activeCaptionBorder);
 		actualizar.addActionListener(new ActionListener() {
 			
 			@Override
@@ -144,6 +152,8 @@ public class VentanaProductosImp extends VentanaProducto {
 		panel_1.add(actualizar);
 		
 		JButton mostrarID = new JButton("<html>Mostrar <br /> producto</html>");
+		mostrarID.setFont(new Font("Consolas", Font.BOLD, 11));
+		mostrarID.setBackground(SystemColor.activeCaptionBorder);
 		mostrarID.addActionListener(new ActionListener() {
 			
 			@Override
@@ -159,6 +169,8 @@ public class VentanaProductosImp extends VentanaProducto {
 		panel_1.add(mostrarID);
 		
 		JButton mostrarTodo = new JButton("<html>Mostrar todos <br />los productos</html>");
+		mostrarTodo.setFont(new Font("Consolas", Font.BOLD, 11));
+		mostrarTodo.setBackground(SystemColor.activeCaptionBorder);
 		mostrarTodo.addActionListener(new ActionListener() {
 			
 			@Override

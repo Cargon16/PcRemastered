@@ -18,6 +18,7 @@ import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
+import java.awt.SystemColor;
 
 /** 
  * <!-- begin-UML-doc -->
@@ -47,6 +48,7 @@ public class PanelReadAllProducto extends JPanel implements Ventana {
 		setLayout(null);
 		setOpaque(false);
 		buttonRead = new JButton("Ver los Productos");
+		buttonRead.setBackground(SystemColor.textHighlight);
 		buttonRead.setBounds(208, 36, 262, 57);
 		add(buttonRead);
 		
