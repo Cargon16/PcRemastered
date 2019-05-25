@@ -21,6 +21,9 @@ import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
 import Presentacion.Command.Contexto;
+import javax.swing.UIManager;
+import java.awt.SystemColor;
+import java.awt.Font;
 
 public class VentanaClientesImp extends VentanaClientes{
 
@@ -63,7 +66,7 @@ public class VentanaClientesImp extends VentanaClientes{
 		setBounds(100, 100, 737, 598);
 
 		
-		contentPane.setBackground(new Color(204, 255, 255));
+		contentPane.setBackground(SystemColor.activeCaption);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -97,6 +100,8 @@ public class VentanaClientesImp extends VentanaClientes{
 
 
 		botonanadir = new JButton("Añadir Cliente");
+		botonanadir.setFont(new Font("Consolas", Font.BOLD, 11));
+		botonanadir.setBackground(SystemColor.activeCaptionBorder);
 
 		botonanadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -113,6 +118,8 @@ public class VentanaClientesImp extends VentanaClientes{
 		panel_1.add(botonanadir);
 
 		botonEliminar = new JButton("<html>Eliminar <br /> clientes</html>");
+		botonEliminar.setFont(new Font("Consolas", Font.BOLD, 11));
+		botonEliminar.setBackground(SystemColor.activeCaptionBorder);
 		botonEliminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel2.removeAll();
@@ -126,6 +133,8 @@ public class VentanaClientesImp extends VentanaClientes{
 		panel_1.add(botonEliminar);
 
 		botonActualizar = new JButton("<html>Actualizar<br /> clientes</html>");
+		botonActualizar.setFont(new Font("Consolas", Font.BOLD, 11));
+		botonActualizar.setBackground(SystemColor.activeCaptionBorder);
 		botonActualizar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -140,6 +149,8 @@ public class VentanaClientesImp extends VentanaClientes{
 		panel_1.add(botonActualizar);
 
 		botonMostrarID = new JButton("<html>Mostrar clientes<br /> por su ID </html>");
+		botonMostrarID.setFont(new Font("Consolas", Font.BOLD, 11));
+		botonMostrarID.setBackground(SystemColor.activeCaptionBorder);
 
 		botonMostrarID.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -153,6 +164,8 @@ public class VentanaClientesImp extends VentanaClientes{
 		panel_1.add(botonMostrarID);
 
 		botonMostrarTodo = new JButton("<html>Mostrar todos<br /> los clientes</html>");
+		botonMostrarTodo.setFont(new Font("Consolas", Font.BOLD, 11));
+		botonMostrarTodo.setBackground(SystemColor.activeCaptionBorder);
 
 		botonMostrarTodo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

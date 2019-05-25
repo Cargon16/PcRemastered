@@ -18,6 +18,7 @@ import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
+import java.awt.SystemColor;
 
 /** 
  * <!-- begin-UML-doc -->
@@ -45,6 +46,7 @@ public class PanelReadAllClientes extends JPanel implements Ventana {
 		setLayout(null);
 		setOpaque(false);
 		button = new JButton("Ver los Clientes");
+		button.setBackground(SystemColor.textHighlight);
 		button.setBounds(208, 36, 262, 57);
 		add(button);
 
