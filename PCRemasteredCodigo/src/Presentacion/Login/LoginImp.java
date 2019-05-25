@@ -3,9 +3,11 @@ package Presentacion.Login;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -17,10 +19,9 @@ import Negocio.ComprobadorSintactico.ComprobadorSintactico;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
+import java.awt.SystemColor;
 
 public class LoginImp extends Login{
-
-	private JButton ButtonExit;
 	private JButton ButtonOK;
 	private JPasswordField Password;
 	private JTextField UserCamp;
@@ -41,11 +42,21 @@ public class LoginImp extends Login{
 	}
 
 	private void initComponents() {
-		ButtonExit = new JButton();
+		
+		ImageIcon imageIcon = new ImageIcon("src/logoPc.png"); 
+		Image im = imageIcon.getImage();
+		ImageIcon iconoEscalado = new ImageIcon(im.getScaledInstance(200,200,Image.SCALE_SMOOTH));
+		JLabel imagen = new JLabel();
+		imagen.setLocation(45, 105);
+		imagen.setSize(238, 226);
+		imagen.setIcon(iconoEscalado);
+		getContentPane().add(imagen);
 		ButtonOK = new JButton();
+		ButtonOK.setBackground(SystemColor.textHighlight);
 		Password = new JPasswordField();
 		UserCamp = new JTextField();
 		Titulo = new JLabel();
+		Titulo.setBackground(SystemColor.textHighlight);
 		User = new JLabel();
 		Pass = new JLabel();
 		
@@ -54,38 +65,34 @@ public class LoginImp extends Login{
 		setMinimumSize(new Dimension(700,400));
 		setResizable(false);
 		setLocationRelativeTo(null);
-		getContentPane().setBackground(Color.cyan);
+		getContentPane().setBackground(SystemColor.textInactiveText);
 		setVisible(true);
 		ButtonOK.setText("Aceptar");
 		getContentPane().add(ButtonOK);
-		ButtonOK.setBounds(510,250,140,90);
-		
-		ButtonExit.setText("Salir");
-		getContentPane().add(ButtonExit);
-		ButtonExit.setBounds(510, 250, 140, 90);
+		ButtonOK.setBounds(395,250,140,57);
 		
 		Pass.setFont(new Font("Tahoma",1,18));
-		Pass.setText("PASS");
+		Pass.setText("Contrase\u00F1a");
 		getContentPane().add(Pass);
-		Pass.setBounds(330, 150, 150, 30);
+		Pass.setBounds(330, 197, 150, 30);
 		
 		User.setFont(new Font("Tahoma",1,18));
-		User.setText("USUARIO");
+		User.setText("Usuario");
 		getContentPane().add(User);
-		User.setBounds(330, 110, 160, 30);
+		User.setBounds(330, 150, 160, 30);
 		
 		Password.setFont(new Font("Tahoma",1,18));
 		getContentPane().add(Password);
-		Password.setBounds(490, 150, 160, 30);
+		Password.setBounds(453, 197, 160, 30);
 		
 		UserCamp.setFont(new Font("Tahoma",1,18));
 		getContentPane().add(UserCamp);
-		UserCamp.setBounds(490, 110, 160, 30);
+		UserCamp.setBounds(453, 150, 160, 30);
 		
-		Titulo.setFont(new Font("Verdana",1,36));
-		Titulo.setText("PCRemastered");
+		Titulo.setFont(new Font("PMingLiU-ExtB", Font.BOLD, 36));
+		Titulo.setText("ACCESO A TIENDA");
 		getContentPane().add(Titulo);
-		Titulo.setBounds(200, 10, 345, 80);
+		Titulo.setBounds(168, 14, 540, 80);
 		
 		pack();
 		

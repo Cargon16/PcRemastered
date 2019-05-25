@@ -1,9 +1,12 @@
 package Presentacion;
 
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -11,6 +14,8 @@ import javax.swing.JLabel;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
+import java.awt.Color;
+import java.awt.SystemColor;
 
 public class VentanaPrincipalImp extends VentanaPrincipal{
 
@@ -25,6 +30,8 @@ public class VentanaPrincipalImp extends VentanaPrincipal{
 	private JButton btnProveedores;
 
 	public VentanaPrincipalImp(){
+		getContentPane().setBackground(SystemColor.textInactiveText);
+		getContentPane().setForeground(Color.GREEN);
 		initComponent();
 	}
 
@@ -33,11 +40,25 @@ public class VentanaPrincipalImp extends VentanaPrincipal{
 
 
 		setResizable(false);
-		setBounds(100, 100, 534, 360);
+		setBounds(100, 100, 531, 361);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("PcRemastered");
+		
+		
+		ImageIcon imageIcon = new ImageIcon("src/logoPc.png"); 
+		Image im = imageIcon.getImage();
+		ImageIcon iconoEscalado = new ImageIcon(im.getScaledInstance(100,100,Image.SCALE_SMOOTH));
+		JLabel imagen = new JLabel();
+		imagen.setLocation(201, 176);
+		imagen.setSize(100, 100);
+		imagen.setIcon(iconoEscalado);
+		getContentPane().add(imagen);
+		
+
+		
 		botonVentas = new JButton("Clientes");
-		botonVentas.setBounds(26, 72, 106, 56);
+		botonVentas.setBackground(SystemColor.activeCaption);
+		botonVentas.setBounds(342, 223, 103, 53);
 		botonVentas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -50,10 +71,13 @@ public class VentanaPrincipalImp extends VentanaPrincipal{
 			}
 		});
 		getContentPane().setLayout(null);
+		
+	
 		getContentPane().add(botonVentas);
 
 		botonModelo = new JButton("Productos");
-		botonModelo.setBounds(393, 142, 106, 56);
+		botonModelo.setBackground(SystemColor.activeCaption);
+		botonModelo.setBounds(342, 105, 103, 53);
 		botonModelo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -70,7 +94,8 @@ public class VentanaPrincipalImp extends VentanaPrincipal{
 		getContentPane().add(botonModelo);
 
 		botonCliente = new JButton("Ventas");
-		botonCliente.setBounds(283, 72, 98, 56);
+		botonCliente.setBackground(SystemColor.activeCaption);
+		botonCliente.setBounds(56, 105, 103, 53);
 		botonCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -87,7 +112,8 @@ public class VentanaPrincipalImp extends VentanaPrincipal{
 		getContentPane().add(botonCliente);
 
 		btnEnvios = new JButton("Envios");
-		btnEnvios.setBounds(26, 141, 106, 59);
+		btnEnvios.setBackground(SystemColor.activeCaption);
+		btnEnvios.setBounds(201, 105, 103, 53);
 		btnEnvios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -102,7 +128,9 @@ public class VentanaPrincipalImp extends VentanaPrincipal{
 		getContentPane().add(btnEnvios);
 
 		btnP = new JButton("Personal");
-		btnP.setBounds(393, 72, 106, 56);
+		btnP.setForeground(Color.BLACK);
+		btnP.setBackground(SystemColor.activeCaption);
+		btnP.setBounds(56, 223, 103, 53);
 		btnP.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -116,13 +144,9 @@ public class VentanaPrincipalImp extends VentanaPrincipal{
 		});
 		getContentPane().add(btnP);
 
-		btnProveedores = new JButton("Proveedores");
-		btnProveedores.setBounds(144, 72, 106, 56);
-		getContentPane().add(btnProveedores);
-
-		JLabel lblPcremastered = new JLabel("PcRemastered");
-		lblPcremastered.setFont(new Font("Tahoma", Font.BOLD, 23));
-		lblPcremastered.setBounds(177, 13, 168, 42);
+		JLabel lblPcremastered = new JLabel("Menu principal");
+		lblPcremastered.setFont(new Font("Segoe Print", Font.BOLD, 23));
+		lblPcremastered.setBounds(167, 41, 183, 53);
 		getContentPane().add(lblPcremastered);
 		setLocationRelativeTo(null);
 		setVisible(true);
