@@ -26,14 +26,8 @@ import Presentacion.Command.Productos.CreateProductosCommand;
 import Presentacion.Command.Productos.DeleteProductosCommand;
 import Presentacion.Command.Productos.ReadAllProductosCommand;
 import Presentacion.Command.Productos.ReadByIdProductosCommand;
-//import Presentacion.Command.Productos.ReadByNombrePRoductosCommand;
 import Presentacion.Command.Productos.ReadProductosCommand;
 import Presentacion.Command.Productos.UpdateProductosCommand;
-import Presentacion.Command.Proveedores.CreateProveedoresCommand;
-import Presentacion.Command.Proveedores.DeleteProveedoresCommand;
-import Presentacion.Command.Proveedores.ReadAllProveedoresCommand;
-import Presentacion.Command.Proveedores.ReadProveedoresCommand;
-import Presentacion.Command.Proveedores.UpdateProveedoresCommand;
 import Presentacion.Command.Ventas.AbrirVentaCommand;
 import Presentacion.Command.Ventas.AnadirProductoVentaCommand;
 import Presentacion.Command.Ventas.CreateVentasCommand;
@@ -55,14 +49,7 @@ import Presentacion.Command.Vista.VentanaProductosCommand;
 import Presentacion.Command.Vista.VentanaVentasCommand;
 import Presentacion.Ventas.PanelPago;
 
-/** 
- * <!-- begin-UML-doc -->
- * <!-- end-UML-doc -->
- * @author nacho710
- * @uml.annotations
- *     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_wP6HMFSUEemuHuD_HqBchg"
- * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_wP6HMFSUEemuHuD_HqBchg"
- */
+
 public class FactoriaCommandsImp extends FactoriaCommands {
 
 	@Override
@@ -97,11 +84,6 @@ public class FactoriaCommandsImp extends FactoriaCommands {
 		case readAllEnvioCommand: return new ReadAllEnviosCommand();
 		case readEnvioCommand: return new ReadByIDEnviosCommand();
 		case updateEnvioCommand:return new UpdateEnviosCommand();
-		case createProveedorCommand: return new CreateProveedoresCommand();
-		case deleteProveedorCommand: return new DeleteProveedoresCommand();
-		case readAllProveedorCommand: return new ReadAllProveedoresCommand();
-		case readProveedorCommand: return new ReadProveedoresCommand();
-		case updateProveedorCommand:return new UpdateProveedoresCommand();
 		case crearVentanaVentas: return new VentanaVentasCommand();
 		case createVentasCommand: return new CreateVentasCommand();
 		case deleteVentasCommand: return new DeleteVentasCommand();

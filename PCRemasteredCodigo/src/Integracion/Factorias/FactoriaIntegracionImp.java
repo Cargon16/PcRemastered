@@ -11,8 +11,6 @@ import Integracion.Personal.DAOPersonal;
 import Integracion.Personal.DAOPersonalImpl;
 import Integracion.Productos.DaoProducto;
 import Integracion.Productos.DaoProductoImp;
-import Integracion.Proveedores.DaoProveedores;
-import Integracion.Proveedores.DaoProveedoresImp;
 import Integracion.Ventas.DaoVentas;
 import Integracion.Ventas.DaoVentasImp;
 
@@ -55,9 +53,5 @@ public class FactoriaIntegracionImp extends FactoriaIntegracion {
 		return new DAOPersonalImpl();
 	}
 
-	@Override
-	public DaoProveedores crearDaoProveedroes() {
-		// TODO Auto-generated method stub
-		return new DaoProveedoresImp();
-	}
+
 }

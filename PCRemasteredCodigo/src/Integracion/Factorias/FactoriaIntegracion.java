@@ -7,7 +7,6 @@ import Integracion.Clientes.DAOCliente;
 import Integracion.Envios.DAOEnvio;
 import Integracion.Personal.DAOPersonal;
 import Integracion.Productos.DaoProducto;
-import Integracion.Proveedores.DaoProveedores;
 import Integracion.Ventas.DaoVentas;
 
 public abstract class FactoriaIntegracion {

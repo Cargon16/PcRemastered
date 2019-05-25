@@ -7,7 +7,6 @@ import Negocio.Clientes.SACliente;
 import Negocio.Envios.SAEnvio;
 import Negocio.Personal.SAPersonal;
 import Negocio.Productos.SAProducto;
-import Negocio.Proveedores.SAProveedores;
 import Negocio.Ventas.SAVentas;
 
 /** 
@@ -34,15 +33,11 @@ public abstract class FactoriaNegocio {
 
 	public abstract SACliente crearSAClientes();
 
-	
 	public abstract SAEnvio crearSAEnvios();
 	
 	public abstract SAPersonal crearSAPersonal();
-
 	
 	public abstract SAProducto crearSAProductos();
 	
-	public abstract SAProveedores crearSAProveedores();
-
 	public abstract SAVentas crearSAVentas();
 }
