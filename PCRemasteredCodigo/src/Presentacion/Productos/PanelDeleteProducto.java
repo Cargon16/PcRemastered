@@ -9,9 +9,12 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import Negocio.ComprobadorSintactico.ComprobadorSintactico;
+import Negocio.ComprobadorSintactico.ComprobadorSintacticoImp;
 import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
@@ -37,8 +40,10 @@ public class PanelDeleteProducto extends JPanel implements Ventana {
 	private static final long serialVersionUID = 1L;
 	private JTextField text;
 	private JButton butonEliminar;
+	
 
 	public PanelDeleteProducto(){
+
 		initComponent();
 	}
 
@@ -57,8 +62,14 @@ public class PanelDeleteProducto extends JPanel implements Ventana {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				try{
-					Contexto contexto = new Contexto(Evento.deleteProductoCommand, text.getText());
-					Controller.getInstance().ejecutar(contexto);
+					if(ComprobadorSintactico.getInstance().isNumeric(text.getText())){
+						Contexto contexto = new Contexto(Evento.deleteProductoCommand, text.getText());
+						Controller.getInstance().ejecutar(contexto);
+					}else{
+						JOptionPane.showMessageDialog(null, "Datos incorrectos, el ID a eliminar debe ser un numero");
+					}
+					
+				
 
 				}catch(Exception ex){;}
 

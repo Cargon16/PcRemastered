@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -16,6 +17,8 @@ import javax.swing.JTextField;
 import javax.swing.ScrollPaneConstants;
 
 import Integracion.Productos.TProducto;
+import Negocio.ComprobadorSintactico.ComprobadorSintactico;
+import Negocio.ComprobadorSintactico.ComprobadorSintacticoImp;
 import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
@@ -38,7 +41,9 @@ public class PanelReadByIdProducto extends JPanel implements Ventana {
 	private JScrollPane scroll;
 	
 	
+	
 	public PanelReadByIdProducto(){
+
 		initComponent();
 	}
 	
@@ -72,8 +77,14 @@ public class PanelReadByIdProducto extends JPanel implements Ventana {
 	    button.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
 	    	
-	    		Contexto contexto = new Contexto (Evento.readProductoCommand,Integer.valueOf(textField.getText()));
-	    		Controller.getInstance().ejecutar(contexto);
+	    		if(ComprobadorSintactico.getInstance().isNumeric(textField.getText())){
+	    			Contexto contexto = new Contexto (Evento.readProductoCommand,Integer.valueOf(textField.getText()));
+		    		Controller.getInstance().ejecutar(contexto);
+	    		}else{
+	    			JOptionPane.showMessageDialog(null, "Datos incorrectos, el ID a eliminar debe ser un numero");
+	    		}
+	    		
+	    	
 	    	}
 	    });
 	

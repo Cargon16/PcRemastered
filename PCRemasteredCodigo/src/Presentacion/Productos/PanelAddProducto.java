@@ -44,11 +44,11 @@ public class PanelAddProducto extends JPanel implements Ventana {
 	private JTextField descripcionText;
 	private JTextField stockText;
 	private JTextField precioText;
-	private ComprobadorSintactico comprobador;
+	
 	
 	
 	public PanelAddProducto(){
-		comprobador = new ComprobadorSintacticoImp();
+	
 		initComponent();
 	}
 	
@@ -99,18 +99,14 @@ public class PanelAddProducto extends JPanel implements Ventana {
 		buttonAnadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				if(comprobador.nombreCorrect(nombreText.getText()) && comprobador.isNumeric(stockText.getText()) && comprobador.isNumeric(precioText.getText())){
+				if(ComprobadorSintactico.getInstance().nombreCorrect(nombreText.getText()) && ComprobadorSintactico.getInstance().isNumeric(stockText.getText()) && ComprobadorSintactico.getInstance().isNumeric(precioText.getText())){
 					TProducto producto = new TProducto(null, nombreText.getText(), descripcionText.getText(), Integer.valueOf(stockText.getText()), Float.valueOf(precioText.getText()));
 					Contexto contexto = new Contexto(Evento.createProductoCommand, producto);
 					Controller.getInstance().ejecutar(contexto);
 				}else{
 					JOptionPane.showMessageDialog(null, "Datos incorrectos, comprueba sintacticamente los datos introducidos.");
 				}
-				
-				
-				
-				
-				
+	
 			}
 		});
 		buttonAnadir.setBounds(435, 184, 132, 40);

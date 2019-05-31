@@ -8,10 +8,13 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import Integracion.Productos.TProducto;
+import Negocio.ComprobadorSintactico.ComprobadorSintactico;
+import Negocio.ComprobadorSintactico.ComprobadorSintacticoImp;
 import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
@@ -44,9 +47,11 @@ public class PanelUpdateProducto extends JPanel implements Ventana {
 	private JLabel labelPrecio;
 	private JButton buttonActualizar;
 	private JButton botonBuscar;
+	private ComprobadorSintactico comprobador;
 
 
 	public PanelUpdateProducto(){
+		comprobador = new ComprobadorSintacticoImp();
 		initComponent();
 	}
 
@@ -110,12 +115,17 @@ public class PanelUpdateProducto extends JPanel implements Ventana {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+
 				// TODO Auto-generated method stu
-				Contexto contexto = new Contexto(Evento.readProductoCommand, Integer.valueOf(campoFindId.getText()));
-				Controller.getInstance().ejecutar(contexto);
 
+				if(comprobador.isNumeric(campoFindId.getText())){
 
+					Contexto contexto = new Contexto(Evento.readProductoCommand, Integer.valueOf(campoFindId.getText()));
+					Controller.getInstance().ejecutar(contexto);
 
+				}else{
+					JOptionPane.showMessageDialog(null, "Datos incorrectos, el ID a eliminar debe ser un numero");
+				}
 			}
 		});
 
@@ -124,17 +134,19 @@ public class PanelUpdateProducto extends JPanel implements Ventana {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-
-				producto.setNombre(nombre.getText());
-				producto.setDescripcion(descripcion.getText());
-				producto.setStock(Integer.valueOf(stock.getText()));
-				producto.setPrecio(Float.valueOf(precio.getText()));
-
 				try {
+					if(comprobador.nombreCorrect(nombre.getText()) && comprobador.isNumeric(precio.getText()) && comprobador.isNumeric(stock.getText())){
 
-					Contexto contexto = new Contexto(Evento.updateProductoCommand, (TProducto) producto);
-					Controller.getInstance().ejecutar(contexto);
+						producto.setNombre(nombre.getText());
+						producto.setDescripcion(descripcion.getText());
+						producto.setStock(Integer.valueOf(stock.getText()));
+						producto.setPrecio(Float.valueOf(precio.getText()));
 
+						Contexto contexto = new Contexto(Evento.updateProductoCommand, (TProducto) producto);
+						Controller.getInstance().ejecutar(contexto);
+					}else{
+						JOptionPane.showMessageDialog(null, "Datos incorrectos, comprueba sintacticamente los datos introducidos");
+					}
 
 				} catch (Exception ex) {;}
 
@@ -174,14 +186,14 @@ public class PanelUpdateProducto extends JPanel implements Ventana {
 
 
 	}
-	
+
 	public void resetCamps(){
 		nombre.setText(null);
 		descripcion.setText(null);
 		stock.setText(null);
 		precio.setText(null);
 		campoFindId.setText(null);
-		
-		
+
+
 	}
 }
