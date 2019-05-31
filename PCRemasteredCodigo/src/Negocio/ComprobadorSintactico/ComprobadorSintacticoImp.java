@@ -19,7 +19,7 @@ public class ComprobadorSintacticoImp extends ComprobadorSintactico {
 	}
 
 	@Override
-	public Boolean DNICorrect(String DNI) {
+	public boolean DNICorrect(String DNI) {
 
 		if(isValidoDNI(DNI)){
 			return true;
@@ -28,7 +28,7 @@ public class ComprobadorSintacticoImp extends ComprobadorSintactico {
 
 
 
-	private  boolean isNumeric(String cadena){
+	public  boolean isNumeric(String cadena){
 
 		boolean okele = false;
 			try {
@@ -44,7 +44,7 @@ public class ComprobadorSintacticoImp extends ComprobadorSintactico {
 
 	}
 	
-	private  boolean isAlphabetic(String cadena){
+	public  boolean isAlphabetic(String cadena){
 		return !cadena.equals("") && cadena !=null && cadena.matches("^[a-zA-Z]*$");
 	}
 	

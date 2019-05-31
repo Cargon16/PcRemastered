@@ -9,10 +9,13 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import Integracion.Productos.TProducto;
+import Negocio.ComprobadorSintactico.ComprobadorSintactico;
+import Negocio.ComprobadorSintactico.ComprobadorSintacticoImp;
 import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
@@ -41,8 +44,11 @@ public class PanelAddProducto extends JPanel implements Ventana {
 	private JTextField descripcionText;
 	private JTextField stockText;
 	private JTextField precioText;
+	private ComprobadorSintactico comprobador;
+	
 	
 	public PanelAddProducto(){
+		comprobador = new ComprobadorSintacticoImp();
 		initComponent();
 	}
 	
@@ -92,9 +98,18 @@ public class PanelAddProducto extends JPanel implements Ventana {
 		buttonAnadir.setBackground(SystemColor.textHighlight);
 		buttonAnadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TProducto producto = new TProducto(null, nombreText.getText(), descripcionText.getText(), Integer.valueOf(stockText.getText()), Float.valueOf(precioText.getText()));
-				Contexto contexto = new Contexto(Evento.createProductoCommand, producto);
-				Controller.getInstance().ejecutar(contexto);
+				
+				if(comprobador.nombreCorrect(nombreText.getText()) && comprobador.isNumeric(stockText.getText()) && comprobador.isNumeric(precioText.getText())){
+					TProducto producto = new TProducto(null, nombreText.getText(), descripcionText.getText(), Integer.valueOf(stockText.getText()), Float.valueOf(precioText.getText()));
+					Contexto contexto = new Contexto(Evento.createProductoCommand, producto);
+					Controller.getInstance().ejecutar(contexto);
+				}else{
+					JOptionPane.showMessageDialog(null, "Datos incorrectos, comprueba sintacticamente los datos introducidos.");
+				}
+				
+				
+				
+				
 				
 			}
 		});
