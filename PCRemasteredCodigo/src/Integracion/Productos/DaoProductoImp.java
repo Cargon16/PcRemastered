@@ -159,7 +159,6 @@ public class DaoProductoImp implements DaoProducto {
 				}
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
 			retorno = null;
 		}
 		return retorno;
