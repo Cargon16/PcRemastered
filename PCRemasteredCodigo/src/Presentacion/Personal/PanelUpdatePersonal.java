@@ -8,12 +8,14 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import Integracion.Clientes.TCliente;
 import Integracion.Personal.TPersonal;
+import Negocio.ComprobadorSintactico.ComprobadorSintactico;
 import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
@@ -104,14 +106,20 @@ public class PanelUpdatePersonal extends JPanel implements Ventana {
 		activoRB.setToolTipText("En n�mina");
 		activoRB.setBounds(49, 349, 109, 23);
 		activoRB.setOpaque(false);
+
 		botonFind.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
 				try {
-					Contexto contexto = new Contexto(Evento.readPersonalCommand, Integer.valueOf(botonfindtext.getText()));
-					Controller.getInstance().ejecutar(contexto);
-					c = (TPersonal) contexto.getDatos();
+					if(ComprobadorSintactico.getInstance().isNumeric(botonfindtext.getText())){
+						Contexto contexto = new Contexto(Evento.readPersonalCommand, Integer.valueOf(botonfindtext.getText()));
+						Controller.getInstance().ejecutar(contexto);
+						c = (TPersonal) contexto.getDatos();
+					}else{
+						JOptionPane.showMessageDialog(null, "Datos incorrectos, el ID a eliminar debe ser un numero");
+					}
+
 					Nombre.setText(c.getNombre());
 					add(Nombre);
 					add(label);
@@ -173,18 +181,27 @@ public class PanelUpdatePersonal extends JPanel implements Ventana {
 
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boolean ok = false;
-				if (activoRB.isSelected())
-					ok = true;
-				c.setNombre(Nombre.getText());
-				c.setSalario(Double.valueOf(salario.getText()));
-				c.setTelefono(Integer.valueOf(telefono.getText()));
-				c.setPass(contrasena.getText());
-				c.setActivo(ok);
-				try {
-					Contexto contexto = new Contexto(Evento.updatePersonalCommand, (TPersonal) c);
-					Controller.getInstance().ejecutar(contexto);
-				} catch (Exception ex) {;}
+
+				if(ComprobadorSintactico.getInstance().nombreCorrect(Nombre.getText()) && ComprobadorSintactico.getInstance().isNumeric(salario.getText()) && ComprobadorSintactico.getInstance().isNumeric(telefono.getText())){
+					boolean ok = false;
+					if (activoRB.isSelected())
+						ok = true;
+					c.setNombre(Nombre.getText());
+					c.setSalario(Double.valueOf(salario.getText()));
+					c.setTelefono(Integer.valueOf(telefono.getText()));
+					c.setPass(contrasena.getText());
+					c.setActivo(ok);
+					
+					try {
+						Contexto contexto = new Contexto(Evento.updatePersonalCommand, (TPersonal) c);
+						Controller.getInstance().ejecutar(contexto);
+					} catch (Exception ex) {;}
+					
+				}else{
+					JOptionPane.showMessageDialog(null, "Datos incorrectos, comprueba sintacticamente los datos introducidos");
+				}
+
+
 			}
 		});
 
@@ -227,7 +244,7 @@ public class PanelUpdatePersonal extends JPanel implements Ventana {
 		}
 
 	}
-	
+
 	public void resetCamps(){
 		Nombre.setText(null);
 		salario.setText(null);
@@ -236,7 +253,7 @@ public class PanelUpdatePersonal extends JPanel implements Ventana {
 		activoRB.setSelected(false);
 		inactivoRB.setSelected(false);
 		botonfindtext.setText(null);
-		
-		
+
+
 	}
 }

@@ -47,11 +47,11 @@ public class PanelUpdateProducto extends JPanel implements Ventana {
 	private JLabel labelPrecio;
 	private JButton buttonActualizar;
 	private JButton botonBuscar;
-	private ComprobadorSintactico comprobador;
+	
 
 
 	public PanelUpdateProducto(){
-		comprobador = new ComprobadorSintacticoImp();
+		
 		initComponent();
 	}
 
@@ -118,7 +118,7 @@ public class PanelUpdateProducto extends JPanel implements Ventana {
 
 				// TODO Auto-generated method stu
 
-				if(comprobador.isNumeric(campoFindId.getText())){
+				if(ComprobadorSintactico.getInstance().isNumeric(campoFindId.getText())){
 
 					Contexto contexto = new Contexto(Evento.readProductoCommand, Integer.valueOf(campoFindId.getText()));
 					Controller.getInstance().ejecutar(contexto);
@@ -135,7 +135,7 @@ public class PanelUpdateProducto extends JPanel implements Ventana {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				try {
-					if(comprobador.nombreCorrect(nombre.getText()) && comprobador.isNumeric(precio.getText()) && comprobador.isNumeric(stock.getText())){
+					if(ComprobadorSintactico.getInstance().nombreCorrect(nombre.getText()) && ComprobadorSintactico.getInstance().isNumeric(precio.getText()) && ComprobadorSintactico.getInstance().isNumeric(stock.getText())){
 
 						producto.setNombre(nombre.getText());
 						producto.setDescripcion(descripcion.getText());

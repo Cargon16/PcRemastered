@@ -9,11 +9,13 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import Integracion.Personal.TPersonal;
+import Negocio.ComprobadorSintactico.ComprobadorSintactico;
 import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
@@ -112,9 +114,14 @@ public class PanelAddPersonal extends JPanel implements Ventana{
 				boolean ok = false ;
 				if(activoRB.isSelected()) 
 					ok = true;
-				TPersonal personal = new TPersonal(passText.getText(), ok, Double.valueOf(salarioText.getText()), null, Integer.valueOf(telefonoText.getText()), nombreText.getText());
-				Contexto contexto = new Contexto(Evento.createPersonalCommand, personal);
-				Controller.getInstance().ejecutar(contexto);
+				if(ComprobadorSintactico.getInstance().isNumeric(salarioText.getText()) && ComprobadorSintactico.getInstance().isNumeric(telefonoText.getText())&& ComprobadorSintactico.getInstance().isAlphabetic(nombreText.getText()) ){
+					TPersonal personal = new TPersonal(passText.getText(), ok, Double.valueOf(salarioText.getText()), null, Integer.valueOf(telefonoText.getText()), nombreText.getText());
+					Contexto contexto = new Contexto(Evento.createPersonalCommand, personal);
+					Controller.getInstance().ejecutar(contexto);
+				}else{
+					JOptionPane.showMessageDialog(null, "Datos incorrectos, comprueba sintacticamente los datos introducidos.");
+				}
+				
 
 			}
 		});
