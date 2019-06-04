@@ -9,11 +9,13 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import Integracion.Clientes.TCliente;
+import Negocio.ComprobadorSintactico.ComprobadorSintactico;
 import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
@@ -115,13 +117,15 @@ public class PanelAddClientes extends JPanel implements Ventana {
 				boolean ok = false ;
 				if(activoRB.isSelected()) 
 					ok = true;
-				TCliente cliente = new TCliente(null,dniText.getText(),nombreText.getText(),Integer.valueOf(telefonoText.getText()), direccionText.getText(), ok);
-				Contexto contexto = new Contexto(Evento.createClienteCommnad, cliente);
-				Controller.getInstance().ejecutar(contexto);
-		
-
-
-
+				
+				if(ComprobadorSintactico.getInstance().isNumeric(dniText.getText()) && ComprobadorSintactico.getInstance().isAlphabetic(nombreText.getText()) &&  ComprobadorSintactico.getInstance().isNumeric(telefonoText.getText())){
+					TCliente cliente = new TCliente(null,dniText.getText(),nombreText.getText(),Integer.valueOf(telefonoText.getText()), direccionText.getText(), ok);
+					Contexto contexto = new Contexto(Evento.createClienteCommnad, cliente);
+					Controller.getInstance().ejecutar(contexto);
+				}else{
+					JOptionPane.showMessageDialog(null, "Datos incorrectos, comprueba sintacticamente los datos introducidos.");
+				}
+				
 			}
 		});
 		button.setBounds(169, 382, 132, 40);
