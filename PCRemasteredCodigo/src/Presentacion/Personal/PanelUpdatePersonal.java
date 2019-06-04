@@ -13,7 +13,6 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
-import Integracion.Clientes.TCliente;
 import Integracion.Personal.TPersonal;
 import Negocio.ComprobadorSintactico.ComprobadorSintactico;
 import Presentacion.Ventana;
@@ -22,14 +21,7 @@ import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
 import java.awt.SystemColor;
 
-/** 
- * <!-- begin-UML-doc -->
- * <!-- end-UML-doc -->
- * @author nacho710
- * @uml.annotations
- *     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_4Ao7AE8iEemfNOmfBQSQBw"
- * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_4Ao7AE8iEemfNOmfBQSQBw"
- */
+
 public class PanelUpdatePersonal extends JPanel implements Ventana {
 	/**
 	 * 

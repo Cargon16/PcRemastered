@@ -1,6 +1,6 @@
 package Presentacion.Command.Vista;
 
-import Presentacion.Clientes.VentanaClientes;
+
 import Presentacion.Command.Command;
 import Presentacion.Command.Contexto;
 import Presentacion.Login.Login;

@@ -47,7 +47,7 @@ import Presentacion.Command.Vista.VentanaPagoCommand;
 import Presentacion.Command.Vista.VentanaPersonalCommand;
 import Presentacion.Command.Vista.VentanaProductosCommand;
 import Presentacion.Command.Vista.VentanaVentasCommand;
-import Presentacion.Ventas.PanelPago;
+
 
 
 public class FactoriaCommandsImp extends FactoriaCommands {
@@ -55,6 +55,7 @@ public class FactoriaCommandsImp extends FactoriaCommands {
 	@Override
 	public Command generacionCommand(Evento evento) {
 		// TODO Auto-generated method stub
+		@SuppressWarnings("unused")
 		Command c = null;
 		switch (evento){
 		case INIT : return new InitCommand(); 

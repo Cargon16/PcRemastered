@@ -4,7 +4,6 @@
 package Presentacion.Ventas;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,10 +19,6 @@ import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
-import Presentacion.Clientes.PanelDeleteClientes;
-import Presentacion.Clientes.PanelReadAllClientes;
-import Presentacion.Clientes.PanelReadByIdClientes;
-import Presentacion.Clientes.PanelUpdateClientes;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
@@ -37,6 +32,7 @@ public class VentanaVentasImp extends VentanaVentas {
 	private PanelAbrirVentas anadir = new PanelAbrirVentas();
 	private PanelReadVentas mID = new PanelReadVentas();
 	private PanelReadAllVentas mAll = new PanelReadAllVentas();
+	@SuppressWarnings("unused")
 	private	 static int Empleado;
 	public static JButton botonMostrarTodo;
 	public static JButton botonMostrarID;

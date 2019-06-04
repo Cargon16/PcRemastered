@@ -6,9 +6,7 @@ package Presentacion.Ventas;
 import javax.swing.JFrame;
 
 import Presentacion.Ventana;
-import Presentacion.Clientes.VentanaClientes;
-import Presentacion.Clientes.VentanaClientesImp;
-import Presentacion.Command.Contexto;
+
 
 /** 
  * <!-- begin-UML-doc -->

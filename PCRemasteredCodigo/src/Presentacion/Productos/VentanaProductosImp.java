@@ -4,7 +4,6 @@
 package Presentacion.Productos;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,14 +23,7 @@ import Presentacion.Command.Contexto;
 import java.awt.SystemColor;
 import java.awt.Font;
 
-/** 
- * <!-- begin-UML-doc -->
- * <!-- end-UML-doc -->
- * @author nacho710
- * @uml.annotations
- *     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_FJOqJVMOEemdZLpuw9I4eQ"
- * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_FJOqJVMOEemdZLpuw9I4eQ"
- */
+
 public class VentanaProductosImp extends VentanaProducto {
 	
 	private static final long serialVersionUID = 1L;

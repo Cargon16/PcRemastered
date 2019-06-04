@@ -1,6 +1,5 @@
 package Presentacion.Command.Ventas;
 
-import java.util.ArrayList;
 
 import Integracion.Ventas.TVentas;
 import Negocio.Factorias.FactoriaNegocio;

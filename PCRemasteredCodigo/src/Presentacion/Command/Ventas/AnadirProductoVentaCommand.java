@@ -2,7 +2,6 @@ package Presentacion.Command.Ventas;
 
 import java.util.ArrayList;
 
-import Integracion.Productos.TProducto;
 import Integracion.Ventas.TVentas;
 import Negocio.Factorias.FactoriaNegocio;
 import Presentacion.Command.Command;
@@ -13,6 +12,7 @@ public class AnadirProductoVentaCommand implements Command{
 
 	@Override
 	public Contexto ejecutar(Contexto contexto) {
+		@SuppressWarnings("unchecked")
 		ArrayList<Object> lista = (ArrayList<Object>) contexto.getDatos();
 		TVentas i = FactoriaNegocio.getInstance().crearSAVentas().AddProductoVenta( (int)lista.get(0), (int)lista.get(1),(int)lista.get(2));
 		if ( i == null){

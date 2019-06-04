@@ -13,7 +13,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import Integracion.Clientes.TCliente;
 import Negocio.ComprobadorSintactico.ComprobadorSintactico;
 import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
@@ -21,14 +20,7 @@ import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
 import java.awt.SystemColor;
 
-/** 
- * <!-- begin-UML-doc -->
- * <!-- end-UML-doc -->
- * @author nacho710
- * @uml.annotations
- *     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_4CoucFOpEemH9v7SOzgnzQ"
- * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_4CoucFOpEemH9v7SOzgnzQ"
- */
+
 public class PanelDeleteClientes extends JPanel implements Ventana {
 	/**
 	 * 

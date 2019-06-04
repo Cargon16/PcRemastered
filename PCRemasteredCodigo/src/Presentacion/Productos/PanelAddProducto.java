@@ -15,21 +15,13 @@ import javax.swing.JTextField;
 
 import Integracion.Productos.TProducto;
 import Negocio.ComprobadorSintactico.ComprobadorSintactico;
-import Negocio.ComprobadorSintactico.ComprobadorSintacticoImp;
 import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
 import java.awt.SystemColor;
 
-/** 
- * <!-- begin-UML-doc -->
- * <!-- end-UML-doc -->
- * @author nacho710
- * @uml.annotations
- *     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_P4uSsFMOEemdZLpuw9I4eQ"
- * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_P4uSsFMOEemdZLpuw9I4eQ"
- */
+
 public class PanelAddProducto extends JPanel implements Ventana {
 	
 

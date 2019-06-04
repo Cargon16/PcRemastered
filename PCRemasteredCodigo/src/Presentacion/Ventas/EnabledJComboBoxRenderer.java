@@ -29,6 +29,7 @@ public class EnabledJComboBoxRenderer extends BasicComboBoxRenderer{
 
 	}
 
+	@SuppressWarnings("rawtypes")
 	@Override
 
 	public Component getListCellRendererComponent(JList list,Object value,int index,boolean isSelected,boolean cellHasFocus) {
