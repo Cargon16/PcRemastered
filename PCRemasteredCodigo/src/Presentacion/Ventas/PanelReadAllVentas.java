@@ -13,7 +13,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 
-import Integracion.Productos.TProducto;
 import Integracion.Ventas.TVentas;
 import Presentacion.Ventana;
 import Presentacion.Command.Contexto;

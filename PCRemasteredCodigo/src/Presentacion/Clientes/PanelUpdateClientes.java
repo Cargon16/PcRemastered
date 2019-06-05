@@ -8,11 +8,13 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import Integracion.Clientes.TCliente;
+import Negocio.ComprobadorSintactico.ComprobadorSintactico;
 import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
@@ -111,9 +113,13 @@ public class PanelUpdateClientes extends JPanel implements Ventana{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-
-				Contexto contexto = new Contexto(Evento.readClienteCommand, Integer.valueOf(botonfindtext.getText()));
-				Controller.getInstance().ejecutar(contexto);
+				if(ComprobadorSintactico.getInstance().isNumeric(botonfindtext.getText())){
+					Contexto contexto = new Contexto(Evento.readClienteCommand, Integer.valueOf(botonfindtext.getText()));
+					Controller.getInstance().ejecutar(contexto);
+				}else{
+	    			JOptionPane.showMessageDialog(null, "Datos incorrectos, el ID a eliminar debe ser un numero");
+	    		}
+				
 			}
 		});
 
@@ -141,19 +147,26 @@ public class PanelUpdateClientes extends JPanel implements Ventana{
 
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				boolean ok = false;
-				if (activoRB.isSelected())
-					ok = true;
-				c.setDNI(dni.getText());
-				c.setNombre(nombre.getText());
-				c.setTelefono(Integer.valueOf(telefono.getText()));
-				c.setDireccion(direccion.getText());
-				c.setActivo(ok);
-				try {
-					Contexto contexto = new Contexto(Evento.updateClienteCommand, (TCliente) c);
-					Controller.getInstance().ejecutar(contexto);
-					
-				} catch (Exception ex) {;}
+				
+				if(ComprobadorSintactico.getInstance().nombreCorrect(nombre.getText()) && ComprobadorSintactico.getInstance().isNumeric(telefono.getText()) && ComprobadorSintactico.getInstance().isNumeric(dni.getText())){
+
+					boolean ok = false;
+					if (activoRB.isSelected())
+						ok = true;
+					c.setDNI(dni.getText());
+					c.setNombre(nombre.getText());
+					c.setTelefono(Integer.valueOf(telefono.getText()));
+					c.setDireccion(direccion.getText());
+					c.setActivo(ok);
+					try {
+						Contexto contexto = new Contexto(Evento.updateClienteCommand, (TCliente) c);
+						Controller.getInstance().ejecutar(contexto);
+						
+					} catch (Exception ex) {;}
+				}else{
+					JOptionPane.showMessageDialog(null, "Datos incorrectos, comprueba sintacticamente los datos introducidos");
+				}
+
 			}
 		});
 

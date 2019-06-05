@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -16,6 +17,7 @@ import javax.swing.JTextField;
 import javax.swing.ScrollPaneConstants;
 
 import Integracion.Envios.TEnvio;
+import Negocio.ComprobadorSintactico.ComprobadorSintactico;
 import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
@@ -66,9 +68,14 @@ public class PanelReadByIdEnvio extends JPanel implements Ventana{
 	
 	    btnBuscarEnvio.addActionListener(new ActionListener() {
 	    	public void actionPerformed(ActionEvent e) {
-	    	//	textArea.setVisible(true);
-	    		Contexto contexto = new Contexto (Evento.readEnvioCommand,Integer.valueOf(textField.getText()));
-	    		Controller.getInstance().ejecutar(contexto);
+	
+	    		if(ComprobadorSintactico.getInstance().isNumeric(textField.getText())){
+	    			Contexto contexto = new Contexto (Evento.readEnvioCommand,Integer.valueOf(textField.getText()));
+		    		Controller.getInstance().ejecutar(contexto);
+	    		}else{
+					JOptionPane.showMessageDialog(null, "Datos incorrectos, el ID a eliminar debe ser un numero");
+				}
+	    		
 
 	    	}
 	    });

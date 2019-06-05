@@ -8,11 +8,13 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import Integracion.Envios.TEnvio;
+import Negocio.ComprobadorSintactico.ComprobadorSintactico;
 import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
@@ -82,24 +84,29 @@ public class PanelUpdateEnvio extends JPanel implements Ventana{
 			public void actionPerformed(ActionEvent e) {
 
 				try {
-					Contexto contexto = new Contexto(Evento.readEnvioCommand, Integer.valueOf(botonfindtext.getText()));
-					Controller.getInstance().ejecutar(contexto);
-					c = (TEnvio) contexto.getDatos();
-					Direccion.setText(c.getDireccion());
-					add(Direccion);
-					add(label);
-					inactivoRB.setSelected(false);
-					activoRB.setSelected(false);
-					if (c.isEstado())
-						activoRB.setSelected(true);
-					else
-						inactivoRB.setSelected(true);
-					activoRB.setVisible(true);
-					inactivoRB.setVisible(true);
+					if(ComprobadorSintactico.getInstance().isNumeric(botonfindtext.getText())){
+						Contexto contexto = new Contexto(Evento.readEnvioCommand, Integer.valueOf(botonfindtext.getText()));
+						Controller.getInstance().ejecutar(contexto);
+						c = (TEnvio) contexto.getDatos();
+						Direccion.setText(c.getDireccion());
+						add(Direccion);
+						add(label);
+						inactivoRB.setSelected(false);
+						activoRB.setSelected(false);
+						if (c.isEstado())
+							activoRB.setSelected(true);
+						else
+							inactivoRB.setSelected(true);
+						activoRB.setVisible(true);
+						inactivoRB.setVisible(true);
 
-					button.setVisible(true);
+						button.setVisible(true);
 
-					repaint();
+						repaint();
+					}else{
+						JOptionPane.showMessageDialog(null, "Datos incorrectos, el ID a eliminar debe ser un numero");
+					}
+					
 				}
 
 				catch (Exception ex) {

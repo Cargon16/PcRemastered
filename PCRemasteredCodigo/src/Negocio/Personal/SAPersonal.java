@@ -6,7 +6,7 @@ package Negocio.Personal;
 import java.util.ArrayList;
 
 import Integracion.Personal.TPersonal;
-import Presentacion.Command.Contexto;
+
 
 
 public interface SAPersonal {

@@ -4,7 +4,6 @@
 package Presentacion.Clientes;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,7 +20,6 @@ import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 
 import Presentacion.Command.Contexto;
-import javax.swing.UIManager;
 import java.awt.SystemColor;
 import java.awt.Font;
 

@@ -12,16 +12,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import Integracion.Connection.Connections;
-import Integracion.Productos.TProducto;
 
-/** 
- * <!-- begin-UML-doc -->
- * <!-- end-UML-doc -->
- * @author nacho710
- * @uml.annotations
- *     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_gQWsYEAeEemCgsm7gUtwsg"
- * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_gQWsYEAeEemCgsm7gUtwsg"
- */
+
+
 public class DaoVentasImp implements DaoVentas {
 	@Override
 	public int abrirVenta(TVentas venta){
@@ -51,30 +44,7 @@ public class DaoVentasImp implements DaoVentas {
 		}
 		return retorno;
 	}
-	/*
-	@Override
-	public int create(TVentas tVenta) {
-	
-		String insercion = "INSERT INTO ventas (id,precioTotal,fecha,pagado,devuelto,idCliente,activo) VALUES ('" + tVenta.getID() + "', '"
-				+ tVenta.getPrecio() + "', '" + tVenta.getFecha() + "', '"+tVenta.getCliente()+"', '" + "');";
-		int id = -1;
-		try {
-			Connection conn = Connections.getInstance();
-			if (conn != null) {
-				for (TLineaVentas l : tVenta.getLineasVenta().values())
-					insertaLineaVenta(l, conn);
-				Statement stmt = conn.createStatement();
-				stmt.execute(insercion);
-				id = tVenta.getID();
-					
-			}
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-			id = -1;
-		}
-		return id;
-	}
-*/
+
 	@Override
 	public TVentas readbyID(int idVenta) {
 		String lectura = "SELECT * FROM ventas WHERE id=" +idVenta+ " FOR UPDATE;";

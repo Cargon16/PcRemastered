@@ -4,26 +4,28 @@ import javax.swing.JPanel;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
 
-import Integracion.Factorias.FactoriaIntegracion;
+
 import Integracion.Productos.TProducto;
-import Integracion.Ventas.TLineaVentas;
+
 import Integracion.Ventas.TVentas;
+import Negocio.ComprobadorSintactico.ComprobadorSintactico;
 import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
 
-import java.awt.Component;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
+
 
 import javax.swing.DefaultListSelectionModel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 import java.awt.SystemColor;
 
@@ -113,16 +115,22 @@ public class PanelAbrirVentas extends JPanel implements Ventana{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ArrayList<Object> lineaevento = new ArrayList<>();
-				lineaevento.add(idventa);
-				lineaevento.add(lista.get(comboBox.getSelectedIndex()).getId());
-				lineaevento.add(Integer.valueOf(textcantidad.getText()));
-				Contexto contexto = new Contexto(Evento.addProductoVentaCommand, lineaevento);
-				Controller.getInstance().ejecutar(contexto);
-			
-				if(!contexto.getEvento().toString().contains("Error")){
-					btnEliminar.setEnabled(true);
+				
+				if(ComprobadorSintactico.getInstance().isNumeric(textcantidad.getText())){
+					ArrayList<Object> lineaevento = new ArrayList<>();
+					lineaevento.add(idventa);
+					lineaevento.add(lista.get(comboBox.getSelectedIndex()).getId());
+					lineaevento.add(Integer.valueOf(textcantidad.getText()));
+					Contexto contexto = new Contexto(Evento.addProductoVentaCommand, lineaevento);
+					Controller.getInstance().ejecutar(contexto);
+				
+					if(!contexto.getEvento().toString().contains("Error")){
+						btnEliminar.setEnabled(true);
+					}
+				}else{
+					JOptionPane.showMessageDialog(null, "Datos incorrectos, la cantidad debe ser un dato numerico");
 				}
+			
 				
 			}
 		});
@@ -130,12 +138,18 @@ public class PanelAbrirVentas extends JPanel implements Ventana{
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ArrayList<Object> lineaevento = new ArrayList<>();
-				lineaevento.add(idventa);
-				lineaevento.add(Integer.valueOf(textDelete.getText()));
-				lineaevento.add(Integer.valueOf(textcantidad.getText()));
-				Contexto contexto = new Contexto(Evento.DeleteProductoVentaCommand,lineaevento);
-				Controller.getInstance().ejecutar(contexto);
+				if(ComprobadorSintactico.getInstance().isNumeric(textcantidad.getText())&&ComprobadorSintactico.getInstance().isNumeric(textDelete.getText())){
+					ArrayList<Object> lineaevento = new ArrayList<>();
+					lineaevento.add(idventa);
+					lineaevento.add(Integer.valueOf(textDelete.getText()));
+					lineaevento.add(Integer.valueOf(textcantidad.getText()));
+					Contexto contexto = new Contexto(Evento.DeleteProductoVentaCommand,lineaevento);
+					Controller.getInstance().ejecutar(contexto);
+				}else{
+					JOptionPane.showMessageDialog(null, "Datos incorrectos, la cantidad e Id debe ser un dato numerico");
+				}
+				
+			
 			}
 		});
 		btnProcesar.addActionListener(new ActionListener() {
@@ -145,7 +159,10 @@ public class PanelAbrirVentas extends JPanel implements Ventana{
 				//ArrayList<Object> lineaevento = new ArrayList<>();
 				Contexto contexto = new Contexto(Evento.procesarVenta,idventa);
 				if(!textArea.getText().isEmpty()){
+					
 					Controller.getInstance().ejecutar(contexto);
+					VentanaVentasImp.botonMostrarID.setEnabled(true);
+					VentanaVentasImp.botonMostrarTodo.setEnabled(true);
 				}
 				
 			}

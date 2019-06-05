@@ -9,24 +9,19 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import Integracion.Productos.TProducto;
+import Negocio.ComprobadorSintactico.ComprobadorSintactico;
 import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
 import java.awt.SystemColor;
 
-/** 
- * <!-- begin-UML-doc -->
- * <!-- end-UML-doc -->
- * @author nacho710
- * @uml.annotations
- *     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_P4uSsFMOEemdZLpuw9I4eQ"
- * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_P4uSsFMOEemdZLpuw9I4eQ"
- */
+
 public class PanelAddProducto extends JPanel implements Ventana {
 	
 
@@ -42,7 +37,10 @@ public class PanelAddProducto extends JPanel implements Ventana {
 	private JTextField stockText;
 	private JTextField precioText;
 	
+	
+	
 	public PanelAddProducto(){
+	
 		initComponent();
 	}
 	
@@ -92,10 +90,15 @@ public class PanelAddProducto extends JPanel implements Ventana {
 		buttonAnadir.setBackground(SystemColor.textHighlight);
 		buttonAnadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				TProducto producto = new TProducto(null, nombreText.getText(), descripcionText.getText(), Integer.valueOf(stockText.getText()), Float.valueOf(precioText.getText()));
-				Contexto contexto = new Contexto(Evento.createProductoCommand, producto);
-				Controller.getInstance().ejecutar(contexto);
 				
+				if(ComprobadorSintactico.getInstance().nombreCorrect(nombreText.getText()) && ComprobadorSintactico.getInstance().isNumeric(stockText.getText()) && ComprobadorSintactico.getInstance().isNumeric(precioText.getText())){
+					TProducto producto = new TProducto(null, nombreText.getText(), descripcionText.getText(), Integer.valueOf(stockText.getText()), Float.valueOf(precioText.getText()));
+					Contexto contexto = new Contexto(Evento.createProductoCommand, producto);
+					Controller.getInstance().ejecutar(contexto);
+				}else{
+					JOptionPane.showMessageDialog(null, "Datos incorrectos, comprueba sintacticamente los datos introducidos.");
+				}
+	
 			}
 		});
 		buttonAnadir.setBounds(435, 184, 132, 40);

@@ -9,6 +9,10 @@ import Presentacion.Ventana;
 
 
 public abstract class VentanaPersonal extends JFrame implements Ventana {
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 private static VentanaPersonal instance = null;
 
 	

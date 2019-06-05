@@ -9,11 +9,13 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 import Integracion.Envios.TEnvio;
+import Negocio.ComprobadorSintactico.ComprobadorSintactico;
 import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
@@ -90,9 +92,14 @@ public class PanelAddEnvio extends JPanel implements Ventana{
 				boolean ok = false ;
 				if(activoRB.isSelected()) 
 					ok = true;
-				TEnvio envio = new TEnvio(null, ok, direccion.getText(), Integer.valueOf(idVenta.getText()));
-				Contexto contexto = new Contexto(Evento.createEnvioCommand, envio);
-				Controller.getInstance().ejecutar(contexto);
+				if(ComprobadorSintactico.getInstance().isNumeric(idVenta.getText())){
+					TEnvio envio = new TEnvio(null, ok, direccion.getText(), Integer.valueOf(idVenta.getText()));
+					Contexto contexto = new Contexto(Evento.createEnvioCommand, envio);
+					Controller.getInstance().ejecutar(contexto);
+					
+				}else{
+					JOptionPane.showMessageDialog(null, "Datos incorrectos, comprueba sintacticamente los datos introducidos.");
+				}
 				
 			}
 		});

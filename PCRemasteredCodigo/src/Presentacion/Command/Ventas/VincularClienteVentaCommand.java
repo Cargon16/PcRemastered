@@ -2,7 +2,6 @@ package Presentacion.Command.Ventas;
 
 import java.util.ArrayList;
 
-import Integracion.Ventas.TVentas;
 import Negocio.Factorias.FactoriaNegocio;
 import Presentacion.Command.Command;
 import Presentacion.Command.Contexto;
@@ -10,6 +9,7 @@ import Presentacion.Command.Evento;
 
 public class VincularClienteVentaCommand implements Command{
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public Contexto ejecutar(Contexto contexto) {
 		ArrayList<Object> lista = new ArrayList<Object>();

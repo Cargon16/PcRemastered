@@ -9,10 +9,12 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import Integracion.Personal.TPersonal;
+
+import Negocio.ComprobadorSintactico.ComprobadorSintactico;
 import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
@@ -47,8 +49,12 @@ public class PanelDeletePersonal extends JPanel implements Ventana {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try{
+					if(ComprobadorSintactico.getInstance().isNumeric(textField.getText())){
 					Contexto contexto = new Contexto(Evento.deletePersonalCommand, textField.getText());
 					Controller.getInstance().ejecutar(contexto);
+					}else{
+						JOptionPane.showMessageDialog(null, "Datos incorrectos, el ID a eliminar debe ser un numero");
+					}
 				}
 				catch(Exception ex){;}
 			}	

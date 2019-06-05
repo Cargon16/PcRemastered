@@ -8,24 +8,19 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import Integracion.Productos.TProducto;
+import Negocio.ComprobadorSintactico.ComprobadorSintactico;
 import Presentacion.Ventana;
 import Presentacion.Command.Contexto;
 import Presentacion.Command.Evento;
 import Presentacion.Controlador.Controller;
 import java.awt.SystemColor;
 
-/** 
- * <!-- begin-UML-doc -->
- * <!-- end-UML-doc -->
- * @author nacho710
- * @uml.annotations
- *     derived_abstraction="platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_P4ykIlMOEemdZLpuw9I4eQ"
- * @generated "sourceid:platform:/resource/PCRemastered/Modelado%20de%20diseño.emx#_P4ykIlMOEemdZLpuw9I4eQ"
- */
+
 public class PanelUpdateProducto extends JPanel implements Ventana {
 
 	/**
@@ -44,9 +39,11 @@ public class PanelUpdateProducto extends JPanel implements Ventana {
 	private JLabel labelPrecio;
 	private JButton buttonActualizar;
 	private JButton botonBuscar;
+	
 
 
 	public PanelUpdateProducto(){
+		
 		initComponent();
 	}
 
@@ -110,12 +107,17 @@ public class PanelUpdateProducto extends JPanel implements Ventana {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+
 				// TODO Auto-generated method stu
-				Contexto contexto = new Contexto(Evento.readProductoCommand, Integer.valueOf(campoFindId.getText()));
-				Controller.getInstance().ejecutar(contexto);
 
+				if(ComprobadorSintactico.getInstance().isNumeric(campoFindId.getText())){
 
+					Contexto contexto = new Contexto(Evento.readProductoCommand, Integer.valueOf(campoFindId.getText()));
+					Controller.getInstance().ejecutar(contexto);
 
+				}else{
+					JOptionPane.showMessageDialog(null, "Datos incorrectos, el ID a eliminar debe ser un numero");
+				}
 			}
 		});
 
@@ -124,17 +126,19 @@ public class PanelUpdateProducto extends JPanel implements Ventana {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-
-				producto.setNombre(nombre.getText());
-				producto.setDescripcion(descripcion.getText());
-				producto.setStock(Integer.valueOf(stock.getText()));
-				producto.setPrecio(Float.valueOf(precio.getText()));
-
 				try {
+					if(ComprobadorSintactico.getInstance().nombreCorrect(nombre.getText()) && ComprobadorSintactico.getInstance().isNumeric(precio.getText()) && ComprobadorSintactico.getInstance().isNumeric(stock.getText())){
 
-					Contexto contexto = new Contexto(Evento.updateProductoCommand, (TProducto) producto);
-					Controller.getInstance().ejecutar(contexto);
+						producto.setNombre(nombre.getText());
+						producto.setDescripcion(descripcion.getText());
+						producto.setStock(Integer.valueOf(stock.getText()));
+						producto.setPrecio(Float.valueOf(precio.getText()));
 
+						Contexto contexto = new Contexto(Evento.updateProductoCommand, (TProducto) producto);
+						Controller.getInstance().ejecutar(contexto);
+					}else{
+						JOptionPane.showMessageDialog(null, "Datos incorrectos, comprueba sintacticamente los datos introducidos");
+					}
 
 				} catch (Exception ex) {;}
 
@@ -174,14 +178,14 @@ public class PanelUpdateProducto extends JPanel implements Ventana {
 
 
 	}
-	
+
 	public void resetCamps(){
 		nombre.setText(null);
 		descripcion.setText(null);
 		stock.setText(null);
 		precio.setText(null);
 		campoFindId.setText(null);
-		
-		
+
+
 	}
 }

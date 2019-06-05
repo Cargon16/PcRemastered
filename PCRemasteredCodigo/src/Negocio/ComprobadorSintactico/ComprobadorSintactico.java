@@ -26,6 +26,10 @@ public  abstract class  ComprobadorSintactico {
 	public abstract boolean nombreCorrect(String Nombre);
 
 	
-	public abstract Boolean DNICorrect(String DNI);
+	public abstract boolean DNICorrect(String DNI);
+	
+	public abstract boolean isNumeric(String cadena);
+	
+	public abstract  boolean isAlphabetic(String cadena);
 
 }
