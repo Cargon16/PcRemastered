@@ -81,9 +81,9 @@ public class PanelReadByIDPersonal extends JPanel implements Ventana{
 		String s = null;
 		TPersonal c = (TPersonal) contexto.getDatos();
 		if(c.isActivo())
-			s= "En n�mina";
+			s= "En nomina";
 		else s= "Despedido";
-		textArea.setText("ID: " + c.getID() + "\n" + "Nombre: " + c.getNombre() + "\n"  + "Salario: " + c.getSalario() + " euros\n"  + "Tel�fono: " + c.getTelefono() + "\n"  + "Estado: " + s + "\n");
+		textArea.setText("ID: " + c.getID() + "\n" + "Nombre: " + c.getNombre() + "\n"  + "Salario: " + c.getSalario() + " euros\n"  + "Telefono: " + c.getTelefono() + "\n"  + "Estado: " + s + "\n");
 
 
 

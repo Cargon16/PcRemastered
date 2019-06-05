@@ -76,7 +76,7 @@ public class PanelReadByIdClientes extends JPanel implements Ventana{
 				if(ComprobadorSintactico.getInstance().isNumeric(textField.getText())){
 					Contexto contexto = new Contexto (Evento.readClienteCommand,Integer.valueOf(textField.getText()));
 					Controller.getInstance().ejecutar(contexto);
-					resetCamps();
+					//resetCamps();
 				}else{
 	    			JOptionPane.showMessageDialog(null, "Datos incorrectos, el ID a eliminar debe ser un numero");
 	    		}

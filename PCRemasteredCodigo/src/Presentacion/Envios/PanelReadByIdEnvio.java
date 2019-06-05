@@ -89,7 +89,7 @@ public class PanelReadByIdEnvio extends JPanel implements Ventana{
 		if(c.isEstado())
 			s= "En curso";
 		else s= "Entregado";
-		textArea.setText("ID: " + c.getID() + "\n" +"Direcci�n: " + c.getDireccion()+ "\n" +"Estado: "+s+  "\n" );
+		textArea.setText("ID: " + c.getID() + "\n" +"Direccion: " + c.getDireccion()+ "\n" +"Estado: "+s+  "\n" );
 		
 		
 	}

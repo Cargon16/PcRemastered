@@ -127,7 +127,7 @@ public class PanelUpdateProducto extends JPanel implements Ventana {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				try {
-					if(ComprobadorSintactico.getInstance().nombreCorrect(nombre.getText()) && ComprobadorSintactico.getInstance().isNumeric(precio.getText()) && ComprobadorSintactico.getInstance().isNumeric(stock.getText())){
+					if(ComprobadorSintactico.getInstance().nombreCorrect(nombre.getText()) && ComprobadorSintactico.getInstance().isNumericFloat(precio.getText()) && ComprobadorSintactico.getInstance().isNumeric(stock.getText())){
 
 						producto.setNombre(nombre.getText());
 						producto.setDescripcion(descripcion.getText());

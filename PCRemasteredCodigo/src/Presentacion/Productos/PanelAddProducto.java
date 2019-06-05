@@ -86,12 +86,12 @@ public class PanelAddProducto extends JPanel implements Ventana {
 		labelPrecio.setBounds(37, 174, 75, 14);
 		add(labelPrecio);
 		
-		JButton buttonAnadir = new JButton("A\u00F1adir");
+		JButton buttonAnadir = new JButton("Añadir");
 		buttonAnadir.setBackground(SystemColor.textHighlight);
 		buttonAnadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				if(ComprobadorSintactico.getInstance().nombreCorrect(nombreText.getText()) && ComprobadorSintactico.getInstance().isNumeric(stockText.getText()) && ComprobadorSintactico.getInstance().isNumeric(precioText.getText())){
+				if(ComprobadorSintactico.getInstance().nombreCorrect(nombreText.getText()) && ComprobadorSintactico.getInstance().isNumeric(stockText.getText()) && ComprobadorSintactico.getInstance().isNumericFloat(precioText.getText())){
 					TProducto producto = new TProducto(null, nombreText.getText(), descripcionText.getText(), Integer.valueOf(stockText.getText()), Float.valueOf(precioText.getText()));
 					Contexto contexto = new Contexto(Evento.createProductoCommand, producto);
 					Controller.getInstance().ejecutar(contexto);

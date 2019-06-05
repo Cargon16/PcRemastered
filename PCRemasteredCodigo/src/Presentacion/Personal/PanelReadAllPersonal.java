@@ -81,10 +81,10 @@ public class PanelReadAllPersonal extends JPanel implements Ventana {
 		for (TPersonal c : array) {
 			String s = null;
 			if (c.isActivo())
-				s = "En n�mina";
+				s = "En nomina";
 			else
 				s = "Despedido";
-			texto = texto + "ID: " + c.getID() + "\n" + "Nombre: " + c.getNombre() + "\n"  + "Salario: " + c.getSalario() + " euros\n"  + "Tel�fono: " + c.getTelefono() + "\n"  + "Estado: " + s + "\n\n";
+			texto = texto + "ID: " + c.getID() + "\n" + "Nombre: " + c.getNombre() + "\n"  + "Salario: " + c.getSalario() + " euros\n"  + "Telefono: " + c.getTelefono() + "\n"  + "Estado: " + s + "\n\n";
 
 		}
 		textArea.setText(texto);

@@ -59,7 +59,7 @@ public class PanelAddPersonal extends JPanel implements Ventana{
 		passText.setBounds(109, 128, 279, 57);
 		add(passText);
 
-		JLabel lblContrasea = new JLabel("Contrase\u00F1a");
+		JLabel lblContrasea = new JLabel("Contrasena");
 		lblContrasea.setBounds(37, 149, 75, 14);
 		add(lblContrasea);
 
@@ -114,7 +114,7 @@ public class PanelAddPersonal extends JPanel implements Ventana{
 				boolean ok = false ;
 				if(activoRB.isSelected()) 
 					ok = true;
-				if(ComprobadorSintactico.getInstance().isNumeric(salarioText.getText()) && ComprobadorSintactico.getInstance().isNumeric(telefonoText.getText())&& ComprobadorSintactico.getInstance().isAlphabetic(nombreText.getText()) ){
+				if(ComprobadorSintactico.getInstance().isNumericFloat(salarioText.getText()) && ComprobadorSintactico.getInstance().isNumeric(telefonoText.getText())&& ComprobadorSintactico.getInstance().isAlphabetic(nombreText.getText()) ){
 					TPersonal personal = new TPersonal(passText.getText(), ok, Double.valueOf(salarioText.getText()), null, Integer.valueOf(telefonoText.getText()), nombreText.getText());
 					Contexto contexto = new Contexto(Evento.createPersonalCommand, personal);
 					Controller.getInstance().ejecutar(contexto);

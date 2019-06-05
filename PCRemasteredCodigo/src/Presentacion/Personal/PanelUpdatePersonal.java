@@ -70,7 +70,7 @@ public class PanelUpdatePersonal extends JPanel implements Ventana {
 		contrasena.setColumns(10);
 		contrasena.setBounds(49, 284, 279, 57);
 
-		JLabel label_3 = new JLabel("Contrase�a");
+		JLabel label_3 = new JLabel("Contrasena");
 		label_3.setBounds(386, 305, 75, 14);
 
 
@@ -91,11 +91,11 @@ public class PanelUpdatePersonal extends JPanel implements Ventana {
 		botonFind.setBounds(427, 28, 222, 23);
 		add(botonFind);
 
-		activoRB = new JRadioButton("En n�mina");
+		activoRB = new JRadioButton("En nomina");
 		inactivoRB = new JRadioButton("Despedido");
 		activoRB.setVisible(false);
 		inactivoRB.setVisible(false);
-		activoRB.setToolTipText("En n�mina");
+		activoRB.setToolTipText("En nomina");
 		activoRB.setBounds(49, 349, 109, 23);
 		activoRB.setOpaque(false);
 
@@ -174,7 +174,7 @@ public class PanelUpdatePersonal extends JPanel implements Ventana {
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
-				if(ComprobadorSintactico.getInstance().nombreCorrect(Nombre.getText()) && ComprobadorSintactico.getInstance().isNumeric(salario.getText()) && ComprobadorSintactico.getInstance().isNumeric(telefono.getText())){
+				if(ComprobadorSintactico.getInstance().nombreCorrect(Nombre.getText()) && ComprobadorSintactico.getInstance().isNumericFloat(salario.getText()) && ComprobadorSintactico.getInstance().isNumeric(telefono.getText())){
 					boolean ok = false;
 					if (activoRB.isSelected())
 						ok = true;

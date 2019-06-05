@@ -83,7 +83,7 @@ public class VentanaVentasImp extends VentanaVentas {
 
 		botonanadir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				botonanadir.setEnabled(false);
 				botonMostrarID.setEnabled(false);
 				botonMostrarTodo.setEnabled(false);
 				panel2.removeAll();

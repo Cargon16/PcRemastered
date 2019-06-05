@@ -77,7 +77,7 @@ public class PanelReadAllEnvio extends JPanel implements Ventana{
 							s = "En curso";
 						else
 							s = "Entregado";
-						texto = texto + "ID: " + c.getID() + "\n" + "Direcci�n: " + c.getDireccion() + "\n"  + "Estado: " + s + "\n\n";
+						texto = texto + "ID: " + c.getID() + "\n" + "Direccion: " + c.getDireccion() + "\n"  + "Estado: " + s + "\n\n";
 
 					}
 					textArea.setText(texto);

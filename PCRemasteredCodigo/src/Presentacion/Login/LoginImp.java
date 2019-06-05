@@ -42,7 +42,7 @@ public class LoginImp extends Login{
 
 	private void initComponents() {
 		
-		ImageIcon imageIcon = new ImageIcon("src/logoPc.png"); 
+		ImageIcon imageIcon = new ImageIcon("src/logoPc2.png"); 
 		Image im = imageIcon.getImage();
 		ImageIcon iconoEscalado = new ImageIcon(im.getScaledInstance(200,200,Image.SCALE_SMOOTH));
 		JLabel imagen = new JLabel();

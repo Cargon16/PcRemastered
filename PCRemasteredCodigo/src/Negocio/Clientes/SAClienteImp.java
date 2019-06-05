@@ -37,7 +37,7 @@ public class SAClienteImp implements SACliente {
 		// comprobar que el cliente existe -- ReaDByDNI
 		 
 		TCliente c = FactoriaIntegracion.getInstance().crearDaoCliente().readByDNI(tCliente.getDNI());
-		if (c==null){
+		if (c!=null){
 			return FactoriaIntegracion.getInstance().crearDaoCliente().update(tCliente);
 		}
 		return -1;

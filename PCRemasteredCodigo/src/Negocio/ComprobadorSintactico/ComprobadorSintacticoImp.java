@@ -43,6 +43,21 @@ public class ComprobadorSintacticoImp extends ComprobadorSintactico {
 		return okele;
 
 	}
+	public  boolean isNumericFloat(String cadena){
+
+		boolean okele = false;
+			try {
+				Float.parseFloat(cadena);
+				okele = true;
+			
+		}catch(NumberFormatException e){
+			okele=false;
+
+		}
+
+		return okele;
+
+	}
 	
 	public  boolean isAlphabetic(String cadena){
 		return !cadena.equals("") && cadena !=null && cadena.matches("^[a-zA-Z]*$");
