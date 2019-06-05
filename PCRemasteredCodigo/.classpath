@@ -2,6 +2,19 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="C:/Users/agoni/git/mariadb-java-client-2.4.1.jar"/>
+=======
+<<<<<<< HEAD
+	<classpathentry kind="lib" path="C:/Users/Usuario/Desktop/mariadb-java-client-2.4.1.jar"/>
+	<classpathentry kind="src" path=".apt_generated">
+		<attributes>
+			<attribute name="optional" value="true"/>
+		</attributes>
+	</classpathentry>
+=======
+	<classpathentry kind="lib" path="C:/Users/ser_e/Desktop/mariadb-java-client-2.4.1.jar"/>
+>>>>>>> refs/remotes/origin/master
+>>>>>>> refs/remotes/origin/master
 	<classpathentry kind="output" path="src"/>
 </classpath>
